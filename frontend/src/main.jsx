@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './styles/index.css'
+import './styles/index.css';
+import NavBar from './components/NavBar';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -13,7 +14,7 @@ function App() {
 
   return (
     <div>
-      <h2>Frontend</h2>
+      <NavBar />
     </div>
   )
 }
