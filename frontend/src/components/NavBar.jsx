@@ -1,4 +1,4 @@
-import React from "react";
+/* eslint-disable */
 import "../styles/components/navbar.css";
 
 

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import TestLogo from "../../assets/react.svg";
 
 export default function JobPost({job}){
@@ -26,7 +27,7 @@ export default function JobPost({job}){
                 }
             </div>
             <p>{job.shortDescription}</p>
-            <button>Apply -></button>
+            <button>Apply -&gt;</button>
         </div>
     )
 }

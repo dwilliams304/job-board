@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/index.css';
 import NavBar from './components/NavBar';
+import SearchBar from './components/SearchBar';
 import JobList from './components/JobList';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -16,6 +17,7 @@ function App() {
   return (
     <div>
       <NavBar />
+      <SearchBar />
       <JobList />
     </div>
   )
