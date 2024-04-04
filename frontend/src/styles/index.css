@@ -12,13 +12,18 @@
 
 .active,
 .inactive {
-  padding: 0.5rem;
   border-radius: 30px;
   margin: 0.2rem;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  font-weight: bold;
 }
 
 .active {
   background-color: rgb(90, 31, 255);
+  color: white;
 }
 
 .inactive {
