@@ -8,3 +8,19 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+
+.active,
+.inactive {
+  padding: 0.5rem;
+  border-radius: 30px;
+  margin: 0.2rem;
+}
+
+.active {
+  background-color: rgb(90, 31, 255);
+}
+
+.inactive {
+  background-color: gainsboro;
+}

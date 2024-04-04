@@ -19,9 +19,9 @@ export default function JobPost({job}){
                 {
                     job.daysWorked.map((day, i) => {
                         return (
-                            <p className={day === true ? "active" : "inactive"} key={i}>
+                            <span className={day === true ? "active" : "inactive"} key={i}>
                                 {day === true ? "Y" : "N"}
-                            </p>
+                            </span>
                         )
                     })
                 }
