@@ -17,9 +17,9 @@ export default function JobPost({job}){
 
             <div style={{width: "50%", textAlign: "right"}}>
                 <p>{job.level}</p>
-                <p>Salary: ${job.salary}/yr</p>
-                <p>Average hours: {job.averageHours} {job.averageHours >=35 ? "(FT)" : "(PT)"}</p>
-                <p>Expected hourly: {Math.round((job.salary / 52 / job.averageHours) * 100) / 100}/hr</p>
+                <p>Salary: ${job.salary.toLocaleString()}/yr</p>
+                <p>Avg. hrs./wk: {job.averageHours} {job.averageHours >=35 ? "(FT)" : "(PT)"}</p>
+                <p>Hourly: ${Math.round((job.salary / 52 / job.averageHours) * 100) / 100}/hr</p>
                 <div style={{display: "flex", justifyContent: "flex-end"}}>
                     {
                         job.daysWorked.map((day, i) => {
