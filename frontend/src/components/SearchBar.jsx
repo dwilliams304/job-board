@@ -19,6 +19,14 @@ export default function SearchBar(){
                     <option>Hybrid</option>
                     <option>Remote</option>
                 </select>
+
+                <select>
+                    <option>Intern</option>
+                    <option>Entry-Level</option>
+                    <option>Mid-Level</option>
+                    <option>Senior</option>
+                    <option>Manager</option>
+                </select>
                 
                 <select>
                     <option>Past 24 hours</option>
