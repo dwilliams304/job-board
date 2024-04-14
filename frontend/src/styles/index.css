@@ -29,3 +29,12 @@
 .inactive {
   background-color: gainsboro;
 }
+
+.search-bar {
+  text-align: left;
+  width: 200px;
+  height: 30px;
+  padding-left: 2rem;
+  /* margin: 0 1rem; */
+  /* border-radius: 25px; */
+}
