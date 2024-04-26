@@ -6,22 +6,22 @@ _Note: This project is still WIP with incompleted documentation. Check back in l
 
 ### To-Do  
 #### Backend:
-[ ] Set up basic server w/ Express
-[ ] Connect/create MongoDB database to backend
-[ ] Basic data modelling
-[ ] Server routing
-[ ] Authentication
+- [ ] Set up basic server w/ Express
+- [ ] Connect/create MongoDB database to backend
+- [ ] Basic data modelling
+- [ ] Server routing
+- [ ] Authentication
 
 #### Frontend:
-[x] Scaffold basic Job Board UI
-[x] Create mock data and display it
-[ ] Switch styling to Tailwind
-[ ] Connect backend to display actual data
-[ ] Users can expand job post for more details
-[ ] Basic search functionality
-[ ] Set up user/company profile creation pages
-[ ] Allow companies to create job posting
+- [x] Scaffold basic Job Board UI
+- [x] Create mock data and display it
+- [ ] Switch styling to Tailwind
+- [ ] Connect backend to display actual data
+- [ ] Users can expand job post for more details
+- [ ] Basic search functionality
+- [ ] Set up user/company profile creation pages
+- [ ] Allow companies to create job posting
 
 #### Stretch:  
-[ ] Convert JavaScript be/fe to TypeScript
-[ ] Set up payment pages for creating job listing (Stripe?)
+- [ ] Convert JavaScript be/fe to TypeScript
+- [ ] Set up payment pages for creating job listing (Stripe?)
