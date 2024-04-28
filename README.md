@@ -6,7 +6,7 @@ _Note: This project is still WIP with incompleted documentation. Check back in l
 
 ### To-Do  
 #### Backend:
-- [ ] Set up basic server w/ Express
+- [x] Set up basic server w/ Express
 - [ ] Connect/create MongoDB database to backend
 - [ ] Basic data modelling
 - [ ] Server routing

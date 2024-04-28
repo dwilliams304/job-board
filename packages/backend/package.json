@@ -2,7 +2,7 @@
   "name": "backend",
   "description": "Express backend using MongoDB",
   "scripts": {
-    "server": "",
+    "server": "nodemon index.js",
     "test": "echo \"Error: No tests setup for Backend\""
   },
   "author": "",
