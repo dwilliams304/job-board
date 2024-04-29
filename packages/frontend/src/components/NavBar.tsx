@@ -2,7 +2,7 @@
 import "../styles/components/navbar.css";
 
 
-export default function NavBar(props) {
+export default function NavBar() {
     return(
         <nav>
             <div className="left">

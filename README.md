@@ -23,5 +23,6 @@ _Note: This project is still WIP with incompleted documentation. Check back in l
 - [ ] Allow companies to create job posting
 
 #### Stretch:  
-- [ ] Convert JavaScript be/fe to TypeScript
+- [x] Convert JavaScript frontend to TypeScript
+- [ ] Convert backend to TypeScript
 - [ ] Set up payment pages for creating job listing (Stripe?)

@@ -7,7 +7,7 @@ export default function JobList(){
             <p>Showing {data.length} results.</p>
             <div>
                 {
-                    data.map((job, i) => {
+                    data.map((job: object, i: number) => {
                         return <JobPost job={job} key={i} />
                     })
                 }

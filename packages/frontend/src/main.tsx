@@ -5,7 +5,7 @@ import NavBar from './components/NavBar';
 import SearchBar from './components/SearchBar';
 import JobList from './components/JobList';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,

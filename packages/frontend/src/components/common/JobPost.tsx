@@ -1,7 +1,7 @@
 /* eslint-disable */
 import TestLogo from "../../assets/react.svg";
 
-export default function JobPost({job}){
+export default function JobPost({job}: any){
     return(
         <div style={{border: "1px solid black", margin: "1rem", padding: "1rem", display: "flex"}}>
             <div style={{width: "50%"}}>
@@ -22,7 +22,7 @@ export default function JobPost({job}){
                 <p>Hourly: ${Math.round((job.salary / 52 / job.averageHours) * 100) / 100}/hr</p>
                 <div style={{display: "flex", justifyContent: "flex-end"}}>
                     {
-                        job.daysWorked.map((day, i) => {
+                        job.daysWorked.map((day: boolean, i: number) => {
                             return (
                                 <span className={day === true ? "active" : "inactive"} key={i}>
                                     {day === true ? "Y" : "N"}
@@ -33,7 +33,7 @@ export default function JobPost({job}){
                 </div>
                 <button style={{border: "none", backgroundColor: "rgb(90, 31, 255)",
                 color: "white", padding: "0.5rem 2rem", borderRadius: "30px"}}>
-                    Apply -&gt;
+                    Apply -&rarr;
                 </button>
             </div>
         </div>
