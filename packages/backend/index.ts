@@ -1,6 +1,6 @@
 require('dotenv').config();
-const helmet = require('helmet');
-const express = require('express');
+import express from 'express';
+import helmet from 'helmet';
 
 const PORT = process.env.PORT || 9000;
 
@@ -9,11 +9,11 @@ const server = express();
 server.use(helmet());
 server.use(express.json());
 
-server.use((err, req, res) => {
+server.use((err: any, req: any, res: any) => {
     res.status(err.status || 500).json({
         message: err.message,
         stack: err.stack
-    })
+    });
 });
 
 server.listen(PORT, () => {
