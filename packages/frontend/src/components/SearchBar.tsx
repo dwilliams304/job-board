@@ -1,8 +1,7 @@
 export default function SearchBar(){
     return (
-        <section style={{display: "flex", flexDirection: "column", 
-        justifyContent: "center", alignItems: "center", margin: "2rem"}}>
-            <div style={{marginBottom: "0.5rem"}}>
+        <section className="flex flex-col items-center justify-center m-8">
+            <div className="mb-2">
                 <input 
                     placeholder="Title, keywords, etc..."
                     className="search-bar"
@@ -11,9 +10,9 @@ export default function SearchBar(){
                     placeholder="Location or 'Remote'"
                     className="search-bar"
                 />
-                <button style={{marginLeft: "1rem", height: "30px"}}>Search</button>
+                <button>Search</button>
             </div>
-            <div style={{display: "flex"}}>
+            <div className="flex">
                 <select>
                     <option>On-Site</option>
                     <option>Hybrid</option>

@@ -15,7 +15,7 @@ _Note: This project is still WIP with incompleted documentation. Check back in l
 #### Frontend:
 - [x] Scaffold basic Job Board UI
 - [x] Create mock data and display it
-- [ ] Switch styling to Tailwind
+- [x] Switch styling to Tailwind
 - [ ] Connect backend to display actual data
 - [ ] Users can expand job post for more details
 - [ ] Basic search functionality
