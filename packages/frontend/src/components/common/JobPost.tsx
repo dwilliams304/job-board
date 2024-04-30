@@ -3,9 +3,9 @@ import TestLogo from "../../assets/react.svg";
 
 export default function JobPost({job}: any){
     return(
-        <div style={{border: "1px solid black", margin: "1rem", padding: "1rem", display: "flex"}}>
-            <div style={{width: "50%"}}>
-                <div style={{display: "flex"}}>
+        <div className="flex border-solid border border-black m-5 p-5">
+            <div className="w-1/2">
+                <div className="flex">
                     <img src={TestLogo} alt="company logo" />
                     <h2>{job.jobTitle} - {job.companyName}</h2>
                 </div>
@@ -15,24 +15,23 @@ export default function JobPost({job}: any){
                 <p>{job.shortDescription}</p>
             </div>
 
-            <div style={{width: "50%", textAlign: "right"}}>
+            <div className="w-1/2 text-right">
                 <p>{job.level}</p>
                 <p>Salary: ${job.salary.toLocaleString()}/yr</p>
                 <p>Avg. hrs./wk: {job.averageHours} {job.averageHours >=35 ? "(FT)" : "(PT)"}</p>
                 <p>Hourly: ${Math.round((job.salary / 52 / job.averageHours) * 100) / 100}/hr</p>
-                <div style={{display: "flex", justifyContent: "flex-end"}}>
+                <div className="flex justify-end">
                     {
                         job.daysWorked.map((day: boolean, i: number) => {
                             return (
-                                <span className={day === true ? "active" : "inactive"} key={i}>
-                                    {day === true ? "Y" : "N"}
-                                </span>
+                                day ? <span key={i}>Y</span> 
+                                : 
+                                <span key={i}>N</span>
                             )
                         })
                     }
                 </div>
-                <button style={{border: "none", backgroundColor: "rgb(90, 31, 255)",
-                color: "white", padding: "0.5rem 2rem", borderRadius: "30px"}}>
+                <button className="border rounded-3xl bg-blue-700 text-white px-8 py-2 ">
                     Apply &rarr;
                 </button>
             </div>
