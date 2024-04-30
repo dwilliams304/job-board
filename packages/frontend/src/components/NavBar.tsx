@@ -1,5 +1,4 @@
 /* eslint-disable */
-import "../styles/components/navbar.css";
 
 
 export default function NavBar() {

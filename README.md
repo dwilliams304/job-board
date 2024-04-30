@@ -24,5 +24,5 @@ _Note: This project is still WIP with incompleted documentation. Check back in l
 
 #### Stretch:  
 - [x] Convert JavaScript frontend to TypeScript
-- [ ] Convert backend to TypeScript
+- [x] Convert backend to TypeScript
 - [ ] Set up payment pages for creating job listing (Stripe?)

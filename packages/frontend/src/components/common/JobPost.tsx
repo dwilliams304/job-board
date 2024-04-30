@@ -33,7 +33,7 @@ export default function JobPost({job}: any){
                 </div>
                 <button style={{border: "none", backgroundColor: "rgb(90, 31, 255)",
                 color: "white", padding: "0.5rem 2rem", borderRadius: "30px"}}>
-                    Apply -&rarr;
+                    Apply &rarr;
                 </button>
             </div>
         </div>

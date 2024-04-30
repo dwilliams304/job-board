@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './styles/index.css';
+import './index.css';
 import NavBar from './components/NavBar';
 import SearchBar from './components/SearchBar';
 import JobList from './components/JobList';
