@@ -1,7 +1,19 @@
-/* eslint-disable */
 import TestLogo from "../../assets/react.svg";
 
-export default function JobPost({job}: any){
+type JobPostProps = {
+    job : {
+        jobTitle: string;
+        companyName: string;
+        location: string;
+        shortDescription: string;
+        level: string;
+        salary: number;
+        averageHours: number;
+        daysWorked: boolean[];
+    }
+}
+
+export default function JobPost({job}: JobPostProps){
     return(
         <div className="flex border-solid border border-black m-5 p-5">
             <div className="w-1/2">
@@ -22,7 +34,7 @@ export default function JobPost({job}: any){
                 <p>Hourly: ${Math.round((job.salary / 52 / job.averageHours) * 100) / 100}/hr</p>
                 <div className="flex justify-end">
                     {
-                        job.daysWorked.map((day: boolean, i: number) => {
+                        job.daysWorked.map((day, i) => {
                             return (
                                 day ? <span key={i}>Y</span> 
                                 : 
