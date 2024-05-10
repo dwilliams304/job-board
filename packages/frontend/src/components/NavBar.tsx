@@ -1,15 +1,16 @@
 /* eslint-disable */
+import TestLogo from "../assets/react.svg";
 
 
 export default function NavBar() {
     return(
-        <nav className="flex justify-between">
+        <nav className="flex justify-between shadow-md p-4">
             <div className="left">
-                <p className="pl-3">Logo</p>
+                <img src={TestLogo} className="pl-3" alt="logo"/>
             </div>
             <div className="flex">
-                <p className="pr-5">Login</p>
-                <p className="pr-3">Help</p>
+                <a className="pr-5 cursor-pointer">Login</a>
+                <a className="pr-3 cursor-pointer">Help</a>
             </div>
         </nav>
     )
