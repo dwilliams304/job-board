@@ -1,10 +1,13 @@
 require('dotenv').config();
 import express from 'express';
 import helmet from 'helmet';
+import authRouter from './src/routes/auth-router';
 
 const PORT = process.env.PORT || 9000;
 
 const server = express();
+
+server.use('/api/auth/', authRouter);
 
 server.use(helmet());
 server.use(express.json());
