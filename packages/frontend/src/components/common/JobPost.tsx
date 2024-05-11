@@ -15,10 +15,10 @@ type JobPostProps = {
 
 export default function JobPost({job}: JobPostProps){
     return(
-        <div className="flex border-solid border border-black m-5 p-5">
+        <div className="flex border border-solid m-5 p-5 shadow-md">
             <div className="w-1/2">
                 <div className="flex">
-                    <img src={TestLogo} alt="company logo" />
+                    <img src={TestLogo} alt="company logo" className="pr-2 mb-2"/>
                     <h2>{job.jobTitle} - {job.companyName}</h2>
                 </div>
                 <div>
@@ -32,13 +32,13 @@ export default function JobPost({job}: JobPostProps){
                 <p>Salary: ${job.salary.toLocaleString()}/yr</p>
                 <p>Avg. hrs./wk: {job.averageHours} {job.averageHours >=35 ? "(FT)" : "(PT)"}</p>
                 <p>Hourly: ${Math.round((job.salary / 52 / job.averageHours) * 100) / 100}/hr</p>
-                <div className="flex justify-end">
+                <div className="flex justify-end my-2">
                     {
                         job.daysWorked.map((day, i) => {
                             return (
-                                day ? <span key={i}>Y</span> 
+                                day ? <span key={i} className="bg-blue-600 rounded-3xl w-6 h-6 text-center">Y</span> 
                                 : 
-                                <span key={i}>N</span>
+                                <span key={i} className="bg-red-600 rounded-3xl w-6 h-6 text-center">N</span>
                             )
                         })
                     }
