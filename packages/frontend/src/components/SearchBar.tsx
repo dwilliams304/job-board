@@ -4,22 +4,22 @@ export default function SearchBar(){
             <div className="mb-2">
                 <input 
                     placeholder="Title, keywords, etc..."
-                    className="search-bar"
+                    className="m-1 mb-2 p-2 pr-6 shadow-md border border-solid"
                 />
                 <input 
                     placeholder="Location or 'Remote'"
-                    className="search-bar"
+                    className="m-1 mb-2 p-2 pr-6 shadow-md border border-solid"
                 />
-                <button>Search</button>
+                <button className="border rounded-3xl bg-blue-700 text-white px-8 py-2 ml-2">Search</button>
             </div>
             <div className="flex">
-                <select>
+                <select className="m-2 p-1 border border-solid border-black cursor-pointer">
                     <option>On-Site</option>
                     <option>Hybrid</option>
                     <option>Remote</option>
                 </select>
 
-                <select>
+                <select className="m-2 p-1 border border-solid border-black cursor-pointer">
                     <option>Intern</option>
                     <option>Entry-Level</option>
                     <option>Mid-Level</option>
@@ -27,7 +27,7 @@ export default function SearchBar(){
                     <option>Manager</option>
                 </select>
                 
-                <select>
+                <select className="m-2 p-1 border border-solid border-black cursor-pointer">
                     <option>Past 24 hours</option>
                     <option>Past 7 days</option>
                     <option>Past 30 days</option>
