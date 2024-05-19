@@ -1,3 +1,5 @@
+import TestLogo from "../assets/react.svg";
+
 export const data = [
     {
         jobTitle: "Frontend Engineer",
@@ -12,7 +14,7 @@ export const data = [
         salary: 50000,
         averageHours: 40,
         daysWorked: [false, true, true, true, true, true, false], // Sunday - Saturday, expected to work?
-        shortDescription: "This is a short description of the job"
+        shortDescription: "The frontend engineer will engineer things in the frontend when things in the frontend need engineered."
     },
     {
         jobTitle: "Fullstack Engineer",
@@ -27,7 +29,7 @@ export const data = [
         salary: 62500,
         averageHours: 40,
         daysWorked: [false, true, true, true, true, true, false],
-        shortDescription: "This is a short description of the job"
+        shortDescription: "You will craft the evil website 900inator frontend and backend."
     },
     {
         jobTitle: "Technical Support Engineer",
@@ -42,7 +44,7 @@ export const data = [
         salary: 120000,
         averageHours: 40,
         daysWorked: [false, true, true, true, true, true, false],
-        shortDescription: "This is a short description of the job"
+        shortDescription: "The Technical Support Engineer will provide excellent customer service and troubleshoot issues with customerinators."
     },
     {
         jobTitle: "Web Developer",
@@ -55,13 +57,13 @@ export const data = [
             remote: false
         },
         salary: 95250,
-        averageHours: 20,
+        averageHours: 40,
         daysWorked: [false, true, true, true, true, true, false],
-        shortDescription: "This is a short description of the job"
+        shortDescription: "As a web developer, you will craft an amazing user experience to drive more traffic and sales."
     },
     {
-        jobTitle: "Job Title 4",
-        companyName: "Company Name 4",
+        jobTitle: "Technical Support Engineer",
+        companyName: "Fakebook",
         level: "Intermediate - Senior",
         location: "United States",
         onSite: {
@@ -69,14 +71,14 @@ export const data = [
             hybrid: false,
             remote: true
         },
-        salary: 95250,
-        averageHours: 20,
+        salary: 85000,
+        averageHours: 40,
         daysWorked: [false, true, true, true, true, true, false],
-        shortDescription: "This is a short description of the job"
+        shortDescription: "Our client Fakebook needs a Technical Support Engineer to help customers troubleshoot common issues. Must be strong in debugging."
     },
     {
-        jobTitle: "Job Title 4",
-        companyName: "Company Name 4",
+        jobTitle: "Backend Engineer",
+        companyName: "SQueueL",
         level: "Intermediate - Senior",
         location: "United States",
         onSite: {
@@ -84,14 +86,14 @@ export const data = [
             hybrid: true,
             remote: false
         },
-        salary: 95250,
-        averageHours: 20,
+        salary: 127500,
+        averageHours: 45,
         daysWorked: [false, true, true, true, true, true, false],
-        shortDescription: "This is a short description of the job"
+        shortDescription: "The Backend Engineer will work and communicate with the frontend team. And will engineer the backend, as a backend engineer would do."
     },
     {
-        jobTitle: "Job Title 4",
-        companyName: "Company Name 4",
+        jobTitle: "Deployed Engineer",
+        companyName: "MikeSpace",
         level: "Intermediate - Senior",
         location: "United States",
         onSite: {
@@ -99,9 +101,9 @@ export const data = [
             hybrid: false,
             remote: false
         },
-        salary: 95250,
-        averageHours: 20,
+        salary: 73000,
+        averageHours: 40,
         daysWorked: [false, true, true, true, true, true, false],
-        shortDescription: "This is a short description of the job"
+        shortDescription: "Deployed Engineers will commonly be engineering as they are deployed."
     },
 ]
