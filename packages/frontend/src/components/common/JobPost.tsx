@@ -4,6 +4,7 @@ type JobPostProps = {
     job : {
         jobTitle: string;
         companyName: string;
+        companyLogo: string;
         location: string;
         onSite: {
             onSite: boolean;
@@ -24,7 +25,7 @@ export default function JobPost({job}: JobPostProps){
         <div className="flex border border-solid m-5 p-5 shadow-md">
             <div className="w-1/2">
                 <div className="flex">
-                    <img src={TestLogo} alt="company logo" className="pr-2 mb-2"/>
+                    <img src={job.companyLogo} alt="company logo" className="pr-2 mb-2"/>
                     <h2 className="font-semibold">{job.jobTitle} - {job.companyName}</h2>
                 </div>
                 <div className="italic">

@@ -1,9 +1,11 @@
 import TestLogo from "../assets/react.svg";
+import TestLogo2 from "../../public/vite.svg";
 
 export const data = [
     {
         jobTitle: "Frontend Engineer",
         companyName: "Jon Doe, Inc.",
+        companyLogo: TestLogo2,
         level: "Junior - Intermediate",
         location: "Salt Lake City, UT",
         onSite: {
@@ -19,6 +21,7 @@ export const data = [
     {
         jobTitle: "Fullstack Engineer",
         companyName: "Doofenshmirtz Evil, Inc.",
+        companyLogo: TestLogo,
         level: "Junior - Intermediate",
         location: "San Francisco, CA",
         onSite: {
@@ -34,6 +37,7 @@ export const data = [
     {
         jobTitle: "Technical Support Engineer",
         companyName: "Doofenshmirtz Evil, Inc.",
+        companyLogo: TestLogo,
         level: "Lead",
         location: "Chicago, IL",
         onSite: {
@@ -49,6 +53,7 @@ export const data = [
     {
         jobTitle: "Web Developer",
         companyName: "Kim's Convenience",
+        companyLogo: TestLogo,
         level: "Intermediate - Senior",
         location: "United States",
         onSite: {
@@ -64,6 +69,7 @@ export const data = [
     {
         jobTitle: "Technical Support Engineer",
         companyName: "Fakebook",
+        companyLogo: TestLogo2,
         level: "Intermediate - Senior",
         location: "United States",
         onSite: {
@@ -79,6 +85,7 @@ export const data = [
     {
         jobTitle: "Backend Engineer",
         companyName: "SQueueL",
+        companyLogo: TestLogo,
         level: "Intermediate - Senior",
         location: "United States",
         onSite: {
@@ -94,6 +101,7 @@ export const data = [
     {
         jobTitle: "Deployed Engineer",
         companyName: "MikeSpace",
+        companyLogo: TestLogo,
         level: "Intermediate - Senior",
         location: "United States",
         onSite: {
