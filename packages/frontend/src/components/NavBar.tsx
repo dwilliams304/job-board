@@ -5,8 +5,9 @@ import TestLogo from "../assets/react.svg";
 export default function NavBar() {
     return(
         <nav className="flex justify-between shadow-md p-4">
-            <div className="left">
-                <img src={TestLogo} className="pl-3" alt="logo"/>
+            <div className="left flex align-middle">
+                <img src={TestLogo} className="px-3" alt="logo"/>
+                <p>TypeScript Job Board</p>
             </div>
             <div className="flex">
                 <a className="pr-5 cursor-pointer">Login</a>
