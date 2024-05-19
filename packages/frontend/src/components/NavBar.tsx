@@ -1,5 +1,6 @@
 /* eslint-disable */
 import TestLogo from "../assets/react.svg";
+import { MdHelpOutline } from "react-icons/md";
 
 
 export default function NavBar() {
@@ -9,9 +10,12 @@ export default function NavBar() {
                 <img src={TestLogo} className="px-3" alt="logo"/>
                 <p>TypeScript Job Board</p>
             </div>
-            <div className="flex">
+            <div className="flex align-middle">
                 <a className="pr-5 cursor-pointer">Login</a>
-                <a className="pr-3 cursor-pointer">Help</a>
+                <span className="cursor-pointer pr-3 flex">
+                    <a>Help</a> 
+                    <MdHelpOutline/>
+                </span>
             </div>
         </nav>
     )

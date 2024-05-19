@@ -1,5 +1,3 @@
-import TestLogo from "../../assets/react.svg";
-
 type JobPostProps = {
     job : {
         jobTitle: string;
@@ -28,7 +26,10 @@ export default function JobPost({job}: JobPostProps){
             <div className="w-1/2">
                 <div className="flex">
                     <img src={job.companyLogo} alt="company logo" className="pr-2 mb-2"/>
-                    <h2 className="font-semibold">{job.jobTitle} - {job.companyName}</h2>
+                    <h2 className="font-semibold">
+                        <span className="hover:underline">{job.companyName}</span> - 
+                        <span> {job.jobTitle}</span>
+                    </h2>
                 </div>
                 <div className="italic">
                     <p> 

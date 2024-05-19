@@ -1,3 +1,5 @@
+import { IoFilterSharp } from "react-icons/io5";
+
 export default function SearchBar(){
     return (
         <section className="flex flex-col items-center justify-center m-8">
@@ -33,7 +35,10 @@ export default function SearchBar(){
                     <option>Past 30 days</option>
                 </select>
 
-                <button>All Filters</button>
+                <button>
+                    All Filters
+                    <span><IoFilterSharp /></span>
+                </button>
             </div>
         </section>
     )
