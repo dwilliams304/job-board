@@ -5,6 +5,11 @@ type JobPostProps = {
         jobTitle: string;
         companyName: string;
         location: string;
+        onSite: {
+            onSite: boolean;
+            hybrid: boolean;
+            remote: boolean;
+        }
         shortDescription: string;
         level: string;
         salary: number;
@@ -14,17 +19,25 @@ type JobPostProps = {
 }
 
 export default function JobPost({job}: JobPostProps){
+
     return(
         <div className="flex border border-solid m-5 p-5 shadow-md">
             <div className="w-1/2">
                 <div className="flex">
                     <img src={TestLogo} alt="company logo" className="pr-2 mb-2"/>
-                    <h2>{job.jobTitle} - {job.companyName}</h2>
+                    <h2 className="font-semibold">{job.jobTitle} - {job.companyName}</h2>
                 </div>
-                <div>
-                    <p>{job.location}</p>
+                <div className="italic">
+                    <p> 
+                        {/* THIS NEEDS TO CHANGE!! */}
+                        {job.location}
+                    </p>
+                    <p>{job.onSite.onSite && "On Site / "}  
+                        {job.onSite.hybrid && "Hybrid / "}   
+                        {job.onSite.remote && "Remote / "}
+                    </p>
                 </div>
-                <p>{job.shortDescription}</p>
+                <p className="mt-4">{job.shortDescription}</p>
             </div>
 
             <div className="w-1/2 text-right">
