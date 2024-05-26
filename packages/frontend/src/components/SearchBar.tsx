@@ -15,13 +15,13 @@ export default function SearchBar(){
                 <button className="border rounded-3xl bg-blue-700 text-white px-8 py-2 ml-2">Search</button>
             </div>
             <div className="flex">
-                <select className="m-2 p-1 border border-solid border-black cursor-pointer">
+                <select className="m-2 p-1 shadow-md border border-solid cursor-pointer">
                     <option>On-Site</option>
                     <option>Hybrid</option>
                     <option>Remote</option>
                 </select>
 
-                <select className="m-2 p-1 border border-solid border-black cursor-pointer">
+                <select className="m-2 p-1 shadow-md border border-solid cursor-pointer">
                     <option>Intern</option>
                     <option>Entry-Level</option>
                     <option>Mid-Level</option>
@@ -29,14 +29,14 @@ export default function SearchBar(){
                     <option>Manager</option>
                 </select>
                 
-                <select className="m-2 p-1 border border-solid border-black cursor-pointer">
+                <select className="m-2 p-1 shadow-md border border-solid cursor-pointer">
                     <option>Past 24 hours</option>
                     <option>Past 7 days</option>
                     <option>Past 30 days</option>
                 </select>
 
-                <button>
-                    All Filters
+                <button className="flex m-2 p-1 shadow-md border border-solid cursor-pointer">
+                    <span>All Filters</span>
                     <span><IoFilterSharp /></span>
                 </button>
             </div>
