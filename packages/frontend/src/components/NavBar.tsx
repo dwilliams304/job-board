@@ -5,8 +5,8 @@ import { MdHelpOutline } from "react-icons/md";
 
 export default function NavBar() {
     return(
-        <nav className="flex justify-between shadow-md p-4">
-            <div className="left flex align-middle">
+        <nav className="sticky top-0 flex justify-between shadow-md p-4 bg-gradient-to-b from-blue-900 to-blue-700 text-white">
+            <div className="left flex align-middle cursor-pointer">
                 <img src={TestLogo} className="px-3" alt="logo"/>
                 <p>TypeScript Job Board</p>
             </div>
