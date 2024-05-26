@@ -23,9 +23,9 @@ export default function JobPost({job}: JobPostProps){
     return(
         <div className="flex border border-solid my-5 mx-8 p-5 shadow-md transition duration-300 ease-in-out
         cursor-pointer hover:shadow-xl hover:border-gray-400">
-            <div className="w-1/2">
-                <div className="flex">
-                    <img src={job.companyLogo} alt="company logo" className="pr-2 mb-2"/>
+            <div className="w-4/5">
+                <div className="flex align-middle">
+                    <img src={job.companyLogo} alt="company logo" className="p-2 mr-2 border"/>
                     <h2 className="font-semibold">
                         <span className="hover:underline">{job.companyName}</span> - 
                         <span> {job.jobTitle}</span>
@@ -36,7 +36,8 @@ export default function JobPost({job}: JobPostProps){
                         {/* THIS NEEDS TO CHANGE!! */}
                         {job.location}
                     </p>
-                    <p>{job.onSite.onSite && "On Site / "}  
+                    <p>
+                        {job.onSite.onSite && "On Site / "}  
                         {job.onSite.hybrid && "Hybrid / "}   
                         {job.onSite.remote && "Remote / "}
                     </p>
@@ -44,7 +45,7 @@ export default function JobPost({job}: JobPostProps){
                 <p className="mt-4">{job.shortDescription}</p>
             </div>
 
-            <div className="w-1/2 text-right">
+            <div className="w-1/5 text-right border-l-2">
                 <p>{job.level}</p>
                 <p>Salary: ${job.salary.toLocaleString()}/yr</p>
                 <p>Avg. hrs./wk: {job.averageHours} {job.averageHours >=35 ? "(FT)" : "(PT)"}</p>
