@@ -45,7 +45,7 @@ npm run test:be
 ### To-Do  
 #### Backend:
 - [x] Set up basic server w/ Express
-- [ ] Connect/create MongoDB database to backend
+- [x] Connect/create MongoDB database to backend
 - [ ] Basic data modelling
 - [ ] Server routing
 - [ ] Authentication
