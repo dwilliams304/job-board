@@ -15,7 +15,7 @@ export default function Login(){
                                 name='email'
                                 id='email'
                                 placeholder='email@email.com'
-                                className='border border-solid border-black w-3/4'
+                                className='w-3/4 p-2 rounded-xl'
                             />
                         </div>
 
@@ -27,7 +27,7 @@ export default function Login(){
                                 name='password'
                                 id='password'
                                 placeholder='••••••••'
-                                className='border border-solid border-black w-3/4'
+                                className='w-3/4 p-2 rounded-xl'
                             />
                         </div>
 
@@ -37,17 +37,18 @@ export default function Login(){
                                     type='checkbox'
                                     name='remember'
                                     id='remember'
+                                    className='cursor-pointer'
                                 />
-                                <label htmlFor='remember'>Remember me</label>
+                                <label htmlFor='remember' className='pl-2 cursor-pointer'>Remember me</label>
                             </div>
 
-                            <a className=''>Forgot password?</a>
+                            <a className='hover:underline focus:underline cursor-pointer'>Forgot password?</a>
                         </div>
 
-                        <button type='submit' className='border border-solid border-black w-3/4'>Sign in</button>
+                        <button type='submit' className='border border-solid border-black w-3/4 p-2 rounded-xl'>Sign in</button>
                         <p>
-                            Don't have an account yet? 
-                            <a> Sign up!</a>
+                            Don't have an account yet?
+                            <a className='pl-1 underline cursor-pointer'>Sign up!</a>
                         </p>
                     </form>
                 </div>
