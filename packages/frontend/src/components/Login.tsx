@@ -4,49 +4,47 @@ import React from 'react';
 export default function Login(){
     return(
         <section className='w-full h-full'>
-            <div className='m-8 flex'>
+            <div className='flex align-middle m-auto pt-10 w-3/5'>
                 <div className='w-1/2 p-6 bg-blue-200'>
-                    <h2>Sign in to your account</h2>
-                    <form>
+                    <h2 className='text-xl pb-4'>Sign in to your account</h2>
+                    <form className='space-y-4'>
                         <div>
-                            <label htmlFor='email'>Email</label>
+                            <label htmlFor='email' className='block text-sm mb-2'>Email</label>
                             <input
                                 type='email'
                                 name='email'
                                 id='email'
                                 placeholder='email@email.com'
-                                className='border border-solid border-black'
+                                className='border border-solid border-black w-3/4'
                             />
                         </div>
 
                         
                         <div>
-                            <label htmlFor='password'>Password</label>
+                            <label htmlFor='password' className='block text-sm mb-2'>Password</label>
                             <input
                                 type='password'
                                 name='password'
                                 id='password'
                                 placeholder='••••••••'
-                                className='border border-solid border-black'
+                                className='border border-solid border-black w-3/4'
                             />
                         </div>
 
-                        <div>
-                            <div>
+                        <div className='w-3/4 flex items-center justify-between'>
+                            <div className='flex-start'>
                                 <input 
                                     type='checkbox'
                                     name='remember'
                                     id='remember'
                                 />
-                            </div>
-                            <div>
                                 <label htmlFor='remember'>Remember me</label>
                             </div>
 
-                            <a>Forgot password?</a>
+                            <a className=''>Forgot password?</a>
                         </div>
 
-                        <button type='submit' className='border border-solid border-black'>Sign in</button>
+                        <button type='submit' className='border border-solid border-black w-3/4'>Sign in</button>
                         <p>
                             Don't have an account yet? 
                             <a> Sign up!</a>
@@ -54,7 +52,7 @@ export default function Login(){
                     </form>
                 </div>
 
-                <div className='w-1/2 p-6 bg-blue-600'>
+                <div className='w-1/2 p-6 bg-blue-100'>
                     <p>Probably some image.</p>
                     <h2>Big headline.</h2>
                     <h3>More flavor text.</h3>
