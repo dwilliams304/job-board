@@ -4,8 +4,8 @@ import React from 'react';
 export default function Login(){
     return(
         <section className='w-full h-full'>
-            <div className='flex align-middle m-auto pt-10 w-3/5'>
-                <div className='w-1/2 p-6 bg-blue-200'>
+            <div className='flex align-middle mx-auto mt-10 w-3/5 shadow-xl bg-gray-100'>
+                <div className='w-1/2 p-6 border-r'>
                     <h2 className='text-xl pb-4'>Sign in to your account</h2>
                     <form className='space-y-4'>
                         <div>
@@ -45,7 +45,7 @@ export default function Login(){
                             <a className='hover:underline focus:underline cursor-pointer'>Forgot password?</a>
                         </div>
 
-                        <button type='submit' className='border border-solid border-black w-3/4 p-2 rounded-xl'>Sign in</button>
+                        <button type='submit' className='border border-solid w-3/4 p-2 rounded-xl bg-white'>Sign in</button>
                         <p>
                             Don't have an account yet?
                             <a className='pl-1 underline cursor-pointer'>Sign up!</a>
@@ -53,10 +53,10 @@ export default function Login(){
                     </form>
                 </div>
 
-                <div className='w-1/2 p-6 bg-blue-100'>
-                    <p>Probably some image.</p>
-                    <h2>Big headline.</h2>
-                    <h3>More flavor text.</h3>
+                <div className='w-1/2 p-6'>
+                    <img src='' alt='logo' />
+                    <h2 className='text-xl'>Big headline.</h2>
+                    <h3 className='text-lg'>More flavor text.</h3>
                     <p>Over 1 million jobs filled.</p>
                 </div>
             </div>
