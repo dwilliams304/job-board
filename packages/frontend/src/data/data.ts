@@ -1,11 +1,10 @@
-import TestLogo from "../assets/react.svg";
-import TestLogo2 from "../../public/vite.svg";
+import { AppleLogo, BMWLogo, FacebookLogo, GoogleLogo, McdonaldsLogo, SoundcloudLogo } from '../assets/testlogos';
 
 export const data = [
     {
         jobTitle: "Frontend Engineer",
         companyName: "Jon Doe, Inc.",
-        companyLogo: TestLogo2,
+        companyLogo: AppleLogo,
         level: "Junior - Intermediate",
         location: "Salt Lake City, UT",
         onSite: {
@@ -20,7 +19,7 @@ export const data = [
     {
         jobTitle: "Fullstack Engineer",
         companyName: "Doofenshmirtz Evil, Inc.",
-        companyLogo: TestLogo,
+        companyLogo: BMWLogo,
         level: "Junior - Intermediate",
         location: "San Francisco, CA",
         onSite: {
@@ -35,7 +34,7 @@ export const data = [
     {
         jobTitle: "Technical Support Engineer",
         companyName: "Doofenshmirtz Evil, Inc.",
-        companyLogo: TestLogo,
+        companyLogo: BMWLogo,
         level: "Lead",
         location: "Chicago, IL",
         onSite: {
@@ -50,7 +49,7 @@ export const data = [
     {
         jobTitle: "Web Developer",
         companyName: "Kim's Convenience",
-        companyLogo: TestLogo,
+        companyLogo: GoogleLogo,
         level: "Intermediate - Senior",
         location: "United States",
         onSite: {
@@ -65,7 +64,7 @@ export const data = [
     {
         jobTitle: "Technical Support Engineer",
         companyName: "Fakebook",
-        companyLogo: TestLogo2,
+        companyLogo: FacebookLogo,
         level: "Intermediate - Senior",
         location: "United States",
         onSite: {
@@ -80,7 +79,7 @@ export const data = [
     {
         jobTitle: "Backend Engineer",
         companyName: "SQueueL",
-        companyLogo: TestLogo,
+        companyLogo: McdonaldsLogo,
         level: "Intermediate - Senior",
         location: "United States",
         onSite: {
@@ -95,7 +94,7 @@ export const data = [
     {
         jobTitle: "Deployed Engineer",
         companyName: "MikeSpace",
-        companyLogo: TestLogo,
+        companyLogo: SoundcloudLogo,
         level: "Intermediate - Senior",
         location: "United States",
         onSite: {
