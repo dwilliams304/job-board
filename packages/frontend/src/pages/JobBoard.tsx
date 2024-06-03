@@ -1,9 +1,12 @@
-import JobPost from "./common/JobPost";
+import JobPost from "../components/JobPost";
 import { data } from "../data/data";
+import { SearchBar } from "../components";
 
-export default function JobList(){
+export default function JobBoard(){
     return(
         <section>
+            <SearchBar />
+
             <p className="pl-2">Showing {data.length} results.</p>
             <div>
                 {

@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { NavBar, JobList, SearchBar, Login } from'./components';
+import { NavBar, Footer } from'./layout';
+import { JobBoard, Login } from './pages';
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -13,16 +17,18 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 function App() {
 
   return (
-    <div>
+    <BrowserRouter>
       <NavBar />
 
-      <Login />
-      
-{/*       
-      <SearchBar />
-      <JobList />
-       */}
-    </div>
+      <Routes>
+        <Route path="/" element={<JobBoard /> } />
+        <Route path="login" index element={<Login />} />
+      </Routes>
+
+      <Footer />
+
+    
+    </BrowserRouter>
   )
 }
 

@@ -1,6 +1,4 @@
-import JobList from "./JobList";
-import NavBar from "./NavBar";
+import JobPost from "./JobPost";
 import SearchBar from "./SearchBar";
-import Login from "./Login";
 
-export {JobList, NavBar, SearchBar, Login};
+export {JobPost, SearchBar};

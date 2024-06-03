@@ -1,4 +1,3 @@
-/* eslint-disable */
 import TestLogo from "../assets/react.svg";
 import { MdHelpOutline } from "react-icons/md";
 
