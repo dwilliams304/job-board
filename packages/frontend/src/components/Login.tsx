@@ -1,13 +1,18 @@
 import React from 'react';
+import DummyLogo from "../assets/react.svg";
 
 
 export default function Login(){
+    const onSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+    }
+
     return(
         <section className='w-full h-full'>
             <div className='flex align-middle mx-auto mt-10 w-3/5 shadow-xl bg-gray-100'>
                 <div className='w-1/2 p-6 border-r'>
                     <h2 className='text-xl pb-4'>Sign in to your account</h2>
-                    <form className='space-y-4'>
+                    <form className='space-y-4' onSubmit={onSubmit}>
                         <div>
                             <label htmlFor='email' className='block text-sm mb-2'>Email</label>
                             <input
@@ -15,7 +20,7 @@ export default function Login(){
                                 name='email'
                                 id='email'
                                 placeholder='email@email.com'
-                                className='w-3/4 p-2 rounded-xl'
+                                className='w-3/4 p-2 rounded-xl shadow-md'
                             />
                         </div>
 
@@ -27,7 +32,7 @@ export default function Login(){
                                 name='password'
                                 id='password'
                                 placeholder='••••••••'
-                                className='w-3/4 p-2 rounded-xl'
+                                className='w-3/4 p-2 rounded-xl shadow-md'
                             />
                         </div>
 
@@ -45,7 +50,7 @@ export default function Login(){
                             <a className='hover:underline focus:underline cursor-pointer'>Forgot password?</a>
                         </div>
 
-                        <button type='submit' className='border border-solid w-3/4 p-2 rounded-xl bg-white'>Sign in</button>
+                        <button type='submit' className='w-3/4 p-2 rounded-xl bg-blue-700 text-white'>Sign in</button>
                         <p>
                             Don't have an account yet?
                             <a className='pl-1 underline cursor-pointer'>Sign up!</a>
@@ -54,10 +59,10 @@ export default function Login(){
                 </div>
 
                 <div className='w-1/2 p-6'>
-                    <img src='' alt='logo' />
-                    <h2 className='text-xl'>Big headline.</h2>
-                    <h3 className='text-lg'>More flavor text.</h3>
-                    <p>Over 1 million jobs filled.</p>
+                    <img src={DummyLogo} alt='logo' className='mb-6' />
+                    <h2 className='text-xl'>Find your dream job.</h2>
+                    <h3 className='text-lg'>Join the largest tech job board.</h3>
+                    <p>Over 500,000 positions filled.</p>
                 </div>
             </div>
         </section>
