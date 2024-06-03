@@ -15,7 +15,6 @@ export const data = [
         }, //OnSite?, Hybrid?, Remote?
         salary: 50000,
         averageHours: 40,
-        daysWorked: [false, true, true, true, true, true, false], // Sunday - Saturday, expected to work?
         shortDescription: "The frontend engineer will engineer things in the frontend when things in the frontend need engineered."
     },
     {
@@ -31,7 +30,6 @@ export const data = [
         },
         salary: 62500,
         averageHours: 40,
-        daysWorked: [false, true, true, true, true, true, false],
         shortDescription: "You will craft the evil website 900inator frontend and backend."
     },
     {
@@ -47,7 +45,6 @@ export const data = [
         },
         salary: 120000,
         averageHours: 40,
-        daysWorked: [false, true, true, true, true, true, false],
         shortDescription: "The Technical Support Engineer will provide excellent customer service and troubleshoot issues with customerinators."
     },
     {
@@ -63,7 +60,6 @@ export const data = [
         },
         salary: 95250,
         averageHours: 40,
-        daysWorked: [false, true, true, true, true, true, false],
         shortDescription: "As a web developer, you will craft an amazing user experience to drive more traffic and sales."
     },
     {
@@ -79,7 +75,6 @@ export const data = [
         },
         salary: 85000,
         averageHours: 40,
-        daysWorked: [false, true, true, true, true, true, false],
         shortDescription: "Our client Fakebook needs a Technical Support Engineer to help customers troubleshoot common issues. Must be strong in debugging."
     },
     {
@@ -95,7 +90,6 @@ export const data = [
         },
         salary: 127500,
         averageHours: 45,
-        daysWorked: [false, true, true, true, true, true, false],
         shortDescription: "The Backend Engineer will work and communicate with the frontend team. And will engineer the backend, as a backend engineer would do."
     },
     {
@@ -111,7 +105,6 @@ export const data = [
         },
         salary: 73000,
         averageHours: 40,
-        daysWorked: [false, true, true, true, true, true, false],
         shortDescription: "Deployed Engineers will commonly be engineering as they are deployed."
     },
 ]
