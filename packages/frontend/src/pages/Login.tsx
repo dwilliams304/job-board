@@ -8,7 +8,7 @@ export default function Login(){
     }
 
     return(
-        <section className='w-full h-full'>
+        <section className='w-full h-full flex-grow'>
             <div className='flex align-middle mx-auto mt-10 w-3/5 shadow-xl bg-gray-100'>
                 <div className='w-1/2 p-6 border-r'>
                     <h2 className='text-xl pb-4'>Sign in to your account</h2>
