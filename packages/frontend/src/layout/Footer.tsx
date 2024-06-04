@@ -1,4 +1,5 @@
 import DummyLogo from "../assets/react.svg";
+import { Link } from "react-router-dom";
 
 export default function Footer(){
     return(
@@ -8,7 +9,7 @@ export default function Footer(){
                     <div className="mb-6 md:mb-0">
                         <a href="#" className="flex items-center">
                             <img src={DummyLogo} className="h-8 me-3" alt="Logo" />
-                            <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">TypeScript Job Board</span>
+                            <Link to="/" className="self-center text-2xl font-semibold whitespace-nowrap text-white">TypeScript Job Board</Link>
                         </a>
                 </div>
                 <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
@@ -38,10 +39,10 @@ export default function Footer(){
                         <h2 className="mb-6 text-sm font-semibold uppercase text-white">Legal</h2>
                         <ul className="text-gray-300 font-medium">
                             <li className="mb-4">
-                                <a href="#" className="hover:underline">Privacy Policy</a>
+                                <Link to="/privacy" className="hover:underline">Privacy Policy</Link>
                             </li>
                             <li>
-                                <a href="#" className="hover:underline">Terms &amp; Conditions</a>
+                                <Link to="/terms" className="hover:underline">Terms &amp; Conditions</Link>
                             </li>
                         </ul>
                     </div>

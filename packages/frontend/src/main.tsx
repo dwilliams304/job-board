@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import { NavBar, Footer } from'./layout';
-import { JobBoard, Login, Help } from './pages';
+import { JobBoard, Login, Help, Terms, Privacy } from './pages';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -22,9 +22,11 @@ function App() {
         <NavBar />
 
         <Routes>
-          <Route path="/" element={<JobBoard /> } />
-          <Route path="login" index element={<Login />} />
+          <Route path="/" index element={<JobBoard /> } />
+          <Route path="login" element={<Login />} />
           <Route path="help" element={<Help /> } />
+          <Route path="terms" element={<Terms /> } />
+          <Route path="privacy" element={<Privacy /> } />
         </Routes>
 
         <Footer />
