@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import { NavBar, Footer } from'./layout';
-import { JobBoard, Login, Help, Terms, Privacy } from './pages';
+import { JobBoard, Login, Help, Terms, Privacy, NotFound } from './pages';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -27,6 +27,7 @@ function App() {
           <Route path="help" element={<Help /> } />
           <Route path="terms" element={<Terms /> } />
           <Route path="privacy" element={<Privacy /> } />
+          <Route path="*" element={<NotFound /> } />
         </Routes>
 
         <Footer />
