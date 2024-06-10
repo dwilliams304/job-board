@@ -15,65 +15,65 @@ export default function Privacy(){
                     <h2 className="text-center text-xl font-bold space-y-4 pb-8">Table of Contents</h2>
                     <ul className="list-disc px-8 space-y-4">
                         <li>
-                            <a href="#tag" className="font-bold hover:underline">Interpretation and Definitions</a>
+                            <a href="#i-n-d" className="font-bold hover:underline">Interpretation and Definitions</a>
                             <ul className="list-disc px-12">
                                 <li>
-                                    <a href="#tag" className="hover:underline">Interpretations</a>
+                                    <a href="#interpretations" className="hover:underline">Interpretations</a>
                                 </li>
                                 <li>
-                                    <a href="#tag" className="hover:underline">Definitions</a>
+                                    <a href="#definitions" className="hover:underline">Definitions</a>
                                 </li>
                             </ul>
                         </li>
 
                         <li>
-                            <a href="#tag" className="font-bold hover:underline">Data Collection</a>
+                            <a href="#collecting-and-using-your-personal-data" className="font-bold hover:underline">Collecting and Using Your Personal Data</a>
                             <ul className="list-disc px-12">
                                 <li>
-                                    <a href="#tag" className="hover:underline">Types Collected</a>
+                                    <a href="#data-types" className="hover:underline">Types of Data Collected</a>
                                 </li>
                                 <li>
-                                    <a href="#tag" className="hover:underline">Types of Data Collected</a>
+                                    <a href="#data-use" className="hover:underline">Use of Your Personal Data</a>
                                 </li>
                                 <li>
-                                    <a href="#tag" className="hover:underline">Use of Your Personal Data</a>
+                                    <a href="#data-retention" className="hover:underline">Retention of Your Personal Data</a>
                                 </li>
                                 <li>
-                                    <a href="#tag" className="hover:underline">Retention of Your Personal Data</a>
+                                    <a href="#data-transfer" className="hover:underline">Transfer of Your Personal Data</a>
                                 </li>
                                 <li>
-                                    <a href="#tag" className="hover:underline">Transfer of Your Personal Data</a>
+                                    <a href="#data-delete" className="hover:underline">Delete Your Personal Data</a>
                                 </li>
                                 <li>
-                                    <a href="#tag" className="hover:underline">Delete Your Personal Data</a>
+                                    <a href="#data-disclosure" className="hover:underline">Disclosure of Your Personal Data</a>
                                 </li>
                                 <li>
-                                    <a href="#tag" className="hover:underline">Disclosure of Your Personal Data</a>
-                                </li>
-                                <li>
-                                    <a href="#tag" className="hover:underline">Security of Your Personal Data</a>
+                                    <a href="#data-security" className="hover:underline">Security of Your Personal Data</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#tag" className="font-bold hover:underline">Children's Privacy</a>
+                            <a href="#childrens-privacy" className="font-bold hover:underline">Children's Privacy</a>
                         </li>
                         <li>
-                            <a href="#tag" className="font-bold hover:underline">Links to Other Websites</a>
+                            <a href="#links-to-other-websites" className="font-bold hover:underline">Links to Other Websites</a>
                         </li>
                         <li>
-                            <a href="#tag" className="font-bold hover:underline">Changes to this Privacy Policy</a>
+                            <a href="#changes-to-this-privacy-policy" className="font-bold hover:underline">Changes to this Privacy Policy</a>
                         </li>
                         <li>
-                            <a href="#tag" className="font-bold hover:underline">Contact Us</a>
+                            <a href="#contact-us" className="font-bold hover:underline">Contact Us</a>
                         </li>
                     </ul>
                 </div>
+                <span className="absolute -translate-y-24" id="i-n-d"></span>
+                <h2 className="text-lg font-extrabold text-center" >Interpretation and Definitions</h2>
 
-                <h2 className="text-lg font-extrabold text-center">Interpretation and Definitions</h2>
+                <span className="absolute -translate-y-24" id="interpretations"></span>
                 <h3 className="text-md font-bold text-center">Interpretation</h3>
                 <p>The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</p>
                 
+                <span className="absolute -translate-y-24" id="definitions"></span>
                 <h3 className="text-md font-bold text-center">Definitions</h3>
                 <p>For the purposes of this Privacy Policy:</p>
                 <ul className="list-disc px-8">
@@ -114,8 +114,11 @@ export default function Privacy(){
                         <p><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</p>
                     </li>
                 </ul>
-                
+
+                <span className="absolute -translate-y-24" id="collecting-and-using-your-personal-data"></span>
                 <h2 className="text-lg font-extrabold text-center">Collecting and Using Your Personal Data</h2>
+                
+                <span className="absolute -translate-y-24" id="data-types"></span>
                 <h3 className="text-md font-bold text-center">Types of Data Collected</h3>
                 <h4 className="text-md font-bold">Personal Data</h4>
                 <div className="px-6">
@@ -178,8 +181,10 @@ export default function Privacy(){
                     </ul>
                     <p>For more information about the cookies we use and your choices regarding cookies, please visit our Cookies Policy or the Cookies section of our Privacy Policy.</p>
                 </div>
-                
+
+                <span className="absolute -translate-y-24" id="data-use"></span>
                 <h3 className="text-md font-bold text-center">Use of Your Personal Data</h3>
+
                 <p>The Company may use Personal Data for the following purposes:</p>
                 <ul className="list-disc px-8">
                     <li>
@@ -216,22 +221,26 @@ export default function Privacy(){
                     <li><strong>With other users:</strong> when You share personal information or otherwise interact in the public areas with other users, such information may be viewed by all users and may be publicly distributed outside.</li>
                     <li><strong>With Your consent</strong>: We may disclose Your personal information for any other purpose with Your consent.</li>
                 </ul>
-                
+
+                <span className="absolute -translate-y-24" id="data-retention"></span>
                 <h3 className="text-md font-bold text-center">Retention of Your Personal Data</h3>
                 <p>The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies.</p>
                 <p>The Company will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of Our Service, or We are legally obligated to retain this data for longer time periods.</p>
                 
+                <span className="absolute -translate-y-24" id="data-transfer"></span>
                 <h3 className="text-md font-bold text-center">Transfer of Your Personal Data</h3>
                 <p>Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.</p>
                 <p>Your consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer.</p>
                 <p>The Company will take all steps reasonably necessary to ensure that Your data is treated securely and in accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of Your data and other personal information.</p>
                 
+                <span className="absolute -translate-y-24" id="data-delete"></span>
                 <h3 className="text-md font-bold text-center">Delete Your Personal Data</h3>
                 <p>You have the right to delete or request that We assist in deleting the Personal Data that We have collected about You.</p>
                 <p>Our Service may give You the ability to delete certain information about You from within the Service.</p>
                 <p>You may update, amend, or delete Your information at any time by signing in to Your Account, if you have one, and visiting the account settings section that allows you to manage Your personal information. You may also contact Us to request access to, correct, or delete any personal information that You have provided to Us.</p>
                 <p>Please note, however, that We may need to retain certain information when we have a legal obligation or lawful basis to do so.</p>
                 
+                <span className="absolute -translate-y-24" id="data-disclosure"></span>
                 <h3 className="text-md font-bold text-center">Disclosure of Your Personal Data</h3>
                 
                 <h4 className="text-md font-bold">Business Transactions</h4>
@@ -252,23 +261,27 @@ export default function Privacy(){
                     </ul>
                 </div>
                 
+                <span className="absolute -translate-y-24" id="data-security"></span>
                 <h3 className="text-md font-bold text-center">Security of Your Personal Data</h3>
                 <p>The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.</p>
                 
+                <span className="absolute -translate-y-24" id="childrens-privacy"></span>
                 <h2 className="text-lg font-extrabold text-center">Children's Privacy</h2>
                 <p>Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.</p>
                 <p>If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information.</p>
                 
+                <span className="absolute -translate-y-24" id="links-to-other-websites"></span>
                 <h2 className="text-lg font-extrabold text-center">Links to Other Websites</h2>
                 <p>Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit.</p>
                 <p>We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</p>
                 
+                <span className="absolute -translate-y-24" id="changes-to-this-privacy-policy"></span>
                 <h2 className="text-lg font-extrabold text-center">Changes to this Privacy Policy</h2>
                 <p>We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.</p>
                 <p>We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the &quot;Last updated&quot; date at the top of this Privacy Policy.</p>
                 <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
                 
-                <h2 className="text-lg font-extrabold text-center">Contact Us</h2>
+                <h2 className="text-lg font-extrabold text-center" id="contact-us">Contact Us</h2>
                 <p>If you have any questions about this Privacy Policy, You can contact us:</p>
                 <ul className="list-disc px-8">
                     <li>By email: notarealemail@email.com</li>
