@@ -9,31 +9,35 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>,
 )
 
 
 function App() {
+  
 
   return (
     <body className='flex flex-col min-h-screen'>
-      <BrowserRouter>
-        <NavBar />
+      <NavBar />
+      
+      <Routes>
+        <Route path="/" index element={<JobBoard /> } />
+        <Route path="login" element={<Login />} />
+        <Route path="help" element={<Help /> } />
+        <Route path="terms" element={<Terms /> } />
+        <Route path="privacy" element={<Privacy /> } />
+        <Route path="*" element={<NotFound /> } />
+      </Routes>
+      
+      
 
-        <Routes>
-          <Route path="/" index element={<JobBoard /> } />
-          <Route path="login" element={<Login />} />
-          <Route path="help" element={<Help /> } />
-          <Route path="terms" element={<Terms /> } />
-          <Route path="privacy" element={<Privacy /> } />
-          <Route path="*" element={<NotFound /> } />
-        </Routes>
 
-        <Footer />
+      <Footer />
 
       
-      </BrowserRouter>
     </body>
   )
 }

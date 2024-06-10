@@ -1,7 +1,7 @@
 export default function Privacy(){
     return(
-        <section className="flex-grow list-disc">
-            <div className="flex flex-col mt-8 justify-center text-center text-xl font-bold text-red-700">
+        <section className="flex-grow list-disc" id="top">
+            <div className="flex flex-col mt-8 justify-center text-center text-xl font-bold text-red-700" >
                 <h2>IMPORTANT NOTE: THIS IS A FAKE PRIVACY POLICY AS NO DATA IS COLLECTED OR STORED.</h2>
                 <h2>THIS IS SIMPLY HERE TO FILL THE PAGE AND MAKE IT LOOK REAL AS A SAMPLE.</h2>
             </div>
@@ -11,6 +11,65 @@ export default function Privacy(){
                 <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
                 <p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the <a href="https://www.termsfeed.com/privacy-policy-generator/" target="_blank">Privacy Policy Generator</a>.</p>
                 
+                <div className="flex flex-col justify-center align-middle w-1/2 mx-auto bg-blue-100 border border-blue-200">
+                    <h2 className="text-center text-xl font-bold space-y-4 pb-8">Table of Contents</h2>
+                    <ul className="list-disc px-8 space-y-4">
+                        <li>
+                            <a href="#tag" className="font-bold hover:underline">Interpretation and Definitions</a>
+                            <ul className="list-disc px-12">
+                                <li>
+                                    <a href="#tag" className="hover:underline">Interpretations</a>
+                                </li>
+                                <li>
+                                    <a href="#tag" className="hover:underline">Definitions</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#tag" className="font-bold hover:underline">Data Collection</a>
+                            <ul className="list-disc px-12">
+                                <li>
+                                    <a href="#tag" className="hover:underline">Types Collected</a>
+                                </li>
+                                <li>
+                                    <a href="#tag" className="hover:underline">Types of Data Collected</a>
+                                </li>
+                                <li>
+                                    <a href="#tag" className="hover:underline">Use of Your Personal Data</a>
+                                </li>
+                                <li>
+                                    <a href="#tag" className="hover:underline">Retention of Your Personal Data</a>
+                                </li>
+                                <li>
+                                    <a href="#tag" className="hover:underline">Transfer of Your Personal Data</a>
+                                </li>
+                                <li>
+                                    <a href="#tag" className="hover:underline">Delete Your Personal Data</a>
+                                </li>
+                                <li>
+                                    <a href="#tag" className="hover:underline">Disclosure of Your Personal Data</a>
+                                </li>
+                                <li>
+                                    <a href="#tag" className="hover:underline">Security of Your Personal Data</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#tag" className="font-bold hover:underline">Children's Privacy</a>
+                        </li>
+                        <li>
+                            <a href="#tag" className="font-bold hover:underline">Links to Other Websites</a>
+                        </li>
+                        <li>
+                            <a href="#tag" className="font-bold hover:underline">Changes to this Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#tag" className="font-bold hover:underline">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+
                 <h2 className="text-lg font-extrabold text-center">Interpretation and Definitions</h2>
                 <h3 className="text-md font-bold text-center">Interpretation</h3>
                 <p>The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</p>

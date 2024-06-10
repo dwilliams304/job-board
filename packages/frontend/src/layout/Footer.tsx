@@ -2,6 +2,7 @@ import DummyLogo from "../assets/react.svg";
 import { Link } from "react-router-dom";
 
 export default function Footer(){
+
     return(
         <footer className="bg-gradient-to-b from-blue-700 to-blue-900 mt-8">
             <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
