@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import { NavBar, Footer } from'./layout';
+import { ToTopButton } from './components';
 import { JobBoard, Login, Help, Terms, Privacy, NotFound } from './pages';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -33,7 +34,7 @@ function App() {
       </Routes>
       
       
-
+      <ToTopButton />
 
       <Footer />
 
