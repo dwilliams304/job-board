@@ -1,5 +1,6 @@
 import DummyLogo from "../assets/react.svg";
 import { Link } from "react-router-dom";
+import { ScrollToTop } from "../helpers";
 
 export default function Footer(){
 
@@ -10,7 +11,7 @@ export default function Footer(){
                     <div className="mb-6 md:mb-0">
                         <a href="#" className="flex items-center">
                             <img src={DummyLogo} className="h-8 me-3" alt="Logo" />
-                            <Link to="/" className="self-center text-2xl font-semibold whitespace-nowrap text-white">TypeScript Job Board</Link>
+                            <Link to="/" onClick={() => ScrollToTop(true)} className="self-center text-2xl font-semibold whitespace-nowrap text-white">TypeScript Job Board</Link>
                         </a>
                 </div>
                 <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
@@ -40,18 +41,10 @@ export default function Footer(){
                         <h2 className="mb-6 text-sm font-semibold uppercase text-white">Legal</h2>
                         <ul className="text-gray-300 font-medium">
                             <li className="mb-4">
-                                <Link to="/privacy" onClick={() => window.scrollTo({
-                                    left: 0,
-                                    top: 0,
-                                    behavior: "smooth"
-                                })} className="hover:underline">Privacy Policy</Link>
+                                <Link onClick={() => ScrollToTop(true)} to="/privacy" className="hover:underline">Privacy Policy</Link>
                             </li>
                             <li>
-                                <Link to="/terms" onClick={() => window.scrollTo({
-                                    left: 0,
-                                    top: 0,
-                                    behavior: "smooth"
-                                })} className="hover:underline">Terms &amp; Conditions</Link>
+                                <Link onClick={() => ScrollToTop(true)} to="/terms" className="hover:underline">Terms &amp; Conditions</Link>
                             </li>
                         </ul>
                     </div>
