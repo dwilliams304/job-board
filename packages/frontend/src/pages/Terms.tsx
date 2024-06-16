@@ -5,23 +5,23 @@ export default function Terms(){
                 <h2>IMPORTANT NOTE: THIS IS A FAKE TERMS & CONDITIONS PAGE.</h2>
                 <h2>THIS IS SIMPLY HERE TO FILL THE PAGE AND MAKE IT LOOK REAL AS A SAMPLE.</h2>
             </div>
-            <h2 className="text-xl text-center mt-10">Terms and Conditions</h2>
+            <h2 className="text-xl text-center my-10">Terms and Conditions</h2>
             <div className="mx-14 space-y-4">
                 <p>Welcome to TypeScript Job Board!</p>
 
-                <p>These terms and conditions outline the rules and regulations for the use of TypeScript Job Board's Website, located at https://dw-project-ts-job-board.vercel.app/.</p>
+                <p>These terms and conditions outline the rules and regulations for the use of TypeScript Job Board's Website, located at <a href="https://dw-project-ts-job-board.vercel.app/" className="underline italic">https://dw-project-ts-job-board.vercel.app/</a>.</p>
 
                 <p>By accessing this website we assume you accept these terms and conditions. Do not continue to use TypeScript Job Board if you do not agree to take all of the terms and conditions stated on this page.</p>
 
                 <p>The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice and all Agreements: "Client", "You" and "Your" refers to you, the person log on this website and compliant to the Company's terms and conditions. "The Company", "Ourselves", "We", "Our" and "Us", refers to our Company. "Party", "Parties", or "Us", refers to both the Client and ourselves. All terms refer to the offer, acceptance and consideration of payment necessary to undertake the process of our assistance to the Client in the most appropriate manner for the express purpose of meeting the Client's needs in respect of provision of the Company's stated services, in accordance with and subject to, prevailing law of us. Any use of the above terminology or other words in the singular, plural, capitalization and/or he/she or they, are taken as interchangeable and therefore as referring to same.</p>
 
-                <h3><strong>Cookies</strong></h3>
+                <h3 className="text-center text-xl font-bold">Cookies</h3>
 
                 <p>We employ the use of cookies. By accessing TypeScript Job Board, you agreed to use cookies in agreement with the TypeScript Job Board's Privacy Policy. </p>
 
                 <p>Most interactive websites use cookies to let us retrieve the user's details for each visit. Cookies are used by our website to enable the functionality of certain areas to make it easier for people visiting our website. Some of our affiliate/advertising partners may also use cookies.</p>
 
-                <h3><strong>License</strong></h3>
+                <h3 className="text-center text-xl font-bold">License</h3>
 
                 <p>Unless otherwise stated, TypeScript Job Board and/or its licensors own the intellectual property rights for all material on TypeScript Job Board. All intellectual property rights are reserved. You may access this from TypeScript Job Board for your own personal use subjected to restrictions set in these terms and conditions.</p>
 
@@ -50,7 +50,7 @@ export default function Terms(){
 
                 <p>You hereby grant TypeScript Job Board a non-exclusive license to use, reproduce, edit and authorize others to use, reproduce and edit any of your Comments in any and all forms, formats or media.</p>
 
-                <h3><strong>Hyperlinking to our Content</strong></h3>
+                <h3 className="text-center text-xl font-bold">Hyperlinking to our Content</h3>
 
                 <p>The following organizations may link to our Website without prior written approval:</p>
 
@@ -92,25 +92,25 @@ export default function Terms(){
 
                 <p>No use of TypeScript Job Board's logo or other artwork will be allowed for linking absent a trademark license agreement.</p>
 
-                <h3><strong>iFrames</strong></h3>
+                <h3 className="text-center text-xl font-bold">iFrames</h3>
 
                 <p>Without prior approval and written permission, you may not create frames around our Webpages that alter in any way the visual presentation or appearance of our Website.</p>
 
-                <h3><strong>Content Liability</strong></h3>
+                <h3 className="text-center text-xl font-bold">Content Liability</h3>
 
                 <p>We shall not be hold responsible for any content that appears on your Website. You agree to protect and defend us against all claims that is rising on your Website. No link(s) should appear on any Website that may be interpreted as libelous, obscene or criminal, or which infringes, otherwise violates, or advocates the infringement or other violation of, any third party rights.</p>
 
-                <h3><strong>Reservation of Rights</strong></h3>
+                <h3 className="text-center text-xl font-bold">Reservation of Rights</h3>
 
                 <p>We reserve the right to request that you remove all links or any particular link to our Website. You approve to immediately remove all links to our Website upon request. We also reserve the right to amen these terms and conditions and it's linking policy at any time. By continuously linking to our Website, you agree to be bound to and follow these linking terms and conditions.</p>
 
-                <h3><strong>Removal of links from our website</strong></h3>
+                <h3 className="text-center text-xl font-bold">Removal of links from our website</h3>
 
                 <p>If you find any link on our Website that is offensive for any reason, you are free to contact and inform us any moment. We will consider requests to remove links but we are not obligated to or so or to respond to you directly.</p>
 
                 <p>We do not ensure that the information on this website is correct, we do not warrant its completeness or accuracy; nor do we promise to ensure that the website remains available or that the material on the website is kept up to date.</p>
 
-                <h3><strong>Disclaimer</strong></h3>
+                <h3 className="text-center text-xl font-bold">Disclaimer</h3>
 
                 <p>To the maximum extent permitted by applicable law, we exclude all representations, warranties and conditions relating to our website and the use of this website. Nothing in this disclaimer will:</p>
 
