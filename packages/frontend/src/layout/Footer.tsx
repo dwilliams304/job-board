@@ -40,10 +40,18 @@ export default function Footer(){
                         <h2 className="mb-6 text-sm font-semibold uppercase text-white">Legal</h2>
                         <ul className="text-gray-300 font-medium">
                             <li className="mb-4">
-                                <Link to="/privacy" className="hover:underline">Privacy Policy</Link>
+                                <Link to="/privacy" onClick={() => window.scrollTo({
+                                    left: 0,
+                                    top: 0,
+                                    behavior: "smooth"
+                                })} className="hover:underline">Privacy Policy</Link>
                             </li>
                             <li>
-                                <Link to="/terms" className="hover:underline">Terms &amp; Conditions</Link>
+                                <Link to="/terms" onClick={() => window.scrollTo({
+                                    left: 0,
+                                    top: 0,
+                                    behavior: "smooth"
+                                })} className="hover:underline">Terms &amp; Conditions</Link>
                             </li>
                         </ul>
                     </div>
