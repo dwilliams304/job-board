@@ -11,14 +11,14 @@ export default function Login(){
         e.preventDefault();
     }
 
-    const [createAccount, useCreateAccount] = useState(false);
+    const [loginForm, useLoginForm] = useState(false);
 
     return(
         <section className='w-full h-full flex-grow'>
             <div className='flex align-middle mx-auto mt-10 w-3/5 shadow-xl bg-gray-100'>
                 <div className='w-1/2 p-6 border-r'>
                     {
-                        createAccount ? <LoginForm /> : <SignupForm />
+                        loginForm ? <LoginForm onSubmit={onSubmit} /> : <SignupForm onSubmit={onSubmit} />
                     }
                 </div>
 
