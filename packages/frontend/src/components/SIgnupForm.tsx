@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export default function SignupForm({onSubmit}: any){ //TEMPORARY
     return(
         <>
@@ -56,7 +58,7 @@ export default function SignupForm({onSubmit}: any){ //TEMPORARY
                         placeholder='••••••••'
                         className='w-3/4 p-2 rounded-xl shadow-md'
                     />
-                    
+
                     <label htmlFor='password' className='block text-sm mb-2'>Confirm password</label>
                     <input
                         type='password'
@@ -71,11 +73,13 @@ export default function SignupForm({onSubmit}: any){ //TEMPORARY
                     <div className='flex-start'>
                         <input 
                             type='checkbox'
-                            name='remember'
-                            id='remember'
+                            name='terms-and-conditions'
+                            id='terms-and-conditions'
                             className='cursor-pointer'
                         />
-                        <label htmlFor='remember' className='pl-2 cursor-pointer'>Remember me</label>
+                        <label htmlFor='terms-and-conditions' className='pl-2 cursor-pointer'>I have read and agreed to the 
+                            <Link to="/terms" className='pl-1 underline cursor-pointer'>Terms and Conditions</Link>
+                        </label>
                     </div>
                 </div>
                 <button type='submit' className='w-3/4 p-2 rounded-xl bg-blue-700 text-white'>Create account</button>
