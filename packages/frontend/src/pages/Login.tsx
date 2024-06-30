@@ -17,7 +17,9 @@ export default function Login(){
         <section className='w-full h-full flex-grow'>
             <div className='flex align-middle mx-auto mt-10 w-3/5 shadow-xl bg-gray-100'>
                 <div className='w-1/2 p-6 border-r'>
-                    <LoginForm />
+                    {
+                        createAccount ? <LoginForm /> : <SignupForm />
+                    }
                 </div>
 
                 <div className='w-1/2 p-6'>
