@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-export default function SignupForm({onSubmit}: any){ //TEMPORARY
+export default function SignupForm({onSubmit, loginForm, useLoginForm}: any){ //TEMPORARY
     return(
         <>
             <h2 className='text-xl pb-4'>Create an account</h2>
@@ -85,7 +85,7 @@ export default function SignupForm({onSubmit}: any){ //TEMPORARY
                 <button type='submit' className='w-3/4 p-2 rounded-xl bg-blue-700 text-white'>Create account</button>
                 <p>
                     Already have an account?
-                    <a className='pl-1 underline cursor-pointer'>Sign in!</a>
+                    <span className='pl-1 underline cursor-pointer' onClick={() => useLoginForm(!loginForm)}>Sign in!</span>
                 </p>
             </form> 
         </>

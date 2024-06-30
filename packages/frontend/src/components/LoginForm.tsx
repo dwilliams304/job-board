@@ -1,4 +1,4 @@
-export default function LoginForm({onSubmit}: any){ //TEMPORARY
+export default function LoginForm({onSubmit, loginForm, useLoginForm}: any){ //TEMPORARY
     return(
         <>
             <h2 className='text-xl pb-4'>Sign in to your account</h2>
@@ -39,7 +39,7 @@ export default function LoginForm({onSubmit}: any){ //TEMPORARY
                 <button type='submit' className='w-3/4 p-2 rounded-xl bg-blue-700 text-white'>Sign in</button>
                 <p>
                     Don't have an account yet?
-                    <a className='pl-1 underline cursor-pointer'>Sign up!</a>
+                    <span className='pl-1 underline cursor-pointer' onClick={() => useLoginForm(!loginForm)}>Sign up!</span>
                 </p>
             </form> 
         </>
