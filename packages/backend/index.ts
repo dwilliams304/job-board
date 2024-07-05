@@ -2,6 +2,7 @@ require('dotenv').config();
 import express from 'express';
 import helmet from 'helmet';
 import authRouter from './src/routes/auth-router';
+import jobsRouter from './src/routes/jobs-router';
 // import mongoose, { mongo } from 'mongoose';
 
 const PORT = process.env.PORT || 9000;
@@ -9,6 +10,7 @@ const PORT = process.env.PORT || 9000;
 const server = express();
 
 server.use('/api/auth/', authRouter);
+server.use('/api/jobs', jobsRouter);
 
 server.use(helmet());
 server.use(express.json());
