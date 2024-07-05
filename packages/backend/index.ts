@@ -1,8 +1,8 @@
 require('dotenv').config();
 import express from 'express';
 import helmet from 'helmet';
-import authRouter from './src/routes/auth-router';
-import jobsRouter from './src/routes/jobs-router';
+import { authRouter } from './src/routes/';
+import { jobsRouter } from './src/routes/';
 // import mongoose, { mongo } from 'mongoose';
 
 const PORT = process.env.PORT || 9000;
