@@ -1,8 +1,11 @@
 import DummyLogo from "../assets/react.svg";
 import { Link } from "react-router-dom";
+import { FooterLink } from "../components";
+import { footerLinks } from "../data/footerlinks";
 import { ScrollToTop } from "../helpers";
 
 export default function Footer(){
+    const data = footerLinks;
 
     return(
         <footer className="bg-gradient-to-b from-blue-700 to-blue-900 mt-8">
@@ -14,38 +17,37 @@ export default function Footer(){
                             <Link to="/" onClick={() => ScrollToTop(true)} className="self-center text-2xl font-semibold whitespace-nowrap text-white">TypeScript Job Board</Link>
                         </a>
                 </div>
-                <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-4">
                     <div>
                         <h2 className="mb-6 text-sm font-semibold uppercase text-white">Resources</h2>
-                        <ul className="text-gray-300 font-medium">
-                            <li className="mb-4">
-                                <a href="#" className="hover:underline">Item 1</a>
-                            </li>
-                            <li>
-                                <a href="#" className="hover:underline">Item 2</a>
-                            </li>
+                        <ul className="text-gray-300 font-medium space-y-2">
+                            {
+                                data.resources.map((link) => <FooterLink linkText={link.linkText} linkDestination={link.linkDestination}/>)
+                            }
                         </ul>
                     </div>
                     <div>
-                        <h2 className="mb-6 text-sm font-semibold uppercase text-white">Follow us</h2>
-                        <ul className="text-gray-300 font-medium">
-                            <li className="mb-4">
-                                <a href="#" className="hover:underline ">Item 1</a>
-                            </li>
-                            <li>
-                                <a href="#" className="hover:underline">Item 2</a>
-                            </li>
+                        <h2 className="mb-6 text-sm font-semibold uppercase text-white">Employers</h2>
+                        <ul className="text-gray-300 font-medium space-y-2">
+                            {
+                                data.employers.map((link) => <FooterLink linkText={link.linkText} linkDestination={link.linkDestination}/>)
+                            }
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 className="mb-6 text-sm font-semibold uppercase text-white">Job Seekers</h2>
+                        <ul className="text-gray-300 font-medium space-y-2">
+                            {
+                                data.jobSeekers.map((link) => <FooterLink linkText={link.linkText} linkDestination={link.linkDestination}/>)
+                            }
                         </ul>
                     </div>
                     <div>
                         <h2 className="mb-6 text-sm font-semibold uppercase text-white">Legal</h2>
-                        <ul className="text-gray-300 font-medium">
-                            <li className="mb-4">
-                                <Link onClick={() => ScrollToTop(true)} to="/privacy" className="hover:underline">Privacy Policy</Link>
-                            </li>
-                            <li>
-                                <Link onClick={() => ScrollToTop(true)} to="/terms" className="hover:underline">Terms &amp; Conditions</Link>
-                            </li>
+                        <ul className="text-gray-300 font-medium space-y-2">
+                            {
+                                data.legal.map((link) => <FooterLink linkText={link.linkText} linkDestination={link.linkDestination}/>)
+                            }
                         </ul>
                     </div>
                 </div>
@@ -54,8 +56,11 @@ export default function Footer(){
             <div className="sm:flex sm:items-center sm:justify-between">
                 <span className="text-sm text-gray-300 sm:text-center">© 2024 All Rights Reserved.
                 </span>
-                <div className="flex mt-4 sm:justify-center sm:mt-0">
-                    <p className="text-sm text-gray-300">Social icons go here.</p>
+                <div className="flex mt-4 sm:justify-center sm:mt-0 space-x-2">
+                    <p className="text-sm text-gray-300 cursor-pointer hover:underline">LinkedIn</p>
+                    <p className="text-sm text-gray-300 cursor-pointer hover:underline">Instagram</p>
+                    <p className="text-sm text-gray-300 cursor-pointer hover:underline">Facebook</p>
+                    <p className="text-sm text-gray-300 cursor-pointer hover:underline">X</p>
                 </div>
             </div>
             </div>
