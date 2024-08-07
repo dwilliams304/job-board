@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { ScrollToTop } from "../helpers"
 
 export default function SignupForm({onSubmit, loginForm, useLoginForm}: any){ //TEMPORARY
     return(
@@ -78,7 +79,7 @@ export default function SignupForm({onSubmit, loginForm, useLoginForm}: any){ //
                             className='cursor-pointer'
                         />
                         <label htmlFor='terms-and-conditions' className='pl-2 cursor-pointer'>I have read and agreed to the 
-                            <Link to="/terms" className='pl-1 underline cursor-pointer'>Terms and Conditions</Link>
+                            <Link to="/terms" className='pl-1 underline cursor-pointer' onClick={() => ScrollToTop(true)}>Terms and Conditions</Link>
                         </label>
                     </div>
                 </div>
