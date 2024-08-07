@@ -20,7 +20,7 @@ export default function LoginForm({onSubmit, loginForm, useLoginForm}: any){ //T
                         type='password'
                         name='password'
                         id='password'
-                        placeholder='••••••••'
+                        placeholder='•••••••••••'
                         className='w-3/4 p-2 rounded-xl shadow-md'
                     />
                 </div>

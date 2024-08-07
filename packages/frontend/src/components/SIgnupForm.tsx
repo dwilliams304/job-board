@@ -56,16 +56,24 @@ export default function SignupForm({onSubmit, loginForm, useLoginForm}: any){ //
                         type='password'
                         name='password'
                         id='password'
-                        placeholder='••••••••'
+                        placeholder='•••••••••••'
                         className='w-3/4 p-2 rounded-xl shadow-md'
                     />
-
+                    <div className="px-2 py-2">
+                        <p className="text-sm">Password requirements:</p>
+                        <ul className="list-disc px-8 text-xs text-gray-500">
+                            <li>Be at least 10 characters long</li>
+                            <li>Have at least one uppercase and lowercase letter</li>
+                            <li>Have at least one number</li>
+                            <li>Have at least one special character: ($, %, #, !, etc... )</li>
+                        </ul>
+                    </div>
                     <label htmlFor='password' className='block text-sm mb-2'>Confirm password</label>
                     <input
                         type='password'
                         name='password'
                         id='password'
-                        placeholder='••••••••'
+                        placeholder='•••••••••••'
                         className='w-3/4 p-2 rounded-xl shadow-md'
                     />
                 </div>
