@@ -22,7 +22,7 @@ export default function Footer(){
                         <h2 className="mb-6 text-sm font-semibold uppercase text-white">Resources</h2>
                         <ul className="text-gray-300 font-medium space-y-2">
                             {
-                                data.resources.map((link) => <FooterLink linkText={link.linkText} linkDestination={link.linkDestination}/>)
+                                data.resources.map((link) => <FooterLink linkObject={link}/>)
                             }
                         </ul>
                     </div>
@@ -30,7 +30,7 @@ export default function Footer(){
                         <h2 className="mb-6 text-sm font-semibold uppercase text-white">Employers</h2>
                         <ul className="text-gray-300 font-medium space-y-2">
                             {
-                                data.employers.map((link) => <FooterLink linkText={link.linkText} linkDestination={link.linkDestination}/>)
+                                data.employers.map((link) => <FooterLink linkObject={link}/>)
                             }
                         </ul>
                     </div>
@@ -38,7 +38,7 @@ export default function Footer(){
                         <h2 className="mb-6 text-sm font-semibold uppercase text-white">Job Seekers</h2>
                         <ul className="text-gray-300 font-medium space-y-2">
                             {
-                                data.jobSeekers.map((link) => <FooterLink linkText={link.linkText} linkDestination={link.linkDestination}/>)
+                                data.jobSeekers.map((link) => <FooterLink linkObject={link}/>)
                             }
                         </ul>
                     </div>
@@ -46,7 +46,7 @@ export default function Footer(){
                         <h2 className="mb-6 text-sm font-semibold uppercase text-white">Legal</h2>
                         <ul className="text-gray-300 font-medium space-y-2">
                             {
-                                data.legal.map((link) => <FooterLink linkText={link.linkText} linkDestination={link.linkDestination}/>)
+                                data.legal.map((link) => <FooterLink linkObject={link}/>)
                             }
                         </ul>
                     </div>
