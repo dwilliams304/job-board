@@ -4,10 +4,11 @@ export default function Privacy(){
             <div className="flex flex-col mt-8 justify-center text-center text-xl font-bold text-red-700" >
                 <h2>IMPORTANT NOTE: THIS IS A FAKE PRIVACY POLICY AS NO DATA IS COLLECTED OR STORED.</h2>
                 <h2>THIS IS SIMPLY HERE TO FILL THE PAGE AND MAKE IT LOOK REAL AS A SAMPLE.</h2>
+                <h2>THIS WAS NOT MADE TO BE ACCURATE.</h2>
             </div>
             <h1 className="text-xl text-center mt-10">Privacy Policy</h1>
             <div className="mx-14 space-y-4">
-                <p className="text-center">Last updated: June 09, 2024</p>
+                <p className="text-center">Last updated: August 8, 2024</p>
                 <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
                 <p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the <a href="https://www.termsfeed.com/privacy-policy-generator/" target="_blank">Privacy Policy Generator</a>.</p>
                 
