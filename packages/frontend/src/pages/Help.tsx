@@ -19,13 +19,13 @@ export default function Help(){
 
                 <div className="w-full mt-8 justify-center align-middle flex flex-col">
                     <nav className="text-center justify-center flex space-x-6 text-xl border-b-2 border-gray-200">
-                        <h4 className={`cursor-pointer ${showEmployerHelp ? "text-black":"text-gray-400"}
-                        transition duration-300 ease-in-out`}
+                        <h4 className={`cursor-pointer ${showEmployerHelp ? "text-black underline":"text-gray-400"}
+                        transition duration-300 ease-in-out underline-offset-4`}
                         onClick={() => useShowEmployerHelp(true)}>
                             Employers
                         </h4>
-                        <h4 className={`cursor-pointer ${!showEmployerHelp ? "text-black" : "text-gray-400"}
-                        transition duration-300 ease-in-out`}
+                        <h4 className={`cursor-pointer ${!showEmployerHelp ? "text-black underline" : "text-gray-400"}
+                        transition duration-300 ease-in-out underline-offset-4`}
                         onClick={() => useShowEmployerHelp(false)}>
                             Job Seekers
                         </h4>
