@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { ScrollToTop } from "../helpers"
 
-interface footerLinkProps {
+type footerLinkProps = {
     linkObject: {
         linkDestination: string,
         linkText: string,

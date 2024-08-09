@@ -17,12 +17,6 @@ export const helpArticles = [
     
 ]
 
-interface borderColors {
-    Account: string,
-    Search: string,
-    Payment: string
-}
-
 export const borderColors = {
     Account: "border-b-green-500",
     Search: "border-b-red-500",
