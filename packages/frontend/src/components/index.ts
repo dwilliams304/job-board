@@ -5,6 +5,7 @@ import LoginForm from "./LoginForm";
 import SignupForm from "./SIgnupForm";
 import ProfileDropDown from "./ProfileDropdown";
 import FooterLink from "./FooterLink";
+import HelpArticle from "./HelpArticle";
 
 
 export {
@@ -14,5 +15,6 @@ export {
     LoginForm, 
     SignupForm, 
     ProfileDropDown, 
-    FooterLink
+    FooterLink,
+    HelpArticle
 };

@@ -1,3 +1,6 @@
+import { HelpArticle } from "../components"
+import { helpArticles } from "../data/helparticles"
+
 export default function Help(){
     return(
         <section className="flex-grow">
@@ -11,8 +14,17 @@ export default function Help(){
                     />
                 </div>
 
-                <div className="">
+                <div className="w-full mt-8 justify-center align-middle flex flex-col">
+                    <nav className="text-center justify-center flex space-x-6 text-xl border-b-2 border-gray-200">
+                        <h4 className="cursor-pointer text-gray-400">Employers</h4>
+                        <h4 className="cursor-pointer">Job Seekers</h4>
+                    </nav>
 
+                    <div className="flex justify-center align-middle mt-6">
+                        {
+                            helpArticles.map((article, idx) => <HelpArticle helpArticle={article} key={idx}/>)
+                        }
+                    </div>
                 </div>
             </div>
         </section>
