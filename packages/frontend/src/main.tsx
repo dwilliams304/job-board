@@ -16,10 +16,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   </React.StrictMode>,
 )
 
-
 function App() {
   
-
   return (
     <body className='flex flex-col min-h-screen'>
       <NavBar />

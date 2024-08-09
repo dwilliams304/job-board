@@ -6,7 +6,7 @@ export const footerLinks = {
     },
     {
         linkText: "Help Center",
-        linkDestination: "",
+        linkDestination: "/help",
     },
     {
         linkText: "About",
