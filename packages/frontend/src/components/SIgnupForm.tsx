@@ -18,10 +18,10 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if(e.target.name === "password"){
             checkPasswordReqs(e.target.value);
-            usePassword(e.target.value);
+            usePassword(e.target.value.trim());
         }
         else if(e.target.name === "confirm-password"){
-            usePasswordConfirmation(e.target.value);
+            usePasswordConfirmation(e.target.value.trim());
         }
     }
 
@@ -37,22 +37,21 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
 
 
     const checkPasswordReqs = (password: string) => {
-        const trimmed = password.trim();
         //Length Check
-        if(trimmed.length >= 10) passwordReqs.charLength = true;
+        if(password.length >= 10) passwordReqs.charLength = true;
         else passwordReqs.charLength = false;
         //Uppercase check
-        if(trimmed !== trimmed.toLowerCase()) passwordReqs.hasUppercase = true;
+        if(password !== password.toLowerCase()) passwordReqs.hasUppercase = true;
         else passwordReqs.hasUppercase = false;
         //Number check
-        if(trimmed.match(/\d+/)) passwordReqs.hasNumber = true;
+        if(password.match(/\d+/)) passwordReqs.hasNumber = true;
         else passwordReqs.hasNumber = false;
         //Special char check
-        if(trimmed.match(specialRegEx)) passwordReqs.hasSpecial = true;
+        if(password.match(specialRegEx)) passwordReqs.hasSpecial = true;
         else passwordReqs.hasSpecial = false;
     }
 
-    
+
     return(
         <>
             <h2 className='text-xl pb-4'>Create an account</h2>
