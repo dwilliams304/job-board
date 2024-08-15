@@ -1,5 +1,7 @@
-export default function LoginForm({onSubmit, loginForm, useLoginForm}: any){ //TEMPORARY
-
+export default function LoginForm({loginForm, useLoginForm}: any){ //TEMPORARY
+    const onSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+    }
     return(
         <>
             <h2 className='text-xl pb-4'>Sign in to your account</h2>

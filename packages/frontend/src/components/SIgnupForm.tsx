@@ -51,6 +51,8 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
         if(trimmed.match(specialRegEx)) passwordReqs.hasSpecial = true;
         else passwordReqs.hasSpecial = false;
     }
+
+    
     return(
         <>
             <h2 className='text-xl pb-4'>Create an account</h2>
