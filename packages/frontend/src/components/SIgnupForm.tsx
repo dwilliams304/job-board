@@ -1,7 +1,56 @@
+import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import { ScrollToTop } from "../helpers"
 
-export default function SignupForm({onSubmit, loginForm, useLoginForm}: any){ //TEMPORARY
+const passwordReqs = {
+    charLength: false,
+    hasUppercase: false,
+    hasNumber: false,
+    hasSpecial: false,
+}
+
+const specialRegEx = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
+
+export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
+    const [password, usePassword] = useState("");
+    const [passwordConfirmation, usePasswordConfirmation] = useState("");
+
+    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if(e.target.name === "password"){
+            checkPasswordReqs(e.target.value);
+            usePassword(e.target.value);
+        }
+        else if(e.target.name === "confirm-password"){
+            usePasswordConfirmation(e.target.value);
+        }
+    }
+
+    const onSubmit = (e: React.FormEvent) => {
+        if(password !== passwordConfirmation){
+            window.alert("Passwords don't match");
+        }
+        else{
+            window.alert("Passwords match!");
+        }
+        e.preventDefault();
+    }
+
+
+    const checkPasswordReqs = (password: string) => {
+        const trimmed = password.trim();
+        //Length Check
+        if(trimmed.length >= 10) passwordReqs.charLength = true;
+        else passwordReqs.charLength = false;
+        //Uppercase check
+        if(trimmed !== trimmed.toLowerCase()) passwordReqs.hasUppercase = true;
+        else passwordReqs.hasUppercase = false;
+        //Number check
+        if(trimmed.match(/\d+/)) passwordReqs.hasNumber = true;
+        else passwordReqs.hasNumber = false;
+        //Special char check
+        if(trimmed.match(specialRegEx)) passwordReqs.hasSpecial = true;
+        else passwordReqs.hasSpecial = false;
+    }
     return(
         <>
             <h2 className='text-xl pb-4'>Create an account</h2>
@@ -58,23 +107,43 @@ export default function SignupForm({onSubmit, loginForm, useLoginForm}: any){ //
                         id='password'
                         placeholder='•••••••••••'
                         className='w-3/4 p-2 rounded-xl shadow-md'
+                        value={password}
+                        onChange={onChange}
                     />
                     <div className="px-2 py-2">
                         <p className="text-sm">Password requirements:</p>
-                        <ul className="list-disc px-8 text-xs text-gray-500">
-                            <li>Be at least 10 characters long</li>
-                            <li>Have at least one uppercase and lowercase letter</li>
-                            <li>Have at least one number</li>
-                            <li>Have at least one special character: ($, %, #, !, etc... )</li>
+                        <ul className="px-4 text-xs text-gray-500">
+                            <li className={`${passwordReqs.charLength ? "text-green-500" : "text-red-500"}`}>
+                            {
+                                passwordReqs.charLength ? "✓ " : "❌ "
+                            } Be at least 10 characters long
+                            </li>
+                            <li className={`${passwordReqs.hasUppercase ? "text-green-500" : "text-red-500"}`}>
+                                {
+                                    passwordReqs.hasUppercase ? "✓ " : "❌ "
+                                }Have at least one uppercase letter
+                            </li>
+                            <li className={`${passwordReqs.hasNumber ? "text-green-500" : "text-red-500"}`}>
+                                {
+                                    passwordReqs.hasNumber ? "✓ " : "❌ "
+                                }Have at least one number
+                            </li>
+                            <li className={`${passwordReqs.hasSpecial ? "text-green-500" : "text-red-500"}`}>
+                                {
+                                    passwordReqs.hasSpecial ? "✓ " : "❌ "
+                                }Have at least one special character: ($, %, #, !, etc... )
+                            </li>
                         </ul>
                     </div>
-                    <label htmlFor='password' className='block text-sm mb-2'>Confirm password</label>
+                    <label htmlFor='confirm-password' className='block text-sm mb-2'>Confirm password</label>
                     <input
                         type='password'
-                        name='password'
-                        id='password'
+                        name='confirm-password'
+                        id='confirm-password'
                         placeholder='•••••••••••'
                         className='w-3/4 p-2 rounded-xl shadow-md'
+                        value={passwordConfirmation}
+                        onChange={onChange}
                     />
                 </div>
 
@@ -91,7 +160,9 @@ export default function SignupForm({onSubmit, loginForm, useLoginForm}: any){ //
                         </label>
                     </div>
                 </div>
-                <button type='submit' className='w-3/4 p-2 rounded-xl bg-blue-700 text-white'>Create account</button>
+                <button type='submit' className='w-3/4 p-2 rounded-xl bg-blue-700 text-white' onClick={onSubmit}>
+                    Create account
+                </button>
                 <p>
                     Already have an account?
                     <span className='pl-1 underline cursor-pointer' onClick={() => useLoginForm(!loginForm)}>Sign in!</span>

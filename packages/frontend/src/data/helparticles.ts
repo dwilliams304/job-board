@@ -6,12 +6,42 @@ export const helpArticles = [
     },
     {
         tag: "Payment",
-        title: "Profile Details",
+        title: "Refund Policy",
         articleLink: ""
     },
     {
         tag: "Search",
+        title: "Keywords",
+        articleLink: ""
+    },
+    {
+        tag: "Account",
         title: "Profile Details",
+        articleLink: ""
+    },
+    {
+        tag: "Payment",
+        title: "Refund Policy",
+        articleLink: ""
+    },
+    {
+        tag: "Search",
+        title: "Keywords",
+        articleLink: ""
+    },
+    {
+        tag: "Account",
+        title: "Profile Details",
+        articleLink: ""
+    },
+    {
+        tag: "Payment",
+        title: "Refund Policy",
+        articleLink: ""
+    },
+    {
+        tag: "Search",
+        title: "Keywords",
         articleLink: ""
     },
     

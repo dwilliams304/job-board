@@ -9,7 +9,7 @@ type HelpArticleProps = {
 }
 
 
-export default function HelpArticle({helpArticle}: HelpArticleProps){ //temporary
+export default function HelpArticleCard({helpArticle}: HelpArticleProps){ //temporary
     const {tag, title, articleLink} = helpArticle;
 
 
