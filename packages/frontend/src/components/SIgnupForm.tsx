@@ -30,8 +30,7 @@ const specialRegEx = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
 
 export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
     const [formValues, setFormValues] = useState(initialFormState);
-    const [passwordValue, setPasswordValue] = useState()
-    const [formErrors, setFormErrors] = useState([])
+    const [formErrors, setFormErrors] = useState([]); //FIX THIS
 
     let date = new Date();
     date.setFullYear(date.getFullYear() - 13);
@@ -129,7 +128,7 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
                     <input
                         type='text'
                         name='lastName'
-                        id='firstName'
+                        id='lastName'
                         placeholder='Doe'
                         className='w-3/4 p-2 rounded-xl shadow-md'
                         value={formValues.lastName}
