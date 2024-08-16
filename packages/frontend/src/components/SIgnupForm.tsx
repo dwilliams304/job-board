@@ -16,13 +16,14 @@ const initialFormState = {
     email: "",
     password: "",
     confirmPassword: "",
-
 }
 
 const specialRegEx = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
 
+
 export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
     const [formValues, setFormValues] = useState(initialFormState);
+    const [formErrors, setFormErrors] = useState([])
 
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -39,6 +40,7 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
     }
 
     const onSubmit = (e: React.FormEvent) => {
+        validateForm();
         e.preventDefault();
     }
 
@@ -58,12 +60,37 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
         else passwordReqs.hasSpecial = false;
     }
 
+    const validateForm = () => {
+        const errors: any = []; //FIX THIS
+        if(formValues.firstName.length < 2 && 
+            formValues.lastName.length < 2) {
+                console.log(`${formValues.firstName.length} -- ${formValues.lastName.length}`)
+                errors.push("First and last name must be at least 2 characters");
+            }
+        
+
+        if(errors.length > 0) {
+            setFormErrors(errors);
+            ScrollToTop(false);
+        }
+    }
+
 
     return(
         <>
             <h2 className='text-xl pb-4'>Create an account</h2>
             <form className='space-y-4' onSubmit={onSubmit}>
                 <div>
+                    <ul className="list-disc">
+                        {formErrors.length > 0 && 
+                            <p className="text-red-500 text-sm">Please fix the following errors:</p>
+                        }
+                        {
+                            formErrors.map((err, i) => {
+                                return <li className="text-red-500 text-sm mx-8" key={i}>{err}</li>
+                            })
+                        }
+                    </ul>
                     <label htmlFor='firstName' className='block text-sm mb-2'>First name</label>
                     <input
                         type='text'
