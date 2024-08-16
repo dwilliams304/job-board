@@ -9,29 +9,36 @@ const passwordReqs = {
     hasSpecial: false,
 }
 
+const initialFormState = {
+    firstName: "",
+    lastName: "",
+    dob: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+
+}
+
 const specialRegEx = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
 
 export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
-    const [password, usePassword] = useState("");
-    const [passwordConfirmation, usePasswordConfirmation] = useState("");
+    const [formValues, setFormValues] = useState(initialFormState);
+
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        if(e.target.name === "password"){
-            checkPasswordReqs(e.target.value);
-            usePassword(e.target.value.trim());
+        const {name, value} = e.target;
+        if(name === "password"){
+            checkPasswordReqs(value);
         }
-        else if(e.target.name === "confirm-password"){
-            usePasswordConfirmation(e.target.value.trim());
-        }
+
+        setFormValues(
+            {...formValues, 
+                [name]: value.trim()
+            }
+        )
     }
 
     const onSubmit = (e: React.FormEvent) => {
-        if(password !== passwordConfirmation){
-            window.alert("Passwords don't match");
-        }
-        else{
-            window.alert("Passwords match!");
-        }
         e.preventDefault();
     }
 
@@ -57,24 +64,29 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
             <h2 className='text-xl pb-4'>Create an account</h2>
             <form className='space-y-4' onSubmit={onSubmit}>
                 <div>
-                    <label htmlFor='first-name' className='block text-sm mb-2'>First name</label>
+                    <label htmlFor='firstName' className='block text-sm mb-2'>First name</label>
                     <input
                         type='text'
-                        name='first-name'
-                        id='first-name'
+                        name='firstName'
+                        id='firstName'
                         placeholder='John'
                         className='w-3/4 p-2 rounded-xl shadow-md'
+                        required={true}
+                        value={formValues.firstName}
+                        onChange={onChange}
                     />
                     
                 </div>
                 <div>
-                    <label htmlFor='last-name' className='block text-sm mb-2'>Last name</label>
+                    <label htmlFor='lastName' className='block text-sm mb-2'>Last name</label>
                     <input
                         type='text'
-                        name='last-name'
-                        id='first-name'
+                        name='lastName'
+                        id='firstName'
                         placeholder='Doe'
                         className='w-3/4 p-2 rounded-xl shadow-md'
+                        value={formValues.lastName}
+                        onChange={onChange}
                     />
                     
                 </div>
@@ -85,6 +97,8 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
                         name='dob'
                         id='dob'
                         className='w-3/4 p-2 rounded-xl shadow-md'
+                        value={formValues.dob}
+                        onChange={onChange}
                     />
                     
                 </div>
@@ -96,6 +110,8 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
                         id='email'
                         placeholder='email@email.com'
                         className='w-3/4 p-2 rounded-xl shadow-md'
+                        value={formValues.email}
+                        onChange={onChange}
                     />
                     
                 </div>
@@ -108,7 +124,7 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
                         id='password'
                         placeholder='•••••••••••'
                         className='w-3/4 p-2 rounded-xl shadow-md'
-                        value={password}
+                        value={formValues.password}
                         onChange={onChange}
                     />
                     <div className="px-2 py-2">
@@ -136,14 +152,14 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
                             </li>
                         </ul>
                     </div>
-                    <label htmlFor='confirm-password' className='block text-sm mb-2'>Confirm password</label>
+                    <label htmlFor='confirmPassword' className='block text-sm mb-2'>Confirm password</label>
                     <input
                         type='password'
-                        name='confirm-password'
-                        id='confirm-password'
+                        name='confirmPassword'
+                        id='confirmPassword'
                         placeholder='•••••••••••'
                         className='w-3/4 p-2 rounded-xl shadow-md'
-                        value={passwordConfirmation}
+                        value={formValues.confirmPassword}
                         onChange={onChange}
                     />
                 </div>
