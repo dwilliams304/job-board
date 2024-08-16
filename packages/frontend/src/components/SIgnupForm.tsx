@@ -2,11 +2,18 @@ import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import { ScrollToTop } from "../helpers"
 
-const passwordReqs = {
+const passwordReqs: passwordReqsTypes = {
     charLength: false,
     hasUppercase: false,
     hasNumber: false,
     hasSpecial: false,
+}
+
+type passwordReqsTypes = {
+    charLength: boolean,
+    hasUppercase: boolean,
+    hasNumber: boolean,
+    hasSpecial: boolean
 }
 
 const initialFormState = {
@@ -23,7 +30,11 @@ const specialRegEx = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
 
 export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
     const [formValues, setFormValues] = useState(initialFormState);
+    const [passwordValue, setPasswordValue] = useState()
     const [formErrors, setFormErrors] = useState([])
+
+    let date = new Date();
+    date.setFullYear(date.getFullYear() - 13);
 
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -58,6 +69,8 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
         //Special char check
         if(password.match(specialRegEx)) passwordReqs.hasSpecial = true;
         else passwordReqs.hasSpecial = false;
+
+
     }
 
     const validateForm = () => {
@@ -66,8 +79,14 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
             formValues.lastName.length < 2) {
                 console.log(`${formValues.firstName.length} -- ${formValues.lastName.length}`)
                 errors.push("First and last name must be at least 2 characters");
-            }
+        }
         
+        for(const key in passwordReqs){
+            if(passwordReqs[key as keyof typeof passwordReqs] === false){
+                errors.push("Password requirements not met!");
+                break;
+            }
+        }
 
         if(errors.length > 0) {
             setFormErrors(errors);
@@ -98,9 +117,10 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
                         id='firstName'
                         placeholder='John'
                         className='w-3/4 p-2 rounded-xl shadow-md'
-                        required={true}
                         value={formValues.firstName}
                         onChange={onChange}
+                        maxLength={32}
+                        required={true}
                     />
                     
                 </div>
@@ -114,6 +134,8 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
                         className='w-3/4 p-2 rounded-xl shadow-md'
                         value={formValues.lastName}
                         onChange={onChange}
+                        maxLength={32}
+                        required={true}
                     />
                     
                 </div>
@@ -126,6 +148,8 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
                         className='w-3/4 p-2 rounded-xl shadow-md'
                         value={formValues.dob}
                         onChange={onChange}
+                        required={true}
+                        // max={`${date.toDateString()}`}
                     />
                     
                 </div>
@@ -139,6 +163,8 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
                         className='w-3/4 p-2 rounded-xl shadow-md'
                         value={formValues.email}
                         onChange={onChange}
+                        maxLength={64}
+                        required={true}
                     />
                     
                 </div>
@@ -153,6 +179,8 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
                         className='w-3/4 p-2 rounded-xl shadow-md'
                         value={formValues.password}
                         onChange={onChange}
+                        maxLength={32}
+                        required={true}
                     />
                     <div className="px-2 py-2">
                         <p className="text-sm">Password requirements:</p>
@@ -160,7 +188,7 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
                             <li className={`${passwordReqs.charLength ? "text-green-500" : "text-red-500"}`}>
                             {
                                 passwordReqs.charLength ? "✓ " : "❌ "
-                            } Be at least 10 characters long
+                            } Be between 10-32 characters long
                             </li>
                             <li className={`${passwordReqs.hasUppercase ? "text-green-500" : "text-red-500"}`}>
                                 {
@@ -188,6 +216,8 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
                         className='w-3/4 p-2 rounded-xl shadow-md'
                         value={formValues.confirmPassword}
                         onChange={onChange}
+                        maxLength={32}
+                        required={true}
                     />
                 </div>
 
@@ -198,6 +228,8 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
                             name='terms-and-conditions'
                             id='terms-and-conditions'
                             className='cursor-pointer'
+
+                            required={true}
                         />
                         <label htmlFor='terms-and-conditions' className='pl-2 cursor-pointer'>I have read and agreed to the 
                             <Link to="/terms" className='pl-1 underline cursor-pointer' onClick={() => ScrollToTop(true)}>Terms and Conditions</Link>
