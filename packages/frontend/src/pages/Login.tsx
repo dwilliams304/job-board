@@ -23,13 +23,13 @@ export default function Login(){
                         <SignupForm onSubmit={onSubmit} loginForm={loginForm} useLoginForm={useLoginForm} />
                     }
                 </div>
-
                 <div className='w-1/2 p-6'>
                     <img src={DummyLogo} alt='logo' className='mb-6' />
                     <h2 className='text-xl'>Find your dream job.</h2>
                     <h3 className='text-lg'>Join the largest tech job board.</h3>
                     <p>Over 500,000 positions filled.</p>
                 </div>
+            
             </div>
         </section>
     )

@@ -23,6 +23,8 @@ const initialFormState = {
     email: "",
     password: "",
     confirmPassword: "",
+    termsCheck: false,
+    privacyCheck: false,
 }
 
 const specialRegEx = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
@@ -33,18 +35,18 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
     const [formErrors, setFormErrors] = useState([]); //FIX THIS
 
     let date = new Date();
-    date.setFullYear(date.getFullYear() - 13);
+    const minDate = [date.getFullYear() - 13, date.getMonth() + 1, date.getDate()].join("-");
 
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const {name, value} = e.target;
+        const {name, value, checked, type} = e.target;
         if(name === "password"){
             checkPasswordReqs(value);
         }
 
         setFormValues(
             {...formValues, 
-                [name]: value.trim()
+                [name]: type === "checkbox" ? checked : value.trim()
             }
         )
     }
@@ -74,15 +76,19 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
 
     const validateForm = () => {
         const errors: any = []; //FIX THIS
-        if(formValues.firstName.length < 2 && 
-            formValues.lastName.length < 2) {
+        if(formValues.firstName.length < 2 || formValues.firstName.length > 32 ||
+            formValues.lastName.length < 2 || formValues.lastName.length > 32) {
                 console.log(`${formValues.firstName.length} -- ${formValues.lastName.length}`)
-                errors.push("First and last name must be at least 2 characters");
+                errors.push("First and last name must be between 2-32 characters long");
+        }
+
+        if(!/\S+@\S+\.\S+/.test(formValues.email)){
+            errors.push("Email is invalid");
         }
         
         for(const key in passwordReqs){
             if(passwordReqs[key as keyof typeof passwordReqs] === false){
-                errors.push("Password requirements not met!");
+                errors.push("Password requirements not met");
                 break;
             }
         }
@@ -148,7 +154,8 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
                         value={formValues.dob}
                         onChange={onChange}
                         required={true}
-                        // max={`${date.toDateString()}`}
+                        // max={new Date().toISOString().split('T')[0]}
+                        min={minDate}
                     />
                     
                 </div>
@@ -221,26 +228,33 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
                 </div>
 
                 <div className='w-3/4 flex items-center justify-between'>
-                    <div className='flex-start'>
+                    <div className='flex-start cursor-pointer'>
                         <input 
                             type='checkbox'
-                            name='terms-and-conditions'
-                            id='terms-and-conditions'
+                            name='termsCheck'
+                            id='termsCheck'
                             className='cursor-pointer'
-
+                            onChange={onChange}
+                            onClick={() => console.log(formValues)}
+                            defaultChecked={false}
+                            checked={formValues.termsCheck}
                             required={true}
                         />
-                        <label htmlFor='terms-and-conditions' className='pl-2 cursor-pointer'>I have read and agreed to the 
-                            <Link to="/terms" className='pl-1 underline cursor-pointer' onClick={() => ScrollToTop(true)}>Terms and Conditions</Link>
+                        <label htmlFor='terms-and-conditions' className='pl-2'>I have read and agreed to the 
+                            <Link to="/terms" className='pl-1 underline' onClick={() => ScrollToTop(true)}>Terms and Conditions</Link>
                         </label>
                     </div>
                 </div>
+
                 <button type='submit' className='w-3/4 p-2 rounded-xl bg-blue-700 text-white' onClick={onSubmit}>
                     Create account
                 </button>
                 <p>
                     Already have an account?
-                    <span className='pl-1 underline cursor-pointer' onClick={() => useLoginForm(!loginForm)}>Sign in!</span>
+                    <span className='pl-1 underline cursor-pointer' onClick={() => {
+                        useLoginForm(!loginForm);
+                        ScrollToTop(false);
+                        }}>Sign in!</span>
                 </p>
             </form> 
         </>

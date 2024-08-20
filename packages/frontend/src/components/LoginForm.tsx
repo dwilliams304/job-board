@@ -1,3 +1,5 @@
+import { ScrollToTop } from "../helpers";
+
 export default function LoginForm({loginForm, useLoginForm}: any){ //TEMPORARY
     const onSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -42,7 +44,10 @@ export default function LoginForm({loginForm, useLoginForm}: any){ //TEMPORARY
                 <button type='submit' className='w-3/4 p-2 rounded-xl bg-blue-700 text-white'>Sign in</button>
                 <p>
                     Don't have an account yet?
-                    <span className='pl-1 underline cursor-pointer' onClick={() => useLoginForm(!loginForm)}>Sign up!</span>
+                    <span className='pl-1 underline cursor-pointer' onClick={() => {
+                        useLoginForm(!loginForm);
+                        ScrollToTop(false);
+                        }}>Sign up!</span>
                 </p>
             </form> 
         </>
