@@ -93,6 +93,10 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
             }
         }
 
+        if(!formValues.termsCheck || !formValues.privacyCheck){
+            errors.push("Must agree to Terms & Conditions and Privacy Policy");
+        }
+
         if(errors.length > 0) {
             setFormErrors(errors);
             ScrollToTop(false);
@@ -235,13 +239,27 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
                             id='termsCheck'
                             className='cursor-pointer'
                             onChange={onChange}
-                            onClick={() => console.log(formValues)}
-                            defaultChecked={false}
                             checked={formValues.termsCheck}
                             required={true}
                         />
                         <label htmlFor='terms-and-conditions' className='pl-2'>I have read and agreed to the 
-                            <Link to="/terms" className='pl-1 underline' onClick={() => ScrollToTop(true)}>Terms and Conditions</Link>
+                            <Link to="/terms" className='pl-1 underline' onClick={() => ScrollToTop(true)}>Terms &amp; Conditions</Link>
+                        </label>
+                    </div>
+                </div>
+                <div className='w-3/4 flex items-center justify-between'>
+                    <div className='flex-start cursor-pointer'>
+                        <input 
+                            type='checkbox'
+                            name='privacyCheck'
+                            id='privacyCheck'
+                            className='cursor-pointer'
+                            onChange={onChange}
+                            checked={formValues.privacyCheck}
+                            required={true}
+                        />
+                        <label htmlFor='terms-and-conditions' className='pl-2'>I have read and agreed to the 
+                            <Link to="/privacy" className='pl-1 underline' onClick={() => ScrollToTop(true)}>Privacy Policy</Link>
                         </label>
                     </div>
                 </div>
