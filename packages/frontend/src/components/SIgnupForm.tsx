@@ -70,8 +70,6 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
         //Special char check
         if(password.match(specialRegEx)) passwordReqs.hasSpecial = true;
         else passwordReqs.hasSpecial = false;
-
-
     }
 
     const validateForm = () => {
@@ -82,9 +80,9 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
                 errors.push("First and last name must be between 2-32 characters long");
         }
 
-        if(!/\S+@\S+\.\S+/.test(formValues.email)){
-            errors.push("Email is invalid");
-        }
+        if(!formValues.dob) errors.push("Date of Birth is invalid")
+
+        if(!/\S+@\S+\.\S+/.test(formValues.email))  errors.push("Email is invalid");
         
         for(const key in passwordReqs){
             if(passwordReqs[key as keyof typeof passwordReqs] === false){
@@ -93,9 +91,9 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
             }
         }
 
-        if(!formValues.termsCheck || !formValues.privacyCheck){
-            errors.push("Must agree to Terms & Conditions and Privacy Policy");
-        }
+        if(formValues.password !== formValues.confirmPassword) errors.push("Passwords do not match");
+
+        if(!formValues.termsCheck || !formValues.privacyCheck) errors.push("Must agree to Terms & Conditions and Privacy Policy");
 
         if(errors.length > 0) {
             setFormErrors(errors);
