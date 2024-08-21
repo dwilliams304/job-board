@@ -1,11 +1,15 @@
+import { useState } from "react";
 import JobPost from "../components/JobPost";
 import { data } from "../data/data";
-import { SearchBar } from "../components";
+import { SearchBar, FiltersPopup } from "../components";
 
 export default function JobBoard(){
+    const [showFilterPopup, useShowFilterPopup] = useState(false);
+
     return(
         <section>
-            <SearchBar />
+            <SearchBar useShowFilterPopup={useShowFilterPopup} showFilterPopup={showFilterPopup} />
+            <FiltersPopup showFilterPopup={showFilterPopup} />
 
             <p className="pl-2">Showing {data.length} results.</p>
             <div>

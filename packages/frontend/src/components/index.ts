@@ -6,6 +6,7 @@ import SignupForm from "./SignupForm";
 import ProfileDropDown from "./ProfileDropdown";
 import FooterLink from "./FooterLink";
 import HelpArticleCard from "./HelpArticleCard";
+import FiltersPopup from "./FiltersPopup";
 
 
 export {
@@ -16,5 +17,6 @@ export {
     SignupForm, 
     ProfileDropDown, 
     FooterLink,
-    HelpArticleCard
+    HelpArticleCard,
+    FiltersPopup
 };

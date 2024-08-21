@@ -1,6 +1,8 @@
 import { IoFilterSharp } from "react-icons/io5";
 
-export default function SearchBar(){
+export default function SearchBar(props: any){
+    const {useShowFilterPopup, showFilterPopup} = props;
+
     return (
         <section className="flex flex-col items-center justify-center m-8">
             <div className="mb-2">
@@ -35,7 +37,11 @@ export default function SearchBar(){
                     <option>Past 30 days</option>
                 </select>
 
-                <button className="flex m-2 p-1 shadow-md border border-solid cursor-pointer">
+                <button className="flex m-2 p-1 shadow-md border border-solid cursor-pointer"
+                onClick={() => {
+                    useShowFilterPopup(!showFilterPopup)
+                    console.log(showFilterPopup);
+                    }}>
                     <span>All Filters</span>
                     <span><IoFilterSharp /></span>
                 </button>
