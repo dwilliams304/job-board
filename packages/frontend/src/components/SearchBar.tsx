@@ -39,8 +39,7 @@ export default function SearchBar(props: any){
 
                 <button className="flex m-2 p-1 shadow-md border border-solid cursor-pointer"
                 onClick={() => {
-                    useShowFilterPopup(!showFilterPopup)
-                    console.log(showFilterPopup);
+                    useShowFilterPopup(!showFilterPopup);
                     }}>
                     <span>All Filters</span>
                     <span><IoFilterSharp /></span>

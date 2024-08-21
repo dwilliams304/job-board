@@ -9,7 +9,7 @@ export default function JobBoard(){
     return(
         <section>
             <SearchBar useShowFilterPopup={useShowFilterPopup} showFilterPopup={showFilterPopup} />
-            <FiltersPopup showFilterPopup={showFilterPopup} />
+            <FiltersPopup useShowFilterPopup={useShowFilterPopup} showFilterPopup={showFilterPopup} />
 
             <p className="pl-2">Showing {data.length} results.</p>
             <div>
