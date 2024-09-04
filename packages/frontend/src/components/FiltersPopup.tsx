@@ -90,13 +90,23 @@ export default function FiltersPopup(props: any){ //FIX THIS
                     </div>
                 </div>
 
-                <button className=" absolute bottom-2 right-2 rounded-full bg-blue-700 text-white
-                px-4 py-1"
-                onClick={() => {
-                    useShowFilterPopup(false);
-                }}>
-                    Set Filters
-                </button>
+                <div className="absolute bottom-2 w-full flex justify-end px-4 py-2 space-x-4">
+                    <button className="rounded-full bg-white text-blue-700
+                    px-4 py-1"
+                    onClick={() => {
+                        useShowFilterPopup(false);
+                    }}>
+                        Clear Filters
+                    </button>
+                    
+                    <button className="rounded-full bg-blue-700 text-white
+                    px-4 py-1"
+                    onClick={() => {
+                        useShowFilterPopup(false);
+                    }}>
+                        Apply Filters
+                    </button>
+                </div>
             </div>
         </nav>
     )
