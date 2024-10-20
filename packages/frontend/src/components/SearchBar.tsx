@@ -1,7 +1,16 @@
 import { IoFilterSharp } from "react-icons/io5";
+import { SearchOptions, FilterPopupMenuState } from "../pages/JobBoard";
 
-export default function SearchBar(props: any){
-    const {useShowFilterPopup, showFilterPopup} = props;
+type SearchBarProps = {
+    filterPopupState: FilterPopupMenuState
+    searchOptions: SearchOptions
+}
+
+export default function SearchBar(props: SearchBarProps)
+{
+
+    const {searchOptions} = props;
+    const {showFilterPopup, setShowFilterPopup} = props.filterPopupState
 
     return (
         <section className="flex flex-col items-center justify-center m-8">
@@ -18,29 +27,33 @@ export default function SearchBar(props: any){
             </div>
             <div className="flex">
                 <select className="m-2 p-1 shadow-md border border-solid cursor-pointer">
-                    <option>On-Site</option>
-                    <option>Hybrid</option>
-                    <option>Remote</option>
+                    {
+                        searchOptions.location.map((option, idx) => (
+                            <option key={idx}>{option}</option>
+                        ))
+                    }
                 </select>
 
                 <select className="m-2 p-1 shadow-md border border-solid cursor-pointer">
-                    <option>Intern</option>
-                    <option>Entry-Level</option>
-                    <option>Mid-Level</option>
-                    <option>Senior</option>
-                    <option>Manager</option>
+                    {
+                        searchOptions.experience.map((option, idx) => (
+                            <option key={idx}>{option}</option>
+                        ))
+                    }
                 </select>
                 
                 <select className="m-2 p-1 shadow-md border border-solid cursor-pointer">
-                    <option>Past 24 hours</option>
-                    <option>Past 7 days</option>
-                    <option>Past 30 days</option>
+                    {
+                        searchOptions.postAge.map((option, idx) => (
+                            <option key={idx}>{option}</option>
+                        ))
+                    }
                 </select>
 
                 <button className="flex m-2 p-1 shadow-md border border-solid cursor-pointer"
                 onClick={() => {
-                    useShowFilterPopup(!showFilterPopup);
-                    }}>
+                setShowFilterPopup(!showFilterPopup);
+                }}>
                     <span>All Filters</span>
                     <span><IoFilterSharp /></span>
                 </button>
