@@ -3,7 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import { NavBar, Footer } from './components/layout';
 import { ToTopButton } from './components';
-import { JobBoard, Login, Help, Terms, Privacy, NotFound } from './components/pages';
+import { 
+  JobBoard,
+  JobPage,
+  Login, 
+  Help, 
+  Terms, 
+  Privacy, 
+  NotFound 
+} from './components/pages';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -23,7 +31,8 @@ function App() {
       <NavBar />
       
       <Routes>
-        <Route path="/" index element={<JobBoard /> } />
+        {/* <Route path="/" index element={<JobBoard /> } /> */}
+        <Route path="/" index element={<JobPage /> } />
         <Route path="login" element={<Login />} />
         <Route path="help" element={<Help /> } />
         <Route path="terms" element={<Terms /> } />

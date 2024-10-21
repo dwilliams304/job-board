@@ -4,6 +4,15 @@ import Help from "./Help/Help";
 import Terms from "./Info/Terms";
 import Privacy from "./Info/Privacy";
 import NotFound from "./NotFound/NotFound";
+import JobPage from "./JobPage/JobPage";
 
 
-export { JobBoard, Login, Help, Terms, Privacy, NotFound }
+export { 
+    JobBoard, 
+    Login, 
+    Help, 
+    Terms, 
+    Privacy, 
+    NotFound, 
+    JobPage 
+}
