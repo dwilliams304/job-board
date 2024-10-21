@@ -1,8 +1,17 @@
 import { ScrollToTop } from "../../../utils";
 
-export default function LoginForm({loginForm, useLoginForm}: any){ //TEMPORARY
+type LoginFormProps = {
+    onLoginFormSubmit: (e: React.FormEvent) => void
+    showLoginForm: boolean
+    setShowLoginForm: (arg0: boolean) => void
+}
+
+export default function LoginForm(
+{onLoginFormSubmit, showLoginForm, setShowLoginForm}: LoginFormProps)
+{
     const onSubmit = (e: React.FormEvent) => {
         e.preventDefault();
+        onLoginFormSubmit(e);
     }
     return(
         <>
@@ -45,7 +54,7 @@ export default function LoginForm({loginForm, useLoginForm}: any){ //TEMPORARY
                 <p>
                     Don't have an account yet?
                     <span className='pl-1 underline cursor-pointer' onClick={() => {
-                        useLoginForm(!loginForm);
+                        setShowLoginForm(!showLoginForm);
                         ScrollToTop(false);
                         }}>Sign up!</span>
                 </p>

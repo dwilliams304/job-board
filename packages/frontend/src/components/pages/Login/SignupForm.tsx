@@ -1,6 +1,6 @@
-import React, { useState } from "react"
-import { Link } from "react-router-dom"
-import { ScrollToTop } from "../../../utils"
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { ScrollToTop } from "../../../utils";
 
 const passwordReqs: passwordReqsTypes = {
     charLength: false,
@@ -29,8 +29,15 @@ const initialFormState = {
 
 const specialRegEx = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
 
+type SignupFormProps = {
+    onSignupFormSubmit: (e: React.FormEvent) => void
+    showLoginForm: boolean
+    setShowLoginForm: (arg0: boolean) => void
+}
 
-export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
+export default function SignupForm(
+{onSignupFormSubmit, showLoginForm, setShowLoginForm}: SignupFormProps)
+{
     const [formValues, setFormValues] = useState(initialFormState);
     const [formErrors, setFormErrors] = useState([]); //FIX THIS
 
@@ -53,7 +60,7 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
 
     const onSubmit = (e: React.FormEvent) => {
         validateForm();
-        e.preventDefault();
+        onSignupFormSubmit(e);
     }
 
 
@@ -268,7 +275,7 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
                 <p>
                     Already have an account?
                     <span className='pl-1 underline cursor-pointer' onClick={() => {
-                        useLoginForm(!loginForm);
+                        setShowLoginForm(!showLoginForm);
                         ScrollToTop(false);
                         }}>Sign in!</span>
                 </p>
