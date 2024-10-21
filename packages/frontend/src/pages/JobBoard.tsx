@@ -46,10 +46,10 @@ export default function JobBoard(){
                 }}
                 searchOptions={searchOptions}
             />
-            <FiltersPopup 
+            {/* <FiltersPopup 
                 showFilterPopup={showFilterPopup}
                 setShowFilterPopup={setShowFilterPopup}
-            />
+            /> */}
 
             <p className="pl-2">Showing {data.length} results.</p>
             <div>

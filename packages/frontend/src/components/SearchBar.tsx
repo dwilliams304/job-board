@@ -25,38 +25,59 @@ export default function SearchBar(props: SearchBarProps)
                 />
                 <button className="border rounded-3xl bg-blue-700 text-white px-8 py-2 ml-2">Search</button>
             </div>
-            <div className="flex">
-                <select className="m-2 p-1 shadow-md border border-solid cursor-pointer">
-                    {
-                        searchOptions.location.map((option, idx) => (
-                            <option key={idx}>{option}</option>
-                        ))
-                    }
-                </select>
-
-                <select className="m-2 p-1 shadow-md border border-solid cursor-pointer">
-                    {
-                        searchOptions.experience.map((option, idx) => (
-                            <option key={idx}>{option}</option>
-                        ))
-                    }
-                </select>
+            <div className="flex relative w-1/3">
+                <div className="flex flex-col text-center m-2">
+                    <label htmlFor="location"
+                    className="text-sm text-gray-400">
+                        Location
+                    </label>
+                    <select className="p-1 shadow-md border border-solid cursor-pointer" id="location">
+                        {
+                            searchOptions.location.map((option, idx) => (
+                                <option key={idx}>{option}</option>
+                            ))
+                        }
+                    </select>
+                </div>
                 
-                <select className="m-2 p-1 shadow-md border border-solid cursor-pointer">
-                    {
-                        searchOptions.postAge.map((option, idx) => (
-                            <option key={idx}>{option}</option>
-                        ))
-                    }
-                </select>
-
-                <button className="flex m-2 p-1 shadow-md border border-solid cursor-pointer"
-                onClick={() => {
-                setShowFilterPopup(!showFilterPopup);
-                }}>
-                    <span>All Filters</span>
-                    <span><IoFilterSharp /></span>
-                </button>
+                <div className="flex flex-col text-center m-2">
+                    <label htmlFor="experience"
+                    className="text-sm text-gray-400">
+                        Experience Level
+                    </label>
+                    <select className="p-1 shadow-md border border-solid cursor-pointer" id="experience">
+                        {
+                            searchOptions.experience.map((option, idx) => (
+                                <option key={idx}>{option}</option>
+                            ))
+                        }
+                    </select>
+                </div>
+                
+                <div className="flex flex-col text-center m-2">
+                    <label htmlFor="post-age"
+                    className="text-sm text-gray-400">
+                        Date posted
+                    </label>
+                    <select className="p-1 shadow-md border border-solid cursor-pointer" id="post-age">
+                        {
+                            searchOptions.postAge.map((option, idx) => (
+                                <option key={idx}>{option}</option>
+                            ))
+                        }
+                    </select>
+                </div>
+                
+                <div className="absolute right-0 bottom-0">
+                    <button className="m-2 p-1 shadow-md border border-solid cursor-pointer"
+                    onClick={() => {
+                    setShowFilterPopup(!showFilterPopup);
+                    }}>
+                        <span className="flex align-middle">
+                            <span className="pr-2">All Filters</span><IoFilterSharp />
+                        </span>
+                    </button>
+                </div>
             </div>
         </section>
     )
