@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { helpArticles } from "../../../data/helparticles";
+import { SeekerHelpArticles, EmployerHelpArticles, FeaturedArticles } from "../../../data/helparticles";
 import HelpArticleCard from "./HelpArticleCard";
+import FeaturedArticleCard from "./FeaturedArticleCard";
 
 
 export default function Help(){
@@ -34,7 +35,16 @@ export default function Help(){
 
                     <div className="grid grid-cols-3 gap-6 w-2/3 mx-auto mt-6">
                         {
-                            helpArticles.map((article, idx) => (
+                            showEmployerHelp ?
+                            EmployerHelpArticles.map((article, idx) => (
+                                <HelpArticleCard
+                                    key={idx}
+                                    borderColor={article.tag}
+                                    helpArticle={article}
+                                />
+                            ))
+                            :
+                            SeekerHelpArticles.map((article, idx) => (
                                 <HelpArticleCard 
                                     key={idx}
                                     borderColor={article.tag}
@@ -47,21 +57,15 @@ export default function Help(){
                 <div className="text-center mt-16 border-t-gray-200 border-t-2">
                     <h3 className="text-xl p-4">Featured Articles</h3>
                     <div className="flex flex-col space-y-4 justify-center align-middle">
-                        <div className="flex w-1/8 mx-auto space-x-6 border border-b-2 border-b-black px-12 py-4
-                        cursor-pointer hover:shadow-lg transition ease-in-out duration-300">
-                            <h3>Featured Article 1</h3>
-                            <p>&rarr;</p>
-                        </div>
-                        <div className="flex w-1/8 mx-auto space-x-6 border border-b-2 border-b-black px-12 py-4
-                        cursor-pointer hover:shadow-lg transition ease-in-out duration-300">
-                            <h3>Featured Article 2</h3>
-                            <p>&rarr;</p>
-                        </div>
-                        <div className="flex w-1/8 mx-auto space-x-6 border border-b-2 border-b-black px-12 py-4
-                        cursor-pointer hover:shadow-lg transition ease-in-out duration-300">
-                            <h3>Featured Article 3</h3>
-                            <p>&rarr;</p>
-                        </div>
+                        {
+                            FeaturedArticles.map((article, idx) => (
+                                <FeaturedArticleCard 
+                                    key={idx}
+                                    title={article.title}
+                                    articleID={article.articleID}
+                                />
+                            ))
+                        }
                     </div>
                 </div>
             </div>

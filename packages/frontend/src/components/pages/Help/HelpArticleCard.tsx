@@ -11,7 +11,7 @@ export default function HelpArticleCard({borderColor, helpArticle}: HelpArticleP
 
 
     return(
-        <div className={`border ${borderColors[borderColor]} text-center m-4 px-16 py-6 cursor-pointer
+        <div className={`border ${borderColors[borderColor]} border-b-2 text-center m-4 px-16 py-6 cursor-pointer
         transition ease-in-out duration-300 hover:shadow-lg`}>
             <h4 className="text-gray-400 text-sm">({tag})</h4>
             <h3 className="text-lg">{title}</h3>
