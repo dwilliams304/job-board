@@ -112,9 +112,9 @@ export default function SignupForm({loginForm, useLoginForm}: any){ //TEMPORARY
                             <p className="text-red-500 text-sm">Please fix the following errors:</p>
                         }
                         {
-                            formErrors.map((err, i) => {
-                                return <li className="text-red-500 text-sm mx-8" key={i}>{err}</li>
-                            })
+                            formErrors.map((err, i) => (
+                                <li className="text-red-500 text-sm mx-8" key={i}>{err}</li>
+                            ))
                         }
                     </ul>
                     <label htmlFor='firstName' className='block text-sm mb-2'>First name</label>

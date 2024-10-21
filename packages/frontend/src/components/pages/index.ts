@@ -1,5 +1,5 @@
 import JobBoard from "./JobBoard/JobBoard";
-import Login from "./Login";
+import Login from "./Login/Login";
 import Help from "./Help/Help";
 import Terms from "./Info/Terms";
 import Privacy from "./Info/Privacy";

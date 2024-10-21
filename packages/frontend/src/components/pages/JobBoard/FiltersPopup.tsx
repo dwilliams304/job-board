@@ -1,4 +1,4 @@
-import { FilterPopupMenuState } from "./pages/JobBoard";
+import { FilterPopupMenuState } from "./JobBoard";
 
 
 export default function FiltersPopup({showFilterPopup, setShowFilterPopup}: FilterPopupMenuState){
