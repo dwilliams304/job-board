@@ -2,6 +2,7 @@ import { useState } from "react";
 import { helpArticles } from "../../../data/helparticles";
 import HelpArticleCard from "./HelpArticleCard";
 
+
 export default function Help(){
     const [showEmployerHelp, useShowEmployerHelp] = useState(false);
 
@@ -33,7 +34,13 @@ export default function Help(){
 
                     <div className="grid grid-cols-3 gap-6 w-2/3 mx-auto mt-6">
                         {
-                            helpArticles.map((article, idx) => <HelpArticleCard helpArticle={article} key={idx}/>)
+                            helpArticles.map((article, idx) => (
+                                <HelpArticleCard 
+                                    key={idx}
+                                    borderColor={article.tag}
+                                    helpArticle={article} 
+                                />
+                            ))
                         }
                     </div>
                 </div>

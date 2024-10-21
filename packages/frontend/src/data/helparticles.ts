@@ -1,4 +1,11 @@
-export const helpArticles = [
+type HelpArticleTags = "Account" | "Search" | "Payment"
+export type HelpArticle = {
+    tag: HelpArticleTags,
+    title: string,
+    articleLink: string
+}
+
+export const helpArticles: HelpArticle[] = [
     {
         tag: "Account",
         title: "Profile Details",
