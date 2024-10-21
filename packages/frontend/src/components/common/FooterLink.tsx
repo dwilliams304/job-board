@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { ScrollToTop } from "../helpers"
+import { ScrollToTop } from "../../utils";
 
 type footerLinkProps = {
     linkObject: {

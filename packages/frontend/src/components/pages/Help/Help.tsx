@@ -1,6 +1,6 @@
-import { useState } from "react"
-import { helpArticles } from "../data/helparticles"
-import { HelpArticleCard } from "../components";
+import { useState } from "react";
+import { helpArticles } from "../../../data/helparticles";
+import HelpArticleCard from "./HelpArticleCard";
 
 export default function Help(){
     const [showEmployerHelp, useShowEmployerHelp] = useState(false);

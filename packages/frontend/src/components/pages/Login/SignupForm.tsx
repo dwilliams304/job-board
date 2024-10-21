@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
-import { ScrollToTop } from "../helpers"
+import { ScrollToTop } from "../../../utils"
 
 const passwordReqs: passwordReqsTypes = {
     charLength: false,

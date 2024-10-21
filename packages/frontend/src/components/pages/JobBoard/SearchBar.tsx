@@ -1,5 +1,5 @@
 import { IoFilterSharp } from "react-icons/io5";
-import { SearchOptions, FilterPopupMenuState } from "../pages/JobBoard";
+import { SearchOptions, FilterPopupMenuState } from "./pages/JobBoard";
 
 type SearchBarProps = {
     filterPopupState: FilterPopupMenuState

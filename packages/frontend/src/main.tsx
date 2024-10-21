@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { NavBar, Footer } from'./layout';
+import { NavBar, Footer } from './components/layout';
 import { ToTopButton } from './components';
-import { JobBoard, Login, Help, Terms, Privacy, NotFound } from './pages';
+import { JobBoard, Login, Help, Terms, Privacy, NotFound } from './components/pages';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 

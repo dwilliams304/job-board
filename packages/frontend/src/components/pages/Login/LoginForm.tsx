@@ -1,4 +1,4 @@
-import { ScrollToTop } from "../helpers";
+import { ScrollToTop } from "../../../utils";
 
 export default function LoginForm({loginForm, useLoginForm}: any){ //TEMPORARY
     const onSubmit = (e: React.FormEvent) => {

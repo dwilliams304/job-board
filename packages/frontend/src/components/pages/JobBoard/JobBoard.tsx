@@ -1,7 +1,8 @@
 import { useState } from "react";
-import JobPost from "../components/JobPost";
-import { data } from "../data/data";
-import { SearchBar, FiltersPopup } from "../components";
+import JobPost from "./JobPost";
+import { data } from "../../../data/data";
+import SearchBar from "./SearchBar";
+import FiltersPopup from "./FiltersPopup";
 
 const searchOptions = {
     location: [

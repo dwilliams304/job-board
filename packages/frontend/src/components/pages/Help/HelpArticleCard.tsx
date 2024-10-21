@@ -1,4 +1,4 @@
-import { borderColors } from "../data/helparticles"
+import { borderColors } from "../../../data/helparticles";
 
 type HelpArticleProps = {
     helpArticle : {
@@ -14,7 +14,7 @@ export default function HelpArticleCard({helpArticle}: HelpArticleProps){ //temp
 
 
     return(
-        <div className={`border ${borderColors[tag]} text-center m-4 px-16 py-6 cursor-pointer 
+        <div className={`border ${borderColors[tag]} text-center m-4 px-16 py-6 cursor-pointer
         transition ease-in-out duration-300 hover:shadow-lg`}>
             <h4 className="text-gray-400 text-sm">({tag})</h4>
             <h3 className="text-lg">{title}</h3>

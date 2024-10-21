@@ -1,8 +1,8 @@
 import React from 'react';
-import DummyLogo from "../assets/react.svg";
+import DummyLogo from "../../assets/react.svg";
 import { useState } from 'react';
 
-import { LoginForm, SignupForm } from '../components';
+import { LoginForm, SignupForm } from '..';
 
 
 

@@ -1,12 +1,11 @@
-import JobPost from "./JobPost";
-import SearchBar from "./SearchBar";
-import ToTopButton from "./ToTopButton";
-import LoginForm from "./LoginForm";
-import SignupForm from "./SignupForm";
-import ProfileDropDown from "./ProfileDropdown";
-import FooterLink from "./FooterLink";
-import HelpArticleCard from "./HelpArticleCard";
-import FiltersPopup from "./FiltersPopup";
+import JobPost from "./pages/JobBoard/JobPost";
+import SearchBar from "./pages/JobBoard/SearchBar";
+import ToTopButton from "./common/ToTopButton";
+import LoginForm from "./pages/Login/LoginForm";
+import SignupForm from "./pages/Login/SignupForm";
+import FooterLink from "./common/FooterLink";
+import HelpArticleCard from "./pages/Help/HelpArticleCard";
+import FiltersPopup from "./pages/JobBoard/FiltersPopup";
 
 
 export {
@@ -15,7 +14,6 @@ export {
     ToTopButton, 
     LoginForm, 
     SignupForm, 
-    ProfileDropDown, 
     FooterLink,
     HelpArticleCard,
     FiltersPopup

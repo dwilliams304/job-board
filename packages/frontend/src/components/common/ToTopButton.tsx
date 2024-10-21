@@ -1,4 +1,4 @@
-import { ScrollToTop } from "../helpers"
+import { ScrollToTop } from "../../utils";
 
 export default function ToTopButton(){
     return(

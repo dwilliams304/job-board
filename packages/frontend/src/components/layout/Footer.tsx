@@ -1,8 +1,8 @@
-import DummyLogo from "../assets/react.svg";
+import DummyLogo from "../../assets/react.svg";
 import { Link } from "react-router-dom";
-import { FooterLink } from "../components";
-import { footerLinks } from "../data/footerlinks";
-import { ScrollToTop } from "../helpers";
+import { FooterLink } from "../";
+import { footerLinks } from "../../data/footerlinks";
+import { ScrollToTop } from "../../utils";
 
 export default function Footer(){
     const data = footerLinks;
