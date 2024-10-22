@@ -6,6 +6,7 @@ import { ToTopButton } from './components';
 import { 
   JobBoard,
   JobPage,
+  CompanyPage,
   Login, 
   Help, 
   Terms, 
@@ -33,6 +34,7 @@ function App() {
       <Routes>
         <Route path="/" index element={<JobBoard /> } />
         <Route path="/job/:id" index element={<JobPage /> } />
+        <Route path="/company/:id" index element={<CompanyPage /> } />
         <Route path="login" element={<Login />} />
         <Route path="help" element={<Help /> } />
         <Route path="terms" element={<Terms /> } />

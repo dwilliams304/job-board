@@ -5,6 +5,7 @@ import Terms from "./Info/Terms";
 import Privacy from "./Info/Privacy";
 import NotFound from "./NotFound/NotFound";
 import JobPage from "./JobPage/JobPage";
+import CompanyPage from "./CompanyPage/CompanyPage";
 
 
 export { 
@@ -14,5 +15,6 @@ export {
     Terms, 
     Privacy, 
     NotFound, 
-    JobPage 
+    JobPage ,
+    CompanyPage
 }

@@ -1,6 +1,8 @@
 import { IoFilterSharp } from "react-icons/io5";
 import { SearchOptions, FilterPopupMenuState } from "./JobBoard";
 
+import Button from "../../common/Button";
+
 type SearchBarProps = {
     filterPopupState: FilterPopupMenuState
     searchOptions: SearchOptions
@@ -23,7 +25,13 @@ export default function SearchBar(props: SearchBarProps)
                     placeholder="Location or 'Remote'"
                     className="m-1 mb-2 p-2 pr-6 shadow-md border border-solid"
                 />
-                <button className="border rounded-3xl bg-blue-700 text-white px-8 py-2 ml-2">Search</button>
+                <Button
+                    type="Primary"
+                    text="Search"
+                    function={() => {}}
+                    style={{marginLeft: "2rem"}}
+
+                />
             </div>
             <div className="flex relative w-1/3">
                 <div className="flex flex-col text-center m-2">
