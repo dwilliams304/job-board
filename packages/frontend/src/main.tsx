@@ -31,8 +31,8 @@ function App() {
       <NavBar />
       
       <Routes>
-        {/* <Route path="/" index element={<JobBoard /> } /> */}
-        <Route path="/" index element={<JobPage /> } />
+        <Route path="/" index element={<JobBoard /> } />
+        <Route path="/job/:id" index element={<JobPage /> } />
         <Route path="login" element={<Login />} />
         <Route path="help" element={<Help /> } />
         <Route path="terms" element={<Terms /> } />

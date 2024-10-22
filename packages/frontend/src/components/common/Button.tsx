@@ -2,7 +2,7 @@ type ButtonProps = {
     style?: React.CSSProperties
     type?: "Primary" | "Secondary" | "Tertiary"
     function: () => void
-    text: string
+    text?: string
     icon?: React.ElementType
 }
 

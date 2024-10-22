@@ -2,6 +2,7 @@ import { AppleLogo, BMWLogo, FacebookLogo, GoogleLogo, McdonaldsLogo, Soundcloud
 
 export const data = [
     {
+        jobID: 498,
         jobTitle: "Frontend Engineer",
         companyName: "Jon Doe, Inc.",
         companyLogo: AppleLogo,
@@ -17,6 +18,7 @@ export const data = [
         shortDescription: "The frontend engineer will engineer things in the frontend when things in the frontend need engineered."
     },
     {
+        jobID: 430,
         jobTitle: "Fullstack Engineer",
         companyName: "Doofenshmirtz Evil, Inc.",
         companyLogo: BMWLogo,
@@ -32,6 +34,7 @@ export const data = [
         shortDescription: "You will craft the evil website 900inator frontend and backend."
     },
     {
+        jobID: 200,
         jobTitle: "Technical Support Engineer",
         companyName: "Doofenshmirtz Evil, Inc.",
         companyLogo: BMWLogo,
@@ -47,6 +50,7 @@ export const data = [
         shortDescription: "The Technical Support Engineer will provide excellent customer service and troubleshoot issues with customerinators."
     },
     {
+        jobID: 986,
         jobTitle: "Web Developer",
         companyName: "Kim's Convenience",
         companyLogo: GoogleLogo,
@@ -62,6 +66,7 @@ export const data = [
         shortDescription: "As a web developer, you will craft an amazing user experience to drive more traffic and sales."
     },
     {
+        jobID: 120,
         jobTitle: "Technical Support Engineer",
         companyName: "Fakebook",
         companyLogo: FacebookLogo,
@@ -77,6 +82,7 @@ export const data = [
         shortDescription: "Our client Fakebook needs a Technical Support Engineer to help customers troubleshoot common issues. Must be strong in debugging."
     },
     {
+        jobID: 208,
         jobTitle: "Backend Engineer",
         companyName: "SQueueL",
         companyLogo: McdonaldsLogo,
@@ -92,6 +98,7 @@ export const data = [
         shortDescription: "The Backend Engineer will work and communicate with the frontend team. And will engineer the backend, as a backend engineer would do."
     },
     {
+        jobID: 766,
         jobTitle: "Deployed Engineer",
         companyName: "MikeSpace",
         companyLogo: SoundcloudLogo,

@@ -1,9 +1,59 @@
-import { IoLocation, IoCash, IoBagSharp, IoArrowForward, IoStarSharp, IoShareSocial } from "react-icons/io5";
-// import { IoCash } from "react-icons/io5";
+import { 
+    useState,
+    useEffect
+} from "react";
 
-import Button from "../../common/Button"
+import { 
+    useParams 
+} from "react-router-dom";
+
+
+import { 
+    IoLocation, 
+    IoCash, 
+    IoBagSharp, 
+    IoArrowForward, 
+    IoStarSharp, 
+    IoShareSocial 
+} from "react-icons/io5";
+
+import Button from "../../common/Button";
+
 
 export default function JobPage(){
+    const [isLoading, setIsLoading] = useState(true);
+    
+    const { jobID } = useParams();
+
+    let randomTimer = Math.floor(Math.random() * 4000);
+
+    useEffect(() => {
+        const timeoutId = setTimeout(() => {
+            setIsLoading(false);
+        }, randomTimer);
+
+
+    }, [])
+
+    if(isLoading) return (
+        <div role="status" className="w-1/2 animate-pulse flex-grow px-20 mt-12 space-y-8">
+        <h2 className="animate-pulse text-3xl text-center">Loading job details...</h2>
+        <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
+        <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px] mb-2.5"></div>
+        <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+        <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[330px] mb-2.5"></div>
+        <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[300px] mb-2.5"></div>
+        <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px]"></div>
+        <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
+        <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[500px] mb-2.5"></div>
+        <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+        <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[500px] mb-2.5"></div>
+        <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[450px] mb-2.5"></div>
+        <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[550px]"></div>
+        </div>
+    )
+
+
     return (
         <div className="flex flex-col w-full flex-grow px-20 mt-12 space-y-8">
             {/* Post Details */}
@@ -12,7 +62,7 @@ export default function JobPage(){
                 <div className="flex flex-row space-x-4">
                     <p className="flex align-middle"><IoArrowForward /> Mid-Level</p>
                     <p className="flex align-middle"><IoBagSharp /> Full-Time</p>
-                    <p className="flex align-middle"><IoLocation /> Madison, WI</p>
+                    <p className="flex align-middle"><IoLocation /> Madison, WI (On-Site)</p>
                     <p className="flex align-middle"><IoCash /> $84,000/yr</p>
                 </div>
 
