@@ -1,3 +1,6 @@
+import { IoLocation, IoCash, IoBagSharp, IoArrowForward, IoStarSharp, IoShareSocial } from "react-icons/io5";
+// import { IoCash } from "react-icons/io5";
+
 import Button from "../../common/Button"
 
 export default function JobPage(){
@@ -7,10 +10,10 @@ export default function JobPage(){
             <div className="space-y-1 relative">
                 <h2 className="text-3xl font-bold">Technical Support Engineer II</h2>
                 <div className="flex flex-row space-x-4">
-                    <p className="">Mid-Level</p>
-                    <p>Full-Time</p>
-                    <p>Madison, WI</p>
-                    <p>$84,000/yr</p>
+                    <p className="flex align-middle"><IoArrowForward /> Mid-Level</p>
+                    <p className="flex align-middle"><IoBagSharp /> Full-Time</p>
+                    <p className="flex align-middle"><IoLocation /> Madison, WI</p>
+                    <p className="flex align-middle"><IoCash /> $84,000/yr</p>
                 </div>
 
                 {/* Company Details */}
@@ -23,11 +26,14 @@ export default function JobPage(){
                         />
                         <h2>Company Name</h2>
                     </div>
-                    <a className="hover:underline cursor-pointer font-bold">4.53/5 (1.4k reviews)</a>
+                    <a className="hover:underline cursor-pointer font-bold flex align-middle">
+                        <IoStarSharp /> 4.53/5 (1.4k reviews)
+                    </a>
                 </div>
                 <Button
                     type="Secondary"
                     text="Share Job"
+                    icon={IoShareSocial}
                     function={() => {}}
                     style={{position: "absolute", right: "0", top: "0"}}
                 />
