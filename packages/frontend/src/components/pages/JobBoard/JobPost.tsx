@@ -2,6 +2,7 @@ import Button from "../../common/Button";
 
 type JobPostProps = {
     job : {
+        jobID: number;
         jobTitle: string;
         companyName: string;
         companyLogo: string;
@@ -23,12 +24,19 @@ export default function JobPost({job}: JobPostProps){
 
     return(
         <div className="flex border border-solid my-5 mx-8 p-5 shadow-md transition duration-300 ease-in-out
-        cursor-pointer hover:shadow-xl hover:border-gray-400">
+        cursor-pointer hover:shadow-xl hover:border-gray-400"
+        onClick={() => window.open(`/job/${job.jobID}`)}>
             <div className="w-4/5">
                 <div className="flex align-middle">
-                    <img src={job.companyLogo} alt="company logo" className="p-2 mr-2 border"/>
+                    <img 
+                        src={job.companyLogo} 
+                        alt="company logo" 
+                        className="p-2 mr-2 border"
+                    />
                     <h2 className="font-semibold">
-                        <span className="hover:underline">{job.companyName}</span> - 
+                        <span className="hover:underline" onClick={() => window.open("/company/22")}>
+                            {job.companyName}
+                        </span> - 
                         <span> {job.jobTitle}</span>
                     </h2>
                 </div>
@@ -54,7 +62,7 @@ export default function JobPost({job}: JobPostProps){
                 <Button
                     type="Primary"
                     text="Apply &rarr;"
-                    function={() => {}}
+                    function={() => window.open(`/job/${job.jobID}/apply`)}
                 />
             </div>
         </div>

@@ -7,7 +7,7 @@ import {
     useParams 
 } from "react-router-dom";
 
-
+import { AppleLogo } from "../../../assets/testlogos";
 import { 
     IoLocation, 
     IoCash, 
@@ -68,13 +68,14 @@ export default function JobPage(){
 
                 {/* Company Details */}
                 <div className="flex flex-col border-b-2 border-black">
-                    <div className="flex space-x-4">
+                    <div className="relative my-4 cursor-pointer"
+                    onClick={() => window.open("/company/22")}>
                         <img 
-                            src="" 
+                            src={AppleLogo} 
                             alt="Company Logo" 
                             className=""
                         />
-                        <h2>Company Name</h2>
+                        <h2 className="absolute bottom-0 left-10 text-lg">Company Name</h2>
                     </div>
                     <a className="hover:underline cursor-pointer font-bold flex align-middle">
                         <IoStarSharp /> 4.53/5 (1.4k reviews)
