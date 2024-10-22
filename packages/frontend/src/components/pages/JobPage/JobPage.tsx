@@ -2,7 +2,7 @@ import Button from "../../common/Button"
 
 export default function JobPage(){
     return (
-        <div className="flex flex-col w-full flex-grow px-8 mt-12 space-y-8">
+        <div className="flex flex-col w-full flex-grow px-20 mt-12 space-y-8">
             {/* Post Details */}
             <div className="space-y-1 relative">
                 <h2 className="text-3xl font-bold">Technical Support Engineer II</h2>
@@ -23,7 +23,7 @@ export default function JobPage(){
                         />
                         <h2>Company Name</h2>
                     </div>
-                    <a className="hover:underline cursor-pointer font-bold">4.5/5 (1.4k reviews)</a>
+                    <a className="hover:underline cursor-pointer font-bold">4.53/5 (1.4k reviews)</a>
                 </div>
                 <Button
                     type="Secondary"
@@ -37,7 +37,15 @@ export default function JobPage(){
             <div className="w-full px-12">
                 <div className="space-y-4">
                     <div>
-                        <h2 className="font-bold text-xl">Job Requirements</h2>
+                        <h2 className="font-bold text-xl">About Us</h2>
+                        <p>
+                            Put something here that tells the potential employee about your company. Your values, what makes you different, etc... <br />
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                    </div>
+                    <div>
+                        <h2 className="font-bold text-xl">Qualifications</h2>
+                        <p>While we don't expect all of the following, these would be nice to have:</p>
                         <ul className="list-disc px-12">
                             <li>4+ years of experience as a Support Engineer</li>
                             <li>Bachelor's Degree in Computer Science or related</li>
@@ -46,10 +54,32 @@ export default function JobPage(){
                         </ul>
                     </div>
                     <div>
-                        <h2 className="font-bold text-xl">About Us</h2>
-                        
+                        <h2 className="font-bold text-xl">Job Responsibilities</h2>
+                        <ul className="list-disc px-12">
+                            <li>Job Responsibility #1</li>
+                            <li>Job Responsibility #2</li>
+                            <li>Job Responsibility #3</li>
+                            <li>Job Responsibility #4</li>
+                            <li>Job Responsibility #5</li>
+                            <li>Job Responsibility #6</li>
+                        </ul>
                     </div>
-
+                    <div>
+                        <h2 className="font-bold text-xl">Hiring Process</h2>
+                        <p>
+                            Potential employees love transparency! Tell them about how you do your hiring and the steps you take
+                            to ensure you are finding the right candidate, etc...<br/>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                    </div>
+                    <div>
+                        <h2 className="font-bold text-xl">Benefits</h2>
+                        <p>
+                            List something here that your company offers. 401ks, health insurance,
+                            life insurance, etc... <br/>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                    </div>
                 </div>
             </div>
 
