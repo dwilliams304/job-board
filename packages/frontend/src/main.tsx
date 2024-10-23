@@ -8,6 +8,7 @@ import {
   JobPage,
   CompanyPage,
   Login, 
+  Signup,
   Help, 
   Terms, 
   Privacy, 
@@ -36,6 +37,7 @@ function App() {
         <Route path="/job/:jobID" index element={<JobPage /> } />
         <Route path="/company/:companyID" index element={<CompanyPage /> } />
         <Route path="login" element={<Login />} />
+        <Route path="signup" element={<Signup />} />
         <Route path="help" element={<Help /> } />
         <Route path="terms" element={<Terms /> } />
         <Route path="privacy" element={<Privacy /> } />

@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { ScrollToTop } from "../../../utils";
+import { Link } from "react-router-dom";
+import { Dev_LoginFunc } from "../../../data/profiles";
 
 type LoginFormProps = {
-    onLoginFormSubmit: (e: React.FormEvent, _email: any, _password: any) => void
-    showLoginForm: boolean
-    setShowLoginForm: (arg0: boolean) => void
+    onLoginFormSubmit: (e: React.FormEvent) => void
 }
 
 const initialFormState = {
@@ -12,8 +12,7 @@ const initialFormState = {
     password: "",
 }
 
-export default function LoginForm(
-{onLoginFormSubmit, showLoginForm, setShowLoginForm}: LoginFormProps){
+export default function LoginForm({onLoginFormSubmit}: LoginFormProps){
     const [formValues, setFormValues] = useState(initialFormState);
     const [loginError, setLoginError] = useState("");
 
@@ -29,15 +28,28 @@ export default function LoginForm(
 
     const onSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        onLoginFormSubmit(e, formValues.email, formValues.password);
+        const user = {
+            email: formValues.email,
+            password: formValues.password
+        }
+        const val = Dev_LoginFunc(user);
+        if(val.error) setLoginError(val.error.message);
+        else{
+            setFormValues(initialFormState);
+            setLoginError('');
+            onLoginFormSubmit(e);
+        }
     }
 
 
 
     return(
-        <>
+        <div className="w-full">
             <h2 className='text-xl pb-4'>Sign in to your account</h2>
-            <form className='space-y-4' onSubmit={onSubmit}>
+            <form className='space-y-4 w-full' onSubmit={onSubmit}>
+                {
+                    loginError && <h2>{loginError}</h2>
+                }
                 <div>
                     <label htmlFor='email' className='block text-sm mb-2'>Email</label>
                     <input
@@ -78,12 +90,13 @@ export default function LoginForm(
                 <button type='submit' className='w-3/4 p-2 rounded-xl bg-blue-700 text-white'>Sign in</button>
                 <p>
                     Don't have an account yet?
-                    <span className='pl-1 underline cursor-pointer' onClick={() => {
-                        setShowLoginForm(!showLoginForm);
-                        ScrollToTop(false);
-                        }}>Sign up!</span>
+                    <Link to="/signup"
+                    className='pl-1 underline cursor-pointer'
+                    onClick={() => ScrollToTop(false)}>
+                        Sign up!
+                    </Link>
                 </p>
             </form> 
-        </>
+        </div>
     )
 }

@@ -29,15 +29,8 @@ const initialFormState = {
 
 const specialRegEx = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
 
-type SignupFormProps = {
-    onSignupFormSubmit: (e: React.FormEvent) => void
-    showLoginForm: boolean
-    setShowLoginForm: (arg0: boolean) => void
-}
+export default function SignupForm() {
 
-export default function SignupForm(
-{onSignupFormSubmit, showLoginForm, setShowLoginForm}: SignupFormProps)
-{
     const [formValues, setFormValues] = useState(initialFormState);
     const [formErrors, setFormErrors] = useState([]); //FIX THIS
 
@@ -60,7 +53,6 @@ export default function SignupForm(
 
     const onSubmit = (e: React.FormEvent) => {
         validateForm();
-        onSignupFormSubmit(e);
     }
 
 
@@ -110,6 +102,7 @@ export default function SignupForm(
 
 
     return(
+        
         <>
             <h2 className='text-xl pb-4'>Create an account</h2>
             <form className='space-y-4' onSubmit={onSubmit}>
@@ -274,10 +267,11 @@ export default function SignupForm(
                 </button>
                 <p>
                     Already have an account?
-                    <span className='pl-1 underline cursor-pointer' onClick={() => {
-                        setShowLoginForm(!showLoginForm);
-                        ScrollToTop(false);
-                        }}>Sign in!</span>
+                    <Link to="/login" 
+                    className='pl-1 underline cursor-pointer' 
+                    onClick={() => ScrollToTop(false)}>
+                        Sign in!
+                    </Link>
                 </p>
             </form> 
         </>
