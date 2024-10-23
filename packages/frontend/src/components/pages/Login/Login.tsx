@@ -1,13 +1,15 @@
 import React from 'react';
-import DummyLogo from "../../../assets/react.svg";
-import { useState } from 'react';
 import { LoginForm } from '../..';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Login(){
+    const navTo = useNavigate();
+
+
     const onLoginFormSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        console.log("Login submitted!");
+        navTo('/');
     }
 
 

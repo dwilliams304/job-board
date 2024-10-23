@@ -23,14 +23,12 @@ export function Dev_LoginFunc({email, password}: LoginArgs): LoginReturn {
     for(let i = 0; i < Profiles.length; i++){
         var cur = Profiles[i];
         if(cur.profileEmail === email){
-            console.log("Found matching email!");
             if(cur.profilePassword === password){
                 console.log(`Login success, logging into id: ${cur.profileID} - ${cur.userInfo.name}`);
                 return {success: cur}
             }
         }
     }
-    console.log("Could not login to any profiles!");
     return {error: 
         {
             message: "Incorrect email or password!"

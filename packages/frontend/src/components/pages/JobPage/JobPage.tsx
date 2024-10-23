@@ -4,7 +4,8 @@ import {
 } from "react";
 
 import { 
-    useParams 
+    useParams ,
+    useNavigate
 } from "react-router-dom";
 
 import { Job, FetchJob, Dev_DefaultJob } from "../../../data/jobs";
@@ -28,6 +29,7 @@ export default function JobPage(){
     const [isLoading, setIsLoading] = useState(true);
     const [jobData, setJobData] = useState<Job>(Dev_DefaultJob);
     
+    const navTo = useNavigate();
     const { jobID } = useParams();
 
 
@@ -78,7 +80,7 @@ export default function JobPage(){
                 {/* Company Details */}
                 <div className="flex flex-col border-b-2 border-black">
                     <div className="relative my-4 cursor-pointer"
-                    onClick={() => window.open(`/company/${jobData.company.companyID}`)}>
+                    onClick={() => navTo(`/company/${jobData.company.companyID}`)}>
                         <img 
                             src={jobData.company.companyLogo} 
                             alt="Company Logo" 

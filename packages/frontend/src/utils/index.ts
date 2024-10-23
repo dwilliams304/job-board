@@ -10,16 +10,15 @@ function GetRandomNumber(max: number): number{
     return Math.floor(Math.random() * max);
 }
 
-// function Wait(ms: number, func: (arg0?: boolean) => void) {
-//     setTimeout(() => {
-//         func();
-//     }, ms);
-// }
+
+function OpenNewTab(url: string){
+    window.open(url, '_blank', 'rel=noopener noreferrer')
+}
 
 
 
 export { 
     ScrollToTop,
     GetRandomNumber,
-    // Wait
+    OpenNewTab
 }

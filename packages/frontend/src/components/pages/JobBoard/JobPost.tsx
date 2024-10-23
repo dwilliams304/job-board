@@ -1,11 +1,14 @@
 import Button from "../../common/Button";
 import { Job } from "../../../data/jobs";
+import { useNavigate } from "react-router-dom";
 
 type JobPostProps = {
     job : Job
 }
 
 export default function JobPost({job}: JobPostProps){
+    const navTo = useNavigate();
+
     const salary = Math.round((job.salary / 52 / job.averageHours) * 100) / 100;
 
     return(
@@ -20,7 +23,7 @@ export default function JobPost({job}: JobPostProps){
                         className="p-2 mr-2 border"
                     />
                     <h2 className="font-semibold">
-                        <span className="hover:underline" onClick={() => window.open(`/company/${job.company.companyID}`)}>
+                        <span className="hover:underline" onClick={() => navTo(`/company/${job.company.companyID}`)}>
                             {job.company.companyName}
                         </span> - 
                         <span> {job.jobTitle}</span>
@@ -45,7 +48,7 @@ export default function JobPost({job}: JobPostProps){
                 <Button
                     type="Primary"
                     text="Apply &rarr;"
-                    function={() => window.open(`/job/${job.jobID}/apply`)}
+                    function={() => navTo(`/job/${job.jobID}/apply`)}
                 />
             </div>
         </div>
