@@ -2,11 +2,18 @@ import React from 'react';
 import DummyLogo from "../../../assets/react.svg";
 import { useState } from 'react';
 import { LoginForm, SignupForm } from '../..';
+import { Dev_LoginFunc } from '../../../data/profiles';
 
 
 export default function Login(){
-    const onLoginFormSubmit = (e: React.FormEvent) => {
+    const onLoginFormSubmit = (e: React.FormEvent, _email: string, _password: string) => {
         e.preventDefault();
+        Dev_LoginFunc(
+            {
+                email: _email, 
+                password: _password
+            }
+        );
         console.log("Login submitted!");
     }
 

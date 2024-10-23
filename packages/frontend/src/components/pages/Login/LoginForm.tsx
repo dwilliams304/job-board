@@ -1,18 +1,39 @@
+import { useState } from "react";
 import { ScrollToTop } from "../../../utils";
 
 type LoginFormProps = {
-    onLoginFormSubmit: (e: React.FormEvent) => void
+    onLoginFormSubmit: (e: React.FormEvent, _email: any, _password: any) => void
     showLoginForm: boolean
     setShowLoginForm: (arg0: boolean) => void
 }
 
+const initialFormState = {
+    email: "",
+    password: "",
+}
+
 export default function LoginForm(
-{onLoginFormSubmit, showLoginForm, setShowLoginForm}: LoginFormProps)
-{
+{onLoginFormSubmit, showLoginForm, setShowLoginForm}: LoginFormProps){
+    const [formValues, setFormValues] = useState(initialFormState);
+    const [loginError, setLoginError] = useState("");
+
+    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const {name, value} = e.target;
+
+        setFormValues(
+            {...formValues, 
+                [name]: value
+            }
+        )
+    }
+
     const onSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        onLoginFormSubmit(e);
+        onLoginFormSubmit(e, formValues.email, formValues.password);
     }
+
+
+
     return(
         <>
             <h2 className='text-xl pb-4'>Sign in to your account</h2>
@@ -25,6 +46,8 @@ export default function LoginForm(
                         id='email'
                         placeholder='email@email.com'
                         className='w-3/4 p-2 rounded-xl shadow-md'
+                        onChange={onChange}
+                        value={formValues.email}
                     />
                 </div>
                 
@@ -36,6 +59,8 @@ export default function LoginForm(
                         id='password'
                         placeholder='•••••••••••'
                         className='w-3/4 p-2 rounded-xl shadow-md'
+                        onChange={onChange}
+                        value={formValues.password}
                     />
                 </div>
                 <div className='w-3/4 flex items-center justify-between'>
