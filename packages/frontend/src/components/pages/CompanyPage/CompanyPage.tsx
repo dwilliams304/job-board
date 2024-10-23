@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { IoStarSharp } from "react-icons/io5";
 
 import { Company, FetchCompany, Dev_DefaultCompany } from "../../../data/companies";
+import { GetRandomNumber } from "../../../utils";
 
 export default function CompanyPage(){
     const { companyID } = useParams();
@@ -10,21 +11,19 @@ export default function CompanyPage(){
     const [isLoading, setIsLoading] = useState(true);
     const [companyData, setCompanyData] = useState<Company>(Dev_DefaultCompany);
 
-    let randomTimer = Math.floor(Math.random() * 4000);
-
     useEffect(() => {
         const company = FetchCompany(Number(companyID));
 
         setCompanyData(company);
         const timeout = setTimeout(() => {
             setIsLoading(false);
-        }, randomTimer);
+        }, GetRandomNumber(4000));
     }, [])
 
     if(isLoading) {
         return(
             <div className="w-full flex-grow text-center">
-                <h2>Loading company page...</h2>
+                <h2 className="mt-20 text-2xl">Loading company page...</h2>
             </div>
         )
     }
@@ -38,7 +37,7 @@ export default function CompanyPage(){
                         <h2 className="text-3xl">{companyData.companyName}</h2>
                     </div>
                     <p>Brief company description</p>
-                    <p className="font-bold flex hover:underline cursor-pointer"><IoStarSharp />4.5/5 (1.4k reviews)</p>
+                    <p className="font-bold flex hover:underline cursor-pointer"><IoStarSharp />{companyData.reviews}</p>
                 </div>
 
                 {/* Navigation Bar, Reviews, Salaries, Jobs, etc... */}

@@ -8,7 +8,6 @@ import {
 } from "react-router-dom";
 
 import { Job, FetchJob, Dev_DefaultJob } from "../../../data/jobs";
-import { Companies } from "../../../data/companies";
 
 import { 
     IoLocation, 
@@ -21,6 +20,8 @@ import {
 
 import Button from "../../common/Button";
 
+import { GetRandomNumber, } from "../../../utils";
+
 
 
 export default function JobPage(){
@@ -29,16 +30,16 @@ export default function JobPage(){
     
     const { jobID } = useParams();
 
-    let randomTimer = Math.floor(Math.random() * 4000);
 
     useEffect(() => {
         const job = FetchJob(Number(jobID));
 
         
         setJobData(job);
+
         const timeout = setTimeout(() => {
             setIsLoading(false);
-        }, randomTimer);
+        }, GetRandomNumber(4000));
 
 
     }, [])
@@ -86,7 +87,7 @@ export default function JobPage(){
                         <h2 className="absolute bottom-0 left-10 text-lg">{jobData.company.companyName}</h2>
                     </div>
                     <a className="hover:underline cursor-pointer font-bold flex align-middle">
-                        <IoStarSharp /> 4.53/5 (1.4k reviews)
+                        <IoStarSharp /> {jobData.company.reviews}
                     </a>
                 </div>
                 <Button
