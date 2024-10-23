@@ -7,7 +7,8 @@ import {
     useParams 
 } from "react-router-dom";
 
-import { Job, FetchJob } from "../../../data/jobs";
+import { Job, FetchJob, Dev_DefaultJob } from "../../../data/jobs";
+import { Companies } from "../../../data/companies";
 
 import { 
     IoLocation, 
@@ -20,23 +21,11 @@ import {
 
 import Button from "../../common/Button";
 
-const defaultJob: Job = {
-    jobID: 111,
-        jobTitle: "Default Job Title",
-        companyName: "Default Company",
-        companyLogo: "",
-        level: "Junior",
-        location: "Franklin, VA",
-        onSite: "On-Site",
-        salary: 9999,
-        averageHours: 40,
-        shortDescription: "Test"
-}
 
 
 export default function JobPage(){
     const [isLoading, setIsLoading] = useState(true);
-    const [jobData, setJobData] = useState<Job>(defaultJob);
+    const [jobData, setJobData] = useState<Job>(Dev_DefaultJob);
     
     const { jobID } = useParams();
 
@@ -79,7 +68,7 @@ export default function JobPage(){
             <div className="space-y-1 relative">
                 <h2 className="text-3xl font-bold">{jobData.jobTitle}</h2>
                 <div className="flex flex-row space-x-4">
-                    <p className="flex align-middle"><IoArrowForward /> {jobData.level}</p>
+                    <p className="flex align-middle"><IoArrowForward /> {jobData.experienceLevel}</p>
                     <p className="flex align-middle"><IoBagSharp /> Full-Time</p>
                     <p className="flex align-middle"><IoLocation /> {jobData.location} ({jobData.onSite})</p>
                     <p className="flex align-middle"><IoCash /> ${jobData.salary.toLocaleString()}/yr</p>
@@ -88,13 +77,13 @@ export default function JobPage(){
                 {/* Company Details */}
                 <div className="flex flex-col border-b-2 border-black">
                     <div className="relative my-4 cursor-pointer"
-                    onClick={() => window.open("/company/22")}>
+                    onClick={() => window.open(`/company/${jobData.company.companyID}`)}>
                         <img 
-                            src={jobData.companyLogo} 
+                            src={jobData.company.companyLogo} 
                             alt="Company Logo" 
                             className=""
                         />
-                        <h2 className="absolute bottom-0 left-10 text-lg">{jobData.companyName}</h2>
+                        <h2 className="absolute bottom-0 left-10 text-lg">{jobData.company.companyName}</h2>
                     </div>
                     <a className="hover:underline cursor-pointer font-bold flex align-middle">
                         <IoStarSharp /> 4.53/5 (1.4k reviews)

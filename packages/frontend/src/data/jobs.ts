@@ -1,11 +1,10 @@
-import { AppleLogo, BMWLogo, FacebookLogo, GoogleLogo, McdonaldsLogo, SoundcloudLogo } from '../assets/testlogos';
+import { Companies, Company } from './companies';
 
 export type Job = {
     jobID: number;
     jobTitle: string;
-    companyName: string;
-    companyLogo: string;
-    level: string;
+    company: Company
+    experienceLevel: string;
     location: string,
     onSite: "On-Site" | "Hybrid" | "Remote"
     salary: number
@@ -24,13 +23,24 @@ export function FetchJob(_jobID: number): Job {
     return val;
 }
 
+export const Dev_DefaultJob: Job = {
+    jobID: 111,
+    jobTitle: "Default Job Title",
+    company: Companies[0],
+    experienceLevel: "Junior",
+    location: "Franklin, VA",
+    onSite: "On-Site",
+    salary: 9999,
+    averageHours: 40,
+    shortDescription: "Test"
+}
+
 export const Jobs: Job[] = [
     {
         jobID: 498,
         jobTitle: "Frontend Engineer",
-        companyName: "Jon Doe, Inc.",
-        companyLogo: AppleLogo,
-        level: "Junior - Intermediate",
+        company: Companies[0],
+        experienceLevel: "Junior - Intermediate",
         location: "Salt Lake City, UT",
         onSite: "On-Site",
         salary: 50000,
@@ -40,9 +50,8 @@ export const Jobs: Job[] = [
     {
         jobID: 430,
         jobTitle: "Fullstack Engineer",
-        companyName: "Doofenshmirtz Evil, Inc.",
-        companyLogo: BMWLogo,
-        level: "Junior - Intermediate",
+        company: Companies[0],
+        experienceLevel: "Junior - Intermediate",
         location: "San Francisco, CA",
         onSite: "Remote",
         salary: 62500,
@@ -52,9 +61,8 @@ export const Jobs: Job[] = [
     {
         jobID: 200,
         jobTitle: "Technical Support Engineer",
-        companyName: "Doofenshmirtz Evil, Inc.",
-        companyLogo: BMWLogo,
-        level: "Lead",
+        company: Companies[0],
+        experienceLevel: "Lead",
         location: "Chicago, IL",
         onSite: "Hybrid",
         salary: 120000,
@@ -64,9 +72,8 @@ export const Jobs: Job[] = [
     {
         jobID: 986,
         jobTitle: "Web Developer",
-        companyName: "Kim's Convenience",
-        companyLogo: GoogleLogo,
-        level: "Intermediate - Senior",
+        company: Companies[0],
+        experienceLevel: "Intermediate - Senior",
         location: "United States",
         onSite: "Remote",
         salary: 95250,
@@ -76,9 +83,8 @@ export const Jobs: Job[] = [
     {
         jobID: 120,
         jobTitle: "Technical Support Engineer",
-        companyName: "Fakebook",
-        companyLogo: FacebookLogo,
-        level: "Intermediate - Senior",
+        company: Companies[0],
+        experienceLevel: "Intermediate - Senior",
         location: "United States",
         onSite: "Remote",
         salary: 85000,
@@ -88,9 +94,8 @@ export const Jobs: Job[] = [
     {
         jobID: 208,
         jobTitle: "Backend Engineer",
-        companyName: "SQueueL",
-        companyLogo: McdonaldsLogo,
-        level: "Intermediate - Senior",
+        company: Companies[0],
+        experienceLevel: "Intermediate - Senior",
         location: "United States",
         onSite: "Remote",
         salary: 127500,
@@ -100,9 +105,8 @@ export const Jobs: Job[] = [
     {
         jobID: 766,
         jobTitle: "Deployed Engineer",
-        companyName: "MikeSpace",
-        companyLogo: SoundcloudLogo,
-        level: "Intermediate - Senior",
+        company: Companies[0],
+        experienceLevel: "Intermediate - Senior",
         location: "United States",
         onSite: "Remote",
         salary: 73000,

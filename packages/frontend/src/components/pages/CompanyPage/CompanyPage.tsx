@@ -1,19 +1,41 @@
-import { useParams } from "react-router-dom"
-import { AppleLogo } from "../../../assets/testlogos";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { IoStarSharp } from "react-icons/io5";
 
+import { Company, FetchCompany, Dev_DefaultCompany } from "../../../data/companies";
+
 export default function CompanyPage(){
-    const companyID = useParams();
+    const { companyID } = useParams();
 
+    const [isLoading, setIsLoading] = useState(true);
+    const [companyData, setCompanyData] = useState<Company>(Dev_DefaultCompany);
 
+    let randomTimer = Math.floor(Math.random() * 4000);
+
+    useEffect(() => {
+        const company = FetchCompany(Number(companyID));
+
+        setCompanyData(company);
+        const timeout = setTimeout(() => {
+            setIsLoading(false);
+        }, randomTimer);
+    }, [])
+
+    if(isLoading) {
+        return(
+            <div className="w-full flex-grow text-center">
+                <h2>Loading company page...</h2>
+            </div>
+        )
+    }
     return(
         <div className="w-full flex-grow">
             <div className="m-20 px-12">
                 {/* Main Company Details, Logo, Title, Reviews, Brief desc., etc... */}
                 <div className="flex flex-col space-y-2 border-b-2 border-black mb-8">
                     <div className="flex space-x-4 align-text-bottom">
-                        <img src={AppleLogo} alt="Company Logo" className="w-16 h-16 border p-2"/>
-                        <h2 className="text-3xl">Company Name</h2>
+                        <img src={companyData.companyLogo} alt="Company Logo" className="w-16 h-16 border p-2"/>
+                        <h2 className="text-3xl">{companyData.companyName}</h2>
                     </div>
                     <p>Brief company description</p>
                     <p className="font-bold flex hover:underline cursor-pointer"><IoStarSharp />4.5/5 (1.4k reviews)</p>

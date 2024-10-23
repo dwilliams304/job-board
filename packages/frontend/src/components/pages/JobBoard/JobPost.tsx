@@ -15,13 +15,13 @@ export default function JobPost({job}: JobPostProps){
             <div className="w-4/5">
                 <div className="flex align-middle">
                     <img 
-                        src={job.companyLogo} 
+                        src={job.company.companyLogo} 
                         alt="company logo" 
                         className="p-2 mr-2 border"
                     />
                     <h2 className="font-semibold">
-                        <span className="hover:underline" onClick={() => window.open("/company/22")}>
-                            {job.companyName}
+                        <span className="hover:underline" onClick={() => window.open(`/company/${job.company.companyID}`)}>
+                            {job.company.companyName}
                         </span> - 
                         <span> {job.jobTitle}</span>
                     </h2>
@@ -38,7 +38,7 @@ export default function JobPost({job}: JobPostProps){
             </div>
 
             <div className="w-1/5 text-right border-l-2">
-                <p>{job.level}</p>
+                <p>{job.experienceLevel}</p>
                 <p>Salary: ${job.salary.toLocaleString()}/yr</p>
                 <p>Avg. hrs./wk: {job.averageHours} {job.averageHours >=35 ? "(FT)" : "(PT)"}</p>
                 <p>Hourly: ${salary}/hr</p>

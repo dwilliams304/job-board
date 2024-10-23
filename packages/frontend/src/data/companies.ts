@@ -1,7 +1,17 @@
+import { 
+    AppleLogo, 
+    BMWLogo, 
+    FacebookLogo, 
+    GoogleLogo, 
+    McdonaldsLogo, 
+    SoundcloudLogo 
+} from '../assets/testlogos';
+import DefaultLogo from "../assets/react.svg";
+
 export type Company = {
-    companyName: string
-    companyLogo: string
-    companyID: number
+    companyID: number;
+    companyName: string;
+    companyLogo: string;
 }
 
 export function FetchCompany(_companyID: number): Company {
@@ -15,25 +25,16 @@ export function FetchCompany(_companyID: number): Company {
     return val;
 }
 
+export const Dev_DefaultCompany: Company = {
+    companyID: 12121212,
+    companyName: "Default Company",
+    companyLogo: DefaultLogo,
+}
+
 export const Companies: Company[] = [
     {
-        companyName: "Mike Jones",
-        companyLogo: "",
-        companyID: 12122
-    },
-    {
-        companyName: "Terry Jones",
-        companyLogo: "",
-        companyID: 19995
-    },
-    {
-        companyName: "Berry Jones",
-        companyLogo: "",
-        companyID: 20012
-    },
-    {
-        companyName: "Rike Jones",
-        companyLogo: "",
-        companyID: 90210
+        companyID: 12121212,
+        companyName: "Default Company",
+        companyLogo: DefaultLogo,
     },
 ]
