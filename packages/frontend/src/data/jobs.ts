@@ -12,6 +12,15 @@ export type Job = {
     shortDescription: string;
 }
 
+export function FetchJobsByCompanyID(_companyID: number): Job[] {
+    let val: Job[] = [];
+    for(let i = 0; i < Jobs.length; i++){
+        var job = Jobs[i];
+        if(job.company.companyID === _companyID) val.push(job);
+    }
+    return val;
+}
+
 export function FetchJob(_jobID: number): Job {
     let val: Job = Jobs[0];
     for(let i = 0; i < Jobs.length; i++){

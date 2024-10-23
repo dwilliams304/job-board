@@ -23,7 +23,7 @@ export default function JobPost({job}: JobPostProps){
                         className="p-2 mr-2 border"
                     />
                     <h2 className="font-semibold">
-                        <span className="hover:underline" onClick={() => navTo(`/company/${job.company.companyID}`)}>
+                        <span className="hover:underline" onClick={() => window.open(`/company/${job.company.companyID}`)}>
                             {job.company.companyName}
                         </span> - 
                         <span> {job.jobTitle}</span>

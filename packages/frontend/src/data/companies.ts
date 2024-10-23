@@ -16,7 +16,7 @@ export type Company = {
 }
 
 export function FetchCompany(_companyID: number): Company {
-    let val: Company = Companies[0];
+    let val: Company = Dev_DefaultCompany;
     for(let i = 0; i < Companies.length; i++){
         if(Companies[i].companyID === _companyID){
             val = Companies[i];

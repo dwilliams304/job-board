@@ -2,18 +2,29 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { IoStarSharp } from "react-icons/io5";
 
+import { Job, FetchJobsByCompanyID } from "../../../data/jobs";
 import { Company, FetchCompany, Dev_DefaultCompany } from "../../../data/companies";
 import { GetRandomNumber } from "../../../utils";
+
+type tabType = "Jobs" | "Salaries" | "Reviews" | "About"
 
 export default function CompanyPage(){
     const { companyID } = useParams();
 
     const [isLoading, setIsLoading] = useState(true);
     const [companyData, setCompanyData] = useState<Company>(Dev_DefaultCompany);
+    const [jobListings, setJobListings] = useState<Job[]>([]);
+    const [activeTab, setActiveTab] = useState("Jobs");
+
+    const onTabClick = (tab: tabType) => {
+        setActiveTab(tab);
+    }
 
     useEffect(() => {
         const company = FetchCompany(Number(companyID));
-
+        const jobs = FetchJobsByCompanyID(Number(companyID));
+        
+        setJobListings(jobs);
         setCompanyData(company);
         const timeout = setTimeout(() => {
             setIsLoading(false);
@@ -27,6 +38,8 @@ export default function CompanyPage(){
             </div>
         )
     }
+
+
     return(
         <div className="w-full flex-grow">
             <div className="m-20 px-12">
@@ -41,12 +54,56 @@ export default function CompanyPage(){
                 </div>
 
                 {/* Navigation Bar, Reviews, Salaries, Jobs, etc... */}
-                <nav className="w-full flex space-x-6 mx-auto">
-                    <h3 className="text-lg cursor-pointer hover:underline">Jobs</h3>
-                    <h3 className="text-lg cursor-pointer hover:underline">Reviews</h3>
-                    <h3 className="text-lg cursor-pointer hover:underline">Salaries</h3>
-                    <h3 className="text-lg cursor-pointer hover:underline">About</h3>
+                <nav className="w-full flex space-x-6 mx-auto border-b-2 mb-8">
+                    <h3 className="text-lg cursor-pointer hover:underline"
+                    onClick={() => onTabClick("Jobs")}>
+                        Jobs
+                    </h3>
+                    <h3 className="text-lg cursor-pointer hover:underline"
+                    onClick={() => onTabClick("Reviews")}>
+                        Reviews
+                    </h3>
+                    <h3 className="text-lg cursor-pointer hover:underline"
+                    onClick={() => onTabClick("Salaries")}>
+                        Salaries
+                    </h3>
+                    <h3 className="text-lg cursor-pointer hover:underline"
+                    onClick={() => onTabClick("About")}>
+                        About
+                    </h3>
                 </nav>
+                { activeTab === "Jobs" &&
+                    <div>
+                        <div>
+                            {
+                                jobListings.length > 0 ?
+                                jobListings.map((listing, i) => (
+                                    <p key={i} className="text-xl cursor-pointer hover:underline"
+                                    onClick={() => window.open(`/job/${listing.jobID}`)}>
+                                        {listing.jobTitle} - {listing.location} ({listing.onSite})
+                                    </p>
+                                ))
+                                :
+                                <p className="text-xl">No job listings found!</p>
+                            }    
+                        </div>
+                    </div>
+                }
+                { activeTab === "Reviews" &&
+                    <div>
+                        <h2 className="text-xl">No reviews listed!</h2>
+                    </div>
+                }
+                { activeTab === "Salaries" &&
+                    <div>
+                        <h2 className="text-xl">No salaries listed!</h2>
+                    </div>
+                }
+                { activeTab === "About" &&
+                    <div>
+                        <h2 className="text-xl">No about listed!</h2>
+                    </div>
+                }
             </div>
         </div>
     )
