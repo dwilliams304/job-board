@@ -33,8 +33,8 @@ function App() {
       
       <Routes>
         <Route path="/" index element={<JobBoard /> } />
-        <Route path="/job/:id" index element={<JobPage /> } />
-        <Route path="/company/:id" index element={<CompanyPage /> } />
+        <Route path="/job/:jobID" index element={<JobPage /> } />
+        <Route path="/company/:companyID" index element={<CompanyPage /> } />
         <Route path="login" element={<Login />} />
         <Route path="help" element={<Help /> } />
         <Route path="terms" element={<Terms /> } />

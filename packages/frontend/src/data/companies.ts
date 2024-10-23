@@ -1,28 +1,39 @@
-type Company = {
+export type Company = {
     companyName: string
-    companyIcon: string
-    companyID: string
+    companyLogo: string
+    companyID: number
+}
+
+export function FetchCompany(_companyID: number): Company {
+    let val: Company = Companies[0];
+    for(let i = 0; i < Companies.length; i++){
+        if(Companies[i].companyID === _companyID){
+            val = Companies[i];
+            break;
+        }
+    }
+    return val;
 }
 
 export const Companies: Company[] = [
     {
         companyName: "Mike Jones",
-        companyIcon: "",
-        companyID: "02234"
+        companyLogo: "",
+        companyID: 12122
     },
     {
         companyName: "Terry Jones",
-        companyIcon: "",
-        companyID: "02283"
+        companyLogo: "",
+        companyID: 19995
     },
     {
         companyName: "Berry Jones",
-        companyIcon: "",
-        companyID: "02100"
+        companyLogo: "",
+        companyID: 20012
     },
     {
         companyName: "Rike Jones",
-        companyIcon: "",
-        companyID: "90921"
+        companyLogo: "",
+        companyID: 90210
     },
 ]

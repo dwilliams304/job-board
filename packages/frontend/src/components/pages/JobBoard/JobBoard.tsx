@@ -1,6 +1,6 @@
 import { useState } from "react";
 import JobPost from "./JobPost";
-import { data } from "../../../data/data";
+import { Jobs } from "../../../data/jobs";
 import SearchBar from "./SearchBar";
 import FiltersPopup from "./FiltersPopup";
 
@@ -52,10 +52,10 @@ export default function JobBoard(){
                 setShowFilterPopup={setShowFilterPopup}
             />
 
-            <p className="pl-2">Showing {data.length} results.</p>
+            <p className="pl-2">Showing {Jobs.length} results.</p>
             <div>
                 {
-                    data.map((job, i) => (
+                    Jobs.map((job, i) => (
                         <JobPost job={job} key={i} />
                     ))
                 }

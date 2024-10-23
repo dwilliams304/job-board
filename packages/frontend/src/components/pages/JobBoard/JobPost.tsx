@@ -1,22 +1,8 @@
 import Button from "../../common/Button";
+import { Job } from "../../../data/jobs";
 
 type JobPostProps = {
-    job : {
-        jobID: number;
-        jobTitle: string;
-        companyName: string;
-        companyLogo: string;
-        location: string;
-        onSite: {
-            onSite: boolean;
-            hybrid: boolean;
-            remote: boolean;
-        }
-        shortDescription: string;
-        level: string;
-        salary: number;
-        averageHours: number;
-    }
+    job : Job
 }
 
 export default function JobPost({job}: JobPostProps){
@@ -40,15 +26,12 @@ export default function JobPost({job}: JobPostProps){
                         <span> {job.jobTitle}</span>
                     </h2>
                 </div>
-                <div className="italic">
+                <div className="italic flex space-x-2">
                     <p> 
-                        {/* THIS NEEDS TO CHANGE!! */}
                         {job.location}
                     </p>
                     <p>
-                        {job.onSite.onSite && "On Site / "}  
-                        {job.onSite.hybrid && "Hybrid / "}   
-                        {job.onSite.remote && "Remote / "}
+                        ({job.onSite})
                     </p>
                 </div>
                 <p className="mt-4">{job.shortDescription}</p>
