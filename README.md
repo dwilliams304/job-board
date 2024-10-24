@@ -1,8 +1,9 @@
 # React Job Board  
 
 > A fullstack application built with a TypeScript React frontend using TailwindCSS for styling.  
-
+&nbsp;
 _Note: This project is still WIP with incompleted documentation. Check back in later!_  
+&nbsp;
 ---
 ## Scripts
 Here are some basic scripts that will be useful. Once you cd into the root folder of the project you can do the following:
@@ -18,7 +19,7 @@ Here are some basic scripts that will be useful. Once you cd into the root folde
 + npm run dev -- this will run both the frontend and backend at the same time using _conccurrently_
 + npm run dev:fe -- this will run the frontend only
 + npm run dev:be -- this will run the backend server only
->_Note: This will also run for npm run test, with the same formatting
+>_Note: This will also run for npm run test, with the same formatting_
 
 
 
@@ -36,8 +37,8 @@ Here are some basic scripts that will be useful. Once you cd into the root folde
 - [x] Create mock data and display it
 - [x] Switch styling to Tailwind
 - [x] Users can click on job posts to see more details
- - [ ] Make job description dynamic
- - [ ] Users can report and share job postings
+    - [ ] Make job description dynamic
+    - [ ] Users can report and share job postings
 - [x] Users can click on company pages from either job posts or job pages to see more
 - [x] Company pages show dynamic data for company name, description
 - [x] Company pages show all job postings from specific company

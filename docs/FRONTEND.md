@@ -22,7 +22,7 @@ It brings in the following components:
     + _Note_: This is currently non functional
 + SearchBar
     + This will be used to search for jobs based off of certain search params
-    +_Note_: This is currently non functional
+    + _Note_: This is currently non functional
 
 &nbsp;
 &nbsp;
