@@ -1,6 +1,7 @@
 # React Job Board  
 
-> A fullstack application built with a TypeScript React frontend using TailwindCSS for styling.  
+> A fullstack application built with a TypeScript React frontend using TailwindCSS for styling. 
+
 &nbsp;
 _Note: This project is still WIP with incompleted documentation. Check back in later!_  
 &nbsp;

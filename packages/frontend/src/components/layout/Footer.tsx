@@ -4,6 +4,14 @@ import { FooterLink } from "../";
 import { footerLinks } from "../../data/footerlinks";
 import { ScrollToTop } from "../../utils";
 
+/*
+    The Footer currently only takes in the footerLinks array of objects from a separate file
+    We will likely want to switch this to take that a prop, to instead make this a lot more
+    flexible
+
+    This is a static footer otherwise, which displays links/other things as a navigation map
+*/
+
 export default function Footer(){
     const data = footerLinks;
 

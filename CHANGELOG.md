@@ -1,8 +1,10 @@
 # Changelog
+
 Here is where you can see all the changes made for thie job board!
 This will include general bug fixes, feature releases, etc...
 ---
 ## v0.0
+
 Start project
 ---
 ## v0.1 (Oct, 24, 2024)

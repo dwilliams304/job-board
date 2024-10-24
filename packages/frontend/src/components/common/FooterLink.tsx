@@ -8,6 +8,9 @@ type FooterLinkProps = {
     }
 }
 
+//Footer links will simply be used to navigate you somewhere when clicked, 
+// and will scroll to the top of the page when clicked
+
 export default function FooterLink({linkObject}: FooterLinkProps){ //TEMPORARY
     const {linkText, linkDestination} = linkObject;
 

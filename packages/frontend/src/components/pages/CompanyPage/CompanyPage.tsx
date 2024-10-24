@@ -8,6 +8,7 @@ import { Job, FetchJobsByCompanyID } from "../../../data/jobs";
 import { Company, FetchCompany, Dev_DefaultCompany } from "../../../data/companies";
 import { GetRandomNumber } from "../../../utils";
 
+//Different navigation tabs, for state management
 type tabType = "Jobs" | "Salaries" | "Reviews" | "About"
 
 export default function CompanyPage(){
@@ -15,8 +16,11 @@ export default function CompanyPage(){
     const navTo = useNavigate();
 
     const [isLoading, setIsLoading] = useState(true);
+    //Set this with default company data, will likely change in the future
     const [companyData, setCompanyData] = useState<Company>(Dev_DefaultCompany);
-    const [jobListings, setJobListings] = useState<Job[]>([]);
+    //We initialize this with an empty array as a company could have no lob listings.
+    const [jobListings, setJobListings] = useState<Job[]>([]); 
+    //By default we will be on the "Jobs" tab which displays all job postings
     const [activeTab, setActiveTab] = useState("Jobs");
 
     
@@ -25,12 +29,19 @@ export default function CompanyPage(){
     }
     
     useEffect(() => {
+        //Grab the company & their posted jobs by using the companyID in the url params
+
         const company = FetchCompany(Number(companyID));
         const jobs = FetchJobsByCompanyID(Number(companyID));
         
+        //Set these into local state
         setJobListings(jobs);
         setCompanyData(company);
+        //Set the tab title so it doesn't just say 'Job Board'
         SetTabTitle(`${company.companyName} | Company Page`);
+
+        //We are setting a fake timer to simulate actual loading speed
+        //THIS WILL BE REMOVED, ONLY FOR SIMULATION
         const timeout = setTimeout(() => {
             setIsLoading(false);
         }, GetRandomNumber(4000));
