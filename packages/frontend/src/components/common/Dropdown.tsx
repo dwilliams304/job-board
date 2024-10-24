@@ -1,13 +1,3 @@
-type DropdownProps = {
-    title: string;
-    optionsAreLinks: boolean;
-    style?: React.CSSProperties;
-    options: [{
-        content: string
-        link?: string
-        function?: () => void
-    }]
-}
 
 /*
     Dropdowns are going to ALWAYS have a main starting title, taken as a prop
@@ -24,6 +14,17 @@ type DropdownProps = {
         If 'optionsAreLinks', the link will be where we are navigating, taken as a string
         If not, the function will be what happens when the option is clicked, taken as a function
 */
+
+type DropdownProps = {
+    title: string;
+    optionsAreLinks: boolean;
+    style?: React.CSSProperties;
+    options: [{
+        content: string
+        link?: string
+        function?: () => void
+    }]
+}
 export default function Dropdown(props: DropdownProps){
     return(
         <div className="relative inline-block">

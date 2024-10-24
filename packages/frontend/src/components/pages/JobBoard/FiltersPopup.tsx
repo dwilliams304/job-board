@@ -1,3 +1,16 @@
+
+/*
+    The FiltersPopup component is a sidebar menu that will appear
+    when the 'All Filters' button is clicked underneath the Search Bar
+
+    This will (eventually) work properly and take in props with all different
+    kinds of Filter options
+
+    This will eventually set an array of FilterOption objects that will execute
+    some kind of function on the job board page to allow users to search
+    through jobs more specifically
+*/
+
 import { FilterPopupMenuState } from "./JobBoard";
 
 

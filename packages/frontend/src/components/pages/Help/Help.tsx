@@ -1,7 +1,3 @@
-import { useState } from "react";
-import { SeekerHelpArticles, EmployerHelpArticles, FeaturedArticles } from "../../../data/helparticles";
-import HelpArticleCard from "./HelpArticleCard";
-import FeaturedArticleCard from "./FeaturedArticleCard";
 
 /*
     The Help page will display various Help articles that the user can click on
@@ -19,6 +15,11 @@ import FeaturedArticleCard from "./FeaturedArticleCard";
     The featured help articles:
         -This will display 3 primary help articles that many users would often search up
 */
+
+import { useState } from "react";
+import { SeekerHelpArticles, EmployerHelpArticles, FeaturedArticles } from "../../../data/helparticles";
+import HelpArticleCard from "./HelpArticleCard";
+import FeaturedArticleCard from "./FeaturedArticleCard";
 
 export default function Help(){
     const [showEmployerHelp, useShowEmployerHelp] = useState(false);

@@ -1,10 +1,3 @@
-type ButtonProps = {
-    style?: React.CSSProperties
-    type?: "Primary" | "Secondary" | "Tertiary"
-    function: (() => void) | ((e: React.FormEvent) => void)
-    text?: string
-    icon?: React.ElementType
-}
 
 /*
     This Button component is to have more standardized styling!
@@ -24,6 +17,14 @@ type ButtonProps = {
     Buttons also have a fourth unstyled type
         This is in case we want all of our own custom styling, which is why 'type' is optional
 */
+
+type ButtonProps = {
+    style?: React.CSSProperties
+    type?: "Primary" | "Secondary" | "Tertiary"
+    function: (() => void) | ((e: React.FormEvent) => void)
+    text?: string
+    icon?: React.ElementType
+}
 export default function Button(props: ButtonProps){
     //If we did enter in a type, return one of three
     if(props.type){

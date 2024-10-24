@@ -1,10 +1,12 @@
-import { FeaturedArticle } from "../../../data/helparticles";
 
 /*
     The FeaturedArticleCard will return a Card that displays text, with an arrow
     which will (eventually) redirect the user to a help article based off of
     the articleID that is passed through props
 */
+
+import { FeaturedArticle } from "../../../data/helparticles";
+
 
 export default function FeaturedArticleCard({title, articleID}: FeaturedArticle){
     return(

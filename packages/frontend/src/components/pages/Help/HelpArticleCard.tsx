@@ -1,10 +1,18 @@
+
+/*
+    The HelpArticleCard is simply a card that will display text and when
+    clicked will redirect you to a specific article based off of the ArticleID
+
+    The bottom border will have a specific color based off the article tag
+    
+*/
+
 import { borderColors, HelpArticle } from "../../../data/helparticles";
 
 type HelpArticleProps = {
     borderColor: keyof typeof borderColors
     helpArticle : HelpArticle
 }
-
 
 export default function HelpArticleCard({borderColor, helpArticle}: HelpArticleProps){ //temporary
     const {tag, title, articleLink} = helpArticle;

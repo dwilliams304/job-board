@@ -1,3 +1,8 @@
+/*
+    This page is simply to look like a mock Privacy Policy page
+    As no data will actually be saved/stored
+*/
+
 export default function Privacy(){
     return(
         <section className="flex-grow list-disc" id="top">

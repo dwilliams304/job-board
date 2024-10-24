@@ -1,3 +1,8 @@
+/*
+    This is a mock Terms & Conditions page to simply make the website look more real
+    There is no real data on here
+*/
+
 export default function Terms(){
     return(
         <section className="flex-grow">

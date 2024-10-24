@@ -1,3 +1,30 @@
+
+/*
+    The JobPost component is a card of data that displays a job
+    These will be listed on the JobBoard page
+
+    JobPosts will take a prop 'job' of type Job which will
+    hold the proper information to dynamically display job data
+
+    This will list the following
+    -Company Name & Logo of job poster
+    -Job Title
+    -Location & if it is remote, hybrid, or on-site
+    -A brief description of the job
+    -Job details
+        -i.e: salary, experience level, job term, etc...
+
+    Users can click on the Company name directly which will redirect them to the
+    CompanyPage
+
+    Users can click on the JobPost card which will redirect them to the JobPage
+    which details the jobdescription
+
+    Users can additionally click on the 'Apply' button which will take them 
+    directly to the job's application.
+        -This will likely be allowable/disallowable from the job poster
+*/
+
 import Button from "../../common/Button";
 import { Job } from "../../../data/jobs";
 

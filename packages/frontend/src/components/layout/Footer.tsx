@@ -1,8 +1,3 @@
-import DummyLogo from "../../assets/react.svg";
-import { Link } from "react-router-dom";
-import { FooterLink } from "../";
-import { footerLinks } from "../../data/footerlinks";
-import { ScrollToTop } from "../../utils";
 
 /*
     The Footer currently only takes in the footerLinks array of objects from a separate file
@@ -11,6 +6,12 @@ import { ScrollToTop } from "../../utils";
 
     This is a static footer otherwise, which displays links/other things as a navigation map
 */
+
+import DummyLogo from "../../assets/react.svg";
+import { Link } from "react-router-dom";
+import { FooterLink } from "../";
+import { footerLinks } from "../../data/footerlinks";
+import { ScrollToTop } from "../../utils";
 
 export default function Footer(){
     const data = footerLinks;

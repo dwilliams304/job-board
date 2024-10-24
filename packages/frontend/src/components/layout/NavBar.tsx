@@ -1,7 +1,3 @@
-import TestLogo from "../../assets/react.svg";
-import { MdHelpOutline } from "react-icons/md";
-import { ScrollToTop } from "../../utils";
-import { NavLink } from "react-router-dom";
 
 /*
     The NavBar is present on all pages, and will always show at the top
@@ -11,6 +7,11 @@ import { NavLink } from "react-router-dom";
     We will likely want to change this in the future to instead take props
     for the navlinks for more customization
 */
+
+import TestLogo from "../../assets/react.svg";
+import { MdHelpOutline } from "react-icons/md";
+import { ScrollToTop } from "../../utils";
+import { NavLink } from "react-router-dom";
 export default function NavBar() {
 
 
