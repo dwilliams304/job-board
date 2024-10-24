@@ -264,6 +264,28 @@ export const Jobs: Job[] = [
         salary: 55000,
         averageHours: 40,
         shortDescription: "Join our team as a Graphic Designer to create visually appealing designs for digital marketing."
+    },
+    {
+        jobID: 100021,
+        jobTitle: "Front-End Developer",
+        company: Companies[19],
+        experienceLevel: "Entry-Level",
+        location: "Miami, FL",
+        onSite: "Remote",
+        salary: 55000,
+        averageHours: 40,
+        shortDescription: "Join our team as a Graphic Designer to create visually appealing designs for digital marketing."
+    },
+    {
+        jobID: 100022,
+        jobTitle: "UI/UX Designer",
+        company: Companies[19],
+        experienceLevel: "Entry-Level",
+        location: "Miami, FL",
+        onSite: "Hybrid",
+        salary: 55000,
+        averageHours: 40,
+        shortDescription: "Join our team as a Graphic Designer to create visually appealing designs for digital marketing."
     }
     
 ]

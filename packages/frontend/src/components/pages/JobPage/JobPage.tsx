@@ -22,6 +22,7 @@ import {
 import Button from "../../common/Button";
 
 import { GetRandomNumber, } from "../../../utils";
+import SetTabTitle from "../../../utils/SetTabTitle";
 
 
 
@@ -36,7 +37,7 @@ export default function JobPage(){
     useEffect(() => {
         const job = FetchJob(Number(jobID));
 
-        
+        SetTabTitle(`${job.jobTitle} | ${job.company.companyName}`);
         setJobData(job);
 
         const timeout = setTimeout(() => {

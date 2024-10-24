@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { IoStarSharp } from "react-icons/io5";
+
+import SetTabTitle from "../../../utils/SetTabTitle";
 
 import { Job, FetchJobsByCompanyID } from "../../../data/jobs";
 import { Company, FetchCompany, Dev_DefaultCompany } from "../../../data/companies";
@@ -10,22 +12,25 @@ type tabType = "Jobs" | "Salaries" | "Reviews" | "About"
 
 export default function CompanyPage(){
     const { companyID } = useParams();
+    const navTo = useNavigate();
 
     const [isLoading, setIsLoading] = useState(true);
     const [companyData, setCompanyData] = useState<Company>(Dev_DefaultCompany);
     const [jobListings, setJobListings] = useState<Job[]>([]);
     const [activeTab, setActiveTab] = useState("Jobs");
 
+    
     const onTabClick = (tab: tabType) => {
         setActiveTab(tab);
     }
-
+    
     useEffect(() => {
         const company = FetchCompany(Number(companyID));
         const jobs = FetchJobsByCompanyID(Number(companyID));
         
         setJobListings(jobs);
         setCompanyData(company);
+        SetTabTitle(`${company.companyName} | Company Page`);
         const timeout = setTimeout(() => {
             setIsLoading(false);
         }, GetRandomNumber(4000));
@@ -74,12 +79,12 @@ export default function CompanyPage(){
                 </nav>
                 { activeTab === "Jobs" &&
                     <div>
-                        <div>
+                        <div className="space-y-2">
                             {
                                 jobListings.length > 0 ?
                                 jobListings.map((listing, i) => (
                                     <p key={i} className="text-xl cursor-pointer hover:underline"
-                                    onClick={() => window.open(`/job/${listing.jobID}`)}>
+                                    onClick={() => navTo(`/job/${listing.jobID}`)}>
                                         {listing.jobTitle} - {listing.location} ({listing.onSite})
                                     </p>
                                 ))

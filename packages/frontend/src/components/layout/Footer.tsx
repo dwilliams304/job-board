@@ -12,10 +12,12 @@ export default function Footer(){
             <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div className="md:flex md:justify-between">
                     <div className="mb-6 md:mb-0">
-                        <a href="#" className="flex items-center">
+                        <span className="flex cursor-pointer" onClick={() => ScrollToTop(true)}>
                             <img src={DummyLogo} className="h-8 me-3" alt="Logo" />
-                            <Link to="/" onClick={() => ScrollToTop(true)} className="self-center text-2xl font-semibold whitespace-nowrap text-white">TypeScript Job Board</Link>
-                        </a>
+                            <Link to="/" className="self-center text-2xl font-semibold whitespace-nowrap text-white">
+                                TypeScript Job Board
+                            </Link>
+                        </span>
                 </div>
                 <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-4">
                     <div>

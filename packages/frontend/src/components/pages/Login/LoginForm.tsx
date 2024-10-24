@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { ScrollToTop } from "../../../utils";
 import { Link } from "react-router-dom";
-import { Dev_LoginFunc } from "../../../data/profiles";
+import { Dev_LoginFunc } from "../../../data/users";
 import { GetRandomNumber } from "../../../utils";
+import { User } from "../../../data/users";
 
 type LoginFormProps = {
-    onLoginFormSubmit: (e: React.FormEvent) => void
+    onLoginFormSubmit: (userData: User | undefined) => void
 }
 
 const initialFormState = {
@@ -43,7 +44,7 @@ export default function LoginForm({onLoginFormSubmit}: LoginFormProps){
             else{
                 setFormValues(initialFormState);
                 setLoginError('');
-                onLoginFormSubmit(e);
+                onLoginFormSubmit(val.success);
             }
         }, GetRandomNumber(4000));
 

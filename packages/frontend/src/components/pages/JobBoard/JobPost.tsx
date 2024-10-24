@@ -12,9 +12,9 @@ export default function JobPost({job}: JobPostProps){
     const salary = Math.round((job.salary / 52 / job.averageHours) * 100) / 100;
 
     return(
-        <div className="flex border border-solid my-5 mx-8 p-5 shadow-md transition duration-300 ease-in-out
+        <div className="relative flex border border-solid my-5 mx-8 p-5 shadow-md transition duration-300 ease-in-out
         cursor-pointer hover:shadow-xl hover:border-gray-400"
-        onClick={() => window.open(`/job/${job.jobID}`)}>
+        onClick={() => navTo(`/job/${job.jobID}`)}>
             <div className="w-4/5">
                 <div className="flex align-middle">
                     <img 
@@ -23,7 +23,11 @@ export default function JobPost({job}: JobPostProps){
                         className="p-2 mr-2 border"
                     />
                     <h2 className="font-semibold">
-                        <span className="hover:underline" onClick={() => window.open(`/company/${job.company.companyID}`)}>
+                        <span className="absoulte hover:underline" onClick={(e) => {
+                        navTo(`/company/${job.company.companyID}`)
+                        e.stopPropagation();
+                        }}
+                            >
                             {job.company.companyName}
                         </span> - 
                         <span> {job.jobTitle}</span>

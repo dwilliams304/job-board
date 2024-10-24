@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import { NavBar, Footer } from './components/layout';
@@ -9,6 +9,7 @@ import {
   CompanyPage,
   Login, 
   Signup,
+  Profile,
   Help, 
   Terms, 
   Privacy, 
@@ -16,6 +17,7 @@ import {
 } from './components/pages';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { User } from './data/users';
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -27,17 +29,47 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 )
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState<boolean>();
+
+  useEffect(() => {
+    setLoggedIn(localStorage.getItem('user') ? true: false);
+  }, [])
+
+  const signIn = (user: User) => {
+    localStorage.setItem('user', JSON.stringify(user));
+    setLoggedIn(true);
+  }
+  const signOut = () => {
+    localStorage.removeItem('user');
+    setLoggedIn(false);
+  }
+
   
   return (
-    <body className='flex flex-col min-h-screen'>
-      <NavBar />
+    <div className='flex flex-col min-h-screen'>
+      <NavBar 
+        loggedIn={loggedIn}
+      />
       
       <Routes>
         <Route path="/" index element={<JobBoard /> } />
         <Route path="/job/:jobID" index element={<JobPage /> } />
         <Route path="/company/:companyID" index element={<CompanyPage /> } />
-        <Route path="login" element={<Login />} />
-        <Route path="signup" element={<Signup />} />
+        <Route path="login" element={
+          <Login 
+            signIn={signIn}
+          />
+        } />
+        <Route path="signup" element={
+          <Signup 
+            
+          />
+        } />
+        <Route path="profile" element={
+          <Profile 
+            signOut={signOut}
+          />
+        } />
         <Route path="help" element={<Help /> } />
         <Route path="terms" element={<Terms /> } />
         <Route path="privacy" element={<Privacy /> } />
@@ -50,7 +82,7 @@ function App() {
       <Footer />
 
       
-    </body>
+    </div>
   )
 }
 
