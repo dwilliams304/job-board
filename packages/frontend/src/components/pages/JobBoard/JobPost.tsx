@@ -14,7 +14,7 @@ export default function JobPost({job}: JobPostProps){
     return(
         <div className="relative flex border border-solid my-5 mx-8 p-5 shadow-md transition duration-300 ease-in-out
         cursor-pointer hover:shadow-xl hover:border-gray-400"
-        onClick={() => navTo(`/job/${job.jobID}`)}>
+        onClick={() => window.open(`/job/${job.jobID}`)}>
             <div className="w-4/5">
                 <div className="flex align-middle">
                     <img 
@@ -24,7 +24,7 @@ export default function JobPost({job}: JobPostProps){
                     />
                     <h2 className="font-semibold">
                         <span className="absoulte hover:underline" onClick={(e) => {
-                        navTo(`/company/${job.company.companyID}`)
+                        window.open(`/company/${job.company.companyID}`)
                         e.stopPropagation();
                         }}
                             >
@@ -52,7 +52,10 @@ export default function JobPost({job}: JobPostProps){
                 <Button
                     type="Primary"
                     text="Apply &rarr;"
-                    function={() => navTo(`/job/${job.jobID}/apply`)}
+                    function={(e) => {
+                        window.open(`/job/${job.jobID}/apply`);
+                        e.stopPropagation();
+                    }}
                 />
             </div>
         </div>
