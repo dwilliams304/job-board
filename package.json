@@ -6,15 +6,12 @@
   },
   "description": "Fullstack job board project",
   "scripts": {
-    "install:all": "npm install && npm install:fe && npm install:be",
+    "install:all": "npm install && npm install:fe",
     "install:fe": "npm install --prefix ./packages/frontend",
-    "install:be": "npm install --prefix ./packages/backend",
-    "dev": "concurrently --kill-others --success first \"npm run dev:fe\" \"npm run dev:be\"",
+    "dev": "concurrently --kill-others --success first \"npm run dev:fe\"",
     "dev:fe": "npm run dev --prefix ./packages/frontend",
-    "dev:be": "npm run server --prefix ./packages/backend",
-    "test": "npm run test:fe && npm run test:be",
-    "test:fe": "npm run test --prefix ./packages/frontend",
-    "test:be": "npm run test --prefix ./packages/backend"
+    "test": "npm run test:fe",
+    "test:fe": "npm run test --prefix ./packages/frontend"
   },
   "author": "Davis Williams",
   "license": "ISC",

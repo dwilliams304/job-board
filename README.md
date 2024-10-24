@@ -3,7 +3,11 @@
 > A fullstack application built with a TypeScript React frontend using TailwindCSS for styling. 
 
 &nbsp;
-_Note: This project is still WIP with incompleted documentation. Check back in later!_  
+## Dev Notes
+
++ This project currently has incomplete documentation as it is actively being worked on, please be patient!
++ All backend related scripts and everything within the backend has been temporarily removed as the backend is switched to .NET (10/24/2024)
+
 &nbsp;
 ---
 ## Scripts
@@ -15,17 +19,18 @@ Here are some basic scripts that will be useful. Once you cd into the root folde
 ```
     npm run dev
     npm run dev:fe
-    npm run dev:be
 ```
 + npm run dev -- this will run both the frontend and backend at the same time using _conccurrently_
 + npm run dev:fe -- this will run the frontend only
-+ npm run dev:be -- this will run the backend server only
+&nbsp;
+>_Note-1: npm run dev:be and related has been re_
 >_Note: This will also run for npm run test, with the same formatting_
 
 
 
 ## To-Do  
 #### Backend:
+- [ ] Switch backend to .NET
 - [ ] Set up basic REST API
 - [ ] User sign in persistence
 - [ ] User authentication and roles

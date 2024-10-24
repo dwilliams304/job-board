@@ -6,6 +6,7 @@ This will include general bug fixes, feature releases, etc...
 ## v0.0
 
 Start project
+&nbsp;
 ---
 ## v0.1 (Oct, 24, 2024)
 This will be the first 'official' version release of the TypeScript job board.
@@ -23,3 +24,6 @@ This will be the first 'official' version release of the TypeScript job board.
 + Job boards display dynamic data
 + Company pages will list all jobs associated with their company ID
 + General clean up on functions/types
+
+&nbsp;
+
