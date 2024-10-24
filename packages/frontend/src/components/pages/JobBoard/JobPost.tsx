@@ -34,7 +34,6 @@ type JobPostProps = {
 
 export default function JobPost({job}: JobPostProps){
 
-    const salary = Math.round((job.salary / 52 / job.averageHours) * 100) / 100;
 
     return(
         <div className="relative flex border border-solid my-5 mx-8 p-5 shadow-md transition duration-300 ease-in-out
@@ -72,8 +71,7 @@ export default function JobPost({job}: JobPostProps){
             <div className="w-1/5 text-right border-l-2">
                 <p>{job.experienceLevel}</p>
                 <p>Salary: ${job.salary.toLocaleString()}/yr</p>
-                <p>Avg. hrs./wk: {job.averageHours} {job.averageHours >=35 ? "(FT)" : "(PT)"}</p>
-                <p>Hourly: ${salary}/hr</p>
+                <p>Term: {job.jobTerm}</p>
                 <Button
                     type="Primary"
                     text="Apply &rarr;"

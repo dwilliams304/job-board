@@ -8,7 +8,7 @@ export type Job = {
     location: string; //City & State, State, or Country
     onSite: "On-Site" | "Hybrid" | "Remote";
     salary: number; //Annualized yearly salaray
-    averageHours: number; //Average hours worked per week
+    jobTerm: "Full-Time" | "Part-Time" | "Contract";
     shortDescription: string;
 }
 
@@ -40,7 +40,7 @@ export const Dev_DefaultJob: Job = {
     location: "Franklin, VA",
     onSite: "On-Site",
     salary: 9999,
-    averageHours: 40,
+    jobTerm: "Full-Time",
     shortDescription: "Test"
 }
 
@@ -53,7 +53,7 @@ export const Jobs: Job[] = [
         location: "Austin, TX",
         onSite: "Hybrid",
         salary: 90000,
-        averageHours: 40,
+        jobTerm: "Part-Time",
         shortDescription: "Seeking a passionate Frontend Developer with experience in React and JavaScript to join our dynamic team."
     },
     {
@@ -64,7 +64,7 @@ export const Jobs: Job[] = [
         location: "New York, NY",
         onSite: "Remote",
         salary: 60000,
-        averageHours: 40,
+        jobTerm: "Full-Time",
         shortDescription: "Join us as a Data Analyst to analyze large datasets and provide insights to drive business decisions."
     },
     {
@@ -75,7 +75,7 @@ export const Jobs: Job[] = [
         location: "San Francisco, CA",
         onSite: "On-Site",
         salary: 130000,
-        averageHours: 40,
+        jobTerm: "Full-Time",
         shortDescription: "Looking for a Senior Software Engineer proficient in Java and cloud technologies to lead our development efforts."
     },
     {
@@ -86,7 +86,7 @@ export const Jobs: Job[] = [
         location: "Seattle, WA",
         onSite: "Hybrid",
         salary: 110000,
-        averageHours: 40,
+        jobTerm: "Full-Time",
         shortDescription: "Seeking a skilled DevOps Engineer with experience in CI/CD processes and containerization to enhance our infrastructure."
     },
     {
@@ -97,7 +97,7 @@ export const Jobs: Job[] = [
         location: "Boston, MA",
         onSite: "On-Site",
         salary: 150000,
-        averageHours: 40,
+        jobTerm: "Full-Time",
         shortDescription: "We are looking for an experienced Product Manager to drive product strategy and collaborate with engineering and design teams."
     },
     {
@@ -108,7 +108,7 @@ export const Jobs: Job[] = [
         location: "Remote",
         onSite: "Remote",
         salary: 55000,
-        averageHours: 40,
+        jobTerm: "Contract",
         shortDescription: "Join our creative team as a UX/UI Designer to help create engaging and user-friendly applications."
     },
     {
@@ -119,7 +119,7 @@ export const Jobs: Job[] = [
         location: "Denver, CO",
         onSite: "On-Site",
         salary: 95000,
-        averageHours: 40,
+        jobTerm: "Full-Time",
         shortDescription: "Looking for a Backend Developer with expertise in Node.js and database management to support our application development."
     },
     {
@@ -130,7 +130,7 @@ export const Jobs: Job[] = [
         location: "Miami, FL",
         onSite: "Hybrid",
         salary: 120000,
-        averageHours: 40,
+        jobTerm: "Full-Time",
         shortDescription: "Seeking a Senior Mobile App Developer with a strong background in iOS and Android development to join our team."
     },
     {
@@ -141,7 +141,7 @@ export const Jobs: Job[] = [
         location: "Chicago, IL",
         onSite: "Remote",
         salary: 85000,
-        averageHours: 40,
+        jobTerm: "Contract",
         shortDescription: "Looking for a QA Engineer to develop and execute test plans, ensuring high-quality software delivery."
     },
     {
@@ -152,7 +152,7 @@ export const Jobs: Job[] = [
         location: "Washington, D.C.",
         onSite: "On-Site",
         salary: 100000,
-        averageHours: 40,
+        jobTerm: "Full-Time",
         shortDescription: "Join our cybersecurity team to protect sensitive data and ensure compliance with industry standards."
     },
     {
@@ -163,7 +163,7 @@ export const Jobs: Job[] = [
         location: "Los Angeles, CA",
         onSite: "Remote",
         salary: 115000,
-        averageHours: 40,
+        jobTerm: "Full-Time",
         shortDescription: "Join our team as a Machine Learning Engineer to develop predictive models and enhance AI solutions."
     },
     {
@@ -174,7 +174,7 @@ export const Jobs: Job[] = [
         location: "Phoenix, AZ",
         onSite: "On-Site",
         salary: 125000,
-        averageHours: 40,
+        jobTerm: "Full-Time",
         shortDescription: "Looking for a Full Stack Developer with strong skills in React and Node.js to lead project development."
     },
     {
@@ -185,7 +185,7 @@ export const Jobs: Job[] = [
         location: "Dallas, TX",
         onSite: "Hybrid",
         salary: 80000,
-        averageHours: 40,
+        jobTerm: "Full-Time",
         shortDescription: "Seeking a Network Administrator to maintain and secure our network infrastructure and support users."
     },
     {
@@ -196,7 +196,7 @@ export const Jobs: Job[] = [
         location: "Atlanta, GA",
         onSite: "On-Site",
         salary: 90000,
-        averageHours: 40,
+        jobTerm: "Full-Time",
         shortDescription: "Join our team as a Database Administrator to manage and optimize our database systems."
     },
     {
@@ -207,7 +207,7 @@ export const Jobs: Job[] = [
         location: "Seattle, WA",
         onSite: "Hybrid",
         salary: 140000,
-        averageHours: 40,
+        jobTerm: "Full-Time",
         shortDescription: "Looking for a Cloud Solutions Architect to design and implement scalable cloud infrastructures."
     },
     {
@@ -218,7 +218,7 @@ export const Jobs: Job[] = [
         location: "Remote",
         onSite: "Remote",
         salary: 50000,
-        averageHours: 40,
+        jobTerm: "Full-Time",
         shortDescription: "Seeking a Technical Writer to create and maintain documentation for software products."
     },
     {
@@ -229,7 +229,7 @@ export const Jobs: Job[] = [
         location: "San Diego, CA",
         onSite: "On-Site",
         salary: 130000,
-        averageHours: 40,
+        jobTerm: "Full-Time",
         shortDescription: "Join us as a Blockchain Developer to create decentralized applications and smart contracts."
     },
     {
@@ -240,7 +240,7 @@ export const Jobs: Job[] = [
         location: "Boston, MA",
         onSite: "Hybrid",
         salary: 125000,
-        averageHours: 40,
+        jobTerm: "Full-Time",
         shortDescription: "Looking for a Site Reliability Engineer to improve system reliability and performance."
     },
     {
@@ -251,7 +251,7 @@ export const Jobs: Job[] = [
         location: "Chicago, IL",
         onSite: "On-Site",
         salary: 110000,
-        averageHours: 40,
+        jobTerm: "Full-Time",
         shortDescription: "Seeking a Salesforce Developer to customize and enhance our Salesforce platform."
     },
     {
@@ -262,7 +262,7 @@ export const Jobs: Job[] = [
         location: "Miami, FL",
         onSite: "Remote",
         salary: 55000,
-        averageHours: 40,
+        jobTerm: "Full-Time",
         shortDescription: "Join our team as a Graphic Designer to create visually appealing designs for digital marketing."
     },
     {
@@ -272,9 +272,9 @@ export const Jobs: Job[] = [
         experienceLevel: "Entry-Level",
         location: "Miami, FL",
         onSite: "Remote",
-        salary: 55000,
-        averageHours: 40,
-        shortDescription: "Join our team as a Graphic Designer to create visually appealing designs for digital marketing."
+        salary: 70000,
+        jobTerm: "Full-Time",
+        shortDescription: "Join our team as a Front-End Developer to develop things on the front-end."
     },
     {
         jobID: 100022,
@@ -283,9 +283,9 @@ export const Jobs: Job[] = [
         experienceLevel: "Entry-Level",
         location: "Miami, FL",
         onSite: "Hybrid",
-        salary: 55000,
-        averageHours: 40,
-        shortDescription: "Join our team as a Graphic Designer to create visually appealing designs for digital marketing."
+        salary: 65000,
+        jobTerm: "Full-Time",
+        shortDescription: "Join our team as a UI/UX Designer to help us make working UI that isn't bad."
     }
     
 ]
