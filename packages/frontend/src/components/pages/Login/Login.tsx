@@ -1,25 +1,20 @@
 import { LoginForm } from '../..';
 import { useNavigate } from 'react-router-dom';
 import { User } from '../../../data/users';
-import { useEffect } from 'react';
 
-type LoginProps = {
-    signIn: (user: User) => void;
-}
-export default function Login(props: LoginProps){
+
+export default function Login(){
     const navTo = useNavigate();
 
 
     const onLoginFormSubmit = (userData: User | undefined) => {
         if(userData !== undefined){
-            props.signIn(userData);
+            // props.signIn(userData);
+            window.alert("Signed in!");
             navTo('/');
         }
     }
 
-    useEffect(() => {
-        if(localStorage.getItem('user')) navTo('/');
-    }, [])
     return(
         <section className='w-full h-full flex-grow'>
             <div className='w-1/3 p-6 mx-auto mt-10 shadow-xl bg-gray-100'>

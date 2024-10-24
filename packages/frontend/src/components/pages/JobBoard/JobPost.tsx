@@ -1,13 +1,11 @@
 import Button from "../../common/Button";
 import { Job } from "../../../data/jobs";
-import { useNavigate } from "react-router-dom";
 
 type JobPostProps = {
     job : Job
 }
 
 export default function JobPost({job}: JobPostProps){
-    const navTo = useNavigate();
 
     const salary = Math.round((job.salary / 52 / job.averageHours) * 100) / 100;
 

@@ -1,16 +1,9 @@
 import SignupForm from "./SignupForm";
 import DummyLogo from "../../../assets/react.svg";
 
-import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-
 
 export default function Signup(){
-    const navTo = useNavigate();
 
-    useEffect(() => {
-        if(localStorage.getItem('user')) navTo('/');
-    })
     return(
         <section className='w-full h-full flex-grow'>
             <div className='flex align-middle mx-auto mt-10 w-3/5 shadow-xl bg-gray-100'>

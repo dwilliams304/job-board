@@ -2,12 +2,9 @@ import TestLogo from "../../assets/react.svg";
 import { MdHelpOutline } from "react-icons/md";
 import { ScrollToTop } from "../../utils";
 import { NavLink } from "react-router-dom";
-import { useState, useEffect } from "react";
 
-type NavBarProps = {
-    loggedIn: boolean | undefined;
-}
-export default function NavBar(props: NavBarProps) {
+
+export default function NavBar() {
 
 
     return(
@@ -19,16 +16,16 @@ export default function NavBar(props: NavBarProps) {
                 </NavLink>
             </span>
             <div className="flex align-middle">
-                {
+                {/* {
                     props.loggedIn ?
                     <NavLink id="RouterNavLink" to='/profile' className="px-4 cursor-pointer">
                         Profile
                     </NavLink>
                     :
-                    <NavLink id="RouterNavLink" to='/login' className="px-4 cursor-pointer">
-                        Login
-                    </NavLink>
-                }
+                } */}
+                <NavLink id="RouterNavLink" to='/login' className="px-4 cursor-pointer">
+                    Login
+                </NavLink>
                 <span className="cursor-pointer px-4 flex">
                     <NavLink id="RouterNavLink" to='/help'>
                         Help

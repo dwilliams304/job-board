@@ -38,7 +38,7 @@ export default function CompanyPage(){
 
     if(isLoading) {
         return(
-            <div className="w-full flex-grow text-center">
+            <div className="w-full flex-grow text-center animate-pulse">
                 <h2 className="mt-20 text-2xl">Loading company page...</h2>
             </div>
         )
