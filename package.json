@@ -6,6 +6,9 @@
   },
   "description": "Fullstack job board project",
   "scripts": {
+    "install:all": "npm install && npm install:fe && npm install:be",
+    "install:fe": "npm install --prefix ./packages/frontend",
+    "install:be": "npm install --prefix ./packages/backend",
     "dev": "concurrently --kill-others --success first \"npm run dev:fe\" \"npm run dev:be\"",
     "dev:fe": "npm run dev --prefix ./packages/frontend",
     "dev:be": "npm run server --prefix ./packages/backend",
