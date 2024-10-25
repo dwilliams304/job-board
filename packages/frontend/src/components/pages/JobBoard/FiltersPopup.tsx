@@ -17,7 +17,7 @@ import { FilterPopupMenuState } from "./JobBoard";
 export default function FiltersPopup({showFilterPopup, setShowFilterPopup}: FilterPopupMenuState){
     
     return(
-        <nav className={`${showFilterPopup ? "opacity-100 visible" : "opacity-0 invisible"} flex w-1/4 bg-gray-50 border-r-2
+        <nav className={`${showFilterPopup ? "opacity-100 visible" : "opacity-0 invisible"} z-40 flex w-1/4 bg-gray-50 border-r-2
         fixed left-0 top-16 bottom-0 transition-all ease-in-out duration-300 `}>
             <div className="w-full h-full flex flex-col align-middle items-center py-8 space-y-6
             divide-y-2">

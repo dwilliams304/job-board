@@ -14,6 +14,7 @@ import JobPost from "./JobPost";
 import { Jobs } from "../../../data/jobs";
 import SearchBar from "./SearchBar";
 import FiltersPopup from "./FiltersPopup";
+import SetTabTitle from "../../../utils/SetTabTitle";
 
 
 
@@ -50,6 +51,8 @@ export type FilterPopupMenuState = {
 
 export default function JobBoard(){
     const [showFilterPopup, setShowFilterPopup] = useState(false);
+
+    SetTabTitle("Job Board");
 
     return(
         <section>
