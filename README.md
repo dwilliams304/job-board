@@ -23,8 +23,7 @@ Here are some basic scripts that will be useful. Once you cd into the root folde
 + npm run dev -- this will run both the frontend and backend at the same time using _conccurrently_
 + npm run dev:fe -- this will run the frontend only
 &nbsp;
->_Note-1: npm run dev:be and related has been re_
->_Note: This will also run for npm run test, with the same formatting_
+>_Note: This will also work for npm run test, with the same formatting_
 
 
 
