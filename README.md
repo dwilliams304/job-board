@@ -29,7 +29,7 @@ Here are some basic scripts that will be useful. Once you cd into the root folde
 
 ## To-Do  
 #### Backend:
-- [ ] Switch backend to .NET
+- [x] Switch backend to .NET
 - [ ] Set up basic REST API
 - [ ] User sign in persistence
 - [ ] User authentication and roles

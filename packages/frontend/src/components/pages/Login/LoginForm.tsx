@@ -37,14 +37,18 @@ export default function LoginForm({onLoginFormSubmit}: LoginFormProps){
             email: formValues.email,
             password: formValues.password
         }
-        const val = Dev_LoginFunc(user);
+        const {response} = Dev_LoginFunc(user);
         const timeout = setTimeout(() => {
             setIsSigningIn(false);
-            if(val.error) setLoginError(val.error.message);
-            else{
+            if(response.error) {
+                setLoginError(response.error.message);
+                console.log(response.error);
+            }
+            else if(response.success){
                 setFormValues(initialFormState);
                 setLoginError('');
-                onLoginFormSubmit(val.success);
+                onLoginFormSubmit(response.success.data);
+                console.log(response.success);
             }
         }, GetRandomNumber(4000));
 

@@ -13,27 +13,45 @@ type LoginArgs = {
     password: string
 }
 
-type LoginReturn = {
-    error?: {
-        message: string;
+type ResponseObject = {
+    status?: number;
+    response: {
+        error?: {
+            message: string;
+            source: string;
+            args?: any
+        }
+        success?: {
+            data: User
+            message?: string
+        }
     }
-    success?: User
 }
-export function Dev_LoginFunc({email, password}: LoginArgs): LoginReturn {
+export function Dev_LoginFunc({email, password}: LoginArgs): ResponseObject {
+    const responseObj: ResponseObject = {
+        response: {}
+    };
     for(let i = 0; i < Users.length; i++){
         var cur = Users[i];
         if(cur.userEmail === email){
             if(cur.userPassword === password){
-                console.log(`Login success, logging into id: ${cur.userID} - ${cur.userInfo.name}`);
-                return {success: cur}
+                responseObj.status = 500;
+                responseObj.response.success = {
+                    data: cur,
+                    message: "Login successful"
+                };
             }
         }
     }
-    return {error: 
-        {
-            message: "Incorrect email or password!"
+    if(!responseObj.response.success){
+        responseObj.status = 404;
+        responseObj.response.error = {
+            message: "Could not find a matching account!",
+            args: {email, password},
+            source: "@Dev_LoginFunc in users.ts"
         }
     }
+    return responseObj;
 }
 
 const Users: User[] = [
