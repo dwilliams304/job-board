@@ -3,6 +3,7 @@ import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
 import Profile from "./Profile/Profile";
 import Help from "./Help/Help";
+import HelpArticlePage from "./Help/HelpArticlePage";
 import Terms from "./Info/Terms";
 import Privacy from "./Info/Privacy";
 import NotFound from "./NotFound/NotFound";
@@ -16,6 +17,7 @@ export {
     Signup,
     Profile, 
     Help, 
+    HelpArticlePage,
     Terms, 
     Privacy, 
     NotFound, 

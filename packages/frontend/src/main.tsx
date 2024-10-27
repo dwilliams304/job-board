@@ -10,7 +10,8 @@ import {
   Login, 
   Signup,
   Profile,
-  Help, 
+  Help,
+  HelpArticlePage,
   Terms, 
   Privacy, 
   NotFound 
@@ -38,24 +39,26 @@ function App() {
         <Route path="/" index element={<JobBoard /> } />
         <Route path="/job/:jobID" index element={<JobPage /> } />
         <Route path="/company/:companyID" index element={<CompanyPage /> } />
-        <Route path="login" element={
+        <Route path="/login" element={
           <Login 
             // signIn={signIn}
           />
-        } />
-        <Route path="signup" element={
+        }/>
+        <Route path="/signup" element={
           <Signup 
             
           />
-        } />
-        <Route path="profile" element={
+        }/>
+        <Route path="/profile" element={
           <Profile 
+          
           />
-        } />
-        <Route path="help" element={<Help /> } />
-        <Route path="terms" element={<Terms /> } />
-        <Route path="privacy" element={<Privacy /> } />
-        <Route path="*" element={<NotFound /> } />
+        }/>
+        <Route path="/help" element={<Help /> } />
+        <Route path="/help/:id" element={<HelpArticlePage /> } />
+        <Route path="/terms" element={<Terms /> } />
+        <Route path="/privacy" element={<Privacy /> } />
+        <Route path="/*" element={<NotFound /> } />
       </Routes>
       
       
