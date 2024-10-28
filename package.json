@@ -8,8 +8,10 @@
   "scripts": {
     "install:all": "npm install && npm install:fe",
     "install:fe": "npm install --prefix ./packages/frontend",
+    "install:be": "cd ./packages/dotnetbackend && dotnet install",
     "dev": "concurrently --kill-others --success first \"npm run dev:fe\"",
     "dev:fe": "npm run dev --prefix ./packages/frontend",
+    "dev:be": "cd ./packages/dotnetbackend && dotnet watch run",
     "test": "npm run test:fe",
     "test:fe": "npm run test --prefix ./packages/frontend"
   },
