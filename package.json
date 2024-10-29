@@ -6,21 +6,15 @@
   },
   "description": "Fullstack job board project",
   "scripts": {
-    "install:all": "npm install && npm install:fe",
-    "install:fe": "npm install --prefix ./packages/frontend",
-    "install:be": "cd ./packages/dotnetbackend && dotnet install",
-    "dev": "concurrently --kill-others --success first \"npm run dev:fe\"",
-    "dev:fe": "npm run dev --prefix ./packages/frontend",
-    "dev:be": "cd ./packages/dotnetbackend && dotnet watch run",
+    "i:fe": "npm install --prefix ./client/",
+    "dev:fe": "npm run dev --prefix ./client/",
+    "dev:be": "cd ./backend/JobBoardDotnetBackend/JobBoardDotnetBackend/ && dotnet watch run",
     "test": "npm run test:fe",
-    "test:fe": "npm run test --prefix ./packages/frontend"
+    "test:fe": "npm run test --prefix ./client/"
   },
   "author": "Davis Williams",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^8.2.2"
-  },
-  "dependencies": {
     "ts-node": "^10.9.2"
   }
 }

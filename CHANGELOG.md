@@ -8,7 +8,7 @@ This will include general bug fixes, feature releases, etc...
 Start project
 &nbsp;
 ---
-## v0.1 (Oct, 24, 2024)
+## v0.1 (Oct. 24, 2024)
 This will be the first 'official' version release of the TypeScript job board.
 + Add more installation scripts from project root
 + Update README and Frontend DOCS
@@ -26,4 +26,14 @@ This will be the first 'official' version release of the TypeScript job board.
 + General clean up on functions/types
 
 &nbsp;
-
+---
+## v0.101 (Oct. 29, 2025)
+(minor update, no features)
++ Change project structure
+    + Move /packages/frontent -> /client
+    + Move /packages/backend -> /backend
+    + Delete /packages
++ Start switch to ASP.NET backend
++ Remove npm package _concurrently_ from root
++ Move npm package _ts.node_ to devDependencies
++ Change npm scripts in root to match new project structure
