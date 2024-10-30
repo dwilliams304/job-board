@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { ScrollToTop } from "../../../utils";
+import { ScrollToTop } from "../../../data/utils";
 import { Link } from "react-router-dom";
 import { Dev_LoginFunc } from "../../../data/users";
-import { GetRandomNumber } from "../../../utils";
+import { GetRandomNumber } from "../../../data/utils";
 import { User } from "../../../data/users";
 
 type LoginFormProps = {

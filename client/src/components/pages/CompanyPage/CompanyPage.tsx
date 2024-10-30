@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { IoStarSharp } from "react-icons/io5";
 
-import SetTabTitle from "../../../utils/SetTabTitle";
+import SetTabTitle from "../../../data/utils/SetTabTitle";
 
 import { Job, FetchJobsByCompanyID } from "../../../data/jobs";
 import { Company, FetchCompany, Dev_DefaultCompany } from "../../../data/companies";
-import { GetRandomNumber } from "../../../utils";
+import { GetRandomNumber } from "../../../data/utils";
 
 //Different navigation tabs, for state management
 type tabType = "Jobs" | "Salaries" | "Reviews" | "About"

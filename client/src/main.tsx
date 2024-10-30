@@ -18,6 +18,7 @@ import {
 } from './components/pages';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes as PageRoutes } from './data/routes';
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -34,31 +35,18 @@ function App() {
     <div className='flex flex-col min-h-screen'>
       <NavBar 
       />
+
+
       
       <Routes>
-        <Route path="/" index element={<JobBoard /> } />
-        <Route path="/job/:jobID" index element={<JobPage /> } />
-        <Route path="/company/:companyID" index element={<CompanyPage /> } />
-        <Route path="/login" element={
-          <Login 
-            // signIn={signIn}
-          />
-        }/>
-        <Route path="/signup" element={
-          <Signup 
-            
-          />
-        }/>
-        <Route path="/profile" element={
-          <Profile 
-          
-          />
-        }/>
-        <Route path="/help" element={<Help /> } />
-        <Route path="/help/:id" element={<HelpArticlePage /> } />
-        <Route path="/terms" element={<Terms /> } />
-        <Route path="/privacy" element={<Privacy /> } />
-        <Route path="/*" element={<NotFound /> } />
+        {
+          PageRoutes.map(route => (
+            <Route 
+              path={route.path}
+              element={<route.pageElement />}
+            />
+          ))
+        }
       </Routes>
       
       

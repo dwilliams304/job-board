@@ -14,7 +14,7 @@ import JobPost from "./JobPost";
 import { Jobs } from "../../../data/jobs";
 import SearchBar from "./SearchBar";
 import FiltersPopup from "./FiltersPopup";
-import SetTabTitle from "../../../utils/SetTabTitle";
+import SetTabTitle from "../../../data/utils/SetTabTitle";
 
 
 

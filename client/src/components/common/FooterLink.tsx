@@ -3,7 +3,7 @@
 // and will scroll to the top of the page when clicked
 
 import { Link } from "react-router-dom"
-import { ScrollToTop } from "../../utils";
+import { ScrollToTop } from "../../data/utils";
 
 type FooterLinkProps = {
     linkObject: {

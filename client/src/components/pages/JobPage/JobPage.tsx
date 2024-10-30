@@ -21,9 +21,8 @@ import {
 
 import Button from "../../common/Button";
 
-import { GetRandomNumber, } from "../../../utils";
-import SetTabTitle from "../../../utils/SetTabTitle";
-
+import { GetRandomNumber } from "../../../data/utils";
+import SetTabTitle from "../../../data/utils/SetTabTitle";
 
 
 export default function JobPage(){

@@ -10,7 +10,7 @@
 
 import TestLogo from "../../assets/react.svg";
 import { MdHelpOutline } from "react-icons/md";
-import { ScrollToTop } from "../../utils";
+import { ScrollToTop } from "../../data/utils";
 import { NavLink } from "react-router-dom";
 export default function NavBar() {
 

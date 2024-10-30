@@ -5,7 +5,7 @@
     Just for ease of use, as if we are listing 50+ jobs on the job board, that's a lot of scrolling!
 */
 
-import { ScrollToTop } from "../../utils";
+import { ScrollToTop } from "../../data/utils";
 
 
 export default function ToTopButton(){
