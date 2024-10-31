@@ -27,7 +27,7 @@ This will be the first 'official' version release of the TypeScript job board.
 
 &nbsp;
 ---
-## v0.101 (Oct. 29, 2025)
+## v0.101 (Oct. 29, 2024)
 (minor update, no features)
 + Change project structure
     + Move /packages/frontent -> /client
