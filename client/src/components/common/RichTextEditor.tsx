@@ -19,6 +19,9 @@ export default function RichTextEditor(){
 
     const formatText = (cmd: string, value: string | undefined = undefined) => {
         document.execCommand(cmd, false, value);
+
+        
+
         updateActiveStyles();
     }
 
@@ -47,14 +50,14 @@ export default function RichTextEditor(){
         if(editor){
             editor.addEventListener('mouseup', updateActiveStyles);
             editor.addEventListener('keyup', updateActiveStyles);
-            editor.addEventListener('keypress', listenForKBShortcut);
+            editor.addEventListener('keydown', listenForKBShortcut);
         }
 
         return () => {
             if(editor){
                 editor.removeEventListener('mouseup', updateActiveStyles);
                 editor.removeEventListener('keyup', updateActiveStyles);
-                editor.removeEventListener('keypress', listenForKBShortcut);
+                editor.removeEventListener('keydown', listenForKBShortcut);
             }
         }
     }, [])

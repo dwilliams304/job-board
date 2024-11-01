@@ -71,9 +71,9 @@ export default function JobPage(){
             <div className="space-y-1 relative">
                 <h2 className="text-3xl font-bold">{jobData.jobTitle}</h2>
                 <div className="flex flex-row space-x-4">
-                    <p className="flex align-middle"><IoArrowForward /> {jobData.experienceLevel}</p>
+                    <p className="flex align-middle"><IoArrowForward /> {jobData.jobOptions.experience}</p>
                     <p className="flex align-middle"><IoBagSharp /> Full-Time</p>
-                    <p className="flex align-middle"><IoLocation /> {jobData.location} ({jobData.onSite})</p>
+                    <p className="flex align-middle"><IoLocation /> {jobData.location} ({jobData.jobOptions.locationType})</p>
                     <p className="flex align-middle"><IoCash /> ${jobData.salary.toLocaleString()}/yr</p>
                 </div>
 

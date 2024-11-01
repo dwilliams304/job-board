@@ -18,32 +18,6 @@ import SetTabTitle from "../../../data/utils/SetTabTitle";
 
 
 
-const searchOptions = {
-    location: [
-        "On-Site",
-        "Hybrid",
-        "Remote",
-    ],
-    experience: [
-        "Intern",
-        "Entry-Level",
-        "Mid-Level",
-        "Senior",
-        "Manager"
-    ],
-    postAge: [
-        "< 24 hrs",
-        "< 7 days",
-        "< 30 days"
-    ]
-}
-
-export type SearchOptions = {
-    location: string[]
-    experience: string[]
-    postAge: string[]
-}
-
 export type FilterPopupMenuState = {
     showFilterPopup: boolean
     setShowFilterPopup: (arg0: boolean) => void
@@ -61,7 +35,6 @@ export default function JobBoard(){
                     showFilterPopup,
                     setShowFilterPopup
                 }}
-                searchOptions={searchOptions}
             />
             <FiltersPopup 
                 showFilterPopup={showFilterPopup}

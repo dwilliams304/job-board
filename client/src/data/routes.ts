@@ -9,6 +9,7 @@ import {
     Privacy,
     NotFound,
     JobPage,
+    CreateJobPost,
     CompanyPage
 } from "../components/pages";
 
@@ -82,7 +83,11 @@ export const Routes: Route[] = [
         pageElement: NotFound
     },
 
-
+    {
+        path: "/dev/createjobpost",
+        protected: false,
+        pageElement: CreateJobPost
+    },
     {
         path: "/dev/rte",
         protected: false,

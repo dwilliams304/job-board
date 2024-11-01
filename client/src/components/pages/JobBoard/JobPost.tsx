@@ -62,16 +62,16 @@ export default function JobPost({job}: JobPostProps){
                         {job.location}
                     </p>
                     <p>
-                        ({job.onSite})
+                        ({job.jobOptions.locationType})
                     </p>
                 </div>
                 <p className="mt-4">{job.shortDescription}</p>
             </div>
 
             <div className="w-1/5 text-right border-l-2">
-                <p>{job.experienceLevel}</p>
+                <p>{job.jobOptions.experience}</p>
                 <p>Salary: ${job.salary.toLocaleString()}/yr</p>
-                <p>Term: {job.jobTerm}</p>
+                <p>Term: {job.jobOptions.term}</p>
                 <Button
                     type="Primary"
                     text="Apply &rarr;"

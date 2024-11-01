@@ -96,7 +96,7 @@ export default function CompanyPage(){
                                 jobListings.map((listing, i) => (
                                     <p key={i} className="text-xl cursor-pointer hover:underline"
                                     onClick={() => navTo(`/job/${listing.jobID}`)}>
-                                        {listing.jobTitle} - {listing.location} ({listing.onSite})
+                                        {listing.jobTitle} - {listing.location} ({listing.jobOptions.locationType})
                                     </p>
                                 ))
                                 :

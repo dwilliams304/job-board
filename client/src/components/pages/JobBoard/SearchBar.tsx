@@ -1,17 +1,18 @@
 import { IoFilterSharp } from "react-icons/io5";
-import { SearchOptions, FilterPopupMenuState } from "./JobBoard";
+import { FilterPopupMenuState } from "./JobBoard";
+
+import { JobOptions } from "../../../data/joboptions";
+
 
 import Button from "../../common/Button";
 
 type SearchBarProps = {
     filterPopupState: FilterPopupMenuState
-    searchOptions: SearchOptions
 }
 
 export default function SearchBar(props: SearchBarProps)
 {
 
-    const {searchOptions} = props;
     const {showFilterPopup, setShowFilterPopup} = props.filterPopupState
 
     return (
@@ -41,7 +42,7 @@ export default function SearchBar(props: SearchBarProps)
                     </label>
                     <select className="p-1 shadow-md border border-solid cursor-pointer" id="location">
                         {
-                            searchOptions.location.map((option, idx) => (
+                            JobOptions.locationOptions.map((option, idx) => (
                                 <option key={idx}>{option}</option>
                             ))
                         }
@@ -55,7 +56,7 @@ export default function SearchBar(props: SearchBarProps)
                     </label>
                     <select className="p-1 shadow-md border border-solid cursor-pointer" id="experience">
                         {
-                            searchOptions.experience.map((option, idx) => (
+                            JobOptions.experienceOptions.map((option, idx) => (
                                 <option key={idx}>{option}</option>
                             ))
                         }
@@ -69,7 +70,7 @@ export default function SearchBar(props: SearchBarProps)
                     </label>
                     <select className="p-1 shadow-md border border-solid cursor-pointer" id="post-age">
                         {
-                            searchOptions.postAge.map((option, idx) => (
+                            JobOptions.postAgeOptions.map((option, idx) => (
                                 <option key={idx}>{option}</option>
                             ))
                         }
