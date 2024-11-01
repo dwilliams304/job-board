@@ -12,6 +12,8 @@ import {
     CompanyPage
 } from "../components/pages";
 
+import { RichTextEditor } from "../components/common";
+
 
 type Route = {
     path: string;
@@ -79,4 +81,11 @@ export const Routes: Route[] = [
         protected: false,
         pageElement: NotFound
     },
+
+
+    {
+        path: "/dev/rte",
+        protected: false,
+        pageElement: RichTextEditor
+    }
 ]

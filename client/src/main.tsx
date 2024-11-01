@@ -3,19 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import { NavBar, Footer } from './components/layout';
 import { ToTopButton } from './components';
-import { 
-  JobBoard,
-  JobPage,
-  CompanyPage,
-  Login, 
-  Signup,
-  Profile,
-  Help,
-  HelpArticlePage,
-  Terms, 
-  Privacy, 
-  NotFound 
-} from './components/pages';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Routes as PageRoutes } from './data/routes';
@@ -35,8 +22,6 @@ function App() {
     <div className='flex flex-col min-h-screen'>
       <NavBar 
       />
-
-
       
       <Routes>
         {
