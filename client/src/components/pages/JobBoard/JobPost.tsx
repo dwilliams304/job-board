@@ -27,12 +27,23 @@
 
 import Button from "../../common/Button";
 import { Job } from "../../../data/jobs";
+import moment from "moment";
+import {
+    IoLocation,
+    IoCash,
+    IoBagSharp,
+    IoArrowForward,
+    
+} from "react-icons/io5";
+import { FaClock } from "react-icons/fa";
 
 type JobPostProps = {
     job : Job
 }
 
 export default function JobPost({job}: JobPostProps){
+
+    const postAge = moment(job.datePosted).fromNow();
 
 
     return(
@@ -58,28 +69,42 @@ export default function JobPost({job}: JobPostProps){
                     </h2>
                 </div>
                 <div className="italic flex space-x-2">
+                    <IoLocation />
                     <p> 
                         {job.location}
                     </p>
-                    <p>
+                    <p className="flex">
                         ({job.jobOptions.locationType})
                     </p>
                 </div>
                 <p className="mt-4">{job.shortDescription}</p>
             </div>
 
-            <div className="w-1/5 text-right border-l-2">
-                <p>{job.jobOptions.experience}</p>
-                <p>Salary: ${job.salary.toLocaleString()}/yr</p>
-                <p>Term: {job.jobOptions.term}</p>
-                <Button
-                    type="Primary"
-                    text="Apply &rarr;"
-                    function={(e) => {
-                        window.open(`/job/${job.jobID}/apply`);
-                        e.stopPropagation();
-                    }}
-                />
+            <div className="w-1/5 pl-5 text-right border-l-2 flex flex-col">
+                    <p className="inline-flex space-x-2">
+                        <FaClock/>
+                        <span>{postAge}</span>
+                    </p>
+                    <p className="inline-flex space-x-2">
+                        <IoArrowForward />
+                        <span>{job.jobOptions.experience}</span>
+                    </p>
+                    <p className="inline-flex space-x-2">
+                        <IoCash />
+                        <span>Salary: ${job.salary.toLocaleString()}/yr</span>
+                    </p>
+                    <p className="inline-flex space-x-2">
+                        <IoBagSharp />
+                        <span>Term: {job.jobOptions.term}</span>
+                    </p>
+                    <Button
+                        type="Primary"
+                        text="Apply Now! &rarr;"
+                        function={(e) => {
+                            window.open(`/job/${job.jobID}/apply`);
+                            e.stopPropagation();
+                        }}
+                    />
             </div>
         </div>
     )

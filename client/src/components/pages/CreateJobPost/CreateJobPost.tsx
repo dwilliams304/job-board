@@ -103,7 +103,7 @@ export default function CreateJobPost(){
                 type="Primary"
                 text="Post Job &rarr;"
                 function={() => window.alert("WIP: Actually create job post")}
-                style={{margin: "0 auto", fontSize: "20px", textAlign: "center"}}
+                style={{margin: "0 auto", fontSize: "20px"}}
             />
 
 

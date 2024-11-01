@@ -3,6 +3,7 @@ import { JobOptionsType } from './joboptions';
 
 export type Job = {
     jobID: number; //6 digit number
+    datePosted: Date;
     jobTitle: string;
     company: Company;    
     location: string; //City & State, State, or Country
@@ -33,6 +34,7 @@ export function FetchJob(_jobID: number): Job {
 
 export const Dev_DefaultJob: Job = {
     jobID: 111,
+    datePosted: new Date('October 17, 2024 11:24:00'),
     jobTitle: "Default Job Title",
     company: Companies[0],
     location: "Franklin, VA",
@@ -48,6 +50,7 @@ export const Dev_DefaultJob: Job = {
 export const Jobs: Job[] = [
     {
         jobID: 100001,
+        datePosted: new Date('October 24, 2024 10:24:00'),
         jobTitle: "Frontend Developer",
         company: Companies[0],
         location: "Austin, TX",
@@ -61,6 +64,7 @@ export const Jobs: Job[] = [
     },
     {
         jobID: 100002,
+        datePosted: new Date('October 31, 2024 09:30:00'),
         jobTitle: "Data Analyst",
         company: Companies[1],
         location: "New York, NY",
@@ -74,6 +78,7 @@ export const Jobs: Job[] = [
     },
     {
         jobID: 100003,
+        datePosted: new Date('October 30, 2024 09:24:00'),
         jobTitle: "Software Engineer",
         company: Companies[2],
         location: "San Francisco, CA",
@@ -87,6 +92,7 @@ export const Jobs: Job[] = [
     },
     {
         jobID: 100004,
+        datePosted: new Date('November 1, 2024 12:24:00'),
         jobTitle: "DevOps Engineer",
         company: Companies[3],
         location: "Seattle, WA",
@@ -100,6 +106,7 @@ export const Jobs: Job[] = [
     },
     {
         jobID: 100005,
+        datePosted: new Date('October 17, 2024 16:20:00'),
         jobTitle: "Product Manager",
         company: Companies[4],
         location: "Boston, MA",
@@ -113,6 +120,7 @@ export const Jobs: Job[] = [
     },
     {
         jobID: 100006,
+        datePosted: new Date('October 1, 2024 13:24:00'),
         jobTitle: "UX/UI Designer",
         company: Companies[5],
         location: "Remote",
@@ -126,6 +134,7 @@ export const Jobs: Job[] = [
     },
     {
         jobID: 100007,
+        datePosted: new Date('October 11, 2024 13:11:00'),
         jobTitle: "Backend Developer",
         company: Companies[6],
         location: "Denver, CO",
@@ -139,6 +148,7 @@ export const Jobs: Job[] = [
     },
     {
         jobID: 100008,
+        datePosted: new Date('October 28, 2024 13:00:00'),
         jobTitle: "Mobile App Developer",
         company: Companies[7],
         location: "Miami, FL",
@@ -152,6 +162,7 @@ export const Jobs: Job[] = [
     },
     {
         jobID: 100009,
+        datePosted: new Date('October 27, 2024 12:05:00'),
         jobTitle: "QA Engineer",
         company: Companies[8],
         location: "Chicago, IL",
@@ -165,6 +176,7 @@ export const Jobs: Job[] = [
     },
     {
         jobID: 100010,
+        datePosted: new Date('October 30, 2024 13:13:13'),
         jobTitle: "Cybersecurity Analyst",
         company: Companies[9],
         location: "Washington, D.C.",
@@ -178,6 +190,7 @@ export const Jobs: Job[] = [
     },
     {
         jobID: 100011,
+        datePosted: new Date('October 31, 2024 12:24:00'),
         jobTitle: "Machine Learning Engineer",
         company: Companies[10],
         location: "Los Angeles, CA",
@@ -191,6 +204,7 @@ export const Jobs: Job[] = [
     },
     {
         jobID: 100012,
+        datePosted: new Date('November 1, 2024 13:22:00'),
         jobTitle: "Full Stack Developer",
         company: Companies[11],
         location: "Phoenix, AZ",
@@ -204,6 +218,7 @@ export const Jobs: Job[] = [
     },
     {
         jobID: 100013,
+        datePosted: new Date('November 1, 2024 14:24:00'),
         jobTitle: "Network Administrator",
         company: Companies[12],
         location: "Dallas, TX",
@@ -217,6 +232,7 @@ export const Jobs: Job[] = [
     },
     {
         jobID: 100014,
+        datePosted: new Date('September 17, 2024 19:24:00'),
         jobTitle: "Database Administrator",
         company: Companies[13],
         location: "Atlanta, GA",
@@ -230,6 +246,7 @@ export const Jobs: Job[] = [
     },
     {
         jobID: 100015,
+        datePosted: new Date('September 30, 2024 12:24:00'),
         jobTitle: "Cloud Solutions Architect",
         company: Companies[14],
         location: "Seattle, WA",
@@ -243,6 +260,7 @@ export const Jobs: Job[] = [
     },
     {
         jobID: 100016,
+        datePosted: new Date('June 1, 2024 12:24:00'),
         jobTitle: "Technical Writer",
         company: Companies[15],
         location: "Remote",
@@ -256,6 +274,7 @@ export const Jobs: Job[] = [
     },
     {
         jobID: 100017,
+        datePosted: new Date('October 19, 2024 14:24:00'),
         jobTitle: "Blockchain Developer",
         company: Companies[16],
         location: "San Diego, CA",
@@ -269,6 +288,7 @@ export const Jobs: Job[] = [
     },
     {
         jobID: 100018,
+        datePosted: new Date('October 5, 2024 16:24:00'),
         jobTitle: "Site Reliability Engineer",
         company: Companies[17],
         location: "Boston, MA",
@@ -282,6 +302,7 @@ export const Jobs: Job[] = [
     },
     {
         jobID: 100019,
+        datePosted: new Date('October 2, 2024 19:24:00'),
         jobTitle: "Salesforce Developer",
         company: Companies[18],
         location: "Chicago, IL",
@@ -295,6 +316,7 @@ export const Jobs: Job[] = [
     },
     {
         jobID: 100020,
+        datePosted: new Date('June 1, 2023 12:24:00'),
         jobTitle: "Graphic Designer",
         company: Companies[19],
         location: "Miami, FL",
@@ -308,6 +330,7 @@ export const Jobs: Job[] = [
     },
     {
         jobID: 100021,
+        datePosted: new Date('October 21, 2024 13:24:00'),
         jobTitle: "Front-End Developer",
         company: Companies[19],
         location: "Miami, FL",
@@ -321,6 +344,7 @@ export const Jobs: Job[] = [
     },
     {
         jobID: 100022,
+        datePosted: new Date('October 17, 2024 03:24:00'),
         jobTitle: "UI/UX Designer",
         company: Companies[19],
         location: "Miami, FL",
