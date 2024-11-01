@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import Button from "./Button";
 
-const activeColor = "#E5E7EB";
+const activeColor = "#94A3B8";
 const inActiveColor = "#FFFFFF";
 const navButtonPadding = "8px 12px";
 
@@ -64,8 +64,8 @@ export default function RichTextEditor(){
 
     return(
         <div className="flex-grow w-full h-full text-center rte">
-            <h1 className="text-2xl">Rich Text Editor</h1>
-            <div className="border border-gray-300 w-1/2 mx-auto my-12">
+            {/* <h1 className="text-2xl">Rich Text Editor</h1> */}
+            <div className="border shadow-md border-slate-400 w-full mx-auto my-12 bg-white">
                 <div>
                     <nav className="border-b border-black text-left">
                         <Button

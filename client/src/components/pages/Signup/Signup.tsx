@@ -6,7 +6,7 @@ export default function Signup(){
 
     return(
         <section className='w-full h-full flex-grow'>
-            <div className='flex align-middle mx-auto mt-10 w-3/5 shadow-xl bg-gray-100'>
+            <div className='flex align-middle mx-auto mt-10 w-3/5 shadow-xl bg-slate-200'>
                 <div className='w-1/2 p-6 border-r'>
                     <SignupForm 
                     

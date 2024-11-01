@@ -17,7 +17,7 @@ export default function Login(){
 
     return(
         <section className='w-full h-full flex-grow'>
-            <div className='w-1/3 p-6 mx-auto mt-10 shadow-xl bg-gray-100'>
+            <div className='w-1/3 p-6 mx-auto mt-10 shadow-xl bg-slate-200'>
                 <LoginForm 
                     onLoginFormSubmit={onLoginFormSubmit} 
                 /> 
