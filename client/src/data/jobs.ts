@@ -1,3 +1,44 @@
+
+/*
+    This file contains all mock data for the jobs in the jobboard.
+
+    This currently has a few mock database fetching functions that
+    returns different things. 
+
+    FetchJobsByCompanyID does as it sounds.
+        This function will take the companyID as an arg (taken from the
+        URL) and will return any Job that has the Company's ID tied to it.
+        This returns an array of type Job
+    
+    FetchJob returns a single Job
+        This is primarily used for the JobPage component.
+        We use this as a mock function to acquire all the data tied to a specific
+        jobID found within the urlParams.
+    
+    Both of these functions just currently do a very linear search
+        -Starting from index 0 -> going to the end of the array
+    When the database grows larger and larger, two things will need to change
+        1. How Jobs are stored in the database
+            -We are currently just pushing them into an array of jobs
+            with no sorting at all, this will become very hard when the
+            database groes extremely long. Imagine tens of thousands of
+            different posts, all stored with NO sorting
+
+        2. How Jobs are being fetched in their fetching functions
+            -When this database gets extremely large (imagine 10,000+), we
+            are searching from 0 -> end. This will become an extremely long
+            process, especially when the job we are searching for is near
+            the end of the array. We have to wait ALL the way until we reach it
+    
+    We could resolve these issues in a few ways.
+        -First we want to sort these jobs every time they are saved into the database
+        -Then when searching, we would likely rather use a better search algo
+    
+    More than likely, we will just implement a basic Binary Tree and use Binary Search
+    There is probably something that could save time and be more efficient, but for
+    just a little personal project, something simmple like that will do just fine.
+*/
+
 import { Companies, Company } from './companies';
 import { JobOptionsType } from './joboptions';
 

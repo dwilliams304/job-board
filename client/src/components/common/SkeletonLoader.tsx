@@ -1,3 +1,12 @@
+
+/*
+    The SkeletonLoader component is made to display a quick animation
+    when a page is loading. This was made into its own component
+    so that many different pages can use this when loading/fetching data
+
+    Possible: might make more modular? Different row counts, etc...
+*/
+
 export default function SkeletonLoader(){
     return(
         <div role="status" className="w-1/2 animate-pulse flex-grow px-20 mt-12 space-y-8">

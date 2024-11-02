@@ -1,3 +1,12 @@
+
+/*
+    This file is where most 'job options' can be found and acts as its source of truth.
+
+    When creating a Job post, it will map each part of the JobOptions into their
+    respective dropdowns. Many different components will use this, which is why
+    it exists in its own file. It additionally allows for stronger typing!
+*/
+
 const locationOptions = ["On-Site", "Hybrid", "Remote"] as const;
 const experienceOptions = ["Intern", "Entry-Level", "Mid-Level", "Senior", "Manager"] as const;
 const termOptions = ["Full-Time", "Part-Time", "Contract"] as const;

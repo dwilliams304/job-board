@@ -1,3 +1,17 @@
+
+/*
+    The RichTextEditor component is what allows companies/site admins make
+    a description/webpage. Currently the features are fairly limited and
+    not fully complete but currently this supports:
+        -Bolding, italicizing, underlining text
+        -Creating a list component
+        -Creating a hyperlink
+    
+    This is primarily going to be used for companies to make a full job 
+    description for any of their job posts, but will eventually be 
+    implemented so that a site admin could create help articles too.
+*/
+
 import { useState, useRef, useEffect } from "react";
 import Button from "./Button";
 

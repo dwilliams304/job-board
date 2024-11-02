@@ -1,3 +1,9 @@
+/*
+    The CreateJobPost component is where companies will be taken to
+    any time they would like to list a new job posting.
+
+*/
+
 import { JobOptions } from "../../../data/joboptions";
 import { RichTextEditor, Button } from "../../common";
 

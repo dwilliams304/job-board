@@ -1,3 +1,19 @@
+
+/*
+    The CompanyPage component display a company specific webpage
+    where a user would be able to see all of the various jobs listed
+    by the specific company. The user will also be able to see
+    all reviews, salaries, and a company made about page!
+
+    Currently, the page uses the useSearchParams hook to display the
+    various tabs on the page (salaries, jobs, etc...)
+    By default, if no 'tab' param exists, or does not match any
+    tabs in the 'tabs' array, it will default to tab=jobs
+
+    This is to prevent a blank page from appearing. Clicking on any tab
+    in the CompanyPage navigation bar will also dynamically switch the tab param
+*/
+
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, useSearchParams } from "react-router-dom";
 import { IoStarSharp } from "react-icons/io5";
