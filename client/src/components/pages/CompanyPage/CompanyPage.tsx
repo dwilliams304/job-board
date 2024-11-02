@@ -38,7 +38,6 @@ export default function CompanyPage(){
     const [params, setParams] = useSearchParams();
     let tab = params.get("tab");
 
-    let totalReviews;
 
 
 

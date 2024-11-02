@@ -72,9 +72,9 @@ export default function JobPage(){
                         />
                         <h2 className="absolute bottom-0 left-10 text-lg">{jobData.company.companyName}</h2>
                     </div>
-                    <a className="hover:underline cursor-pointer font-bold flex align-middle">
+                    {/* <a className="hover:underline cursor-pointer font-bold flex align-middle">
                         <IoStarSharp /> {jobData.company.reviews}
-                    </a>
+                    </a> */}
                 </div>
                 <Button
                     type="Secondary"

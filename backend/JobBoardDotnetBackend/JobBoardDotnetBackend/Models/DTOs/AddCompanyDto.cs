@@ -1,6 +1,6 @@
 ﻿namespace JobBoardDotnetBackend.Models.DTOs
 {
-    public class AddEmployerDto
+    public class AddCompanyDto
     {
         public required string CompanyName { get; set; }
         public required string CompanyAddress { get; set; }
