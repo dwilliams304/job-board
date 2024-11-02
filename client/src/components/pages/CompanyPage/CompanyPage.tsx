@@ -8,6 +8,8 @@ import { Job, FetchJobsByCompanyID } from "../../../data/jobs";
 import { Company, FetchCompany, Dev_DefaultCompany } from "../../../data/companies";
 import { GetRandomNumber } from "../../../data/utils";
 
+import { SkeletonLoader } from "../../common";
+
 //Different navigation tabs, for state management
 const tabs = ["jobs", "reviews", "salaries", "about"];
 
@@ -59,15 +61,8 @@ export default function CompanyPage(){
     }, [])
 
 
-    if(isLoading) {
-        return(
-            <div className="w-full flex-grow text-center animate-pulse">
-                <h2 className="mt-20 text-2xl">Loading company page...</h2>
-            </div>
-        )
-    }
-
-
+    if(isLoading) return <SkeletonLoader />
+    
     return(
         <div className="w-full flex-grow">
             <div className="m-20 px-12">

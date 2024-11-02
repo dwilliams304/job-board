@@ -19,7 +19,7 @@ import {
     IoShareSocial 
 } from "react-icons/io5";
 
-import Button from "../../common/Button";
+import { SkeletonLoader, Button } from "../../common";
 
 import { GetRandomNumber } from "../../../data/utils";
 import SetTabTitle from "../../../data/utils/SetTabTitle";
@@ -46,23 +46,7 @@ export default function JobPage(){
 
     }, [])
 
-    if(isLoading) return (
-        <div role="status" className="w-1/2 animate-pulse flex-grow px-20 mt-12 space-y-8">
-        <h2 className="animate-pulse text-3xl text-center">Loading job details...</h2>
-        <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
-        <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px] mb-2.5"></div>
-        <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
-        <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[330px] mb-2.5"></div>
-        <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[300px] mb-2.5"></div>
-        <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[360px]"></div>
-        <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
-        <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[500px] mb-2.5"></div>
-        <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
-        <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[500px] mb-2.5"></div>
-        <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[450px] mb-2.5"></div>
-        <div className="h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[550px]"></div>
-        </div>
-    )
+    if(isLoading) return <SkeletonLoader />
 
 
     return (
