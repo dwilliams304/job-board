@@ -22,23 +22,23 @@ namespace JobBoardDotnetBackend.Controllers
         [HttpGet]
         public IActionResult GetAllEmployers()
         {
-            var employers = _dbContext.Employers.ToList();
+            var companies = _dbContext.Companies.ToList();
 
-            return Ok(employers);
+            return Ok(companies);
         }
 
         [HttpPost]
-        public IActionResult AddEmployer(AddEmployerDto addEmployerDto)
+        public IActionResult AddEmployer(AddCompanyDto addCompanyDto)
         {
-            var employer = new Employer()
+            var employer = new Company()
             {
-                CompanyName = addEmployerDto.CompanyName,
-                CompanyAddress = addEmployerDto.CompanyAddress,
-                CompanyEmail = addEmployerDto.CompanyEmail,
-                CompanyPhone = addEmployerDto.CompanyPhone,
+                CompanyName = addCompanyDto.CompanyName,
+                CompanyAddress = addCompanyDto.CompanyAddress,
+                CompanyEmail = addCompanyDto.CompanyEmail,
+                CompanyPhone = addCompanyDto.CompanyPhone,
             };
 
-            _dbContext.Employers.Add(employer);
+            _dbContext.Companies.Add(employer);
             _dbContext.SaveChanges();
 
 
