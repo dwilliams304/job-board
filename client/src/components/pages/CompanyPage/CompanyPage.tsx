@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useSearchParams } from "react-router-dom";
 import { IoStarSharp } from "react-icons/io5";
 
 import SetTabTitle from "../../../data/utils/SetTabTitle";
@@ -9,10 +9,15 @@ import { Company, FetchCompany, Dev_DefaultCompany } from "../../../data/compani
 import { GetRandomNumber } from "../../../data/utils";
 
 //Different navigation tabs, for state management
-type tabType = "Jobs" | "Salaries" | "Reviews" | "About"
+const tabs = ["jobs", "reviews", "salaries", "about"];
 
 export default function CompanyPage(){
     const { companyID } = useParams();
+    const [params, setParams] = useSearchParams();
+    let tab = params.get("tab");
+
+
+
     const navTo = useNavigate();
 
     const [isLoading, setIsLoading] = useState(true);
@@ -20,12 +25,14 @@ export default function CompanyPage(){
     const [companyData, setCompanyData] = useState<Company>(Dev_DefaultCompany);
     //We initialize this with an empty array as a company could have no lob listings.
     const [jobListings, setJobListings] = useState<Job[]>([]); 
-    //By default we will be on the "Jobs" tab which displays all job postings
-    const [activeTab, setActiveTab] = useState("Jobs");
 
     
-    const onTabClick = (tab: tabType) => {
-        setActiveTab(tab);
+    const onTabClick = (tab: string) => {
+        //set state into URL
+        setParams(_params => {
+            _params.set("tab", tab);
+            return _params;
+        });
     }
     
     useEffect(() => {
@@ -33,6 +40,10 @@ export default function CompanyPage(){
 
         const company = FetchCompany(Number(companyID));
         const jobs = FetchJobsByCompanyID(Number(companyID));
+
+        if(!tab || tab === "undefined" || !tabs.includes(tab)){ 
+            onTabClick("jobs"); 
+        }
         
         //Set these into local state
         setJobListings(jobs);
@@ -46,6 +57,7 @@ export default function CompanyPage(){
             setIsLoading(false);
         }, GetRandomNumber(4000));
     }, [])
+
 
     if(isLoading) {
         return(
@@ -72,23 +84,23 @@ export default function CompanyPage(){
                 {/* Navigation Bar, Reviews, Salaries, Jobs, etc... */}
                 <nav className="w-full flex space-x-6 mx-auto border-b-2 mb-8">
                     <h3 className="text-lg cursor-pointer hover:underline"
-                    onClick={() => onTabClick("Jobs")}>
+                    onClick={() => onTabClick("jobs")}>
                         Jobs
                     </h3>
                     <h3 className="text-lg cursor-pointer hover:underline"
-                    onClick={() => onTabClick("Reviews")}>
+                    onClick={() => onTabClick("reviews")}>
                         Reviews
                     </h3>
                     <h3 className="text-lg cursor-pointer hover:underline"
-                    onClick={() => onTabClick("Salaries")}>
+                    onClick={() => onTabClick("salaries")}>
                         Salaries
                     </h3>
                     <h3 className="text-lg cursor-pointer hover:underline"
-                    onClick={() => onTabClick("About")}>
+                    onClick={() => onTabClick("about")}>
                         About
                     </h3>
                 </nav>
-                { activeTab === "Jobs" &&
+                { tab === "jobs" &&
                     <div>
                         <div className="space-y-2">
                             {
@@ -105,17 +117,17 @@ export default function CompanyPage(){
                         </div>
                     </div>
                 }
-                { activeTab === "Reviews" &&
+                { tab === "reviews" &&
                     <div>
                         <h2 className="text-xl">No reviews listed!</h2>
                     </div>
                 }
-                { activeTab === "Salaries" &&
+                { tab === "salaries" &&
                     <div>
                         <h2 className="text-xl">No salaries listed!</h2>
                     </div>
                 }
-                { activeTab === "About" &&
+                { tab === "about" &&
                     <div>
                         <h2 className="text-xl">No about listed!</h2>
                     </div>
