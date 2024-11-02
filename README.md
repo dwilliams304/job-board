@@ -1,12 +1,21 @@
 # React Job Board  
 
-> A fullstack application built with a TypeScript React frontend using TailwindCSS for styling. 
+The React Job Board is a mock job-board website that uses React (using TypeScript) and TailwindCSS for the frontend, and uses .NET/C# for the backend. 
+This Job Board will be fully functional, allowing for users to login to employer/job seeker accounts, create an employer/job seeker account, apply to jobs, and create job posts.
+
+&nbsp;
+
+## Purpose
+
+This project is NOT for commercial/public use. This is simply as a personal challenge to create a fully functional full-stack application using TypeScript, and .NET Core. I wanted to learn tech that I have previously not used like TypeScript. While I have familiarity with JavaScript and more statically typed languages (C#), I have not previously used TypeScript extensively, and have never used C# in a web development environment. 
 
 &nbsp;
 ## Dev Notes
 
 + This project currently has incomplete documentation as it is actively being worked on, please be patient!
-+ All backend related scripts and everything within the backend has been temporarily removed as the backend is switched to .NET (10/24/2024)
++ A lot of the frontend data is being pulled from hard-coded .ts files within ./client/data -- this is temporary and will be switched over to using the .NET backend when it is finished. Many models are incomplete and are purely for testing purposes and to show data being displayed (somewhat) dynamically
++ Users can not currently sign in or create accounts. This is intentional
++ Reviews tied to companies are not currently functional, and companies are no longer showing a review score - currently this is WIP
 
 &nbsp;
 ---
