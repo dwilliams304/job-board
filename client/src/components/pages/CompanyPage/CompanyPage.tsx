@@ -26,6 +26,10 @@ import { GetRandomNumber } from "../../../data/utils";
 
 import { SkeletonLoader } from "../../common";
 
+import { FetchCompanyReviews, Review } from "../../../data/reviews";
+
+import ReviewsList from "./ReviewsList";
+
 //Different navigation tabs, for state management
 const tabs = ["jobs", "reviews", "salaries", "about"];
 
@@ -33,6 +37,8 @@ export default function CompanyPage(){
     const { companyID } = useParams();
     const [params, setParams] = useSearchParams();
     let tab = params.get("tab");
+
+    let totalReviews;
 
 
 
@@ -43,6 +49,7 @@ export default function CompanyPage(){
     const [companyData, setCompanyData] = useState<Company>(Dev_DefaultCompany);
     //We initialize this with an empty array as a company could have no lob listings.
     const [jobListings, setJobListings] = useState<Job[]>([]); 
+    const [reviews, setReviews] = useState<Review[]>([]);
 
     
     const onTabClick = (tab: string) => {
@@ -58,6 +65,7 @@ export default function CompanyPage(){
 
         const company = FetchCompany(Number(companyID));
         const jobs = FetchJobsByCompanyID(Number(companyID));
+        const _reviews = FetchCompanyReviews(Number(companyID));
 
         if(!tab || tab === "undefined" || !tabs.includes(tab)){ 
             onTabClick("jobs"); 
@@ -66,6 +74,9 @@ export default function CompanyPage(){
         //Set these into local state
         setJobListings(jobs);
         setCompanyData(company);
+
+
+        setReviews(_reviews);
         //Set the tab title so it doesn't just say 'Job Board'
         SetTabTitle(`${company.companyName} | Company Page`);
 
@@ -89,7 +100,7 @@ export default function CompanyPage(){
                         <h2 className="text-3xl">{companyData.companyName}</h2>
                     </div>
                     <p>Brief company description</p>
-                    <p className="font-bold flex hover:underline cursor-pointer"><IoStarSharp />{companyData.reviews}</p>
+                    <p className="font-bold flex hover:underline cursor-pointer"><IoStarSharp />{reviews.length} reviews...</p>
                 </div>
 
                 {/* Navigation Bar, Reviews, Salaries, Jobs, etc... */}
@@ -112,26 +123,24 @@ export default function CompanyPage(){
                     </h3>
                 </nav>
                 { tab === "jobs" &&
-                    <div>
-                        <div className="space-y-2">
-                            {
-                                jobListings.length > 0 ?
-                                jobListings.map((listing, i) => (
-                                    <p key={i} className="text-xl cursor-pointer hover:underline"
-                                    onClick={() => navTo(`/job/${listing.jobID}`)}>
-                                        {listing.jobTitle} - {listing.location} ({listing.jobOptions.locationType})
-                                    </p>
-                                ))
-                                :
-                                <p className="text-xl">No job listings found!</p>
-                            }    
-                        </div>
+                    <div className="space-y-2">
+                        {
+                            jobListings.length > 0 ?
+                            jobListings.map((listing, i) => (
+                                <p key={i} className="text-xl cursor-pointer hover:underline"
+                                onClick={() => navTo(`/job/${listing.jobID}`)}>
+                                    {listing.jobTitle} - {listing.location} ({listing.jobOptions.locationType})
+                                </p>
+                            ))
+                            :
+                            <p className="text-xl">No job listings found!</p>
+                        }    
                     </div>
                 }
                 { tab === "reviews" &&
-                    <div>
-                        <h2 className="text-xl">No reviews listed!</h2>
-                    </div>
+                    <ReviewsList 
+                        reviews={reviews}
+                    />
                 }
                 { tab === "salaries" &&
                     <div>
