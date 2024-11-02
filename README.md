@@ -19,23 +19,6 @@ This project is NOT for commercial/public use. This is simply as a personal chal
 
 &nbsp;
 ---
-## Scripts
-Here are some basic scripts that will be useful. Once you cd into the root folder of the project you can do the following:
-&nbsp;  
-&nbsp;  
-&nbsp;  
-
-```
-    npm run dev
-    npm run dev:fe
-```
-+ npm run dev -- this will run both the frontend and backend at the same time using _conccurrently_
-+ npm run dev:fe -- this will run the frontend only
-&nbsp;
->_Note: This will also work for npm run test, with the same formatting_
-
-
-
 ## To-Do  
 #### Backend:
 - [x] Switch backend to .NET
