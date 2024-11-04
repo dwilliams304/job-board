@@ -12,6 +12,7 @@
 */
 
 import { FilterPopupMenuState } from "./JobBoard";
+import { JobOptions } from "../../../data/joboptions";
 
 
 export default function FiltersPopup({showFilterPopup, setShowFilterPopup}: FilterPopupMenuState){
@@ -25,19 +26,23 @@ export default function FiltersPopup({showFilterPopup, setShowFilterPopup}: Filt
                     <h2 className="text-lg font-semibold">Job Location</h2>
                     <div>
                         <select className="m-2 p-1 shadow-md border border-solid cursor-pointer">
-                            <option>On-Site</option>
-                            <option>Hybrid</option>
-                            <option>Remote</option>
+                            {
+                                JobOptions.locationOptions.map((option, idx) => (
+                                    <option key={idx}>{option}</option>
+                                ))
+                            }
                         </select>
+                        <input
+                            type="range"
+                            min={0}
+                            max={30}
+                        />
                         <select className="m-2 p-1 shadow-md border border-solid cursor-pointer">
-                            <option>On-Site</option>
-                            <option>Hybrid</option>
-                            <option>Remote</option>
-                        </select>
-                        <select className="m-2 p-1 shadow-md border border-solid cursor-pointer">
-                            <option>On-Site</option>
-                            <option>Hybrid</option>
-                            <option>Remote</option>
+                            {
+                                JobOptions.termOptions.map((option, idx) => (
+                                    <option key={idx}>{option}</option>
+                                ))
+                            }
                         </select>
                     </div>
                 </div>
@@ -52,11 +57,11 @@ export default function FiltersPopup({showFilterPopup, setShowFilterPopup}: Filt
                             max={999999}
                         />
                         <select className="m-2 p-1 shadow-md border border-solid cursor-pointer">
-                            <option>Intern</option>
-                            <option>Entry-Level</option>
-                            <option>Mid-Level</option>
-                            <option>Senior</option>
-                            <option>Manager</option>
+                            {
+                                JobOptions.experienceOptions.map((option, idx) => (
+                                    <option key={idx}>{option}</option>
+                                ))
+                            }
                         </select>
                     </div>
                 </div>
