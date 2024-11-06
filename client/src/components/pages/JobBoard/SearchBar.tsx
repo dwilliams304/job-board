@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { IoFilterSharp } from "react-icons/io5";
 import { FilterPopupMenuState } from "./JobBoard";
 
@@ -6,12 +7,31 @@ import { JobOptions } from "../../../data/joboptions";
 
 import Button from "../../common/Button";
 
-type SearchBarProps = {
-    filterPopupState: FilterPopupMenuState
+const initialSearchValues = {
+    title: "",
+    location: "",
+    locationType: "",
+    experience: "",
+    datePosted: "",
 }
 
-export default function SearchBar(props: SearchBarProps)
-{
+type SearchBarProps = {
+    filterPopupState: FilterPopupMenuState;
+    onSearchSubmit: (...args: any[]) => void;
+}
+
+export default function SearchBar(props: SearchBarProps){
+    const [ searchInputs, setSearchInputs ] = useState({});
+
+    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const {name, value} = e.target;
+        setSearchInputs(
+            {
+                ...searchInputs,
+                [name]: value
+            }
+        )
+    }
 
     const {showFilterPopup, setShowFilterPopup} = props.filterPopupState
 
@@ -21,15 +41,21 @@ export default function SearchBar(props: SearchBarProps)
                 <input 
                     placeholder="Title, keywords, etc..."
                     className="m-1 mb-2 p-2 pr-6 shadow-md border border-solid"
+                    name="title"
+                    onChange={onChange}
+                    value={searchInputs.title}
                 />
                 <input 
                     placeholder="Location or 'Remote'"
                     className="m-1 mb-2 p-2 pr-6 shadow-md border border-solid"
+                    name="location"
+                    onChange={onChange}
+                    value={searchInputs.location}
                 />
                 <Button
                     type="Primary"
                     text="Search"
-                    function={() => {}}
+                    function={() => props.onSearchSubmit(searchInputs)}
                     style={{marginLeft: "2rem"}}
 
                 />

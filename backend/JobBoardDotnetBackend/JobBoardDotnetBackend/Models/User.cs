@@ -1,7 +1,8 @@
-namespace JobBoardDotnetBackend.Models.DTOs
+namespace JobBoardDotnetBackend.Models
 {
-    public class AddUserDto
+    public class User 
     {
+        public Guid Id { get; set; }
         public required string Name { get; set; }
         public required string Location { get; set; }
         public required string Email { get; set; }

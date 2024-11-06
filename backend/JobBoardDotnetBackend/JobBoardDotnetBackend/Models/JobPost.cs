@@ -1,7 +1,7 @@
 using Supabase.Postgrest.Attributes;
 using Supabase.Postgrest.Models;
 
-namespace JobBoardDotnetBackend.Models.Entities 
+namespace JobBoardDotnetBackend.Models 
 {
     [Table("JobPosts")]
     public class JobPost : BaseModel

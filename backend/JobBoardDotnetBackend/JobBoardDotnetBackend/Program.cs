@@ -1,3 +1,4 @@
+using JobBoardDotnetBackend.Models;
 using Supabase;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,10 +14,14 @@ var supabaseOptions = new Supabase.SupabaseOptions
 
 // Add services to the container.
 
-builder.Services.AddScoped<Supabase.Client>(_ =>
-    new Supabase.Client(url, api, supabaseOptions));
+if(!(url is null) && !(api is null)){
+    builder.Services.AddScoped<Supabase.Client>(_ =>
+        new Supabase.Client(url, api, supabaseOptions));
+}
+else{
+    Console.WriteLine("No URL or APIKEY found!");
+}
 
-builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -31,10 +36,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-
-app.MapControllers();
 
 app.Run();

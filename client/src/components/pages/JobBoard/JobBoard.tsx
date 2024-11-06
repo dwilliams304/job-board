@@ -10,6 +10,7 @@
 */
 
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import JobPost from "./JobPost";
 import { Jobs } from "../../../data/jobs";
 import SearchBar from "./SearchBar";
@@ -25,6 +26,18 @@ export type FilterPopupMenuState = {
 
 export default function JobBoard(){
     const [showFilterPopup, setShowFilterPopup] = useState(false);
+    const [jobsList, setJobsList] = useState(Jobs);
+    const [searchParams, setSearchParams] = useSearchParams();
+
+    const onSearchSubmit = (searchParams: any) => {
+        // const {title, location, locationType, experience} = searchParams;
+        setSearchParams(params => {
+            for(let key in searchParams){
+                params.set(`${key}`, searchParams[key]);
+            }
+            return params;
+        })
+    }
 
     SetTabTitle("Job Board");
 
@@ -35,16 +48,17 @@ export default function JobBoard(){
                     showFilterPopup,
                     setShowFilterPopup
                 }}
+                onSearchSubmit={onSearchSubmit}
             />
             <FiltersPopup 
                 showFilterPopup={showFilterPopup}
                 setShowFilterPopup={setShowFilterPopup}
             />
 
-            <p className="pl-2">Showing {Jobs.length} results.</p>
+            <p className="pl-2">Showing {jobsList.length} results.</p>
             <div>
                 {
-                    Jobs.map((job, i) => (
+                    jobsList.map((job, i) => (
                         <JobPost job={job} key={i} />
                     ))
                 }
