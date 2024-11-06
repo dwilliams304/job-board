@@ -1,8 +1,12 @@
+using Postgrest.Models;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace JobBoardDotnetBackend.Models.Entities
 {
-    public class HelpArticle
+    [Table("HelpArticles")]
+    public class HelpArticle : BaseModel
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public required string ArticleTitle { get; set; }
         public required string ArticleTag { get; set; }
         public required string ArticleDescription { get; set; }

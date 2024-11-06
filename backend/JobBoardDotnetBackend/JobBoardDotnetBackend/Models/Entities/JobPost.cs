@@ -1,9 +1,13 @@
+using Postgrest.Models;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace JobBoardDotnetBackend.Models.Entities 
 {
-    public class JobPost
+    [Table("JobPosts")]
+    public class JobPost : BaseModel
     {
-        public Guid Id { get; set; }
-        public required Guid CompanyID { get; set; }
+        public int Id { get; set; }
+        public required int CompanyID { get; set; }
         public required string JobTitle { get; set; }
         public required string ShortDescription { get; set; }
         public required int JobSalary { get; set; }
