@@ -1,15 +1,27 @@
-﻿using Postgrest.Models;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using Postgrest.Attributes;
+using Postgrest.Models;
 
 namespace JobBoardDotnetBackend.Models.Entities
 {
     [Table("Companies")]
     public class Company : BaseModel
     {
+        [PrimaryKey("id")]
         public int Id { get; set; }
+        
+        [Column("company_name")]
         public required string CompanyName { get; set; }
-        public required string CompanyAddress { get; set; }
-        public required string CompanyPhone { get; set; }
+
+        [Column("company_img")]
+        public required string CompanyImg { get; set; }
+
+        [Column("company_location")]
+        public required string CompanyLocation { get; set; }
+
+        [Column("company_email")]
         public required string CompanyEmail { get; set; }
+
+        [Column("company_about")]
+        public string? CompanyAbout { get; set; }
     }
 }
