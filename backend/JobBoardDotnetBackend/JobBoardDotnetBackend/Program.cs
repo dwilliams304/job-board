@@ -1,3 +1,5 @@
+using Supabase;
+
 var builder = WebApplication.CreateBuilder(args);
 
 var url = Environment.GetEnvironmentVariable("SUPABASE_URL");
