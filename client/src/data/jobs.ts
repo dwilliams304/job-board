@@ -112,7 +112,7 @@ export const Jobs: Job[] = [
         salary: 60000,
         jobOptions: {
             experience: "Entry-Level",
-            locationType: "On-Site",
+            locationType: "Remote",
             term: "Full-Time"
         },
         shortDescription: "Join us as a Data Analyst to analyze large datasets and provide insights to drive business decisions."
@@ -154,7 +154,7 @@ export const Jobs: Job[] = [
         salary: 150000,
         jobOptions: {
             experience: "Entry-Level",
-            locationType: "On-Site",
+            locationType: "Remote",
             term: "Full-Time"
         },
         shortDescription: "We are looking for an experienced Product Manager to drive product strategy and collaborate with engineering and design teams."
@@ -168,7 +168,7 @@ export const Jobs: Job[] = [
         salary: 55000,
         jobOptions: {
             experience: "Entry-Level",
-            locationType: "On-Site",
+            locationType: "Remote",
             term: "Full-Time"
         },
         shortDescription: "Join our creative team as a UX/UI Designer to help create engaging and user-friendly applications."
@@ -182,7 +182,7 @@ export const Jobs: Job[] = [
         salary: 95000,
         jobOptions: {
             experience: "Entry-Level",
-            locationType: "On-Site",
+            locationType: "Hybrid",
             term: "Full-Time"
         },
         shortDescription: "Looking for a Backend Developer with expertise in Node.js and database management to support our application development."
@@ -196,7 +196,7 @@ export const Jobs: Job[] = [
         salary: 120000,
         jobOptions: {
             experience: "Entry-Level",
-            locationType: "On-Site",
+            locationType: "Hybrid",
             term: "Full-Time"
         },
         shortDescription: "Seeking a Senior Mobile App Developer with a strong background in iOS and Android development to join our team."
