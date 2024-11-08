@@ -8,7 +8,7 @@
   "scripts": {
     "i:fe": "npm install --prefix ./client/",
     "dev:fe": "npm run dev --prefix ./client/",
-    "dev:be": "cd ./backend/JobBoardDotnetBackend/JobBoardDotnetBackend/ && dotnet watch run",
+    "dev:be": "cd ./backend/ && dotnet watch run",
     "test": "npm run test:fe",
     "test:fe": "npm run test --prefix ./client/"
   },
