@@ -1,16 +1,25 @@
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+
 
 namespace JobBoardDotnetBackend.Models
 {
     public class HelpArticle
     {
-        public int Id { get; set; }
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string? Id { get; set; }
 
-        public required DateTime ArticleDate { get; set; }
+        [BsonElement("last_update")]
+        public required DateTime LastUpdated { get; set; }
 
-        public required string ArticleTitle { get; set; }
+        [BsonElement("title")]
+        public required string Title { get; set; }
 
-        public required string ArticleTag { get; set; }
+        [BsonElement("tag")]
+        public required string Tag { get; set; }
 
+        [BsonElement("for_employers")]
         public required bool ForEmployers { get; set; }
     }
 }
