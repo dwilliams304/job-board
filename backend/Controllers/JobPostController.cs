@@ -22,11 +22,12 @@ namespace JobBoardDotnetBackend.Controllers
             return await mongoDbService.GetJobPosts();
         }
 
-        //[HttpPost]
-        //public async Task<IActionResult> CreateNewPost([FromBody] JobPost jobPost)
-        //{
-
-        //}
+        [HttpPost]
+        public async Task<IActionResult> CreateNewPost([FromBody] JobPost jobPost)
+        {
+            await mongoDbService.CreateJobPost(jobPost);
+            return Created();
+        }
 
         //[HttpPut("{id}")]
         //public async Task<IActionResult> UpdatePost(string id, [FromBody] JobPost jobPost)

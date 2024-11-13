@@ -22,16 +22,18 @@ namespace JobBoardDotnetBackend.Services
             _reviewsCollection = mainDb.GetCollection<Review>(settings.Value.ReviewCollectionName);
         }
 
-
+        #region Company Funcs...
         public async Task CreateCompany(Company company)
         {
             await _companyCollection.InsertOneAsync(company);
             return;
         }
+        #endregion
 
         #region Job Post Funcs...
         public async Task CreateJobPost(JobPost jobPost)
         {
+            //jobPost.DatePosted = DateTime.Now;
             await _jobPostCollection.InsertOneAsync(jobPost);
             return;
         }
@@ -42,16 +44,20 @@ namespace JobBoardDotnetBackend.Services
         }
         #endregion
 
+        #region Help Article Funcs...
         public async Task CreateHelpArticle(HelpArticle helpArticle)
         {
             await _helpArticleCollection.InsertOneAsync(helpArticle);
             return;
         }
+        #endregion
 
+        #region Review Funcs...
         public async Task CreateReview(Review review)
         {
             await _reviewsCollection.InsertOneAsync(review);
             return;
         }
+        #endregion
     }
 }

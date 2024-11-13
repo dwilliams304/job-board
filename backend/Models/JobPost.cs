@@ -12,30 +12,30 @@ namespace JobBoardDotnetBackend.Models
 
         [BsonElement("company")]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string CompanyID { get; set; } = null!;
+        public string? CompanyID { get; set; }
 
         [BsonElement("date_posted")]
-        public DateTime? DatePosted { get; set; }
+        public DateTime? DatePosted { get; set; } = DateTime.Now;
 
         [BsonElement("title")]
-        public string Title { get; set; } = null!;
+        public required string Title { get; set; }
 
         [BsonElement("short_description")]
-        public string ShortDescription { get; set; } = null!;
+        public required string ShortDescription { get; set; }
 
         [BsonElement("salary")]
-        public required int? Salary { get; set; }
+        public required int Salary { get; set; }
 
         [BsonElement("term")]
-        public string Term { get; set; } = null!;
+        public required string Term { get; set; }
 
         [BsonElement("location")]
-        public string Location { get; set; } = null!;
+        public required string Location { get; set; }
 
         [BsonElement("location_type")]
-        public string LocationType { get; set; } = null!;
+        public required string LocationType { get; set; }
 
         [BsonElement("experience")]
-        public string Experience { get; set; } = null!;
+        public required string Experience { get; set; }
     }
 }
