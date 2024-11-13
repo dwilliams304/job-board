@@ -1,0 +1,21 @@
+_id,name,about,address,current_employees,currently_hiring,email,img,phone
+67351f3e4b9cab8b45cadc65,TechCorp,About TechCorp,"123 Tech St, Silicon Valley, CA",866,true,techcorp@companymail.com,https://notfound.com/noimageprovided,+1-841-694-5872
+67351f3e99c94e3e5061cccc,HealthPlus,About HealthPlus,"789 Health Ave, New York, NY",402,false,healthplus@companymail.com,https://notfound.com/noimageprovided,+1-332-741-8566
+67351f3e9c109bacfbaee0a7,EduNation,About EduNation,"456 Edu Ln, Boston, MA",603,true,edunation@companymail.com,https://notfound.com/noimageprovided,+1-609-486-7824
+67351f3e2e7b9624b1b751de,FinScope,About FinScope,"101 Fin St, Chicago, IL",491,false,finscope@companymail.com,https://notfound.com/noimageprovided,+1-554-769-8771
+67351f3eaf7a4e24a1de75f5,GreenEnergy,About GreenEnergy,"102 Green Dr, Austin, TX",887,true,greenenergy@companymail.com,https://notfound.com/noimageprovided,+1-301-224-6276
+67351f3eb68c43ed5b337d10,LogiSolutions,About LogiSolutions,"109 Logi Rd, Dallas, TX",634,true,logisolutions@companymail.com,https://notfound.com/noimageprovided,+1-716-356-1912
+67351f3e90f4a547ab2e7471,UrbanScape,About UrbanScape,"203 Urban Rd, Miami, FL",846,true,urbanscape@companymail.com,https://notfound.com/noimageprovided,+1-884-435-6238
+67351f3e4db1ec729c54490d,AeroDynamics,About AeroDynamics,"305 Aero Ln, Denver, CO",216,true,aerodynamics@companymail.com,https://notfound.com/noimageprovided,+1-315-858-6572
+67351f3eeaf1a57838f51eb5,DataSense,About DataSense,"444 Data Dr, Seattle, WA",348,true,datasense@companymail.com,https://notfound.com/noimageprovided,+1-610-990-4381
+67351f3e94257cfc0d4bb09f,FoodiesHub,About FoodiesHub,"555 Foodie St, Portland, OR",233,false,foodieshub@companymail.com,https://notfound.com/noimageprovided,+1-378-294-7356
+67351f3ee6d4efd568f98e99,BuildRight,About BuildRight,"678 Build Ln, Atlanta, GA",166,true,buildright@companymail.com,https://notfound.com/noimageprovided,+1-743-925-9759
+67351f3e6daef67c768b7ff0,SoftWareHouse,About SoftWareHouse,"789 Soft St, Palo Alto, CA",970,true,softwarehouse@companymail.com,https://notfound.com/noimageprovided,+1-301-975-9566
+67351f3e7a23c8fc0e4cc465,MediConnect,About MediConnect,"810 Medi St, San Diego, CA",690,true,mediconnect@companymail.com,https://notfound.com/noimageprovided,+1-782-510-2220
+67351f3e6af16a7ed0164c9b,AgriWorld,About AgriWorld,"901 Agri Rd, Orlando, FL",833,false,agriworld@companymail.com,https://notfound.com/noimageprovided,+1-563-736-8409
+67351f3ed53e4525df7bfc7d,CloudNine,About CloudNine,"345 Cloud Blvd, San Jose, CA",946,true,cloudnine@companymail.com,https://notfound.com/noimageprovided,+1-365-261-3482
+67351f3e7195c000d7c10317,TravelEase,About TravelEase,"999 Travel Rd, Las Vegas, NV",277,true,travelease@companymail.com,https://notfound.com/noimageprovided,+1-155-571-3398
+67351f3ef9485a1c0f1955d0,SmartSecure,About SmartSecure,"202 Smart St, Phoenix, AZ",97,false,smartsecure@companymail.com,https://notfound.com/noimageprovided,+1-386-808-6427
+67351f3ee451b1fd2a25c5d0,EcoLife,About EcoLife,"303 Eco Ave, Salt Lake City, UT",252,true,ecolife@companymail.com,https://notfound.com/noimageprovided,+1-979-210-9434
+67351f3e5262ab5ba1eab2a1,BrightFuture,About BrightFuture,"404 Bright Rd, Houston, TX",625,false,brightfuture@companymail.com,https://notfound.com/noimageprovided,+1-899-948-9477
+67351f3ebeddd4abbce8dea8,InnoVentures,About InnoVentures,"505 Inno Blvd, Boston, MA",274,false,innoventures@companymail.com,https://notfound.com/noimageprovided,+1-938-698-2789

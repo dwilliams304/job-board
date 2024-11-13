@@ -22,6 +22,12 @@ namespace JobBoardDotnetBackend.Controllers
             return await mongoDbService.GetJobPosts();
         }
 
+        [HttpGet("{id}")]
+        public async Task<JobPost> GetPostById(string id)
+        {
+            return await mongoDbService.GetJobPostById(id);
+        }
+
         [HttpPost]
         public async Task<IActionResult> CreateNewPost([FromBody] JobPost jobPost)
         {

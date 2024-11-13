@@ -38,9 +38,18 @@ namespace JobBoardDotnetBackend.Services
             return;
         }
 
+        public async Task<JobPost> GetJobPostById(string id)
+        {
+            FilterDefinition<JobPost> filter = Builders<JobPost>.Filter.Eq("Id", id);
+            var post = await _jobPostCollection.Find(filter).FirstOrDefaultAsync();
+            return post;
+        }
+
+
         public async Task<List<JobPost>> GetJobPosts()
         {
-            return await _jobPostCollection.Find(new BsonDocument()).ToListAsync();
+            var posts = await _jobPostCollection.Find(new BsonDocument()).ToListAsync();
+            return posts;
         }
         #endregion
 

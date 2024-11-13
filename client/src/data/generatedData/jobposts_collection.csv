@@ -1,0 +1,101 @@
+_id,company,title,location,salary,date_posted,short_description,experience,location_type,term
+67351f3e647828db595431bf,67351f3e90f4a547ab2e7471,Backend Developer,"Detroit, MI",72747,2024-08-31T10:18:20.995Z,Contribute to our core products.,Entry-Level,Remote,Contract
+67351f3efe5e48e14fbe5a71,67351f3e7a23c8fc0e4cc465,DevOps Engineer,"Houston, TX",82109,2024-11-03T19:57:27.216Z,Exciting opportunity for growth.,Intern,Hybrid,Part-Time
+67351f3e4cd9d366d906f33f,67351f3e6af16a7ed0164c9b,Full Stack Developer,"Washington, D.C.",189578,2024-05-23T03:09:15.358Z,Contribute to our core products.,Entry-Level,Remote,Full-Time
+67351f3e7235352f922c42a0,67351f3e99c94e3e5061cccc,Product Manager,"Houston, TX",54149,2024-11-02T21:36:20.115Z,Join our team to drive innovation.,Manager,Remote,Full-Time
+67351f3ec9c0e74341ac748a,67351f3e6af16a7ed0164c9b,Frontend Developer,"Phoenix, AZ",109072,2024-09-26T01:54:49.812Z,Join our team to drive innovation.,Manager,Hybrid,Contract
+67351f3e3bbf440d150e6e4d,67351f3ed53e4525df7bfc7d,Quality Assurance Engineer,"Denver, CO",128639,2024-05-17T21:52:34.657Z,Creative solutions-oriented mindset needed.,Manager,On-Site,Contract
+67351f3ef9356324ed8d1d6f,67351f3e9c109bacfbaee0a7,Full Stack Developer,"New York NY",55788,2024-10-22T08:09:18.789Z,Looking for a motivated individual.,Mid-Level,Remote,Full-Time
+67351f3ee1061745a1f52d3f,67351f3ee6d4efd568f98e99,Cybersecurity Specialist,"Chicago, IL",97809,2024-10-24T09:33:46.281Z,Join our team to drive innovation.,Entry-Level,On-Site,Full-Time
+67351f3e4e16bd2dd7ea9981,67351f3e2e7b9624b1b751de,Data Scientist,"Denver, CO",137816,2024-10-24T23:48:17.701Z,Looking for a motivated individual.,Mid-Level,Hybrid,Part-Time
+67351f3e2891367e3676214e,67351f3eeaf1a57838f51eb5,Backend Developer,"Washington, D.C.",95727,2024-07-01T18:34:33.075Z,Help us shape the future.,Senior,Remote,Part-Time
+67351f3e39e8a2c3a65885f1,67351f3e7195c000d7c10317,Software Engineer,"Phoenix, AZ",126628,2024-06-15T03:06:26.317Z,Join our team to drive innovation.,Entry-Level,Hybrid,Full-Time
+67351f3ef787fb1e411acfe2,67351f3e7a23c8fc0e4cc465,Full Stack Developer,"Boston, MA",55810,2024-09-23T04:06:15.647Z,Exciting opportunity for growth.,Mid-Level,Hybrid,Full-Time
+67351f3ee606aab31ce16ed6,67351f3ed53e4525df7bfc7d,Backend Developer,"Chicago, IL",54003,2024-08-12T16:19:54.193Z,Looking for a motivated individual.,Mid-Level,Hybrid,Part-Time
+67351f3e48f9339fb058bd59,67351f3eeaf1a57838f51eb5,Data Scientist,"Salt Lake City, UT",158075,2024-06-03T05:53:30.412Z,Join our team to drive innovation.,Senior,On-Site,Part-Time
+67351f3ee99ec83800d0bab8,67351f3e94257cfc0d4bb09f,UX/UI Designer,"Atlanta, GA",104652,2024-09-27T11:06:09.052Z,Creative solutions-oriented mindset needed.,Manager,Remote,Full-Time
+67351f3e5d29857460961008,67351f3e6daef67c768b7ff0,UX/UI Designer,"Remote",95597,2024-05-30T23:37:30.030Z,Exciting opportunity for growth.,Senior,On-Site,Contract
+67351f3ef6a03084702f2536,67351f3e4b9cab8b45cadc65,Cybersecurity Specialist,"Salt Lake City, UT",116687,2024-10-10T02:06:50.569Z,Join our team to drive innovation.,Entry-Level,On-Site,Part-Time
+67351f3e6e73f59ff0cb217c,67351f3e7195c000d7c10317,IT Project Manager,"Austin TX",191785,2024-07-08T22:26:10.149Z,Creative solutions-oriented mindset needed.,Mid-Level,On-Site,Part-Time
+67351f3e33d2929f39e860a4,67351f3ee451b1fd2a25c5d0,Software Engineer,"Denver, CO",122836,2024-11-07T08:54:25.530Z,Contribute to our core products.,Entry-Level,On-Site,Full-Time
+67351f3edbd435e89b92b468,67351f3eb68c43ed5b337d10,Cybersecurity Specialist,"Detroit, MI",63038,2024-06-27T22:03:30.000Z,Creative solutions-oriented mindset needed.,Intern,Remote,Part-Time
+67351f3e5271fb9a8860e641,67351f3ed53e4525df7bfc7d,Full Stack Developer,"Atlanta, GA",65973,2024-06-15T13:57:44.849Z,Join our team to drive innovation.,Mid-Level,Remote,Part-Time
+67351f3eaecaea6a4448f83f,67351f3e94257cfc0d4bb09f,Mobile App Developer,"Denver, CO",79328,2024-07-26T04:24:50.731Z,Creative solutions-oriented mindset needed.,Mid-Level,Remote,Contract
+67351f3efe1ffaf5a126954a,67351f3e4b9cab8b45cadc65,Technical Support Specialist,"Denver, CO",54288,2024-08-16T07:04:44.551Z,Help us shape the future.,Manager,Remote,Full-Time
+67351f3e9bc03c803f6e1684,67351f3ee451b1fd2a25c5d0,System Administrator,"Orlando, FL",102523,2024-07-07T12:29:37.165Z,Contribute to our core products.,Mid-Level,Remote,Part-Time
+67351f3e8d334a3b181a7aa0,67351f3ed53e4525df7bfc7d,Full Stack Developer,"Houston, TX",87631,2024-07-01T13:01:41.561Z,Exciting opportunity for growth.,Manager,On-Site,Part-Time
+67351f3e731ba5862a8375cb,67351f3e4db1ec729c54490d,Data Engineer,"Orlando, FL",70398,2024-05-28T15:01:03.845Z,Looking for a motivated individual.,Senior,Hybrid,Part-Time
+67351f3e431a7a501f058958,67351f3e4db1ec729c54490d,Mobile App Developer,"Detroit, MI",192173,2024-08-24T17:39:01.817Z,Looking for a motivated individual.,Intern,Hybrid,Part-Time
+67351f3e441f57c21fe454a4,67351f3e5262ab5ba1eab2a1,System Administrator,"Chicago, IL",64844,2024-06-12T08:43:33.879Z,Looking for a motivated individual.,Senior,Remote,Full-Time
+67351f3e565269ad85b6a91a,67351f3eb68c43ed5b337d10,Cloud Solutions Architect,"New York NY",152975,2024-10-22T07:34:43.577Z,Creative solutions-oriented mindset needed.,Manager,Hybrid,Part-Time
+67351f3e5aff5c93c00cd211,67351f3eeaf1a57838f51eb5,DevOps Engineer,"Los Angeles, CA",110137,2024-10-16T20:23:51.091Z,Help us shape the future.,Mid-Level,Hybrid,Part-Time
+67351f3e87fdf4a85ad8acba,67351f3e99c94e3e5061cccc,Data Engineer,"Boston, MA",187412,2024-08-30T09:35:02.242Z,Looking for a motivated individual.,Senior,Remote,Part-Time
+67351f3e00a3e1ced1ee7456,67351f3e94257cfc0d4bb09f,System Administrator,"Houston, TX",192634,2024-07-08T00:32:08.811Z,Contribute to our core products.,Entry-Level,On-Site,Contract
+67351f3e60ffda26a5a2ef91,67351f3e9c109bacfbaee0a7,Backend Developer,"Denver, CO",89613,2024-06-05T20:51:03.577Z,Help us shape the future.,Entry-Level,Remote,Full-Time
+67351f3eb44629f497910ec4,67351f3e2e7b9624b1b751de,Frontend Developer,"Chicago, IL",83300,2024-05-27T04:22:43.060Z,Join our team to drive innovation.,Mid-Level,Remote,Part-Time
+67351f3e104553dc1fad4fb4,67351f3e6daef67c768b7ff0,Network Engineer,"Austin TX",94002,2024-07-30T18:35:56.639Z,Join our team to drive innovation.,Intern,Remote,Part-Time
+67351f3e4ed3ed7a379d1a82,67351f3eb68c43ed5b337d10,Database Administrator,"Houston, TX",181272,2024-06-08T20:47:59.749Z,Exciting opportunity for growth.,Entry-Level,Remote,Contract
+67351f3e470855d749fa46c9,67351f3e94257cfc0d4bb09f,Cybersecurity Specialist,"Denver, CO",194919,2024-08-03T15:08:00.106Z,Exciting opportunity for growth.,Entry-Level,On-Site,Full-Time
+67351f3e73e6d8f6c44e0945,67351f3eb68c43ed5b337d10,Security Analyst,"Seattle WA",70833,2024-10-14T10:40:30.243Z,Join our team to drive innovation.,Manager,On-Site,Part-Time
+67351f3eaa8d916b96c3c8ba,67351f3e7195c000d7c10317,Software Engineer,"Houston, TX",83481,2024-09-28T08:42:20.135Z,Looking for a motivated individual.,Manager,On-Site,Full-Time
+67351f3e3c97e7011a4e6da9,67351f3e4b9cab8b45cadc65,Quality Assurance Engineer,"Detroit, MI",50791,2024-06-13T10:53:01.844Z,Join our team to drive innovation.,Intern,On-Site,Contract
+67351f3e352173b4f20ed440,67351f3e99c94e3e5061cccc,Technical Support Specialist,"Los Angeles, CA",95169,2024-08-18T07:41:31.064Z,Looking for a motivated individual.,Manager,Hybrid,Contract
+67351f3eec9635ca5b62b137,67351f3e6af16a7ed0164c9b,DevOps Engineer,"Houston, TX",86162,2024-06-03T11:45:23.920Z,Join our team to drive innovation.,Entry-Level,On-Site,Contract
+67351f3e215a180a28c2516c,67351f3e6daef67c768b7ff0,Cloud Solutions Architect,"San Francisco CA",102463,2024-07-31T09:43:03.239Z,Creative solutions-oriented mindset needed.,Manager,Hybrid,Full-Time
+67351f3e6b719bbfd3e68817,67351f3ed53e4525df7bfc7d,Full Stack Developer,"Dallas, TX",178908,2024-10-27T09:40:21.976Z,Looking for a motivated individual.,Entry-Level,On-Site,Full-Time
+67351f3e02ac2c3cc798de14,67351f3e99c94e3e5061cccc,DevOps Engineer,"Atlanta, GA",194237,2024-09-02T23:53:52.089Z,Contribute to our core products.,Manager,On-Site,Part-Time
+67351f3efee8d25c80f7ddb0,67351f3e94257cfc0d4bb09f,Frontend Developer,"Washington, D.C.",141826,2024-08-07T18:24:31.512Z,Help us shape the future.,Mid-Level,On-Site,Full-Time
+67351f3e5a9fff3444b16229,67351f3eaf7a4e24a1de75f5,Product Manager,"Phoenix, AZ",86410,2024-10-22T23:01:41.829Z,Help us shape the future.,Mid-Level,Remote,Full-Time
+67351f3e77faad41b6c20eb1,67351f3ee451b1fd2a25c5d0,Security Analyst,"Minneapolis, MN",121581,2024-09-01T19:07:28.639Z,Exciting opportunity for growth.,Entry-Level,On-Site,Contract
+67351f3ef99b27a68fb115cb,67351f3ee451b1fd2a25c5d0,Full Stack Developer,"Phoenix, AZ",152377,2024-07-17T08:30:45.680Z,Join our team to drive innovation.,Manager,Hybrid,Full-Time
+67351f3e87b598a5b52ec230,67351f3e7a23c8fc0e4cc465,Full Stack Developer,"Washington, D.C.",196319,2024-08-30T09:09:07.088Z,Join our team to drive innovation.,Manager,On-Site,Full-Time
+67351f3e2e41c8b7772b1333,67351f3ee6d4efd568f98e99,Data Scientist,"Seattle WA",187441,2024-11-12T04:29:43.550Z,Creative solutions-oriented mindset needed.,Entry-Level,On-Site,Contract
+67351f3ef330ea7338634728,67351f3e2e7b9624b1b751de,Full Stack Developer,"Washington, D.C.",95651,2024-06-30T05:06:31.512Z,Help us shape the future.,Manager,On-Site,Contract
+67351f3ecf6834a99b2143e9,67351f3ee6d4efd568f98e99,UX/UI Designer,"Chicago, IL",182597,2024-07-09T19:42:57.493Z,Looking for a motivated individual.,Intern,Hybrid,Full-Time
+67351f3ec02b53fd7a013f44,67351f3ee451b1fd2a25c5d0,IT Project Manager,"Houston, TX",70012,2024-06-30T23:31:09.593Z,Join our team to drive innovation.,Manager,Hybrid,Part-Time
+67351f3ed2964b2a193cad1b,67351f3ef9485a1c0f1955d0,Backend Developer,"Salt Lake City, UT",121707,2024-08-06T05:02:52.133Z,Join our team to drive innovation.,Entry-Level,Hybrid,Part-Time
+67351f3e4ddc475677f6fc97,67351f3eb68c43ed5b337d10,IT Project Manager,"Dallas, TX",95542,2024-06-21T19:45:56.699Z,Creative solutions-oriented mindset needed.,Senior,Hybrid,Contract
+67351f3e8f848314410e9ebd,67351f3e4db1ec729c54490d,DevOps Engineer,"United States",108851,2024-07-01T05:24:37.011Z,Contribute to our core products.,Senior,Remote,Contract
+67351f3e0e698525d55f16bc,67351f3e4b9cab8b45cadc65,Full Stack Developer,"San Francisco CA",111798,2024-09-22T22:02:34.684Z,Exciting opportunity for growth.,Intern,Hybrid,Contract
+67351f3eb1706a2d10b2273f,67351f3e94257cfc0d4bb09f,Frontend Developer,"Seattle WA",136131,2024-11-10T22:58:26.632Z,Contribute to our core products.,Manager,On-Site,Part-Time
+67351f3e79297b11979113ac,67351f3e2e7b9624b1b751de,Technical Support Specialist,"Denver, CO",86602,2024-09-08T19:35:45.232Z,Join our team to drive innovation.,Entry-Level,Hybrid,Part-Time
+67351f3e1f0ecba45975be4b,67351f3eb68c43ed5b337d10,Product Manager,"Dallas, TX",98177,2024-08-31T09:27:37.221Z,Contribute to our core products.,Manager,On-Site,Part-Time
+67351f3ee9fc35e6fba0474f,67351f3e7195c000d7c10317,Machine Learning Engineer,"Austin TX",184640,2024-09-13T15:27:15.188Z,Help us shape the future.,Mid-Level,Hybrid,Contract
+67351f3e637bc6d73b9cdd93,67351f3e94257cfc0d4bb09f,Backend Developer,"Detroit, MI",76991,2024-06-30T23:55:15.827Z,Help us shape the future.,Senior,Remote,Contract
+67351f3ea0497ccc6bc21b78,67351f3e7a23c8fc0e4cc465,Frontend Developer,"Phoenix, AZ",67819,2024-06-21T11:55:57.730Z,Contribute to our core products.,Intern,On-Site,Contract
+67351f3e6e8b6103f1dba021,67351f3e4b9cab8b45cadc65,System Administrator,"Dallas, TX",141670,2024-08-16T20:57:33.604Z,Contribute to our core products.,Manager,Remote,Part-Time
+67351f3e8e3c36e79b523bb5,67351f3ed53e4525df7bfc7d,Cybersecurity Specialist,"Washington, D.C.",82462,2024-09-29T16:36:15.953Z,Exciting opportunity for growth.,Senior,On-Site,Contract
+67351f3e055591b1e466bfeb,67351f3ebeddd4abbce8dea8,Network Engineer,"Denver, CO",83372,2024-08-17T01:53:31.259Z,Exciting opportunity for growth.,Entry-Level,Hybrid,Part-Time
+67351f3ef2d69350b7579c15,67351f3e4b9cab8b45cadc65,Cybersecurity Specialist,"Salt Lake City, UT",111250,2024-09-12T21:58:16.936Z,Help us shape the future.,Mid-Level,Hybrid,Full-Time
+67351f3efc20eecf99183981,67351f3e6af16a7ed0164c9b,Cloud Solutions Architect,"San Francisco CA",102583,2024-08-29T03:11:07.171Z,Contribute to our core products.,Entry-Level,On-Site,Contract
+67351f3e23df968c09570d1c,67351f3e4db1ec729c54490d,Data Engineer,"Atlanta, GA",157770,2024-11-03T08:44:44.217Z,Help us shape the future.,Manager,Hybrid,Contract
+67351f3e012edf4a7a389737,67351f3e6af16a7ed0164c9b,Cloud Solutions Architect,"Washington, D.C.",195406,2024-06-05T00:54:32.418Z,Join our team to drive innovation.,Intern,Remote,Part-Time
+67351f3e0ef5ec1606a0d9b9,67351f3e6daef67c768b7ff0,Machine Learning Engineer,"Seattle WA",157329,2024-07-09T04:36:35.590Z,Looking for a motivated individual.,Manager,On-Site,Contract
+67351f3ec38e841771f1bd85,67351f3eeaf1a57838f51eb5,Product Manager,"Detroit, MI",120103,2024-09-30T08:28:35.367Z,Help us shape the future.,Mid-Level,Hybrid,Contract
+67351f3e94dd3a474eda77d1,67351f3e9c109bacfbaee0a7,Technical Support Specialist,"Los Angeles, CA",76024,2024-10-20T08:30:42.569Z,Contribute to our core products.,Intern,Remote,Full-Time
+67351f3e08021b94d7dd7b01,67351f3e4db1ec729c54490d,Technical Support Specialist,"Los Angeles, CA",104843,2024-06-17T10:22:49.990Z,Creative solutions-oriented mindset needed.,Senior,Remote,Contract
+67351f3ec354b08ffba6cab8,67351f3e4db1ec729c54490d,DevOps Engineer,"Boston, MA",132640,2024-08-15T19:49:59.612Z,Contribute to our core products.,Mid-Level,On-Site,Full-Time
+67351f3e2a21662933a31414,67351f3e4b9cab8b45cadc65,Data Engineer,"United States",79241,2024-10-15T16:52:24.771Z,Exciting opportunity for growth.,Senior,Remote,Part-Time
+67351f3e23963d53a79d8996,67351f3e4b9cab8b45cadc65,Full Stack Developer,"Dallas, TX",147203,2024-11-09T21:57:30.534Z,Looking for a motivated individual.,Manager,On-Site,Contract
+67351f3edcb5635be9a759f8,67351f3e4db1ec729c54490d,Quality Assurance Engineer,"Denver, CO",76917,2024-11-09T06:38:35.414Z,Help us shape the future.,Manager,Hybrid,Part-Time
+67351f3ea1c11151b5429d93,67351f3e2e7b9624b1b751de,System Administrator,"San Francisco CA",102712,2024-08-06T09:42:49.772Z,Creative solutions-oriented mindset needed.,Senior,On-Site,Full-Time
+67351f3e9d1c386530d31330,67351f3ef9485a1c0f1955d0,Technical Support Specialist,"Austin TX",177689,2024-06-05T08:41:05.659Z,Creative solutions-oriented mindset needed.,Senior,On-Site,Contract
+67351f3e37ae54f8d07cba10,67351f3e90f4a547ab2e7471,Machine Learning Engineer,"San Francisco CA",151997,2024-08-29T16:29:31.780Z,Help us shape the future.,Manager,Hybrid,Part-Time
+67351f3ef1e99058e73c82ae,67351f3e90f4a547ab2e7471,Cloud Solutions Architect,"Chicago, IL",158796,2024-09-26T17:39:31.956Z,Contribute to our core products.,Mid-Level,On-Site,Contract
+67351f3e32dd1df2614d006a,67351f3e99c94e3e5061cccc,IT Project Manager,"Minneapolis, MN",64687,2024-05-20T21:44:03.054Z,Looking for a motivated individual.,Senior,Hybrid,Contract
+67351f3e614648cc875857b9,67351f3e5262ab5ba1eab2a1,Software Engineer,"Orlando, FL",102242,2024-08-27T19:06:05.007Z,Join our team to drive innovation.,Entry-Level,Hybrid,Full-Time
+67351f3ec602daace80bc2fe,67351f3e7195c000d7c10317,Mobile App Developer,"Detroit, MI",52879,2024-09-17T12:45:47.255Z,Looking for a motivated individual.,Intern,Hybrid,Full-Time
+67351f3e00e45548c16a7d02,67351f3ed53e4525df7bfc7d,Data Engineer,"Seattle WA",113855,2024-10-06T12:03:31.253Z,Looking for a motivated individual.,Senior,Hybrid,Contract
+67351f3e8153558f831c3d67,67351f3ebeddd4abbce8dea8,Frontend Developer,"Remote",151227,2024-06-20T08:55:16.980Z,Join our team to drive innovation.,Entry-Level,Hybrid,Contract
+67351f3e01fe7ac1b5192c40,67351f3e2e7b9624b1b751de,Network Engineer,"Atlanta, GA",60262,2024-09-19T11:22:27.475Z,Looking for a motivated individual.,Entry-Level,Hybrid,Full-Time
+67351f3e9737cf94357642af,67351f3e4b9cab8b45cadc65,Data Engineer,"Remote",116002,2024-10-21T03:46:53.538Z,Looking for a motivated individual.,Manager,On-Site,Contract
+67351f3e87f55039468a1728,67351f3ed53e4525df7bfc7d,Quality Assurance Engineer,"Salt Lake City, UT",114712,2024-06-28T04:14:44.727Z,Exciting opportunity for growth.,Entry-Level,Remote,Full-Time
+67351f3eea3d42366ee9f2d4,67351f3e6daef67c768b7ff0,IT Project Manager,"Dallas, TX",107423,2024-07-05T01:39:03.349Z,Creative solutions-oriented mindset needed.,Intern,Remote,Full-Time
+67351f3e66074fcd8dff8491,67351f3e6af16a7ed0164c9b,Mobile App Developer,"San Francisco CA",95439,2024-09-30T20:27:48.186Z,Creative solutions-oriented mindset needed.,Manager,Hybrid,Part-Time
+67351f3eea11b6fa3f1500fa,67351f3e2e7b9624b1b751de,Data Scientist,"Austin TX",134538,2024-08-24T05:16:45.803Z,Join our team to drive innovation.,Senior,On-Site,Part-Time
+67351f3ee368e75e6f6c20a0,67351f3eeaf1a57838f51eb5,Quality Assurance Engineer,"Salt Lake City, UT",72642,2024-11-12T19:23:28.696Z,Join our team to drive innovation.,Intern,On-Site,Part-Time
+67351f3ef2914e4f7989e4c4,67351f3eb68c43ed5b337d10,Backend Developer,"Seattle WA",151587,2024-09-21T06:17:35.135Z,Join our team to drive innovation.,Mid-Level,On-Site,Full-Time
+67351f3e04c8e2cccabe8458,67351f3ee451b1fd2a25c5d0,Database Administrator,"Austin TX",114481,2024-08-07T22:40:12.369Z,Creative solutions-oriented mindset needed.,Manager,Hybrid,Part-Time
+67351f3e4ce6734a33e3b1b5,67351f3e90f4a547ab2e7471,Machine Learning Engineer,"Orlando, FL",158920,2024-10-25T12:08:55.313Z,Help us shape the future.,Manager,Remote,Part-Time
+67351f3ea37f149647247b24,67351f3e6af16a7ed0164c9b,Mobile App Developer,"Boston, MA",78534,2024-08-20T20:05:25.412Z,Looking for a motivated individual.,Manager,Hybrid,Contract
+67351f3e9f04fcbbc36a75e6,67351f3eb68c43ed5b337d10,DevOps Engineer,"Seattle WA",196532,2024-06-03T14:36:08.671Z,Contribute to our core products.,Intern,Hybrid,Contract
