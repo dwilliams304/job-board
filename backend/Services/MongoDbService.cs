@@ -14,7 +14,7 @@ namespace JobBoardDotnetBackend.Services
 
         public MongoDbService(IOptions<MongoDbSettings> settings)
         {
-            MongoClient client = new MongoClient(Environment.GetEnvironmentVariable("MONGO_URI"));
+            MongoClient client = new MongoClient(settings.Value.ConnectionURI);
             IMongoDatabase mainDb = client.GetDatabase(settings.Value.DatabaseName);
             _companyCollection = mainDb.GetCollection<Company>(settings.Value.CompanyCollectionName);
             _jobPostCollection = mainDb.GetCollection<JobPost>(settings.Value.JobPostCollectionName);
