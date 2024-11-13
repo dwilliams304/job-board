@@ -1,6 +1,7 @@
 ﻿using JobBoardDotnetBackend.Models;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
+using MongoDB.Bson;
 
 namespace JobBoardDotnetBackend.Services
 {
@@ -19,6 +20,38 @@ namespace JobBoardDotnetBackend.Services
             _jobPostCollection = mainDb.GetCollection<JobPost>(settings.Value.JobPostCollectionName);
             _helpArticleCollection = mainDb.GetCollection<HelpArticle>(settings.Value.HelpArticleCollectionName);
             _reviewsCollection = mainDb.GetCollection<Review>(settings.Value.ReviewCollectionName);
+        }
+
+
+        public async Task CreateCompany(Company company)
+        {
+            await _companyCollection.InsertOneAsync(company);
+            return;
+        }
+
+        #region Job Post Funcs...
+        public async Task CreateJobPost(JobPost jobPost)
+        {
+            await _jobPostCollection.InsertOneAsync(jobPost);
+            return;
+        }
+
+        public async Task<List<JobPost>> GetJobPosts()
+        {
+            return await _jobPostCollection.Find(new BsonDocument()).ToListAsync();
+        }
+        #endregion
+
+        public async Task CreateHelpArticle(HelpArticle helpArticle)
+        {
+            await _helpArticleCollection.InsertOneAsync(helpArticle);
+            return;
+        }
+
+        public async Task CreateReview(Review review)
+        {
+            await _reviewsCollection.InsertOneAsync(review);
+            return;
         }
     }
 }
