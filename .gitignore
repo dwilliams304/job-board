@@ -12,6 +12,8 @@ dist
 dist-ssr
 *.local
 *.env
+
+appsettings.json
 .env
 
 # Editor directories and files
