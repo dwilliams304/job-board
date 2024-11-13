@@ -6,8 +6,7 @@ namespace JobBoardDotnetBackend.Models
 {
     public class HelpArticle
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
+        [BsonId, BsonRepresentation(BsonType.ObjectId)]
         public string? Id { get; set; }
 
         [BsonElement("last_update")]

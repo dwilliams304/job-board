@@ -6,12 +6,10 @@ namespace JobBoardDotnetBackend.Models
 {
     public class JobPost
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
+        [BsonId, BsonRepresentation(BsonType.ObjectId)]
         public string? Id { get; set; }
 
-        [BsonElement("company")]
-        [BsonRepresentation(BsonType.ObjectId)]
+        [BsonElement("company"), BsonRepresentation(BsonType.ObjectId)]
         public string? CompanyID { get; set; }
 
         [BsonElement("date_posted")]

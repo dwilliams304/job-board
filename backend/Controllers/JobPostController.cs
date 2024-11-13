@@ -1,7 +1,7 @@
 ﻿using JobBoardDotnetBackend.Models;
 using JobBoardDotnetBackend.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Driver;
 
 namespace JobBoardDotnetBackend.Controllers
 {
@@ -9,42 +9,26 @@ namespace JobBoardDotnetBackend.Controllers
     [Controller]
     public class JobPostController : Controller
     {
-        private readonly MongoDbService mongoDbService;
 
-        public JobPostController(MongoDbService mongoDbService)
-        {
-            this.mongoDbService = mongoDbService;
+        private readonly IMongoCollection<JobPost>? _jobPosts;
+
+        public JobPostController(MongoDbService mongoDbService){
+            _jobPosts = mongoDbService.Database?.GetCollection<JobPost>("JobPosts");
         }
 
+
         [HttpGet]
-        public async Task<List<JobPost>> GetPosts()
+        public async Task<IEnumerable<JobPost>> GetJobPosts()
         {
-            return await mongoDbService.GetJobPosts();
+            return await _jobPosts.Find(FilterDefinition<JobPost>.Empty).ToListAsync();
         }
 
         [HttpGet("{id}")]
-        public async Task<JobPost> GetPostById(string id)
+        public async Task<ActionResult<JobPost?>> GetPostById(string id)
         {
-            return await mongoDbService.GetJobPostById(id);
+            var filter = Builders<JobPost>.Filter.Eq("Id", id);
+            var post = await _jobPosts.Find(filter).FirstOrDefaultAsync();
+            return post is null ? NotFound() : Ok(post);
         }
-
-        [HttpPost]
-        public async Task<IActionResult> CreateNewPost([FromBody] JobPost jobPost)
-        {
-            await mongoDbService.CreateJobPost(jobPost);
-            return Created();
-        }
-
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> UpdatePost(string id, [FromBody] JobPost jobPost)
-        //{
-
-        //}
-
-        //[HttpDelete("{id}")]
-        //public async Task<IActionResult> DeletePost(string id)
-        //{
-
-        //}
     }
 }

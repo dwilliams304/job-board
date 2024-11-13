@@ -5,9 +5,8 @@ namespace JobBoardDotnetBackend.Models
 {
     public class Review
     {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        [BsonId, BsonRepresentation(BsonType.ObjectId)]
+        public string? Id { get; set; }
 
         [BsonElement("company")]
         public required int CompanyID { get; set; }
@@ -36,8 +35,7 @@ namespace JobBoardDotnetBackend.Models
         [BsonElement("worklife_score")]
         public required int WorklifeScore { get; set; }
 
-        [BsonElement("average_score")]
-        [BsonRepresentation(MongoDB.Bson.BsonType.Double)]
+        [BsonElement("average_score"), BsonRepresentation(BsonType.Double)]
         public required decimal AverageScore { get; set; }
 
         [BsonElement("job_salary")]
