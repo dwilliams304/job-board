@@ -12,7 +12,6 @@ _This is currently incomplete, but will eventually show how the Backend works_
 &nbsp;
 &nbsp;
 &nbsp;
----
 ## Data Models
 
 Here is what the data looks like when returned. This is still being worked on, and can change in the future!

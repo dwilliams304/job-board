@@ -2,12 +2,12 @@
 
 Here is where you can see all the changes made for thie job board!
 This will include general bug fixes, feature releases, etc...
----
+
 ## v0.0
 
 Start project
 &nbsp;
----
+
 ## v0.1 (Oct. 24, 2024)
 
 This will be the first 'official' version release of the TypeScript job board.
@@ -27,7 +27,7 @@ This will be the first 'official' version release of the TypeScript job board.
 + General clean up on functions/types
 
 &nbsp;
----
+
 ## v0.101 (Oct. 29, 2024)
 
 (minor update, no features)
@@ -41,7 +41,7 @@ This will be the first 'official' version release of the TypeScript job board.
 + Change npm scripts in root to match new project structure
 
 &nbsp;
----
+
 ## v0.2 (Nov. 13, 2024)
 
 These are primarily backend focused changes.
