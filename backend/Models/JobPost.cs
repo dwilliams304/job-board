@@ -10,7 +10,7 @@ namespace JobBoardDotnetBackend.Models
         public string? Id { get; set; }
 
         [BsonElement("company"), BsonRepresentation(BsonType.ObjectId)]
-        public string? CompanyID { get; set; }
+        public string? Company { get; set; }
 
         [BsonElement("date_posted")]
         public DateTime? DatePosted { get; set; } = DateTime.Now;
