@@ -32,10 +32,10 @@ namespace JobBoardDotnetBackend.Models
         [BsonElement("about")]
         public string? About { get; set; }
 
-        [BsonElement("job_postings")]
+        [BsonElement("job_postings"), BsonRepresentation(BsonType.ObjectId)]
         public List<string>? JobPosts { get; set; }
 
-        [BsonElement("reviews")]
+        [BsonElement("reviews"), BsonRepresentation(BsonType.ObjectId)]
         public List<string>? Reviews { get; set; }
     }
 }

@@ -8,9 +8,6 @@ namespace JobBoardDotnetBackend.Models
         [BsonId, BsonRepresentation(BsonType.ObjectId)]
         public string? Id { get; set; }
 
-        [BsonElement("company")]
-        public required int CompanyID { get; set; }
-
         [BsonElement("date_posted")]
         public required DateTime DatePosted { get; set; }
 

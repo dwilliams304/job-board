@@ -20,7 +20,7 @@ namespace JobBoardDotnetBackend.Controllers
 
 
         [HttpGet]
-        public async Task<IEnumerable<JobPost>> GetJobPosts()
+        public async Task<IEnumerable<JobPost>> GetAllJobPosts()
         {
             return await _jobPosts.Find(FilterDefinition<JobPost>.Empty).ToListAsync();
         }
@@ -86,12 +86,31 @@ namespace JobBoardDotnetBackend.Controllers
             return posts;
         }
 
+
         [HttpGet("{id}")]
         public async Task<ActionResult<JobPost?>> GetPostById(string id)
         {
             var filter = Builders<JobPost>.Filter.Eq("Id", id);
             var post = await _jobPosts.Find(filter).FirstOrDefaultAsync();
             return post is null ? NotFound() : Ok(post);
+        }
+
+
+        [HttpPost]
+        public async Task<ActionResult<JobPost?>> CreateJobPost([FromBody] JobPost jobPost, string companyID)
+        {
+            jobPost.DatePosted = DateTime.Now;
+            jobPost.Company = companyID;
+
+
+            return Ok();
+        }
+
+
+        [HttpPut]
+        public async Task<ActionResult<JobPost>> UpdateJobPost([FromBody] JobPost jobPost, string postId)
+        {
+            return Ok();
         }
     }
 }
