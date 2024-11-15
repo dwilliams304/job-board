@@ -25,8 +25,8 @@ namespace JobBoardDotnetBackend.Controllers
             return await _jobPosts.Find(FilterDefinition<JobPost>.Empty).ToListAsync();
         }
 
-        [HttpGet("filters")]
-        public async Task<IEnumerable<JobPost>> GetJobPostByQuery(JobPostQuery query)
+        [HttpGet("filterBy")]
+        public async Task<IEnumerable<JobPost>> GetJobPostByQuery([FromBody] JobPostQuery query)
         {
             var filterDefBuilder = Builders<JobPost>.Filter;
             var filter = filterDefBuilder.Empty;

@@ -22,7 +22,7 @@ This project is NOT for commercial/public use. This is simply as a personal chal
 ## To-Do  
 #### Backend:
 - [x] Switch backend to .NET
-- [ ] Set up basic REST API
+- [x] Set up basic REST API
 - [ ] User sign in persistence
 - [ ] User authentication and roles
 - [ ] Users can create profiles
@@ -39,7 +39,7 @@ This project is NOT for commercial/public use. This is simply as a personal chal
 - [x] Users can click on company pages from either job posts or job pages to see more
 - [x] Company pages show dynamic data for company name, description
 - [x] Company pages show all job postings from specific company
-- [ ] Companies show all reviews/salaries
+- [x] Companies show all reviews
 - [ ] Users can make a profile (job seeker OR employer)
 - [ ] Users can sign in to profile and see profile page
 - [ ] Users can apply to a job post

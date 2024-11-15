@@ -30,18 +30,19 @@ It brings in the following components:
 
 ### Job Posts
 Job posts will take a Job object of type 'Job' to get their data displaying properly.
+
 Here is what props we require _(currently)_:
-```
+```javascript
 {
-    jobID: type(number),
-    jobTitle: type(string),
-    company: type(Company),
-    experienceLevel: type(string(restrictions: "Intern" | "Entry-Level" | "Mid-Level" | "Senior" | "Manager")),
-    location: type(string),
-    onSite: type(string(restrictions: "On-Site" | "Hybrid" | "Remote")),
-    salary: number,
-    averageHours: number,
-    shortDescription: strign
+    "jobID": typeof(string),
+    "jobTitle": typeof(string),
+    "company": typeof(Company),
+    "experienceLevel": typeof(string(restrictions: "Intern" | "Entry-Level" | "Mid-Level" | "Senior" | "Manager")),
+    "location": typeof(string),
+    "onSite": typeof(string(restrictions: "On-Site" | "Hybrid" | "Remote")),
+    "salary": typeof(number),
+    "averageHours": typeof(number),
+    "shortDescription": typeof(string)
 }
 ```
 Notes:
