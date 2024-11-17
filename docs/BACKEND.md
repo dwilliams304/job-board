@@ -3,7 +3,7 @@
 _This is currently incomplete, but will eventually show how the Backend works_
 
 ## Tech Used:
-- ASP.NET
+- .NET Core
 - MongoDB
 
 

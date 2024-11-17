@@ -17,6 +17,8 @@ This project is NOT for commercial/public use. This is simply as a personal chal
 + Users can not currently sign in or create accounts. This is intentional
 + Reviews tied to companies are not currently functional, and companies are no longer showing a review score - currently this is WIP
 
+
+
 &nbsp;
 ---
 ## To-Do  
