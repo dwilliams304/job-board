@@ -7,7 +7,8 @@ This Job Board will be fully functional, allowing for users to login to employer
 
 ## Purpose
 
-This project is NOT for commercial/public use. This is simply as a personal challenge to create a fully functional full-stack application using TypeScript, and .NET Core. I wanted to learn tech that I have previously not used like TypeScript. While I have familiarity with JavaScript and more statically typed languages (C#), I have not previously used TypeScript extensively, and have never used C# in a web development environment. 
+This project is not for commercial/public use. This is simply as a personal challenge to create a fully functional full-stack application using TypeScript, and .NET Core. I wanted to learn tech that I have previously not used like TypeScript. While I have familiarity with JavaScript and more statically typed languages (C#), I have not previously used TypeScript extensively, and have never used C# in a web development environment. 
+
 
 &nbsp;
 ## Dev Notes

@@ -30,7 +30,23 @@ Database:
     "email": string, //Company's primary contact email
     "img": string, //Company's main logo
     "job_postings": ObjectId[] //An array of objectID's that are link to job postings
-    "reviews": ObjectId[] //An array of objectID's that are linked to reviews
+```
+
+When retrieving the job company's data we want to change the data's shape so that _job postings_ is not just an array of ObjectID's and instead would look more like this:
+```javascript
+    "_id": ObjectId,
+    ...,
+    "job_postings": [
+        {
+            "job_id": ObjectId,
+            "job_title": string,
+            "job_location": string,
+            "job_location_type": string
+        },
+        {
+            ...
+        }
+    ]
 ```
 
 
@@ -38,14 +54,16 @@ Database:
 
 Database:
 ```javascript
-    "_id": ObjectId,
-    "company": ObjectId,
+    "_id": ObjectId, //Primary key
+    "company": ObjectId, //The posting company's id
     "title": string,
-    "location": string,
+    "location": string, 
     "salary": Int32,
-    "date_posted": Date,
+    "date_posted": Date, //Uses .NET/C# DateTime.Now()
     "short_description": string,
-    "experience": string,
-    "location_type": string,
-    "term": string
+    "experience": string, //Experience level needed for job, i.e Entry-Level, Mid-Level, etc...
+    "location_type": string, //If the job is remote, hybrid, or on-site
+    "term": string //Is the job Full-Time, Part-Time, or Contract
 ```
+
+When a Job Post is added into the database, the Company's id who is creating the post is automatically attached to the _company_ property, as a job post can only be made when signed into a company account. 
