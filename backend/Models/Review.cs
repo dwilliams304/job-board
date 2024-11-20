@@ -23,17 +23,6 @@ namespace JobBoardDotnetBackend.Models
         [BsonElement("current_employee")]
         public required bool CurrentEmployee { get; set; }
 
-        [BsonElement("pay_score")]
-        public required int PayScore { get; set; }
-
-        [BsonElement("culture_score")]
-        public required int CultureScore { get; set; }
-
-        [BsonElement("worklife_score")]
-        public required int WorklifeScore { get; set; }
-
-        [BsonElement("average_score"), BsonRepresentation(BsonType.Double)]
-        public required decimal AverageScore { get; set; }
 
         [BsonElement("job_salary")]
         public required int JobSalary { get; set; }
@@ -43,5 +32,15 @@ namespace JobBoardDotnetBackend.Models
 
         [BsonElement("recommends_company")]
         public required bool RecommendsCompany {  get; set; }
+
+
+        [BsonElement("pay_score"), BsonRepresentation(BsonType.Int32)]
+        public int? PayScore { get; set; }
+        [BsonElement("culture_score"), BsonRepresentation(BsonType.Int32)]
+        public int? CultureScore { get; set; }
+        [BsonElement("worklife_score"), BsonRepresentation(BsonType.Int32)]
+        public int? WorkLifeScore { get; set; }
+        [BsonElement("average_score"), BsonRepresentation(BsonType.Double)]
+        public decimal? AverageScore { get; set; }
     }
 }

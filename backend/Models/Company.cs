@@ -1,21 +1,23 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
+
 namespace JobBoardDotnetBackend.Models
 {
     public class ShortJobPostDetails
     {
-        [BsonId]
+        [BsonId, BsonRepresentation(BsonType.ObjectId)]
         public string? Id { get; set; }
+
         [BsonElement("title")]
         public string? Title { get; set; }
+
         [BsonElement("location")]
         public string? Location { get; set; }
+
         [BsonElement("location_type")]
         public string? LocationType { get; set; }
     }
-
-
     public class Company
     {
         [BsonId, BsonRepresentation(BsonType.ObjectId)]
@@ -46,7 +48,7 @@ namespace JobBoardDotnetBackend.Models
         public string? About { get; set; }
 
 
-        [BsonElement("job_postings")]
+        [BsonElement("job_posts")]
         public List<ShortJobPostDetails>? JobPosts { get; set; }
 
 

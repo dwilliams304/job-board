@@ -4,7 +4,6 @@ using JobBoardDotnetBackend.Services;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 using MongoDB.Driver;
-using System.Security.Cryptography;
 
 namespace JobBoardDotnetBackend.Controllers
 {
@@ -25,11 +24,45 @@ namespace JobBoardDotnetBackend.Controllers
         [HttpGet]
         public async Task<IEnumerable<JobPost>> GetAllJobPosts()
         {
-            return await _jobPosts.Find(FilterDefinition<JobPost>.Empty).ToListAsync();
+            var pipeline = new[]
+            {
+                //Match the company field (containing an objectId), to the
+                //_id field of the company in the Companies collection
+                new BsonDocument("$lookup", new BsonDocument
+                {
+                    { "from", "Companies" },
+                    { "localField", "company" },
+                    { "foreignField", "_id" },
+                    { "as", "company_details" }
+                }),
+                new BsonDocument("$unwind", "$company_details"),
+                new BsonDocument("$project", new BsonDocument
+                {
+                    { "_id", 1 },
+                    { "title", 1 },
+                    { "short_description", 1 },
+                    { "salary", 1 },
+                    { "term", 1 },
+                    { "location", 1 },
+                    { "location_type", 1 },
+                    { "experience", 1 },
+                    { "date_posted", 1 },
+                    { "company", new BsonDocument
+                    {
+                        //Match this data to the fields we need
+                        { "_id", "$company_details._id" },
+                        { "name", "$company_details.name" },
+                        { "img", "$company_details.img" }
+                    }
+                    }
+                })
+            };
+            //Join the documents following the pipeline created
+            return await _jobPosts.Aggregate<JobPost>(pipeline).ToListAsync();
         }
 
         [HttpGet("filterBy")]
-        public async Task<IEnumerable<JobPost>> GetJobPostByQuery(JobPostQuery query)
+        public async Task<IEnumerable<JobPost>> GetJobPostByQuery([FromBody] JobPostQuery query)
         {
             var filterDefBuilder = Builders<JobPost>.Filter;
             var filter = filterDefBuilder.Empty;
@@ -84,7 +117,6 @@ namespace JobBoardDotnetBackend.Controllers
 
 
 
-
             var posts = await _jobPosts.Find(filter).ToListAsync();
             return posts;
         }
@@ -93,11 +125,10 @@ namespace JobBoardDotnetBackend.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<JobPost>> GetPostById(string id)
         {
-            var objId = new ObjectId(id);
             var pipeline = new[]
             {
                 new BsonDocument("$match", new BsonDocument{
-                    {"_id", objId } 
+                    {"_id", new ObjectId(id) } 
                 }),
                 new BsonDocument("$lookup", new BsonDocument
                 {
@@ -106,7 +137,6 @@ namespace JobBoardDotnetBackend.Controllers
                     { "foreignField", "_id" },
                     { "as", "company_details" }
                 }),
-                new BsonDocument("$unwind", "$company_details"),
                 new BsonDocument("$project", new BsonDocument
                 {
                     { "_id", 1 },
