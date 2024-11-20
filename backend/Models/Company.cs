@@ -9,25 +9,25 @@ namespace JobBoardDotnetBackend.Models
         public string? Id { get; set; }
 
         [BsonElement("name")]
-        public required string Name { get; set; }
+        public string? Name { get; set; }
 
         [BsonElement("current_employees")]
-        public required int CurrentEmployees { get; set; }
+        public int? CurrentEmployees { get; set; }
 
         [BsonElement("currently_hiring")]
-        public required bool CurrentlyHiring { get; set; }
+        public bool? CurrentlyHiring { get; set; }
 
         [BsonElement("img")]
-        public required string Img { get; set; }
+        public string? Img { get; set; }
 
         [BsonElement("address")]
-        public required string Address { get; set; }
+        public string? Address { get; set; }
 
         [BsonElement("email")]
-        public required string Email { get; set; }
+        public string? Email { get; set; }
 
         [BsonElement("phone")]
-        public required string Phone { get; set; }
+        public string? Phone { get; set; }
 
         [BsonElement("about")]
         public string? About { get; set; }

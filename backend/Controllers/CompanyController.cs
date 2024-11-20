@@ -5,6 +5,8 @@ using MongoDB.Driver;
 
 namespace JobBoardDotnetBackend.Controllers
 {
+    [Route("api/[controller]")]
+    [Controller]
     public class CompanyController : Controller
     {
         private readonly IMongoCollection<Company>? _companies;

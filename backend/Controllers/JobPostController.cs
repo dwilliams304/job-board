@@ -26,7 +26,7 @@ namespace JobBoardDotnetBackend.Controllers
         }
 
         [HttpGet("filterBy")]
-        public async Task<IEnumerable<JobPost>> GetJobPostByQuery([FromBody] JobPostQuery query)
+        public async Task<IEnumerable<JobPost>> GetJobPostByQuery(JobPostQuery query)
         {
             var filterDefBuilder = Builders<JobPost>.Filter;
             var filter = filterDefBuilder.Empty;
@@ -88,29 +88,65 @@ namespace JobBoardDotnetBackend.Controllers
 
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<JobPost?>> GetPostById(string id)
+        public async Task<ActionResult<JobPost>> GetPostById(string id)
         {
-            var filter = Builders<JobPost>.Filter.Eq("Id", id);
-            var post = await _jobPosts.Find(filter).FirstOrDefaultAsync();
+            var objId = new ObjectId(id);
+            var pipeline = new[]
+            {
+                new BsonDocument("$match", new BsonDocument{
+                    {"_id", objId } 
+                }),
+                new BsonDocument("$lookup", new BsonDocument
+                {
+                    { "from", "Companies" },
+                    { "localField", "company" },
+                    { "foreignField", "_id" },
+                    { "as", "company_details" }
+                }),
+                new BsonDocument("$unwind", "$company_details"),
+                new BsonDocument("$project", new BsonDocument
+                {
+                    { "_id", 1 },
+                    { "title", 1 },
+                    { "short_description", 1 },
+                    { "salary", 1 },
+                    { "term", 1 },
+                    { "location", 1 },
+                    { "location_type", 1 },
+                    { "experience", 1 },
+                    { "date_posted", 1 },
+                    { "company", new BsonDocument
+                    {
+                        { "_id", "$company_details._id" },
+                        { "name", "$company_details.name" },
+                        { "img", "$company_details.img" }
+                    }
+                    }
+                })
+            };
+
+            var post = await _jobPosts.Aggregate<JobPost>(pipeline).FirstOrDefaultAsync();
+
+            //return Ok(post);
             return post is null ? NotFound() : Ok(post);
         }
 
 
-        [HttpPost]
-        public async Task<ActionResult<JobPost?>> CreateJobPost([FromBody] JobPost jobPost, string companyID)
-        {
-            jobPost.DatePosted = DateTime.Now;
-            jobPost.Company = companyID;
+        //[HttpPost]
+        //public async Task<ActionResult<JobPost?>> CreateJobPost([FromBody] JobPost jobPost, string companyID)
+        //{
+        //    jobPost.DatePosted = DateTime.Now;
+        //    jobPost.Company = companyID;
 
 
-            return Ok();
-        }
+        //    return Ok();
+        //}
 
 
-        [HttpPut]
-        public async Task<ActionResult<JobPost>> UpdateJobPost([FromBody] JobPost jobPost, string postId)
-        {
-            return Ok();
-        }
+        //[HttpPut]
+        //public async Task<ActionResult<JobPost>> UpdateJobPost([FromBody] JobPost jobPost, string postId)
+        //{
+        //    return Ok();
+        //}
     }
 }

@@ -4,13 +4,25 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace JobBoardDotnetBackend.Models 
 {
+    public class ShortCompanyDetails
+    {
+        [BsonId, BsonRepresentation(BsonType.ObjectId)]
+        public string? Id { get; set; }
+
+        [BsonElement("name")]
+        public string? Name { get; set; }
+
+        [BsonElement("img")]
+        public string? Img { get; set; }
+    }
     public class JobPost
     {
         [BsonId, BsonRepresentation(BsonType.ObjectId)]
         public string? Id { get; set; }
 
-        [BsonElement("company"), BsonRepresentation(BsonType.ObjectId)]
-        public string? Company { get; set; }
+        [BsonElement("company")]
+        public ShortCompanyDetails? Company { get; set; }
+
 
         [BsonElement("date_posted")]
         public DateTime? DatePosted { get; set; } = DateTime.Now;
