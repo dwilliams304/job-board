@@ -3,6 +3,19 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace JobBoardDotnetBackend.Models
 {
+    public class ShortJobPostDetails
+    {
+        [BsonId]
+        public string? Id { get; set; }
+        [BsonElement("title")]
+        public string? Title { get; set; }
+        [BsonElement("location")]
+        public string? Location { get; set; }
+        [BsonElement("location_type")]
+        public string? LocationType { get; set; }
+    }
+
+
     public class Company
     {
         [BsonId, BsonRepresentation(BsonType.ObjectId)]
@@ -32,10 +45,12 @@ namespace JobBoardDotnetBackend.Models
         [BsonElement("about")]
         public string? About { get; set; }
 
-        [BsonElement("job_postings"), BsonRepresentation(BsonType.ObjectId)]
-        public List<string>? JobPosts { get; set; }
 
-        [BsonElement("reviews"), BsonRepresentation(BsonType.ObjectId)]
-        public List<string>? Reviews { get; set; }
+        [BsonElement("job_postings")]
+        public List<ShortJobPostDetails>? JobPosts { get; set; }
+
+
+        [BsonElement("reviews")]
+        public List<Review>? Reviews { get; set; }
     }
 }

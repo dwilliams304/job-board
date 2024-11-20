@@ -4,6 +4,7 @@ using JobBoardDotnetBackend.Services;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using System.Security.Cryptography;
 
 namespace JobBoardDotnetBackend.Controllers
 {
@@ -17,6 +18,8 @@ namespace JobBoardDotnetBackend.Controllers
         public JobPostController(MongoDbService mongoDbService){
             _jobPosts = mongoDbService.Database?.GetCollection<JobPost>("JobPosts");
         }
+
+
 
 
         [HttpGet]
