@@ -12,13 +12,14 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import JobPost from "./JobPost";
-import { Jobs } from "../../../data/jobs";
+// import { Jobs } from "../../../data/jobs";
 import SearchBar from "./SearchBar";
 import FiltersPopup from "./FiltersPopup";
 import SetTabTitle from "../../../data/utils/SetTabTitle";
 import { SkeletonLoader } from "../../common";
 
 import { GetRandomNumber } from "../../../data/utils";
+import { apiURL } from "../../../data/constants";
 import axios from "axios";
 
 
@@ -30,14 +31,12 @@ export type FilterPopupMenuState = {
 
 export default function JobBoard(){
     const [showFilterPopup, setShowFilterPopup] = useState(false);
-    const [jobsList, setJobsList] = useState(Jobs);
+    const [jobsList, setJobsList] = useState([]);
     const [filteredList, setFilteredList] = useState(jobsList);
     const [jobsAreLoading, setJobsAreLoading] = useState(false);
     const [searchParams, setSearchParams] = useSearchParams();
 
-    const [listCount, setListCount] = useState(Jobs.length);
-
-    const apiUrl = import.meta.env.VITE_DEV_URL;
+    // const [listCount, setListCount] = useState(Jobs.length);
 
 
 
@@ -60,7 +59,7 @@ export default function JobBoard(){
     useEffect(() => {
         setJobsAreLoading(true);
         SetTabTitle("Job Board");
-        axios.get(`http://localhost:5158/api/JobPost`)
+        axios.get(`${apiURL}/JobPost`)
             .then(res => {
                 setJobsList(res.data)
             })
@@ -70,9 +69,9 @@ export default function JobBoard(){
             })
     }, [])
 
-    useEffect(() => {
-        setListCount(filteredList.length);
-    }, [filteredList])
+    // useEffect(() => {
+    //     setListCount(filteredList.length);
+    // }, [filteredList])
 
     useEffect(() => {
         setJobsAreLoading(true);
@@ -82,6 +81,7 @@ export default function JobBoard(){
         const locationType = searchParams.get("locationType");
         const postAge = searchParams.get("postAge");
         setFilteredList(jobsList);
+        console.log(searchParams);
 
         setJobsAreLoading(false);
     }, [searchParams])
@@ -101,7 +101,7 @@ export default function JobBoard(){
                 setShowFilterPopup={setShowFilterPopup}
             /> */}
 
-            <p className="pl-2">Showing {listCount} results.</p>
+            {/* <p className="pl-2">Showing {listCount} results.</p> */}
             {
                 jobsAreLoading ?
                 <div className="flex-grow text-center">
@@ -115,7 +115,7 @@ export default function JobBoard(){
                             <h2>We couldn't find any matching jobs!</h2>
                         </div>
                         :
-                        filteredList.map((job, i) => (
+                        jobsList.map((job, i) => (
                             <JobPost job={job} key={i} />
                         ))
                     }

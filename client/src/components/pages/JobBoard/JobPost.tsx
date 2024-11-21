@@ -26,7 +26,7 @@
 */
 
 import Button from "../../common/Button";
-import { Job } from "../../../data/jobs";
+import { Job } from "../../../data/types";
 import moment from "moment";
 import {
     IoLocation,
@@ -49,23 +49,23 @@ export default function JobPost({job}: JobPostProps){
     return(
         <div className="relative flex border border-solid my-5 mx-8 p-5 shadow-md transition duration-300 ease-in-out
         cursor-pointer hover:shadow-xl hover:border-gray-400"
-        onClick={() => window.open(`/job/${job.jobID}`)}>
+        onClick={() => window.open(`/job/${job.id}`)}>
             <div className="w-4/5">
                 <div className="flex align-middle">
                     <img 
-                        src={job.company.companyLogo} 
+                        src={job.company.img} 
                         alt="company logo" 
                         className="p-2 mr-2 border"
                     />
                     <h2 className="font-semibold">
                         <span className="absoulte hover:underline" onClick={(e) => {
-                        window.open(`/company/${job.company.companyID}`)
+                        window.open(`/company/${job.company.id}`)
                         e.stopPropagation();
                         }}
                             >
-                            {job.company.companyName}
+                            {job.company.name}
                         </span> - 
-                        <span> {job.jobTitle}</span>
+                        <span> {job.title}</span>
                     </h2>
                 </div>
                 <div className="italic flex space-x-2">
@@ -74,7 +74,7 @@ export default function JobPost({job}: JobPostProps){
                         {job.location}
                     </p>
                     <p className="flex">
-                        ({job.jobOptions.locationType})
+                        ({job.locationType})
                     </p>
                 </div>
                 <p className="mt-4">{job.shortDescription}</p>
@@ -87,7 +87,7 @@ export default function JobPost({job}: JobPostProps){
                     </p>
                     <p className="inline-flex space-x-2">
                         <IoArrowForward />
-                        <span>{job.jobOptions.experience}</span>
+                        <span>{job.experience}</span>
                     </p>
                     <p className="inline-flex space-x-2">
                         <IoCash />
@@ -95,13 +95,13 @@ export default function JobPost({job}: JobPostProps){
                     </p>
                     <p className="inline-flex space-x-2">
                         <IoBagSharp />
-                        <span>Term: {job.jobOptions.term}</span>
+                        <span>Term: {job.term}</span>
                     </p>
                     <Button
                         type="Primary"
                         text="Apply Now! &rarr;"
                         function={(e) => {
-                            window.open(`/job/${job.jobID}/apply`);
+                            window.open(`/job/${job.id}/apply`);
                             e.stopPropagation();
                         }}
                     />

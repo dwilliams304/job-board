@@ -1,20 +1,16 @@
 import { useState } from "react";
 import { ScrollToTop } from "../../../data/utils";
 import { Link } from "react-router-dom";
-import { Dev_LoginFunc } from "../../../data/users";
+// import { Dev_LoginFunc } from "../../../data/users";
 import { GetRandomNumber } from "../../../data/utils";
-import { User } from "../../../data/users";
-
-type LoginFormProps = {
-    onLoginFormSubmit: (userData: User | undefined) => void
-}
+// import { User } from "../../../data/users";
 
 const initialFormState = {
     email: "",
     password: "",
 }
 
-export default function LoginForm({onLoginFormSubmit}: LoginFormProps){
+export default function LoginForm(){
     const [formValues, setFormValues] = useState(initialFormState);
     const [loginError, setLoginError] = useState("");
     const [isSigningIn, setIsSigningIn] = useState(false);
@@ -30,27 +26,27 @@ export default function LoginForm({onLoginFormSubmit}: LoginFormProps){
     }
 
     const onSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        setLoginError("");
-        setIsSigningIn(true);
-        const user = {
-            email: formValues.email,
-            password: formValues.password
-        }
-        const {response} = Dev_LoginFunc(user);
-        const timeout = setTimeout(() => {
-            setIsSigningIn(false);
-            if(response.error) {
-                setLoginError(response.error.message);
-                console.log(response.error);
-            }
-            else if(response.success){
-                setFormValues(initialFormState);
-                setLoginError('');
-                onLoginFormSubmit(response.success.data);
-                console.log(response.success);
-            }
-        }, GetRandomNumber(4000));
+        // e.preventDefault();
+        // setLoginError("");
+        // setIsSigningIn(true);
+        // const user = {
+        //     email: formValues.email,
+        //     password: formValues.password
+        // }
+        // const {response} = Dev_LoginFunc(user);
+        // const timeout = setTimeout(() => {
+        //     setIsSigningIn(false);
+        //     if(response.error) {
+        //         setLoginError(response.error.message);
+        //         console.log(response.error);
+        //     }
+        //     else if(response.success){
+        //         setFormValues(initialFormState);
+        //         setLoginError('');
+        //         onLoginFormSubmit(response.success.data);
+        //         console.log(response.success);
+        //     }
+        // }, GetRandomNumber(4000));
 
     }
 

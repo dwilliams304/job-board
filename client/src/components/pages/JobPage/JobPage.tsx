@@ -8,7 +8,7 @@ import {
     useNavigate
 } from "react-router-dom";
 
-import { Job, FetchJob, Dev_DefaultJob } from "../../../data/jobs";
+import { Job } from "../../../data/types";
 
 import { 
     IoLocation, 
@@ -24,20 +24,37 @@ import { SkeletonLoader, Button } from "../../common";
 import { GetRandomNumber } from "../../../data/utils";
 import SetTabTitle from "../../../data/utils/SetTabTitle";
 
+const initialJobData: Job = {
+    id: "",
+    datePosted: new Date(),
+    title: "",
+    company: {
+        id: "",
+        name: "",
+        img: ""
+    },
+    location: "",
+    locationType: "",
+    salary: 0,
+    experience: "",
+    term: "",
+    shortDescription: ""
+}
+
 
 export default function JobPage(){
     const [isLoading, setIsLoading] = useState(true);
-    const [jobData, setJobData] = useState<Job>(Dev_DefaultJob);
+    const [job, setJob] = useState<Job>(initialJobData);
     
     const navTo = useNavigate();
     const { jobID } = useParams();
 
 
     useEffect(() => {
-        const job = FetchJob(Number(jobID));
+        // const job = FetchJob(Number(jobID));
 
-        SetTabTitle(`${job.jobTitle} | ${job.company.companyName}`);
-        setJobData(job);
+        SetTabTitle(`${job.title} | ${job.company.name}`);
+        // setJobData(job);
 
         const timeout = setTimeout(() => {
             setIsLoading(false);
@@ -53,24 +70,24 @@ export default function JobPage(){
         <div className="flex flex-col w-full flex-grow px-20 mt-12 space-y-8">
             {/* Post Details */}
             <div className="space-y-1 relative">
-                <h2 className="text-3xl font-bold">{jobData.jobTitle}</h2>
+                <h2 className="text-3xl font-bold">{job.title}</h2>
                 <div className="flex flex-row space-x-4">
-                    <p className="flex align-middle"><IoArrowForward /> {jobData.jobOptions.experience}</p>
-                    <p className="flex align-middle"><IoBagSharp /> Full-Time</p>
-                    <p className="flex align-middle"><IoLocation /> {jobData.location} ({jobData.jobOptions.locationType})</p>
-                    <p className="flex align-middle"><IoCash /> ${jobData.salary.toLocaleString()}/yr</p>
+                    <p className="flex align-middle"><IoArrowForward /> {job.experience}</p>
+                    <p className="flex align-middle"><IoBagSharp /> {job.term}</p>
+                    <p className="flex align-middle"><IoLocation /> {job.location} ({job.locationType})</p>
+                    <p className="flex align-middle"><IoCash /> ${job.salary.toLocaleString()}/yr</p>
                 </div>
 
                 {/* Company Details */}
                 <div className="flex flex-col border-b-2 border-black">
                     <div className="relative my-4 cursor-pointer"
-                    onClick={() => navTo(`/company/${jobData.company.companyID}`)}>
+                    onClick={() => navTo(`/company/${job.company.id}`)}>
                         <img 
-                            src={jobData.company.companyLogo} 
+                            src={job.company.img} 
                             alt="Company Logo" 
                             className=""
                         />
-                        <h2 className="absolute bottom-0 left-10 text-lg">{jobData.company.companyName}</h2>
+                        <h2 className="absolute bottom-0 left-10 text-lg">{job.company.name}</h2>
                     </div>
                     {/* <a className="hover:underline cursor-pointer font-bold flex align-middle">
                         <IoStarSharp /> {jobData.company.reviews}

@@ -20,22 +20,27 @@ import { IoStarSharp } from "react-icons/io5";
 
 import SetTabTitle from "../../../data/utils/SetTabTitle";
 
-import { Job, FetchJobsByCompanyID } from "../../../data/jobs";
-import { Company, FetchCompany, Dev_DefaultCompany } from "../../../data/companies";
-import { GetRandomNumber } from "../../../data/utils";
+import { Company } from "../../../data/types";
 
 import { SkeletonLoader } from "../../common";
 
-import { FetchCompanyReviews, Review } from "../../../data/reviews";
-
-import ReviewsList from "./ReviewsList";
+import { apiURL } from "../../../data/constants";
+import axios from "axios";
 
 //Different navigation tabs, for state management
 const tabs = ["jobs", "reviews", "salaries", "about"];
 
+const initialCompanyData: Company = {
+    id: "",
+    name: "",
+    img: "",
+    jobPosts: []
+}
+
 export default function CompanyPage(){
     const { companyID } = useParams();
     const [params, setParams] = useSearchParams();
+    const redir = useNavigate();
     let tab = params.get("tab");
 
 
@@ -43,12 +48,10 @@ export default function CompanyPage(){
 
     const navTo = useNavigate();
 
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState<boolean>();
     //Set this with default company data, will likely change in the future
-    const [companyData, setCompanyData] = useState<Company>(Dev_DefaultCompany);
+    const [companyData, setCompanyData] = useState<Company>(initialCompanyData);
     //We initialize this with an empty array as a company could have no lob listings.
-    const [jobListings, setJobListings] = useState<Job[]>([]); 
-    const [reviews, setReviews] = useState<Review[]>([]);
 
     
     const onTabClick = (tab: string) => {
@@ -60,30 +63,25 @@ export default function CompanyPage(){
     }
     
     useEffect(() => {
+        setIsLoading(true);
         //Grab the company & their posted jobs by using the companyID in the url params
-
-        const company = FetchCompany(Number(companyID));
-        const jobs = FetchJobsByCompanyID(Number(companyID));
-        const _reviews = FetchCompanyReviews(Number(companyID));
+        axios.get(`${apiURL}/Company/${companyID}`)
+            .then(res => {
+                const company = res.data;
+                console.log(company);
+                setCompanyData(company);
+                SetTabTitle(`${company.name} | Company Page`);
+            })
+            .catch(err => {
+                redir('not-found')
+            })
+            .finally(() => {
+                setIsLoading(false);
+            })
 
         if(!tab || tab === "undefined" || !tabs.includes(tab)){ 
             onTabClick("jobs"); 
         }
-        
-        //Set these into local state
-        setJobListings(jobs);
-        setCompanyData(company);
-
-
-        setReviews(_reviews);
-        //Set the tab title so it doesn't just say 'Job Board'
-        SetTabTitle(`${company.companyName} | Company Page`);
-
-        //We are setting a fake timer to simulate actual loading speed
-        //THIS WILL BE REMOVED, ONLY FOR SIMULATION
-        const timeout = setTimeout(() => {
-            setIsLoading(false);
-        }, GetRandomNumber(4000));
     }, [])
 
 
@@ -95,11 +93,11 @@ export default function CompanyPage(){
                 {/* Main Company Details, Logo, Title, Reviews, Brief desc., etc... */}
                 <div className="flex flex-col space-y-2 border-b-2 border-black mb-8">
                     <div className="flex space-x-4 align-text-bottom">
-                        <img src={companyData.companyLogo} alt="Company Logo" className="w-16 h-16 border p-2"/>
-                        <h2 className="text-3xl">{companyData.companyName}</h2>
+                        <img src={companyData.img} alt="Company Logo" className="w-16 h-16 border p-2"/>
+                        <h2 className="text-3xl">{companyData.name}</h2>
                     </div>
                     <p>Brief company description</p>
-                    <p className="font-bold flex hover:underline cursor-pointer"><IoStarSharp />{reviews.length} reviews...</p>
+                    {/* <p className="font-bold flex hover:underline cursor-pointer"><IoStarSharp />{reviews.length} reviews...</p> */}
                 </div>
 
                 {/* Navigation Bar, Reviews, Salaries, Jobs, etc... */}
@@ -124,11 +122,11 @@ export default function CompanyPage(){
                 { tab === "jobs" &&
                     <div className="space-y-2">
                         {
-                            jobListings.length > 0 ?
-                            jobListings.map((listing, i) => (
+                            companyData.jobPosts.length ?
+                            companyData?.jobPosts.map((listing, i) => (
                                 <p key={i} className="text-xl cursor-pointer hover:underline"
-                                onClick={() => navTo(`/job/${listing.jobID}`)}>
-                                    {listing.jobTitle} - {listing.location} ({listing.jobOptions.locationType})
+                                onClick={() => navTo(`/job/${listing.id}`)}>
+                                    {listing.title} - {listing.location} ({listing.locationType})
                                 </p>
                             ))
                             :
@@ -137,9 +135,12 @@ export default function CompanyPage(){
                     </div>
                 }
                 { tab === "reviews" &&
-                    <ReviewsList 
-                        reviews={reviews}
-                    />
+                    // <ReviewsList 
+                    //     reviews={}
+                    // />
+                    <div>
+                        WIP!
+                    </div>
                 }
                 { tab === "salaries" &&
                     <div>
