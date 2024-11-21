@@ -19,6 +19,7 @@ import SetTabTitle from "../../../data/utils/SetTabTitle";
 import { SkeletonLoader } from "../../common";
 
 import { GetRandomNumber } from "../../../data/utils";
+import axios from "axios";
 
 
 export type FilterPopupMenuState = {
@@ -35,6 +36,8 @@ export default function JobBoard(){
     const [searchParams, setSearchParams] = useSearchParams();
 
     const [listCount, setListCount] = useState(Jobs.length);
+
+    const apiUrl = import.meta.env.VITE_DEV_URL;
 
 
 
@@ -56,9 +59,15 @@ export default function JobBoard(){
 
     useEffect(() => {
         setJobsAreLoading(true);
-        setFilteredList(Jobs);
-        setJobsAreLoading(false);
         SetTabTitle("Job Board");
+        axios.get(`http://localhost:5158/api/JobPost`)
+            .then(res => {
+                setJobsList(res.data)
+            })
+            .catch(err => console.log(err))
+            .finally(() => {
+                setJobsAreLoading(false);
+            })
     }, [])
 
     useEffect(() => {
@@ -74,26 +83,6 @@ export default function JobBoard(){
         const postAge = searchParams.get("postAge");
         setFilteredList(jobsList);
 
-        // if(jobTitle){
-        //     setFilteredList(filteredList.filter(job => {
-        //         if(job.jobTitle.toLowerCase().includes(jobTitle.toLowerCase())) return job;
-        //     }))
-        // }
-        // if(location){
-        //     setFilteredList(filteredList.filter(job => {
-        //         if(job.location.toLowerCase().includes(location.toLowerCase())) return job;
-        //     }))
-        // }
-        // if(experience){
-        //     setFilteredList(filteredList.filter(job => {
-        //         if(job.jobOptions.experience.toLowerCase().includes(experience.toLowerCase())) return job;
-        //     }))
-        // }
-        if(locationType){
-            setFilteredList(jobsList.filter(job => {
-                if(job.jobOptions.locationType === locationType) return job;
-            }))
-        }
         setJobsAreLoading(false);
     }, [searchParams])
 
@@ -107,10 +96,10 @@ export default function JobBoard(){
                 }}
                 onSearchSubmit={onSearchSubmit}
             />
-            <FiltersPopup 
+            {/* <FiltersPopup 
                 showFilterPopup={showFilterPopup}
                 setShowFilterPopup={setShowFilterPopup}
-            />
+            /> */}
 
             <p className="pl-2">Showing {listCount} results.</p>
             {
@@ -121,6 +110,11 @@ export default function JobBoard(){
                 :
                 <div>
                     {
+                        jobsList.length === 0 ?
+                        <div>
+                            <h2>We couldn't find any matching jobs!</h2>
+                        </div>
+                        :
                         filteredList.map((job, i) => (
                             <JobPost job={job} key={i} />
                         ))

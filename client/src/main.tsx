@@ -17,8 +17,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 )
 
 function App() {
-  
   return (
+
     <div className='flex flex-col min-h-screen'>
       <NavBar 
       />
@@ -29,6 +29,7 @@ function App() {
             <Route 
               path={route.path}
               element={<route.pageElement />}
+              key={route.path}
             />
           ))
         }

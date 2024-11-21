@@ -58,7 +58,7 @@ namespace JobBoardDotnetBackend.Controllers
                 })
             };
             //Join the documents following the pipeline created
-            return await _jobPosts.Aggregate<JobPost>(pipeline).ToListAsync();
+            return await _jobPosts!.Aggregate<JobPost>(pipeline).ToListAsync();
         }
 
         [HttpGet("filterBy")]
