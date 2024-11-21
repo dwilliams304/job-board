@@ -1,4 +1,4 @@
-import { Review } from "../../../data/reviews";
+import { Review } from "../../../data/types";
 import ReviewCard from "./ReviewCard";
 
 type ReviewsListProps = {
@@ -14,7 +14,7 @@ export default function ReviewsList({reviews}: ReviewsListProps){
                     reviews.map(review => {
                         return(
                             <ReviewCard
-                                key={review.reviewID}
+                                key={review.id}
                                 review={review}
                             />
                         )

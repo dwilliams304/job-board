@@ -18,6 +18,19 @@ export type Company = {
     jobPosts: ShortJobDetails[];
 }
 
+export type Review = {
+    id: string;
+    payScore: number;
+    cultureScore: number;
+    worklifeScore: number;
+    averageScore: number;
+    title: string;
+    jobTitle: string;
+    reviewerName: string;
+    comments: string;
+    reccomendsCompany: boolean;
+}
+
 type ShortCompanyDetails = {
     id: string;
     name: string;
