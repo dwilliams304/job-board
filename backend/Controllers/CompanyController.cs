@@ -32,13 +32,13 @@ namespace JobBoardDotnetBackend.Controllers
                     { "foreignField", "_id" },
                     { "as", "reviews" }
                 }),
-                //new BsonDocument("$lookup", new BsonDocument
-                //{
-                //    { "from", "JobPosts" },
-                //    { "localField", "job_posts" },
-                //    { "foreignField", "_id" },
-                //    { "as", "job_posts" }
-                //}),
+                new BsonDocument("$lookup", new BsonDocument
+                {
+                    { "from", "JobPosts" },
+                    { "localField", "job_posts" },
+                    { "foreignField", "_id" },
+                    { "as", "job_posts" }
+                }),
                 new BsonDocument("$project", new BsonDocument
                 {
                     { "_id", 1 },
@@ -50,13 +50,13 @@ namespace JobBoardDotnetBackend.Controllers
                     { "email", 1 },
                     { "img", 1 },
                     { "phone", 1 },
-                    //{ "job_posts", new BsonDocument
-                    //{
-                    //    { "_id", 1 },
-                    //    { "title", 1 },
-                    //    { "location", 1 },
-                    //    { "location_type", 1 }
-                    //}},
+                    { "job_posts", new BsonDocument
+                    {
+                        { "_id", 1 },
+                        { "title", 1 },
+                        { "location", 1 },
+                        { "location_type", 1 },
+                    }},
                     { "reviews", 1 }
                 })
             };
