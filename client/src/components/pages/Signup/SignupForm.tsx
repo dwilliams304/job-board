@@ -117,7 +117,9 @@ export default function SignupForm() {
                             ))
                         }
                     </ul>
-                    <label htmlFor='firstName' className='block text-sm mb-2'>First name</label>
+                    <label htmlFor='firstName' className='block text-sm mb-2'>
+                        First name <span className="text-red-600">*</span>
+                    </label>
                     <input
                         type='text'
                         name='firstName'
@@ -132,7 +134,9 @@ export default function SignupForm() {
                     
                 </div>
                 <div>
-                    <label htmlFor='lastName' className='block text-sm mb-2'>Last name</label>
+                    <label htmlFor='lastName' className='block text-sm mb-2'>
+                        Last name <span className="text-red-600">*</span>
+                    </label>
                     <input
                         type='text'
                         name='lastName'
@@ -147,7 +151,9 @@ export default function SignupForm() {
                     
                 </div>
                 <div>
-                    <label htmlFor='dob' className='block text-sm mb-2'>Date of birth</label>
+                    <label htmlFor='dob' className='block text-sm mb-2'>
+                        Date of birth <span className="text-red-600">*</span>
+                    </label>
                     <input
                         type='date'
                         name='dob'
@@ -162,7 +168,9 @@ export default function SignupForm() {
                     
                 </div>
                 <div>
-                    <label htmlFor='email' className='block text-sm mb-2'>Email</label>
+                    <label htmlFor='email' className='block text-sm mb-2'>
+                        Email <span className="text-red-600">*</span>
+                    </label>
                     <input
                         type='email'
                         name='email'
@@ -178,7 +186,9 @@ export default function SignupForm() {
                 </div>
                 
                 <div>
-                    <label htmlFor='password' className='block text-sm mb-2'>Password</label>
+                    <label htmlFor='password' className='block text-sm mb-2'>
+                        Password <span className="text-red-600">*</span>
+                    </label>
                     <input
                         type='password'
                         name='password'
@@ -215,7 +225,9 @@ export default function SignupForm() {
                             </li>
                         </ul>
                     </div>
-                    <label htmlFor='confirmPassword' className='block text-sm mb-2'>Confirm password</label>
+                    <label htmlFor='confirmPassword' className='block text-sm mb-2'>
+                        Confirm password <span className="text-red-600">*</span>
+                    </label>
                     <input
                         type='password'
                         name='confirmPassword'
@@ -241,7 +253,10 @@ export default function SignupForm() {
                             required={true}
                         />
                         <label htmlFor='terms-and-conditions' className='pl-2'>I have read and agreed to the 
-                            <Link to="/terms" className='pl-1 underline' onClick={() => ScrollToTop(true)}>Terms &amp; Conditions</Link>
+                            <Link to="/terms" onClick={() => ScrollToTop(true)}>
+                                <span className="pl-1 underline">Terms &amp; Conditions</span> 
+                                <span className="text-red-600"> *</span>
+                            </Link>
                         </label>
                     </div>
                 </div>
@@ -257,7 +272,10 @@ export default function SignupForm() {
                             required={true}
                         />
                         <label htmlFor='terms-and-conditions' className='pl-2'>I have read and agreed to the 
-                            <Link to="/privacy" className='pl-1 underline' onClick={() => ScrollToTop(true)}>Privacy Policy</Link>
+                            <Link to="/privacy" onClick={() => ScrollToTop(true)}>
+                                <span className="pl-1 underline">Privacy Policy</span> 
+                                <span className="text-red-600"> *</span>
+                            </Link>
                         </label>
                     </div>
                 </div>

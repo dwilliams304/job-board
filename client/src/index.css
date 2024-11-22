@@ -8,3 +8,7 @@
 .rte a {
     @apply text-blue-500 cursor-pointer hover:text-purple-500;
 }
+
+textarea {
+    @apply resize-none;
+}

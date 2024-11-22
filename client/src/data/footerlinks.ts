@@ -2,7 +2,7 @@ export const footerLinks = {
     resources: [
     {
         linkText: "Contact",
-        linkDestination: "",
+        linkDestination: "/contact",
     },
     {
         linkText: "Help Center",

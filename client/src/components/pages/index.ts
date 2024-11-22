@@ -10,6 +10,7 @@ import NotFound from "./NotFound/NotFound";
 import JobPage from "./JobPage/JobPage";
 import CreateJobPost from "./CreateJobPost/CreateJobPost";
 import CompanyPage from "./CompanyPage/CompanyPage";
+import ContactPage from "./ContactPage/ContactPage";
 
 
 export { 
@@ -24,5 +25,6 @@ export {
     NotFound, 
     JobPage,
     CreateJobPost,
-    CompanyPage
+    CompanyPage,
+    ContactPage
 }

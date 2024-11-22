@@ -10,7 +10,8 @@ import {
     NotFound,
     JobPage,
     CreateJobPost,
-    CompanyPage
+    CompanyPage,
+    ContactPage
 } from "../components/pages";
 
 import { RichTextEditor } from "../components/common";
@@ -64,6 +65,11 @@ export const Routes: Route[] = [
         path: "/help/:articleID",
         protected: false,
         pageElement: HelpArticlePage
+    },
+    {
+        path: "/contact",
+        protected: false,
+        pageElement: ContactPage
     },
 
 
