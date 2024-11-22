@@ -66,3 +66,26 @@ Misc:
     + This can be found in: "./client/src/data/generatedData"
     + Will write 20 companies and 100 job posts into a CSV file
 + General cleanup on backend/frontend deps
+
+&nbsp;
+
+## v0.3 (Nov. 21, 2024)
+
+This update was primarily to switch the backend and properly connect the backend to MongoDB. Additionally, the frontend has been updated with a lot of the temporary data/files being removed, and instead being replaced with real database data. While this has stripped some of the previously "working" functionality, it is important to now actually match the data, and the way we request it as it gets pulled from the API.
+
+Backend:
++ Deploy early version of backend to Azure and get it working
++ GET reqs for Companies/JobPosts working properly
++ Most endpoints mapped properly to MongoDB
++ JobPosts can be searched and filtered through
++ Add aggregation pipelines for companies/jobposts to join data from Companies/JobPosts
++ Update Review, Company, and JobPost model
+
+
+Frontend:
++ Remove Login functionality (temporary)
++ Remove dummy data/funcs from frontend files
++ Add constants for API URL requests
++ Add Axios
++ Axios properly can request data from backend
++ Fix company logos potentially being too large

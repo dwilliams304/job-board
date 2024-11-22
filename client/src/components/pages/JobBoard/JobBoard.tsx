@@ -12,13 +12,11 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import JobPost from "./JobPost";
-// import { Jobs } from "../../../data/jobs";
 import SearchBar from "./SearchBar";
 import FiltersPopup from "./FiltersPopup";
 import SetTabTitle from "../../../data/utils/SetTabTitle";
 import { SkeletonLoader } from "../../common";
 
-import { GetRandomNumber } from "../../../data/utils";
 import { apiURL } from "../../../data/constants";
 import axios from "axios";
 
@@ -82,6 +80,17 @@ export default function JobBoard(){
         const postAge = searchParams.get("postAge");
         setFilteredList(jobsList);
         console.log(searchParams);
+
+        axios.get(`${apiURL}/JobPost/filterBy`)
+            .then(res => {
+
+            })
+            .catch(err => {
+
+            })
+            .finally(() => {
+
+            });
 
         setJobsAreLoading(false);
     }, [searchParams])

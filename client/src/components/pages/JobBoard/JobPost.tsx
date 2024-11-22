@@ -50,12 +50,12 @@ export default function JobPost({job}: JobPostProps){
         <div className="relative flex border border-solid my-5 mx-8 p-5 shadow-md transition duration-300 ease-in-out
         cursor-pointer hover:shadow-xl hover:border-gray-400"
         onClick={() => window.open(`/job/${job.id}`)}>
-            <div className="w-4/5">
+            <div className="w-4/5 space-y-2">
                 <div className="flex align-middle">
                     <img 
                         src={job.company.img} 
                         alt="company logo" 
-                        className="p-2 mr-2 border"
+                        className="mr-2 border w-14 h-14"
                     />
                     <h2 className="font-semibold">
                         <span className="absoulte hover:underline" onClick={(e) => {

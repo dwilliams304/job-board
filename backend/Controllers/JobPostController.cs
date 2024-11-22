@@ -62,7 +62,7 @@ namespace JobBoardDotnetBackend.Controllers
         }
 
         [HttpGet("filterBy")]
-        public async Task<IEnumerable<JobPost>> GetJobPostByQuery([FromBody] JobPostQuery query)
+        public async Task<IEnumerable<JobPost>> GetJobPostByQuery(JobPostQuery query)
         {
             var filterDefBuilder = Builders<JobPost>.Filter;
             var filter = filterDefBuilder.Empty;
