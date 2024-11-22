@@ -94,7 +94,10 @@ export default function LoginForm(){
                         />
                         <label htmlFor='remember' className='pl-2 cursor-pointer'>Remember me</label>
                     </div>
-                    <a className='hover:underline focus:underline cursor-pointer'>Forgot password?</a>
+                    <a className='hover:underline focus:underline cursor-pointer'
+                    onClick={() => window.alert("This is not setup as accounts are automatically deleted from the db every day!")}>
+                        Forgot password?
+                    </a>
                 </div>
                 <button type='submit' className='w-3/4 p-2 rounded-xl bg-blue-700 text-white'
                 disabled={isSigningIn}>

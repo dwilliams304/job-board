@@ -1,15 +1,21 @@
 import { Button } from "../../common"
 
 export default function ContactPage(){
+
+    const onFormSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        window.alert("This does not currently go anywhere as this is a personal project!");
+    }
+
     return(
         <div className="flex-grow flex my-auto p-12">
             <div className="w-1/2 ml-auto p-6 space-y-2">
-                <h2 className="text-3xl">Contact Us</h2>
+                <h2 className="text-4xl font-bold">Contact Us</h2>
                 <p>Experiencing any issues or have some general questions?</p>
                 <p>Feel free to reach out to us here!</p>
             </div>
             <div className="w-1/2 bg-slate-200">
-                <form className="flex flex-col space-y-4 p-6">
+                <form className="flex flex-col space-y-4 p-6" onSubmit={onFormSubmit}>
                     <div className="flex space-x-6 w-full">
                         <div className="flex flex-col w-1/3">
                             <label htmlFor="name"> 
@@ -40,12 +46,13 @@ export default function ContactPage(){
                         <label htmlFor="reason"> 
                             Please select a reson for you reaching out <span className="text-red-600">*</span>
                         </label>
-                        <select name="reason" className="w-1/3 border bg-white p-2">
-                            <option>Option 1</option>
-                            <option>Option 2</option>
-                            <option>Option 3</option>
-                            <option>Option 4</option>
-                            <option>Option 5</option>
+                        <select name="reason" className="w-1/3 border bg-white p-2 cursor-pointer">
+                            <option>Account Issues</option>
+                            <option>Billing Issues</option>
+                            <option>Bug Report</option>
+                            <option>Suggestion</option>
+                            <option>Report</option>
+                            <option>Other</option>
                         </select>
                     </div>
 
@@ -60,9 +67,10 @@ export default function ContactPage(){
                     </div>
 
                     <Button
-                        function={() => {}}
+                        function={(e) => onFormSubmit(e)}
                         text="Send"
                         type="Primary"
+                        title="Send"
                     />
                 </form>
             </div>
