@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson;
+﻿using JobBoardDotnetBackend.Models.Common;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 
@@ -12,12 +13,10 @@ namespace JobBoardDotnetBackend.Models
         [BsonElement("title")]
         public string? Title { get; set; }
 
-        [BsonElement("location"), BsonRepresentation(BsonType.String)]
-        public string? Location { get; set; }        
-        
-        [BsonElement("location_type"), BsonRepresentation(BsonType.String)]
-        public string? LocationType { get; set; }
+        [BsonElement("location")]
+        public Location? Location { get; set; }
     }
+
     public class Company
     {
         [BsonId, BsonRepresentation(BsonType.ObjectId)]

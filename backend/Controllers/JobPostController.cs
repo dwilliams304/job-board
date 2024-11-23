@@ -44,7 +44,6 @@ namespace JobBoardDotnetBackend.Controllers
                     { "salary", 1 },
                     { "term", 1 },
                     { "location", 1 },
-                    { "location_type", 1 },
                     { "experience", 1 },
                     { "date_posted", 1 },
                     { "company", new BsonDocument

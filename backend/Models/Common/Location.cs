@@ -8,10 +8,11 @@ namespace JobBoardDotnetBackend.Models.Common
         public string? StreetAddress { get; set; } = null!;
         [BsonElement("street_address_two")]
         public string? StreetAddressTwo { get; set; } = null!;
+
         [BsonElement("city")]
-        public required string City { get; set; }
+        public string? City { get; set; } = null;
         [BsonElement("postal_code")]
-        public required string PostalCode { get; set; }
+        public string? PostalCode { get; set; } = null!;
         [BsonElement("state")]
         public required string State { get; set; }
         [BsonElement("country")]

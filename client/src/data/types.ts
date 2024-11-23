@@ -1,9 +1,19 @@
+type Location = {
+    streetAddress?: string;
+    streetAddressTwo?: string;
+    city?: string;
+    postalCode?: string;
+    state?: string;
+    country: string;
+    locationType: "On-Site" | "Hybrid" | "Remote"
+}
+
 export type Job = {
     id: string;
     datePosted: Date;
     title: string;
     company: ShortCompanyDetails;    
-    location: string; //City & State, State, or Country
+    location: Location;
     salary: number; //Annualized yearly salaray
     experience: string;
     term: string;
@@ -40,6 +50,5 @@ type ShortCompanyDetails = {
 type ShortJobDetails = {
     id: string;
     title: string;
-    location: string;
-    locationType: string;
+    location: Location;
 }

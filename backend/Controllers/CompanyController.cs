@@ -55,7 +55,6 @@ namespace JobBoardDotnetBackend.Controllers
                         { "_id", 1 },
                         { "title", 1 },
                         { "location", 1 },
-                        { "location_type", 1 },
                     }},
                     { "reviews", 1 }
                 })

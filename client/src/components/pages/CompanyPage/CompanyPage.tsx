@@ -26,6 +26,7 @@ import { SkeletonLoader } from "../../common";
 
 import { apiURL } from "../../../data/constants";
 import axios from "axios";
+import { list } from "postcss";
 
 //Different navigation tabs, for state management
 const tabs = ["jobs", "reviews", "salaries", "about"];
@@ -126,7 +127,24 @@ export default function CompanyPage(){
                             companyData?.jobPosts.map((listing, i) => (
                                 <p key={i} className="text-xl cursor-pointer hover:underline"
                                 onClick={() => navTo(`/job/${listing.id}`)}>
-                                    {listing.title} - {listing.location} ({listing.locationType})
+                                    {listing.title} - 
+                                    {
+                                    listing.location.city && listing.location.state ?
+                                        `${listing.location.city}, ${listing.location.state} - `
+                                        :
+                                        ""
+                                    }
+                                    {listing.location.country} ({listing.location.locationType})
+                                    {/* If we have a city/state, will show as:
+                                        Software Engineer - Chicago, IL - United States (Remote)
+                                        If we do not, will show as:
+                                        Software Engineer - United States (Remote)
+
+                                        This could potentially be a bit more comprehensive, but for this purpose,
+                                        in the backend if we have a state, we must have a city
+                                        If we have a city, we must have a state (of course)
+                                        but we could also just simply have a country
+                                    */}
                                 </p>
                             ))
                             :

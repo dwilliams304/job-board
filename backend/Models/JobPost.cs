@@ -1,3 +1,4 @@
+using JobBoardDotnetBackend.Models.Common;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
@@ -39,11 +40,9 @@ namespace JobBoardDotnetBackend.Models
         [BsonElement("term")]
         public required string Term { get; set; }
 
+        
         [BsonElement("location")]
-        public required string Location { get; set; }
-
-        [BsonElement("location_type")]
-        public required string LocationType { get; set; }
+        public required Location Location { get; set; }
 
         [BsonElement("experience")]
         public required string Experience { get; set; }
