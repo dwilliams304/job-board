@@ -20,13 +20,26 @@ export type Job = {
     locationType: string;
     shortDescription: string;
 }
+type ShortCompanyDetails = {
+    id: string;
+    name: string;
+    img: string;
+}
+
 
 export type Company = {
     id: string;
     name: string;
     img: string;
     jobPosts: ShortJobDetails[];
+    reviews: Review[];
 }
+type ShortJobDetails = {
+    id: string;
+    title: string;
+    location: Location;
+}
+
 
 export type Review = {
     id: string;
@@ -39,16 +52,4 @@ export type Review = {
     reviewerName: string;
     comments: string;
     reccomendsCompany: boolean;
-}
-
-type ShortCompanyDetails = {
-    id: string;
-    name: string;
-    img: string;
-}
-
-type ShortJobDetails = {
-    id: string;
-    title: string;
-    location: Location;
 }

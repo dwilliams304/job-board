@@ -35,7 +35,8 @@ const initialCompanyData: Company = {
     id: "",
     name: "",
     img: "",
-    jobPosts: []
+    jobPosts: [],
+    reviews: []
 }
 
 export default function CompanyPage(){
@@ -143,7 +144,7 @@ export default function CompanyPage(){
                                         This could potentially be a bit more comprehensive, but for this purpose,
                                         in the backend if we have a state, we must have a city
                                         If we have a city, we must have a state (of course)
-                                        but we could also just simply have a country
+                                        but we could also just simply have a country and NO city/state
                                     */}
                                 </p>
                             ))
