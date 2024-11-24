@@ -73,13 +73,13 @@ export default function JobPost({job}: JobPostProps){
                     <p> 
                         {
                             job.location.city && job.location.state ?
-                                `${job.location.city}, ${job.location.state} - `
+                                `${job.location.city}, ${job.location.state} - ${job.location.country}`
                                 :
                                 `${job.location.country}`
                         }
                     </p>
                     <p className="flex">
-                        ({job.locationType})
+                        ({job.location.locationType})
                     </p>
                 </div>
                 <p className="mt-4">{job.shortDescription}</p>

@@ -71,29 +71,29 @@ export default function JobBoard(){
     //     setListCount(filteredList.length);
     // }, [filteredList])
 
-    useEffect(() => {
-        setJobsAreLoading(true);
-        const jobTitle = searchParams.get("title");
-        const location = searchParams.get("location");
-        const experience = searchParams.get("experience");
-        const locationType = searchParams.get("locationType");
-        const postAge = searchParams.get("postAge");
-        setFilteredList(jobsList);
-        console.log(searchParams);
+    // useEffect(() => {
+    //     setJobsAreLoading(true);
+    //     const jobTitle = searchParams.get("title");
+    //     const location = searchParams.get("location");
+    //     const experience = searchParams.get("experience");
+    //     const locationType = searchParams.get("locationType");
+    //     const postAge = searchParams.get("postAge");
+    //     setFilteredList(jobsList);
+    //     console.log(searchParams);
 
-        axios.get(`${apiURL}/JobPost/filterBy`)
-            .then(res => {
+    //     axios.get(`${apiURL}/JobPost/filterBy`)
+    //         .then(res => {
 
-            })
-            .catch(err => {
+    //         })
+    //         .catch(err => {
 
-            })
-            .finally(() => {
+    //         })
+    //         .finally(() => {
 
-            });
+    //         });
 
-        setJobsAreLoading(false);
-    }, [searchParams])
+    //     setJobsAreLoading(false);
+    // }, [searchParams])
 
 
     return(

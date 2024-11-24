@@ -136,6 +136,7 @@ namespace JobBoardDotnetBackend.Controllers
                     { "foreignField", "_id" },
                     { "as", "company_details" }
                 }),
+                new BsonDocument("$unwind", "$company_details"),
                 new BsonDocument("$project", new BsonDocument
                 {
                     { "_id", 1 },

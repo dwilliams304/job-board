@@ -23,6 +23,8 @@ import { SkeletonLoader, Button } from "../../common";
 
 import { GetRandomNumber } from "../../../data/utils";
 import SetTabTitle from "../../../data/utils/SetTabTitle";
+import axios from "axios";
+import { apiURL } from "../../../data/constants";
 
 const initialJobData: Job = {
     id: "",
@@ -38,7 +40,6 @@ const initialJobData: Job = {
         country: "United States",
 
     },
-    locationType: "",
     salary: 0,
     experience: "",
     term: "",
@@ -56,13 +57,21 @@ export default function JobPage(){
 
     useEffect(() => {
         // const job = FetchJob(Number(jobID));
+        setIsLoading(true);
+        axios.get(`${apiURL}/JobPost/${jobID}`)
+            .then(res => {
+                setJob(res.data);
+            })
+            .catch(err => {
+                navTo('/not-found');
+                SetTabTitle('Page Not Found!');
+            })
+            .finally(() => {
+                setIsLoading(false);
+            })
+            SetTabTitle(`${job.title} | ${job.company.name}`);
 
-        SetTabTitle(`${job.title} | ${job.company.name}`);
         // setJobData(job);
-
-        const timeout = setTimeout(() => {
-            setIsLoading(false);
-        }, GetRandomNumber(4000));
 
 
     }, [])
@@ -81,11 +90,11 @@ export default function JobPage(){
                     <p className="flex align-middle"><IoLocation /> 
                         {
                             job.location.city && job.location.state ?
-                                `${job.location.city}, ${job.location.state} - `
+                                `${job.location.city}, ${job.location.state} - ${job.location.country} `
                                 :
-                                `${job.location.country}`
+                                `${job.location.country} `
                         }
-                        ({job.locationType})
+                        ({job.location.locationType})
                     </p>
                     <p className="flex align-middle"><IoCash /> ${job.salary.toLocaleString()}/yr</p>
                 </div>
@@ -97,9 +106,12 @@ export default function JobPage(){
                         <img 
                             src={job.company.img} 
                             alt="Company Logo" 
-                            className=""
+                            className="w-14 h-14"
                         />
-                        <h2 className="absolute bottom-0 left-10 text-lg">{job.company.name}</h2>
+                        <span className="absolute bottom-0 left-14 text-lg flex">
+                            <p className="pr-2">posted by: </p> 
+                            <h2 className="font-bold hover:underline"> {job.company.name}</h2>
+                        </span>
                     </div>
                     {/* <a className="hover:underline cursor-pointer font-bold flex align-middle">
                         <IoStarSharp /> {jobData.company.reviews}

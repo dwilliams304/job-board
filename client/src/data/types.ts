@@ -17,7 +17,6 @@ export type Job = {
     salary: number; //Annualized yearly salaray
     experience: string;
     term: string;
-    locationType: string;
     shortDescription: string;
 }
 type ShortCompanyDetails = {
