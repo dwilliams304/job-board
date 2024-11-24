@@ -59,6 +59,8 @@ export default function JobBoard(){
         SetTabTitle("Job Board");
         axios.get(`${apiURL}/JobPost`)
             .then(res => {
+                console.log("TESTING: ");
+                console.log(res);
                 console.log(res.data);
                 setJobsList(res.data)
             })
