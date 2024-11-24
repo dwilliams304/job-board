@@ -19,7 +19,8 @@ builder.Services.AddControllers();
 builder.Services.AddCors(services =>
     services.AddDefaultPolicy(policyBuilder =>
     {
-        policyBuilder.WithOrigins("http://localhost:5173", "https://localhost:5173");
+        policyBuilder.WithOrigins("http://localhost:5173", "https://localhost:5173",
+            "https://job-board-five-bice.vercel.app/");
     })
 );
 
