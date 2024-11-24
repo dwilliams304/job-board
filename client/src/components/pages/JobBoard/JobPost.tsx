@@ -71,7 +71,12 @@ export default function JobPost({job}: JobPostProps){
                 <div className="italic flex space-x-2">
                     <IoLocation />
                     <p> 
-                        {job.location}
+                        {
+                            job.location.city && job.location.state ?
+                                `${job.location.city}, ${job.location.state} - `
+                                :
+                                `${job.location.country}`
+                        }
                     </p>
                     <p className="flex">
                         ({job.locationType})

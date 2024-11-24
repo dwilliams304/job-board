@@ -29,8 +29,8 @@ This project is not for commercial/public use. This is simply as a personal chal
 - [ ] User sign in persistence
 - [ ] User authentication and roles
 - [ ] Users can create profiles
-- [ ] Link jobs -> companies
-- [ ] Link reviews -> companies
+- [x] Link jobs -> companies
+- [x] Link reviews -> companies
 
 #### Frontend:
 - [x] Scaffold basic Job Board UI

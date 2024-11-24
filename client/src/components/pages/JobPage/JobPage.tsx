@@ -33,7 +33,11 @@ const initialJobData: Job = {
         name: "",
         img: ""
     },
-    location: "",
+    location: {
+        locationType: "Remote",
+        country: "United States",
+
+    },
     locationType: "",
     salary: 0,
     experience: "",
@@ -74,7 +78,15 @@ export default function JobPage(){
                 <div className="flex flex-row space-x-4">
                     <p className="flex align-middle"><IoArrowForward /> {job.experience}</p>
                     <p className="flex align-middle"><IoBagSharp /> {job.term}</p>
-                    <p className="flex align-middle"><IoLocation /> {job.location} ({job.locationType})</p>
+                    <p className="flex align-middle"><IoLocation /> 
+                        {
+                            job.location.city && job.location.state ?
+                                `${job.location.city}, ${job.location.state} - `
+                                :
+                                `${job.location.country}`
+                        }
+                        ({job.locationType})
+                    </p>
                     <p className="flex align-middle"><IoCash /> ${job.salary.toLocaleString()}/yr</p>
                 </div>
 
