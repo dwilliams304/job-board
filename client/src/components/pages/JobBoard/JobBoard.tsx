@@ -59,9 +59,6 @@ export default function JobBoard(){
         SetTabTitle("Job Board");
         axios.get(`${apiURL}/JobPost`)
             .then(res => {
-                console.log("TESTING: ");
-                console.log(res);
-                console.log(res.data);
                 setJobsList(res.data)
             })
             .catch(err => console.log(err))
@@ -122,11 +119,6 @@ export default function JobBoard(){
                 :
                 <div>
                     {
-                        jobsList.length ?
-                        <div>
-                            <h2>We couldn't find any matching jobs!</h2>
-                        </div>
-                        :
                         jobsList.map((job, i) => (
                             <JobPost job={job} key={i} />
                         ))
