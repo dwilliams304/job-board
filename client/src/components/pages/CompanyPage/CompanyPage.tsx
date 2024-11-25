@@ -27,15 +27,19 @@ import { SkeletonLoader } from "../../common";
 import { apiURL } from "../../../data/constants";
 import axios from "axios";
 
+import { Reviews } from "../../../data/reviews";
+import ReviewsList from "./ReviewsList";
+
 //Different navigation tabs, for state management
 const tabs = ["jobs", "reviews", "salaries", "about"];
 
 const initialCompanyData: Company = {
-    id: "",
-    name: "",
+    id: "x123",
+    name: "Default Company",
     img: "",
     jobPosts: [],
-    reviews: []
+    reviews: Reviews,
+    about: "No"
 }
 
 export default function CompanyPage(){
@@ -73,7 +77,7 @@ export default function CompanyPage(){
                 SetTabTitle(`${company.name} | Company Page`);
             })
             .catch(err => {
-                // redir('not-found')
+                redir('/not-found')
             })
             .finally(() => {
                 setIsLoading(false);
@@ -129,7 +133,7 @@ export default function CompanyPage(){
                                     {listing.title} - 
                                     {
                                     listing.location.city && listing.location.state ?
-                                        `${listing.location.city}, ${listing.location.state} - `
+                                        ` ${listing.location.city}, ${listing.location.state} - `
                                         :
                                         ""
                                     }
@@ -152,12 +156,9 @@ export default function CompanyPage(){
                     </div>
                 }
                 { tab === "reviews" &&
-                    // <ReviewsList 
-                    //     reviews={}
-                    // />
-                    <div>
-                        WIP!
-                    </div>
+                    <ReviewsList 
+                        reviews={companyData.reviews}
+                    />
                 }
                 { tab === "salaries" &&
                     <div>
@@ -165,9 +166,7 @@ export default function CompanyPage(){
                     </div>
                 }
                 { tab === "about" &&
-                    <div>
-                        <h2 className="text-xl">No about listed!</h2>
-                    </div>
+                    <p>{companyData.about}</p>
                 }
             </div>
         </div>

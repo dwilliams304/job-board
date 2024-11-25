@@ -12,7 +12,7 @@ export const Reviews: Review[] = [
         datePosted: new Date(),
         jobSalary: 75000,
         scores: {
-            averageScore: 5,
+            averageScore: 5.0,
             payScore: 5,
             cultureScore: 5,
             worklifeScore: 5
@@ -30,7 +30,7 @@ export const Reviews: Review[] = [
         datePosted: new Date(),
         jobSalary: 55000,
         scores: {
-            averageScore: 4,
+            averageScore: 4.0,
             payScore: 3,
             cultureScore: 5,
             worklifeScore: 4
@@ -48,10 +48,10 @@ export const Reviews: Review[] = [
         datePosted: new Date(),
         jobSalary: 65250,
         scores: {
-            averageScore: 5,
+            averageScore: 4.5,
             payScore: 5,
-            cultureScore: 5,
-            worklifeScore: 5
+            cultureScore: 4,
+            worklifeScore: 4
         }
     },
 

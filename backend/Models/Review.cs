@@ -40,12 +40,13 @@ namespace JobBoardDotnetBackend.Models
         public required int JobSalary { get; set; }
 
         [BsonElement("comments")]
-        public required string ReviewComments { get; set; }
+        public required string Comments { get; set; }
 
         [BsonElement("recommends_company")]
         public required bool RecommendsCompany {  get; set; }
 
         [BsonElement("scores")]
         public Scores? scores { get; set; }
+
     }
 }

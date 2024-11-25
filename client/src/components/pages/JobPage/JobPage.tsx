@@ -22,13 +22,13 @@ import {
 
 import { SkeletonLoader, Button } from "../../common";
 
-import { GetRandomNumber } from "../../../data/utils";
 import SetTabTitle from "../../../data/utils/SetTabTitle";
 import axios from "axios";
 import { apiURL } from "../../../data/constants";
 
 import ReportJob from "./ReportJob";
 import Application from "./Application";
+import JobDescription from "./JobDescription";
 
 const initialJobData: Job = {
     id: "",
@@ -91,16 +91,17 @@ export default function JobPage(){
         setIsLoading(true);
         axios.get(`${apiURL}/JobPost/${jobID}`)
             .then(res => {
-                setJob(res.data);
+                const jobDetals = res.data;
+                setJob(jobDetals);
+                SetTabTitle(`${jobDetals.title} | ${jobDetals.company.name}`);
             })
             .catch(err => {
-                // navTo('/not-found');
+                navTo('/not-found');
                 SetTabTitle('Page Not Found!');
             })
             .finally(() => {
                 setIsLoading(false);
             })
-            SetTabTitle(`${job.title} | ${job.company.name}`);
 
         // setJobData(job);
 
@@ -132,14 +133,15 @@ export default function JobPage(){
 
                 {/* Company Details */}
                 <div className="flex flex-col border-b-2 border-black">
-                    <div className="relative my-4 cursor-pointer"
-                    onClick={() => navTo(`/company/${job.company.id}`)}>
+                    <div className="relative my-4 cursor-pointer">
                         <img 
                             src={job.company.img} 
                             alt="Company Logo" 
                             className="w-14 h-14"
+                            onClick={() => navTo(`/company/${job.company.id}`)}
                         />
-                        <span className="absolute bottom-0 left-14 text-lg flex">
+                        <span className="absolute bottom-0 left-14 text-lg flex"
+                        onClick={() => navTo(`/company/${job.company.id}`)}>
                             <p className="pr-2">posted by: </p> 
                             <h2 className="font-bold hover:underline"> {job.company.name}</h2>
                         </span>
@@ -157,63 +159,13 @@ export default function JobPage(){
                 />
             </div>
 
-            {/* Job Description */}
-            <div className="w-full px-12">
-                <div className="space-y-4">
-                    <div>
-                        <h2 className="font-bold text-xl">About Us</h2>
-                        <p>
-                            Put something here that tells the potential employee about your company. Your values, what makes you different, etc... <br />
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-                    </div>
-                    <div>
-                        <h2 className="font-bold text-xl">Qualifications</h2>
-                        <p>While we don't expect all of the following, these would be nice to have:</p>
-                        <ul className="list-disc px-12">
-                            <li>4+ years of experience as a Support Engineer</li>
-                            <li>Bachelor's Degree in Computer Science or related</li>
-                            <li>Excellent written and verbal communication skills</li>
-                            <li>Great understanding of Javascript, TypeScript, HTML, and CSS</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h2 className="font-bold text-xl">Job Responsibilities</h2>
-                        <ul className="list-disc px-12">
-                            <li>Job Responsibility #1</li>
-                            <li>Job Responsibility #2</li>
-                            <li>Job Responsibility #3</li>
-                            <li>Job Responsibility #4</li>
-                            <li>Job Responsibility #5</li>
-                            <li>Job Responsibility #6</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h2 className="font-bold text-xl">Hiring Process</h2>
-                        <p>
-                            Potential employees love transparency! Tell them about how you do your hiring and the steps you take
-                            to ensure you are finding the right candidate, etc...<br/>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-                    </div>
-                    <div>
-                        <h2 className="font-bold text-xl">Benefits</h2>
-                        <p>
-                            List something here that your company offers. 401ks, health insurance,
-                            life insurance, etc... <br/>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <JobDescription 
+            
+            />
 
             <Application 
                 questions={questions}
             />
-            
-            
-            {/* Apply, Report, Etc */}
-
 
         </div>
     )

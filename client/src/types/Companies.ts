@@ -6,6 +6,7 @@ export type Company = {
     img: string;
     jobPosts: ShortJobDetails[];
     reviews: Review[];
+    about: string;
 }
 type ShortJobDetails = {
     id: string;
@@ -27,6 +28,6 @@ export type Review = {
         averageScore: number;
         payScore: number;
         cultureScore: number;
-        worklifeScore: number;
+        workLifeScore: number;
     }
 }

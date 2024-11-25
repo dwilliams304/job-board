@@ -1,5 +1,5 @@
 import { Button } from "../../common";
-import { ApplicationQuestion } from "../../../data/types";
+import { ApplicationQuestion } from "../../../types/Jobs";
 
 import { useState } from "react";
 
@@ -110,7 +110,7 @@ export default function Application({questions}: ApplicationProps){
                         {questions && <h3 className="pt-10 pb-4 text-lg font-bold">Employer Specific Questions</h3>}
                         {
                             questions?.map((question, i) => (
-                                <div className="flex flex-col w-1/2">
+                                <div className="flex flex-col w-1/2" key={i}>
                                     <label htmlFor={question.inputName ? question.inputName : question.question}>
                                         {question.question} {question.required && <span className="text-red-600">*</span>}
                                     </label>
@@ -130,7 +130,7 @@ export default function Application({questions}: ApplicationProps){
                                         name={question.inputName ? question.inputName : question.question}
                                         required={question.required}>
                                             {
-                                                question.options?.map((option, i) => (
+                                                question.options?.map((option: any, i: number) => (
                                                     <option key={i}>
                                                         {option}
                                                     </option>
@@ -146,12 +146,12 @@ export default function Application({questions}: ApplicationProps){
                         <Button
                             type="Primary"
                             text="Submit Application"
-                            function={() => {}}
+                            function={() => window.alert("This is WIP! Check back in later :)")}
                         />
                         <Button
                             type="Tertiary"
                             text="Report Job"
-                            function={() => {}}
+                            function={() => window.alert("This is WIP! Check back in later :)")}
                         />
                     </div>
                 </div>
