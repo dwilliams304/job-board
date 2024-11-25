@@ -26,7 +26,7 @@
 */
 
 import Button from "../../common/Button";
-import { Job } from "../../../data/types";
+import { Job } from "../../../types/Jobs";
 import moment from "moment";
 import {
     IoLocation,

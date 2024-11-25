@@ -1,11 +1,26 @@
-import { Button } from "../../common"
-import { ApplicationQuestion } from "../../../data/types"
+import { Button } from "../../common";
+import { ApplicationQuestion } from "../../../data/types";
+
+import { useState } from "react";
 
 type ApplicationProps = {
     questions?: ApplicationQuestion[];
 }
 
 export default function Application({questions}: ApplicationProps){
+    const [formValues, setFormValues] = useState<any>({});
+
+    const onChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        const {name, value, type} = e.target;
+        console.log(formValues);
+
+        setFormValues({
+            ...formValues,
+            [name]: value
+        })
+    }
+
+
     return(
         <>
             <div id="apply" className="bg-slate-200 w-4/6 mx-auto">
@@ -43,6 +58,8 @@ export default function Application({questions}: ApplicationProps){
                                 placeholder="Email"
                                 name="email"
                                 className="border p-2"
+                                onChange={onChange}
+                                value={formValues.email}
                             />
                         </div>
                         <div className="flex flex-col w-1/2">
@@ -54,6 +71,8 @@ export default function Application({questions}: ApplicationProps){
                                 placeholder="Location"
                                 name="location"
                                 className="border p-2"
+                                onChange={onChange}
+                                value={formValues.location}
                             />
                         </div>
                         <div className="flex flex-col w-1/2">
@@ -65,6 +84,8 @@ export default function Application({questions}: ApplicationProps){
                                 placeholder="123-123-1234"
                                 name="phone"
                                 className="border p-2"
+                                onChange={onChange}
+                                value={formValues.phone}
                             />
                         </div>
                         <div className="flex flex-col w-1/2">
@@ -106,7 +127,8 @@ export default function Application({questions}: ApplicationProps){
                                     {
                                         question.type === "multi" &&
                                         <select className="border bg-white p-2 cursor-pointer"
-                                        name={question.inputName ? question.inputName : question.question}>
+                                        name={question.inputName ? question.inputName : question.question}
+                                        required={question.required}>
                                             {
                                                 question.options?.map((option, i) => (
                                                     <option key={i}>

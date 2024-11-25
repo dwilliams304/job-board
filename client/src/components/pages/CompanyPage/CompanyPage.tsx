@@ -20,13 +20,12 @@ import { IoStarSharp } from "react-icons/io5";
 
 import SetTabTitle from "../../../data/utils/SetTabTitle";
 
-import { Company } from "../../../data/types";
+import { Company } from "../../../types/Companies";
 
 import { SkeletonLoader } from "../../common";
 
 import { apiURL } from "../../../data/constants";
 import axios from "axios";
-import { list } from "postcss";
 
 //Different navigation tabs, for state management
 const tabs = ["jobs", "reviews", "salaries", "about"];
@@ -70,12 +69,11 @@ export default function CompanyPage(){
         axios.get(`${apiURL}/Company/${companyID}`)
             .then(res => {
                 const company = res.data;
-                console.log(company);
                 setCompanyData(company);
                 SetTabTitle(`${company.name} | Company Page`);
             })
             .catch(err => {
-                redir('not-found')
+                // redir('not-found')
             })
             .finally(() => {
                 setIsLoading(false);

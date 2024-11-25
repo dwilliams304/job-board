@@ -3,6 +3,18 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace JobBoardDotnetBackend.Models
 {
+    public class Scores
+    {
+        [BsonElement("average_score"), BsonRepresentation(BsonType.Decimal128)]
+        public decimal AverageScore { get; set; }
+        [BsonElement("pay_score"), BsonRepresentation(BsonType.Int32)]
+        public int payScore { get; set; }
+        [BsonElement("culture_score"), BsonRepresentation(BsonType.Int32)]
+        public int cultureScore { get; set; }
+        [BsonElement("worklife_score"), BsonRepresentation(BsonType.Int32)]
+        public int workLifeScore {  get; set; }
+
+    }
     public class Review
     {
         [BsonId, BsonRepresentation(BsonType.ObjectId)]
@@ -33,14 +45,7 @@ namespace JobBoardDotnetBackend.Models
         [BsonElement("recommends_company")]
         public required bool RecommendsCompany {  get; set; }
 
-
-        [BsonElement("pay_score"), BsonRepresentation(BsonType.Int32)]
-        public int? PayScore { get; set; }
-        [BsonElement("culture_score"), BsonRepresentation(BsonType.Int32)]
-        public int? CultureScore { get; set; }
-        [BsonElement("worklife_score"), BsonRepresentation(BsonType.Int32)]
-        public int? WorkLifeScore { get; set; }
-        [BsonElement("average_score"), BsonRepresentation(BsonType.Decimal128)]
-        public decimal? AverageScore { get; set; }
+        [BsonElement("scores")]
+        public Scores? scores { get; set; }
     }
 }

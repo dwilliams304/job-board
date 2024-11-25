@@ -9,7 +9,7 @@ import {
     useSearchParams
 } from "react-router-dom";
 
-import { ApplicationQuestion, Job } from "../../../data/types";
+import { ApplicationQuestion, Job } from "../../../types/Jobs";
 
 import { 
     IoLocation, 
