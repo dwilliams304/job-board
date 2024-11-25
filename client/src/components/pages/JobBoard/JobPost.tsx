@@ -106,7 +106,7 @@ export default function JobPost({job}: JobPostProps){
                         type="Primary"
                         text="Apply Now! &rarr;"
                         function={(e) => {
-                            window.open(`/job/${job.id}/apply`);
+                            window.open(`/job/${job.id}/#apply`);
                             e.stopPropagation();
                         }}
                     />

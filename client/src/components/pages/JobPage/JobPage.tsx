@@ -4,11 +4,12 @@ import {
 } from "react";
 
 import { 
-    useParams ,
-    useNavigate
+    useParams,
+    useNavigate,
+    useSearchParams
 } from "react-router-dom";
 
-import { Job } from "../../../data/types";
+import { ApplicationQuestion, Job } from "../../../data/types";
 
 import { 
     IoLocation, 
@@ -26,13 +27,16 @@ import SetTabTitle from "../../../data/utils/SetTabTitle";
 import axios from "axios";
 import { apiURL } from "../../../data/constants";
 
+import ReportJob from "./ReportJob";
+import Application from "./Application";
+
 const initialJobData: Job = {
     id: "",
     datePosted: new Date(),
-    title: "",
+    title: "Default Title",
     company: {
-        id: "",
-        name: "",
+        id: "34",
+        name: "Default Company",
         img: ""
     },
     location: {
@@ -40,16 +44,43 @@ const initialJobData: Job = {
         country: "United States",
 
     },
-    salary: 0,
-    experience: "",
-    term: "",
+    salary: 99999,
+    experience: "Entry-Level",
+    term: "Full-Time",
     shortDescription: ""
 }
+
+const questions: ApplicationQuestion[] = [
+    {
+        question: "Test Question 1",
+        required: true
+    },
+    {
+        question: "Test Question 2",
+        required: true
+    },
+    {
+        question: "Test Question 3",
+        required: false
+    },
+    {
+        question: "Test Question 4",
+        required: true,
+        type: "multi",
+        options: [
+            "Option 1",
+            "Option 2",
+            "Option 3",
+            "Option 4"
+        ]
+    }
+]
 
 
 export default function JobPage(){
     const [isLoading, setIsLoading] = useState(true);
     const [job, setJob] = useState<Job>(initialJobData);
+    const [params, setSearchParams] = useSearchParams();
     
     const navTo = useNavigate();
     const { jobID } = useParams();
@@ -63,7 +94,7 @@ export default function JobPage(){
                 setJob(res.data);
             })
             .catch(err => {
-                navTo('/not-found');
+                // navTo('/not-found');
                 SetTabTitle('Page Not Found!');
             })
             .finally(() => {
@@ -176,19 +207,14 @@ export default function JobPage(){
                 </div>
             </div>
 
+            <Application 
+                questions={questions}
+            />
+            
+            
             {/* Apply, Report, Etc */}
-            <div className="space-x-4">
-                <Button
-                    type="Primary"
-                    text="Apply now"
-                    function={() => {}}
-                />
-                <Button
-                    type="Tertiary"
-                    text="Report Job"
-                    function={() => {}}
-                />
-            </div>
+
+
         </div>
     )
 }

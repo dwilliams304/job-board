@@ -52,3 +52,11 @@ export type Review = {
     comments: string;
     reccomendsCompany: boolean;
 }
+
+export type ApplicationQuestion = {
+    question: string;
+    required: boolean;
+    type?: "text" | "multi"
+    options?: string[];
+    inputName?: string;
+}

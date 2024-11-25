@@ -40,7 +40,7 @@ namespace JobBoardDotnetBackend.Models
         public int? CultureScore { get; set; }
         [BsonElement("worklife_score"), BsonRepresentation(BsonType.Int32)]
         public int? WorkLifeScore { get; set; }
-        [BsonElement("average_score"), BsonRepresentation(BsonType.Double)]
+        [BsonElement("average_score"), BsonRepresentation(BsonType.Decimal128)]
         public decimal? AverageScore { get; set; }
     }
 }
