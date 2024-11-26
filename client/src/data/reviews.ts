@@ -15,7 +15,7 @@ export const Reviews: Review[] = [
             averageScore: 5.0,
             payScore: 5,
             cultureScore: 5,
-            worklifeScore: 5
+            workLifeScore: 5
         }
     },
     
@@ -33,7 +33,7 @@ export const Reviews: Review[] = [
             averageScore: 4.0,
             payScore: 3,
             cultureScore: 5,
-            worklifeScore: 4
+            workLifeScore: 4
         }
     },
     
@@ -51,7 +51,7 @@ export const Reviews: Review[] = [
             averageScore: 4.5,
             payScore: 5,
             cultureScore: 4,
-            worklifeScore: 4
+            workLifeScore: 4
         }
     },
 
