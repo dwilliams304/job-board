@@ -60,31 +60,31 @@ export default function LoginForm(){
                     loginError && <h2 className="font-bold text-red-600">{loginError}</h2>
                 }
                 <div>
-                    <label htmlFor='email' className='block text-sm mb-2'>Email</label>
+                    <label htmlFor='email' className='block text-sm mb-2 px-2'>Email</label>
                     <input
                         type='email'
                         name='email'
                         id='email'
                         placeholder='email@email.com'
-                        className='w-3/4 p-2 rounded-xl shadow-md'
+                        className='w-full xl:w-3/4 p-2 rounded-xl shadow-md'
                         onChange={onChange}
                         value={formValues.email}
                     />
                 </div>
                 
                 <div>
-                    <label htmlFor='password' className='block text-sm mb-2'>Password</label>
+                    <label htmlFor='password' className='block text-sm mb-2 px-2'>Password</label>
                     <input
                         type='password'
                         name='password'
                         id='password'
                         placeholder='•••••••••••'
-                        className='w-3/4 p-2 rounded-xl shadow-md'
+                        className='w-full xl:w-3/4 p-2 rounded-xl shadow-md'
                         onChange={onChange}
                         value={formValues.password}
                     />
                 </div>
-                <div className='w-3/4 flex items-center justify-between'>
+                <div className='w-full xl:w-3/4 flex items-center justify-between'>
                     <div className='flex-start'>
                         <input 
                             type='checkbox'
@@ -99,7 +99,7 @@ export default function LoginForm(){
                         Forgot password?
                     </a>
                 </div>
-                <button type='submit' className='w-3/4 p-2 rounded-xl bg-blue-700 text-white'
+                <button type='submit' className='w-full xl:w-3/4 p-2 rounded-xl bg-blue-700 text-white'
                 disabled={isSigningIn}>
                     {
                         isSigningIn ?
@@ -114,7 +114,7 @@ export default function LoginForm(){
                         "Sign in"
                     }
                 </button>
-                <p>
+                <p className="text-center md:text-left">
                     Don't have an account yet?
                     <Link to="/signup"
                     className='pl-1 underline cursor-pointer'

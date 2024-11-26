@@ -17,7 +17,7 @@ export default function Footer(){
     const data = footerLinks;
 
     return(
-        <footer className="bg-gradient-to-b from-blue-700 to-blue-900 mt-8">
+        <footer className="bg-gradient-to-b from-blue-700 to-blue-900 md:mt-8">
             <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div className="md:flex md:justify-between">
                     <div className="mb-6 md:mb-0">

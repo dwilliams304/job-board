@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ScrollToTop } from "../../../data/utils";
+import { Button } from "../../common";
 
 const passwordReqs: passwordReqsTypes = {
     charLength: false,
@@ -106,14 +107,14 @@ export default function SignupForm() {
         <div className="">
             <h2 className='text-xl pb-4'>Create an account</h2>
             <form className='space-y-4 w-full' onSubmit={onSubmit}>
-                <div className="">
-                    <ul className="list-disc">
+                <div className="w-full">
+                    <ul className="px-4 pb-4 list-disc">
                         {formErrors.length > 0 && 
                             <p className="text-red-500 text-sm">Please fix the following errors:</p>
                         }
                         {
                             formErrors.map((err, i) => (
-                                <li className="text-red-500 text-sm mx-8" key={i}>{err}</li>
+                                <li className="text-red-500 text-sm lg:mx-8" key={i}>{err}</li>
                             ))
                         }
                     </ul>
@@ -125,7 +126,7 @@ export default function SignupForm() {
                         name='firstName'
                         id='firstName'
                         placeholder='John'
-                        className='lg:w-3/4 w-full p-2 rounded-xl shadow-md'
+                        className='w-full p-2 rounded-xl shadow-md'
                         value={formValues.firstName}
                         onChange={onChange}
                         maxLength={32}
@@ -142,7 +143,7 @@ export default function SignupForm() {
                         name='lastName'
                         id='lastName'
                         placeholder='Doe'
-                        className='lg:w-3/4 w-full p-2 rounded-xl shadow-md'
+                        className='w-full p-2 rounded-xl shadow-md'
                         value={formValues.lastName}
                         onChange={onChange}
                         maxLength={32}
@@ -158,7 +159,7 @@ export default function SignupForm() {
                         type='date'
                         name='dob'
                         id='dob'
-                        className='lg:w-3/4 w-full p-2 rounded-xl shadow-md'
+                        className='w-full p-2 rounded-xl shadow-md'
                         value={formValues.dob}
                         onChange={onChange}
                         required={true}
@@ -176,7 +177,7 @@ export default function SignupForm() {
                         name='email'
                         id='email'
                         placeholder='email@email.com'
-                        className='lg:w-3/4 w-full p-2 rounded-xl shadow-md'
+                        className='w-full p-2 rounded-xl shadow-md'
                         value={formValues.email}
                         onChange={onChange}
                         maxLength={64}
@@ -194,13 +195,13 @@ export default function SignupForm() {
                         name='password'
                         id='password'
                         placeholder='•••••••••••'
-                        className='lg:w-3/4 w-full p-2 rounded-xl shadow-md'
+                        className='w-full p-2 rounded-xl shadow-md'
                         value={formValues.password}
                         onChange={onChange}
                         maxLength={32}
                         required={true}
                     />
-                    <div className="px-2 py-2">
+                    <div className="lg:px-2 py-2">
                         <p className="text-sm">Password requirements:</p>
                         <ul className="px-4 text-xs text-gray-500">
                             <li className={`${passwordReqs.charLength ? "text-green-500" : "text-red-500"}`}>
@@ -233,7 +234,7 @@ export default function SignupForm() {
                         name='confirmPassword'
                         id='confirmPassword'
                         placeholder='•••••••••••'
-                        className='lg:w-3/4 w-full p-2 rounded-xl shadow-md'
+                        className='w-full p-2 rounded-xl shadow-md'
                         value={formValues.confirmPassword}
                         onChange={onChange}
                         maxLength={32}
@@ -241,7 +242,7 @@ export default function SignupForm() {
                     />
                 </div>
 
-                <div className='lg:w-3/4 w-full flex items-center justify-between'>
+                <div className='w-full flex items-center justify-between'>
                     <div className='flex-start cursor-pointer'>
                         <input 
                             type='checkbox'
@@ -260,7 +261,7 @@ export default function SignupForm() {
                         </label>
                     </div>
                 </div>
-                <div className='lg:w-3/4 w-full flex items-center justify-between'>
+                <div className='w-full flex items-center justify-between'>
                     <div className='flex-start cursor-pointer'>
                         <input 
                             type='checkbox'
@@ -280,10 +281,14 @@ export default function SignupForm() {
                     </div>
                 </div>
 
-                <button type='submit' className='lg:w-3/4 w-full p-2 rounded-xl bg-blue-700 text-white' onClick={onSubmit}>
-                    Create account
-                </button>
-                <p>
+                <Button
+                    function={onSubmit}
+                    type="Primary"
+                    text="Create Account"
+                    title="Create account"
+                    className="w-full"
+                />
+                <p className="text-center">
                     Already have an account?
                     <Link to="/login" 
                     className='pl-1 underline cursor-pointer' 

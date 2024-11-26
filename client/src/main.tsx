@@ -19,7 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 function App() {
   return (
 
-    <div className='flex flex-col min-h-screen'>
+    <div className='flex flex-col min-h-screen max-h-screen'>
       <NavBar 
       />
       
