@@ -56,6 +56,8 @@ export default function JobPage(){
     const [isLoading, setIsLoading] = useState(true);
     const [job, setJob] = useState<Job>(initialJobData);
     const [params, setSearchParams] = useSearchParams();
+
+    const [showReportModal, setShowReportModal] = useState(false);
     
     const navTo = useNavigate();
     const { jobID } = useParams();
@@ -87,7 +89,7 @@ export default function JobPage(){
 
 
     return (
-        <div className="flex flex-col w-full flex-grow md:px-20 px-2 md:mt-12 mt-4 space-y-8">
+        <div className="flex flex-col w-full flex-grow md:px-20 px-2 md:pt-12 pt-4">
             {/* Post Details */}
             <div className="space-y-1 relative">
                 <h2 className="text-3xl font-bold">{job.title}</h2>
@@ -140,8 +142,13 @@ export default function JobPage(){
 
             <Application 
                 questions={job.employerQuestions}
+                setShowReportModal={setShowReportModal}
             />
 
+            <ReportJob 
+                showReportModal={showReportModal}
+                setShowReportModal={setShowReportModal}
+            />
         </div>
     )
 }

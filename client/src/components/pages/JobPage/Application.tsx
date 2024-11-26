@@ -5,9 +5,10 @@ import { useState } from "react";
 
 type ApplicationProps = {
     questions?: ApplicationQuestion[];
+    setShowReportModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function Application({questions}: ApplicationProps){
+export default function Application({questions, setShowReportModal}: ApplicationProps){
     const [formValues, setFormValues] = useState<any>({});
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -22,7 +23,7 @@ export default function Application({questions}: ApplicationProps){
 
 
     return(
-        <div className="md:px-12">
+        <div className="md:px-12 pt-12">
             <div id="apply" className="bg-slate-200 w-full lg:w-4/6  md:mx-auto">
                 <div className="p-2 md:py-8 md:px-12">
                     <h3 className="text-lg font-bold pb-8">Job Application</h3>
@@ -151,7 +152,7 @@ export default function Application({questions}: ApplicationProps){
                         <Button
                             type="Tertiary"
                             text="Report Job"
-                            function={() => window.alert("This is WIP! Check back in later :)")}
+                            function={() => setShowReportModal(true)}
                         />
                     </div>
                 </div>
