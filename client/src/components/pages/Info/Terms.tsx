@@ -5,14 +5,14 @@
 
 export default function Terms(){
     return(
-        <section className="flex-grow">
+        <section className="flex-grow p-4 md:p-0">
             <div className="flex flex-col mt-8 justify-center text-center text-xl font-bold text-red-700">
                 <h2>IMPORTANT NOTE: THIS IS A FAKE TERMS & CONDITIONS PAGE.</h2>
                 <h2>THIS IS SIMPLY HERE TO FILL THE PAGE AND MAKE IT LOOK REAL AS A SAMPLE.</h2>
                 <h2>THIS WAS NOT MADE TO BE ACCURATE.</h2>
             </div>
             <h2 className="text-xl text-center my-10">Terms and Conditions</h2>
-            <div className="mx-14 space-y-4">
+            <div className="md:mx-14 space-y-4">
                 <p>Welcome to TypeScript Job Board!</p>
 
                 <p>These terms and conditions outline the rules and regulations for the use of TypeScript Job Board's Website, located at <a href="https://dw-project-ts-job-board.vercel.app/" className="underline italic">https://dw-project-ts-job-board.vercel.app/</a>.</p>
