@@ -7,9 +7,9 @@ type ReviewCardProps = {
 export default function ReviewCard({review}: ReviewCardProps){
 
     return(
-        <div className="border shadow-md bg-slate-100 w-96">
+        <div className="border shadow-md bg-slate-100 w-full xl:w-96">
             <div>
-                <div className="flex flex-col border-b-2 px-12 py-4">
+                <div className="flex flex-col border-b-2 px-12 md:py-4">
                     <h3 className="font-bold text-xl flex">{review.title} - {review.scores.averageScore}/5</h3>
                     <p><span className="font-semibold">Reviewer name: </span>{review.reviewerName}</p>
                     <p><span className="font-semibold">Job title: </span>{review.jobTitle}</p>

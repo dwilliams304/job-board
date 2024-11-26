@@ -7,9 +7,9 @@ type ReviewsListProps = {
 
 export default function ReviewsList({reviews}: ReviewsListProps){
     return(
-        <div>
+        <div className="w-full mx-auto">
             <h2 className="pb-4">Showing {reviews.length} reviews.</h2>
-            <div className="grid grid-flow-col gap-8">
+            <div className="2xl:grid w-full space-y-4 2xl:space-y-0 2xl:grid-flow-col 2xl:gap-8">
                 {
                     reviews.map(review => {
                         return(

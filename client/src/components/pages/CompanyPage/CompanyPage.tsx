@@ -93,7 +93,7 @@ export default function CompanyPage(){
     
     return(
         <div className="w-full flex-grow">
-            <div className="m-20 px-12">
+            <div className="md:m-20 md:px-12 p-4">
                 {/* Main Company Details, Logo, Title, Reviews, Brief desc., etc... */}
                 <div className="flex flex-col space-y-2 border-b-2 border-black mb-8">
                     <div className="flex space-x-4 align-text-bottom">
