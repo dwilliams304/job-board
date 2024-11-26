@@ -5,8 +5,12 @@ namespace JobBoardDotnetBackend.Models.Common
     public class ApplicationQuestion
     {
         [BsonElement("question")]
-        public required string Question { get; set; }
-        [BsonElement("answer")]
-        public string? Answer { get; set; } = null!;
+        public string? Question { get; set; } = null!;
+        [BsonElement("required")]
+        public bool Required { get; set; } = false;
+        [BsonElement("type")]
+        public string Type { get; set; } = "Text";
+        [BsonElement("options")]
+        public List<string>? Options { get; set; } = null!;
     }
 }

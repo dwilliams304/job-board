@@ -53,7 +53,8 @@ namespace JobBoardDotnetBackend.Controllers
                         { "name", "$company_details.name" },
                         { "img", "$company_details.img" }
                     }
-                    }
+                    },
+                    { "employer_questions", 1 }
                 })
             };
             //Join the documents following the pipeline created
@@ -154,7 +155,8 @@ namespace JobBoardDotnetBackend.Controllers
                         { "name", "$company_details.name" },
                         { "img", "$company_details.img" }
                     }
-                    }
+                    },
+                    { "employer_questions", 1 }
                 })
             };
 

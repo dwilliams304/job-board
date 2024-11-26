@@ -31,8 +31,8 @@ namespace JobBoardDotnetBackend.Models
         [BsonElement("status")]
         public string? Status { get; set; }
 
-        [BsonElement("answers")]
-        public List<ApplicationQuestion>? Answers { get; set; }
+        //[BsonElement("answers")]
+        //public List<ApplicationQuestion>? Answers { get; set; }
     }
 
 }

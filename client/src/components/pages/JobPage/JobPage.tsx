@@ -47,34 +47,9 @@ const initialJobData: Job = {
     salary: 99999,
     experience: "Entry-Level",
     term: "Full-Time",
-    shortDescription: ""
+    shortDescription: "",
+    employerQuestions: []
 }
-
-const questions: ApplicationQuestion[] = [
-    {
-        question: "Test Question 1",
-        required: true
-    },
-    {
-        question: "Test Question 2",
-        required: true
-    },
-    {
-        question: "Test Question 3",
-        required: false
-    },
-    {
-        question: "Test Question 4",
-        required: true,
-        type: "multi",
-        options: [
-            "Option 1",
-            "Option 2",
-            "Option 3",
-            "Option 4"
-        ]
-    }
-]
 
 
 export default function JobPage(){
@@ -164,7 +139,7 @@ export default function JobPage(){
             />
 
             <Application 
-                questions={questions}
+                questions={job.employerQuestions}
             />
 
         </div>

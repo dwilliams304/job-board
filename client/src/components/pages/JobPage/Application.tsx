@@ -111,23 +111,23 @@ export default function Application({questions}: ApplicationProps){
                         {
                             questions?.map((question, i) => (
                                 <div className="flex flex-col w-1/2" key={i}>
-                                    <label htmlFor={question.inputName ? question.inputName : question.question}>
+                                    <label htmlFor={question.question}>
                                         {question.question} {question.required && <span className="text-red-600">*</span>}
                                     </label>
                                     {
-                                        question.type === "text" || !question.type &&
+                                        question.type === "text" &&
                                         <input
                                             type="text"
                                             className="border p-2"
                                             placeholder="Enter answer here..."
                                             required={question.required}
-                                            name={question.inputName ? question.inputName : question.question}
+                                            name={question.question}
                                         />
                                     }
                                     {
                                         question.type === "multi" &&
                                         <select className="border bg-white p-2 cursor-pointer"
-                                        name={question.inputName ? question.inputName : question.question}
+                                        name={question.question}
                                         required={question.required}>
                                             {
                                                 question.options?.map((option: any, i: number) => (

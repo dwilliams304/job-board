@@ -46,5 +46,8 @@ namespace JobBoardDotnetBackend.Models
 
         [BsonElement("experience")]
         public required string Experience { get; set; }
+
+        [BsonElement("employer_questions")]
+        public List<ApplicationQuestion>? EmployerQuestions { get; set; }
     }
 }

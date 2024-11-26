@@ -10,6 +10,7 @@ export type Job = {
     experience: string;
     term: string;
     shortDescription: string;
+    employerQuestions: ApplicationQuestion[];
 }
 type ShortCompanyDetails = {
     id: string;
@@ -23,5 +24,4 @@ export type ApplicationQuestion = {
     required: boolean;
     type?: "text" | "multi"
     options?: string[];
-    inputName?: string;
 }
