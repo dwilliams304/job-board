@@ -11,16 +11,17 @@
 import TestLogo from "../../assets/react.svg";
 import { MdHelpOutline } from "react-icons/md";
 import { ScrollToTop } from "../../data/utils";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 export default function NavBar() {
+    const navTo = useNavigate();
 
 
     return(
         <nav className="z-50 sticky top-0 flex justify-between p-4 bg-gradient-to-b from-blue-900 to-blue-700 text-white">
             {/* Page title and icon */}
-            <span className="left flex align-middle cursor-pointer invisible md:visible" onClick={() => ScrollToTop(true)}>
-                <img src={TestLogo} className="px-3" alt="logo"/>
-                <NavLink id="RouterNavLink" to='/'>
+            <span className="left flex align-middle cursor-pointer" onClick={() => ScrollToTop(true)}>
+                <img src={TestLogo} className="md:px-3" alt="logo" onClick={() => navTo("/")}/>
+                <NavLink id="RouterNavLink" to='/' className="invisible md:visible">
                     TypeScript Job Board
                 </NavLink>
             </span>

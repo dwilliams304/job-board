@@ -87,11 +87,11 @@ export default function JobPage(){
 
 
     return (
-        <div className="flex flex-col w-full flex-grow px-20 mt-12 space-y-8">
+        <div className="flex flex-col w-full flex-grow md:px-20 md:mt-12 mt-4 space-y-8">
             {/* Post Details */}
             <div className="space-y-1 relative">
                 <h2 className="text-3xl font-bold">{job.title}</h2>
-                <div className="flex flex-row space-x-4">
+                <div className="flex flex-col md:flex-row md:space-x-4">
                     <p className="flex align-middle"><IoArrowForward /> {job.experience}</p>
                     <p className="flex align-middle"><IoBagSharp /> {job.term}</p>
                     <p className="flex align-middle"><IoLocation /> 
@@ -130,7 +130,7 @@ export default function JobPage(){
                     text="Share Job"
                     icon={IoShareSocial}
                     function={() => {}}
-                    style={{position: "absolute", right: "0", top: "0"}}
+                    className="md:absolute right-0 top-0"
                 />
             </div>
 

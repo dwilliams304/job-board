@@ -23,11 +23,11 @@ export default function Application({questions}: ApplicationProps){
 
     return(
         <>
-            <div id="apply" className="bg-slate-200 w-4/6 mx-auto">
+            <div id="apply" className="bg-slate-200 md:w-4/6 mx-auto">
                 <div className="p-8">
                     <h3 className="text-lg font-bold pb-8">Job Application</h3>
                     <form className="flex flex-col space-y-2">
-                        <div className="flex flex-col w-1/2">
+                        <div className="flex flex-col md:w-1/2">
                             <label htmlFor="first-name"> 
                                 First name <span className="text-red-600">*</span>
                             </label>
@@ -38,7 +38,7 @@ export default function Application({questions}: ApplicationProps){
                                 className="border p-2"
                             />
                         </div>
-                        <div className="flex flex-col w-1/2">
+                        <div className="flex flex-col md:w-1/2">
                             <label htmlFor="last-name"> 
                                 Last name <span className="text-red-600">*</span>
                             </label>
@@ -49,7 +49,7 @@ export default function Application({questions}: ApplicationProps){
                                 className="border p-2"
                             />
                         </div>
-                        <div className="flex flex-col w-1/2">
+                        <div className="flex flex-col md:w-1/2">
                             <label htmlFor="email"> 
                                 Email <span className="text-red-600">*</span>
                             </label>
@@ -62,7 +62,7 @@ export default function Application({questions}: ApplicationProps){
                                 value={formValues.email}
                             />
                         </div>
-                        <div className="flex flex-col w-1/2">
+                        <div className="flex flex-col md:w-1/2">
                             <label htmlFor="location"> 
                                 Location <span className="text-red-600">*</span>
                             </label>
@@ -75,7 +75,7 @@ export default function Application({questions}: ApplicationProps){
                                 value={formValues.location}
                             />
                         </div>
-                        <div className="flex flex-col w-1/2">
+                        <div className="flex flex-col md:w-1/2">
                             <label htmlFor="phone"> 
                                 Phone
                             </label>
@@ -88,7 +88,7 @@ export default function Application({questions}: ApplicationProps){
                                 value={formValues.phone}
                             />
                         </div>
-                        <div className="flex flex-col w-1/2">
+                        <div className="flex flex-col md:w-1/2">
                             <label htmlFor="resume"> 
                                 Resume <span className="text-red-600">*</span>
                             </label>
@@ -103,14 +103,14 @@ export default function Application({questions}: ApplicationProps){
                                 Additional comments
                             </label>
                             <textarea
-                                className="border w-1/2 h-60"
+                                className="border md:w-1/2 h-60"
                                 name="additional"
                             />
                         </div>
                         {questions && <h3 className="pt-10 pb-4 text-lg font-bold">Employer Specific Questions</h3>}
                         {
                             questions?.map((question, i) => (
-                                <div className="flex flex-col w-1/2" key={i}>
+                                <div className="flex flex-col md:w-1/2" key={i}>
                                     <label htmlFor={question.question}>
                                         {question.question} {question.required && <span className="text-red-600">*</span>}
                                     </label>
@@ -142,7 +142,7 @@ export default function Application({questions}: ApplicationProps){
                             ))
                         }
                     </form>
-                    <div className="space-x-4">
+                    <div className="flex flex-col space-y-4 md:flex-row md:space-x-4">
                         <Button
                             type="Primary"
                             text="Submit Application"

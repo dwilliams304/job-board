@@ -25,6 +25,7 @@ type ButtonProps = {
     text?: string
     title?: string
     icon?: React.ElementType
+    className?: string;
 }
 export default function Button(props: ButtonProps){
     //If we did enter in a type, return one of three
@@ -34,8 +35,8 @@ export default function Button(props: ButtonProps){
                 return(
                     <button style={props.style}
                     title={props.title && props.title}
-                    className="transition border rounded-3xl bg-blue-700 text-white px-8 py-2 mt-6
-                    hover:bg-white hover:border-blue-700 hover:text-blue-700 duration-300 ease-in-out"
+                    className={`transition border rounded-3xl bg-blue-700 text-white px-8 py-2 mt-6
+                    hover:bg-white hover:border-blue-700 hover:text-blue-700 duration-300 ease-in-out ${props.className}`}
                     onClick={props.function}>
                         <span className="flex align-middle justify-center">
                             {props.text} {props.icon && <props.icon />}
@@ -46,8 +47,8 @@ export default function Button(props: ButtonProps){
                 return(
                     <button style={props.style}
                     title={props.title && props.title}
-                    className="px-8 py-2 border-2 border-blue-700 rounded-3xl
-                    hover:bg-blue-700 hover:text-white duration-300 ease-in-out"
+                    className={`px-8 py-2 border-2 border-blue-700 rounded-3xl
+                    hover:bg-blue-700 hover:text-white duration-300 ease-in-out ${props.className}`}
                     onClick={props.function}>
                         <span className="flex align-middle justify-center">
                             {props.text} {props.icon && <props.icon />}
@@ -58,7 +59,7 @@ export default function Button(props: ButtonProps){
                 return(
                     <button style={props.style}
                     title={props.title && props.title}
-                    className="px-8 py-2 bg-slate-300 hover:bg-slate-400 duration-300 ease-in-out"
+                    className={`px-8 py-2 bg-slate-300 hover:bg-slate-400 duration-300 ease-in-out ${props.className}`}
                     onClick={props.function}>
                         <span className="flex align-middle justify-center">
                             {props.text} {props.icon && <props.icon />}

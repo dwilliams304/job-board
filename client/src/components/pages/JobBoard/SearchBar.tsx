@@ -45,14 +45,14 @@ export default function SearchBar(props: SearchBarProps){
                     {/* MAIN SEARCH OPTIONS */}
                     <input 
                         placeholder="Title, keywords, etc..."
-                        className="m-1 mb-2 p-2 pr-6 shadow-md border border-solid"
+                        className="m-1 mb-2 p-2 md:pr-6 pr-14 shadow-md border border-solid"
                         name="title"
                         onChange={onChange}
                         value={searchInputs.title}
                     />
                     <input 
                         placeholder="Location or 'Remote'"
-                        className="m-1 mb-2 p-2 pr-6 shadow-md border border-solid"
+                        className="m-1 mb-2 p-2 md:pr-6 pr-14 shadow-md border border-solid"
                         name="location"
                         onChange={onChange}
                         value={searchInputs.location}

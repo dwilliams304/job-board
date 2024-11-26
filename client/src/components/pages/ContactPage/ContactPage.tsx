@@ -8,16 +8,16 @@ export default function ContactPage(){
     }
 
     return(
-        <div className="flex-grow flex my-auto p-12">
-            <div className="w-1/2 ml-auto p-6 space-y-2">
+        <div className="flex-grow flex flex-col lg:flex-row my-auto md:p-12">
+            <div className="lg:w-1/2 lg:ml-auto p-6 space-y-2">
                 <h2 className="text-4xl font-bold">Contact Us</h2>
                 <p>Experiencing any issues or have some general questions?</p>
                 <p>Feel free to reach out to us here!</p>
             </div>
-            <div className="w-1/2 bg-slate-200">
+            <div className="lg:w-1/2 bg-slate-200">
                 <form className="flex flex-col space-y-4 p-6" onSubmit={onFormSubmit}>
-                    <div className="flex space-x-6 w-full">
-                        <div className="flex flex-col w-1/3">
+                    <div className="flex flex-col md:flex-row md:space-x-6 w-full">
+                        <div className="flex flex-col md:w-1/3">
                             <label htmlFor="name"> 
                                 Name <span className="text-red-600">*</span>
                             </label>
@@ -29,7 +29,7 @@ export default function ContactPage(){
                             />
                         </div>
                         
-                        <div className="flex flex-col w-1/3">
+                        <div className="flex flex-col md:w-1/3">
                             <label htmlFor="email"> 
                                 Email <span className="text-red-600">*</span>
                             </label>
@@ -46,7 +46,7 @@ export default function ContactPage(){
                         <label htmlFor="reason"> 
                             Please select a reson for you reaching out <span className="text-red-600">*</span>
                         </label>
-                        <select name="reason" className="w-1/3 border bg-white p-2 cursor-pointer">
+                        <select name="reason" className="md:w-1/3 border bg-white p-2 cursor-pointer">
                             <option>Account Issues</option>
                             <option>Billing Issues</option>
                             <option>Bug Report</option>

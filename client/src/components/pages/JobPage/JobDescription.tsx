@@ -1,6 +1,6 @@
 export default function JobDescription() {
     return (
-        <div className="w-full px-12">
+        <div className="w-full md:px-12 px-2">
             <h2>This is currently being implemented</h2>
             <div className="space-y-4">
                 <div>

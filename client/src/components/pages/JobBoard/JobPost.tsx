@@ -47,10 +47,12 @@ export default function JobPost({job}: JobPostProps){
 
 
     return(
-        <div className="relative flex border border-solid my-5 mx-8 p-5 shadow-md transition duration-300 ease-in-out
+        <div className="relative flex flex-col lg:flex-row border bg-slate-200 
+        md:bg-white
+        border-solid my-5 md:mx-8 p-5 shadow-md transition duration-300 ease-in-out
         cursor-pointer hover:shadow-xl hover:border-gray-400"
         onClick={() => window.open(`/job/${job.id}`)}>
-            <div className="w-4/5 space-y-2">
+            <div className="md:w-4/5 w-full space-y-2">
                 <div className="flex align-middle">
                     <img 
                         src={job.company.img} 
@@ -82,10 +84,10 @@ export default function JobPost({job}: JobPostProps){
                         ({job.location.locationType})
                     </p>
                 </div>
-                <p className="mt-4">{job.shortDescription}</p>
+                <p className="mt-4 pb-6 border-b-2 lg:border-none lg:pb-0">{job.shortDescription}</p>
             </div>
 
-            <div className="w-1/5 pl-5 text-right border-l-2 flex flex-col">
+            <div className="lg:w-1/5 lg:pl-5 text-right lg:border-l-2 flex flex-col pt-6 lg:pt-0">
                     <p className="inline-flex space-x-2">
                         <FaClock/>
                         <span>{postAge}</span>
