@@ -6,14 +6,14 @@ export default function Signup(){
 
     return(
         <section className='w-full h-full flex-grow'>
-            <div className='flex align-middle mx-auto mt-10 w-3/5 shadow-xl bg-slate-200'>
-                <div className='w-1/2 p-6 border-r'>
+            <div className='flex align-middle mx-auto lg:mt-10 w-full lg:w-3/5 lg:shadow-xl bg-slate-200'>
+                <div className='w-full lg:w-1/2 p-6 border-r'>
                     <SignupForm 
                     
                     />
                 </div>
 
-                <div className='w-1/2 p-6 bg-gradient-to-t from-blue-900 to-blue-700 text-white divide-y-2'>
+                <div className='w-1/2 p-6 bg-gradient-to-t from-blue-900 to-blue-700 text-white divide-y-2 invisible lg:visible'>
                     <div className="space-y-4 pb-6">
                         <img src={DummyLogo} alt='logo' className='mb' />
                         <h2 className='text-xl'>Find your dream job.</h2>

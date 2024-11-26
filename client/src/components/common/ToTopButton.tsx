@@ -10,7 +10,7 @@ import { ScrollToTop } from "../../data/utils";
 
 export default function ToTopButton(){
     return(
-        <button className="sticky bottom-2 mr-2 ml-auto border bg-blue-700 text-white border-blue-200 rounded-xl px-4 py-1"
+        <button className="sticky bottom-2 mr-2 ml-auto border bg-blue-700 text-white border-blue-200 rounded-xl px-4 py-1 invisible lg:visible"
         onClick={() => ScrollToTop(true)}>
             Back to Top &uarr;
         </button>

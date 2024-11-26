@@ -53,7 +53,7 @@ export default function LoginForm(){
 
 
     return(
-        <div className="w-full">
+        <div className="w-full flex flex-col">
             <h2 className='text-xl pb-4'>Sign in to your account</h2>
             <form className='space-y-4 w-full' onSubmit={onSubmit}>
                 {

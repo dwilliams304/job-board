@@ -103,10 +103,10 @@ export default function SignupForm() {
 
     return(
         
-        <>
+        <div className="">
             <h2 className='text-xl pb-4'>Create an account</h2>
-            <form className='space-y-4' onSubmit={onSubmit}>
-                <div>
+            <form className='space-y-4 w-full' onSubmit={onSubmit}>
+                <div className="">
                     <ul className="list-disc">
                         {formErrors.length > 0 && 
                             <p className="text-red-500 text-sm">Please fix the following errors:</p>
@@ -125,7 +125,7 @@ export default function SignupForm() {
                         name='firstName'
                         id='firstName'
                         placeholder='John'
-                        className='w-3/4 p-2 rounded-xl shadow-md'
+                        className='lg:w-3/4 w-full p-2 rounded-xl shadow-md'
                         value={formValues.firstName}
                         onChange={onChange}
                         maxLength={32}
@@ -142,7 +142,7 @@ export default function SignupForm() {
                         name='lastName'
                         id='lastName'
                         placeholder='Doe'
-                        className='w-3/4 p-2 rounded-xl shadow-md'
+                        className='lg:w-3/4 w-full p-2 rounded-xl shadow-md'
                         value={formValues.lastName}
                         onChange={onChange}
                         maxLength={32}
@@ -158,7 +158,7 @@ export default function SignupForm() {
                         type='date'
                         name='dob'
                         id='dob'
-                        className='w-3/4 p-2 rounded-xl shadow-md'
+                        className='lg:w-3/4 w-full p-2 rounded-xl shadow-md'
                         value={formValues.dob}
                         onChange={onChange}
                         required={true}
@@ -176,7 +176,7 @@ export default function SignupForm() {
                         name='email'
                         id='email'
                         placeholder='email@email.com'
-                        className='w-3/4 p-2 rounded-xl shadow-md'
+                        className='lg:w-3/4 w-full p-2 rounded-xl shadow-md'
                         value={formValues.email}
                         onChange={onChange}
                         maxLength={64}
@@ -194,7 +194,7 @@ export default function SignupForm() {
                         name='password'
                         id='password'
                         placeholder='•••••••••••'
-                        className='w-3/4 p-2 rounded-xl shadow-md'
+                        className='lg:w-3/4 w-full p-2 rounded-xl shadow-md'
                         value={formValues.password}
                         onChange={onChange}
                         maxLength={32}
@@ -233,7 +233,7 @@ export default function SignupForm() {
                         name='confirmPassword'
                         id='confirmPassword'
                         placeholder='•••••••••••'
-                        className='w-3/4 p-2 rounded-xl shadow-md'
+                        className='lg:w-3/4 w-full p-2 rounded-xl shadow-md'
                         value={formValues.confirmPassword}
                         onChange={onChange}
                         maxLength={32}
@@ -241,7 +241,7 @@ export default function SignupForm() {
                     />
                 </div>
 
-                <div className='w-3/4 flex items-center justify-between'>
+                <div className='lg:w-3/4 w-full flex items-center justify-between'>
                     <div className='flex-start cursor-pointer'>
                         <input 
                             type='checkbox'
@@ -260,7 +260,7 @@ export default function SignupForm() {
                         </label>
                     </div>
                 </div>
-                <div className='w-3/4 flex items-center justify-between'>
+                <div className='lg:w-3/4 w-full flex items-center justify-between'>
                     <div className='flex-start cursor-pointer'>
                         <input 
                             type='checkbox'
@@ -280,7 +280,7 @@ export default function SignupForm() {
                     </div>
                 </div>
 
-                <button type='submit' className='w-3/4 p-2 rounded-xl bg-blue-700 text-white' onClick={onSubmit}>
+                <button type='submit' className='lg:w-3/4 w-full p-2 rounded-xl bg-blue-700 text-white' onClick={onSubmit}>
                     Create account
                 </button>
                 <p>
@@ -292,6 +292,6 @@ export default function SignupForm() {
                     </Link>
                 </p>
             </form> 
-        </>
+        </div>
     )
 }

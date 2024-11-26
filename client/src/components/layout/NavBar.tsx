@@ -18,7 +18,7 @@ export default function NavBar() {
     return(
         <nav className="z-50 sticky top-0 flex justify-between p-4 bg-gradient-to-b from-blue-900 to-blue-700 text-white">
             {/* Page title and icon */}
-            <span className="left flex align-middle cursor-pointer" onClick={() => ScrollToTop(true)}>
+            <span className="left flex align-middle cursor-pointer invisible md:visible" onClick={() => ScrollToTop(true)}>
                 <img src={TestLogo} className="px-3" alt="logo"/>
                 <NavLink id="RouterNavLink" to='/'>
                     TypeScript Job Board

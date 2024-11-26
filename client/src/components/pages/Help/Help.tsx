@@ -28,12 +28,12 @@ export default function Help(){
         <section className="flex-grow">
             <div>
                 {/* Header area w/ search bar */}
-                <div className="w-full text-center py-20 bg-gradient-to-t from-blue-900 to-blue-700 shadow-md">
+                <div className="w-full text-center md:py-20 py-10 bg-gradient-to-t from-blue-900 to-blue-700 shadow-md">
                     <h2 className="p-8 text-3xl text-white font-light">How can we help you?</h2>
                     <input
                         type="text"
                         placeholder="Enter your question here"
-                        className="rounded-xl py-2 pl-4 w-1/3 border border-solid border-black"
+                        className="rounded-xl py-2 pl-4 md:w-1/3 border border-solid border-black"
                     />
                 </div>
 
@@ -54,7 +54,7 @@ export default function Help(){
                     </nav>
 
                     {/* Actual help articles, which display dynamically */}
-                    <div className="grid grid-cols-3 gap-6 w-2/3 mx-auto mt-6">
+                    <div className="grid lg:grid-cols-3 grid-cols-2 gap-2 p-2 lg:gap-6 lg:w-2/3 mx-auto mt-6">
                         {
                             showEmployerHelp ?
                             EmployerHelpArticles.map((article, idx) => (
