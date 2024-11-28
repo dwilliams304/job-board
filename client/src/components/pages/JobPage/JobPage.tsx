@@ -26,9 +26,12 @@ import SetTabTitle from "../../../data/utils/SetTabTitle";
 import axios from "axios";
 import { apiURL } from "../../../data/constants";
 
+import { ScrollToTop } from "../../../data/utils";
+
 import ReportJob from "./ReportJob";
 import Application from "./Application";
 import JobDescription from "./JobDescription";
+import { JobLocatingStringBuilder } from "../../../data/utils";
 
 const initialJobData: Job = {
     id: "",
@@ -66,11 +69,12 @@ export default function JobPage(){
     useEffect(() => {
         // const job = FetchJob(Number(jobID));
         setIsLoading(true);
+        ScrollToTop(true);
         axios.get(`${apiURL}/JobPost/${jobID}`)
             .then(res => {
-                const jobDetals = res.data;
-                setJob(jobDetals);
-                SetTabTitle(`${jobDetals.title} | ${jobDetals.company.name}`);
+                const jobDetails = res.data;
+                setJob(jobDetails);
+                SetTabTitle(`${jobDetails.title} | ${jobDetails.company.name}`);
             })
             .catch(err => {
                 navTo('/not-found');
@@ -97,13 +101,7 @@ export default function JobPage(){
                     <p className="flex align-middle"><IoArrowForward /> {job.experience}</p>
                     <p className="flex align-middle"><IoBagSharp /> {job.term}</p>
                     <p className="flex align-middle"><IoLocation /> 
-                        {
-                            job.location.city && job.location.state ?
-                                `${job.location.city}, ${job.location.state} - ${job.location.country} `
-                                :
-                                `${job.location.country} `
-                        }
-                        ({job.location.locationType})
+                        {JobLocatingStringBuilder(job.location)}
                     </p>
                     <p className="flex align-middle"><IoCash /> ${job.salary.toLocaleString()}/yr</p>
                 </div>
@@ -114,7 +112,7 @@ export default function JobPage(){
                         <img 
                             src={job.company.img} 
                             alt="Company Logo" 
-                            className="w-14 h-14"
+                            className="w-10"
                             onClick={() => navTo(`/company/${job.company.id}`)}
                         />
                         <span className="absolute bottom-0 left-14 text-lg flex"

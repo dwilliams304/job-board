@@ -36,6 +36,7 @@ import {
     
 } from "react-icons/io5";
 import { FaClock } from "react-icons/fa";
+import { JobLocatingStringBuilder } from "../../../data/utils";
 
 type JobPostProps = {
     job : Job
@@ -57,7 +58,7 @@ export default function JobPost({job}: JobPostProps){
                     <img 
                         src={job.company.img} 
                         alt="company logo" 
-                        className="mr-2 border w-14 h-14"
+                        className="mr-2 border w-10"
                     />
                     <h2 className="font-semibold">
                         <span className="absoulte hover:underline" onClick={(e) => {
@@ -73,15 +74,7 @@ export default function JobPost({job}: JobPostProps){
                 <div className="italic flex space-x-2">
                     <IoLocation />
                     <p> 
-                        {
-                            job.location.city && job.location.state ?
-                                `${job.location.city}, ${job.location.state} - ${job.location.country}`
-                                :
-                                `${job.location.country}`
-                        }
-                    </p>
-                    <p className="flex">
-                        ({job.location.locationType})
+                        {JobLocatingStringBuilder(job.location)}
                     </p>
                 </div>
                 <p className="mt-4 pb-6 border-b-2 lg:border-none lg:pb-0">{job.shortDescription}</p>

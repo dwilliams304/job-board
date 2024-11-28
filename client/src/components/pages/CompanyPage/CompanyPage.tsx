@@ -19,6 +19,7 @@ import { useParams, useNavigate, useSearchParams } from "react-router-dom";
 import { IoStarSharp } from "react-icons/io5";
 
 import SetTabTitle from "../../../data/utils/SetTabTitle";
+import { JobLocatingStringBuilder } from "../../../data/utils";
 
 import { Company } from "../../../types/Companies";
 
@@ -131,13 +132,7 @@ export default function CompanyPage(){
                                 <p key={i} className="text-xl cursor-pointer hover:underline"
                                 onClick={() => navTo(`/job/${listing.id}`)}>
                                     {listing.title} - 
-                                    {
-                                    listing.location.city && listing.location.state ?
-                                        ` ${listing.location.city}, ${listing.location.state} - `
-                                        :
-                                        ""
-                                    }
-                                    {listing.location.country} ({listing.location.locationType})
+                                    {JobLocatingStringBuilder(listing.location)}
                                     {/* If we have a city/state, will show as:
                                         Software Engineer - Chicago, IL - United States (Remote)
                                         If we do not, will show as:

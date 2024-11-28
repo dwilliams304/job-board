@@ -1,3 +1,5 @@
+import { LocationType } from "../../types/Common";
+
 function ScrollToTop(smooth: boolean){
     window.scrollTo({
         top: 0,
@@ -16,9 +18,24 @@ function OpenNewTab(url: string){
 }
 
 
+function JobLocatingStringBuilder(
+    location: LocationType
+): string{
+
+    return `
+            ${location.city && location.state ?
+                `${location.city}, ${location.state} - ${location.country} `
+                :
+                `${location.country} `
+            }
+            (${location.locationType})
+            `;
+}
+
 
 export { 
     ScrollToTop,
     GetRandomNumber,
-    OpenNewTab
+    OpenNewTab,
+    JobLocatingStringBuilder
 }
