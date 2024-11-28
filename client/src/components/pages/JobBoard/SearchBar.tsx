@@ -79,7 +79,7 @@ export default function SearchBar(props: SearchBarProps){
                                 <option>Any</option>
                                 {
                                     JobOptions.locationOptions.map((option, idx) => (
-                                        <option key={idx}>{option}</option>
+                                        <option key={idx} value={option}>{option}</option>
                                     ))
                                 }
                             </select>
@@ -97,7 +97,7 @@ export default function SearchBar(props: SearchBarProps){
                                 <option>Any</option>
                                 {
                                     JobOptions.experienceOptions.map((option, idx) => (
-                                        <option key={idx}>{option}</option>
+                                        <option key={idx} value={option}>{option}</option>
                                     ))
                                 }
                             </select>

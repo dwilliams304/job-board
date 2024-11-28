@@ -30,17 +30,14 @@ export type FilterPopupMenuState = {
 export default function JobBoard(){
     const [showFilterPopup, setShowFilterPopup] = useState(false);
     const [jobsList, setJobsList] = useState([]);
-    const [filteredList, setFilteredList] = useState(jobsList);
     const [jobsAreLoading, setJobsAreLoading] = useState(false);
     const [searchParams, setSearchParams] = useSearchParams();
 
-    // const [listCount, setListCount] = useState(Jobs.length);
 
 
 
 
     const onSearchSubmit = (searchParams: any) => {
-        // const {title, location, locationType, experience} = searchParams;
         setSearchParams(params => {
             for(let key in searchParams){
                 if(searchParams[key] !== "" && searchParams[key] !== "Any"){
@@ -67,33 +64,27 @@ export default function JobBoard(){
             })
     }, [])
 
-    // useEffect(() => {
-    //     setListCount(filteredList.length);
-    // }, [filteredList])
 
-    // useEffect(() => {
-    //     setJobsAreLoading(true);
-    //     const jobTitle = searchParams.get("title");
-    //     const location = searchParams.get("location");
-    //     const experience = searchParams.get("experience");
-    //     const locationType = searchParams.get("locationType");
-    //     const postAge = searchParams.get("postAge");
-    //     setFilteredList(jobsList);
-    //     console.log(searchParams);
+    useEffect(() => {
+        setJobsAreLoading(true);
+        
+        let filtersString = "";
 
-    //     axios.get(`${apiURL}/JobPost/filterBy`)
-    //         .then(res => {
+        for(let [key, value] of searchParams.entries()){
+            filtersString += `${key}=${value}&`
+        }
 
-    //         })
-    //         .catch(err => {
+        // axios.get(`${apiURL}/JobPost/filterBy?${filtersString}`)
+        //     .then(res => {
+        //     })
+        //     .catch(err => {
+        //     })
+        //     .finally(() => {
+        //          setJobsAreLoading(false);
+        //     });
 
-    //         })
-    //         .finally(() => {
-
-    //         });
-
-    //     setJobsAreLoading(false);
-    // }, [searchParams])
+        setJobsAreLoading(false);
+    }, [searchParams])
 
 
     return(
