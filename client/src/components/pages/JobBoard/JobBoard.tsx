@@ -14,7 +14,7 @@ import { useSearchParams } from "react-router-dom";
 import JobPost from "./JobPost";
 import SearchBar from "./SearchBar";
 import FiltersPopup from "./FiltersPopup";
-import SetTabTitle from "../../../data/utils/SetTabTitle";
+import { SetTabTitle } from "../../../data/utils/";
 import { SkeletonLoader } from "../../common";
 
 import { apiURL } from "../../../data/constants";

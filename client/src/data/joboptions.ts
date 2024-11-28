@@ -10,7 +10,7 @@
 const locationOptions = ["On-Site", "Hybrid", "Remote"] as const;
 const experienceOptions = ["Intern", "Entry-Level", "Mid-Level", "Senior", "Manager"] as const;
 const termOptions = ["Full-Time", "Part-Time", "Contract"] as const;
-const postAgeOptions = ["< 24 hrs", "< 7 days", "< 30 days"] as const;
+const postAgeOptions = ["24 hrs", "7 days", "30 days", "90 days"] as const;
 
 
 export const JobOptions = {

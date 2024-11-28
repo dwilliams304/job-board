@@ -18,8 +18,10 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate, useSearchParams } from "react-router-dom";
 import { IoStarSharp } from "react-icons/io5";
 
-import SetTabTitle from "../../../data/utils/SetTabTitle";
-import { JobLocatingStringBuilder } from "../../../data/utils";
+import { 
+    SetTabTitle, 
+    JobLocatingStringBuilder 
+} from "../../../data/utils";
 
 import { Company } from "../../../types/Companies";
 

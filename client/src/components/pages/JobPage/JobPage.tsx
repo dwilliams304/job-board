@@ -9,7 +9,7 @@ import {
     useSearchParams
 } from "react-router-dom";
 
-import { ApplicationQuestion, Job } from "../../../types/Jobs";
+import { Job } from "../../../types/Jobs";
 
 import { 
     IoLocation, 
@@ -20,18 +20,24 @@ import {
     IoShareSocial 
 } from "react-icons/io5";
 
+//Util functions
+import { 
+    ScrollToTop,
+    SetTabTitle, 
+    JobLocatingStringBuilder 
+} from "../../../data/utils";
+
+//Common Components
 import { SkeletonLoader, Button } from "../../common";
 
-import SetTabTitle from "../../../data/utils/SetTabTitle";
-import axios from "axios";
-import { apiURL } from "../../../data/constants";
-
-import { ScrollToTop } from "../../../data/utils";
-
+//Page components
 import ReportJob from "./ReportJob";
 import Application from "./Application";
 import JobDescription from "./JobDescription";
-import { JobLocatingStringBuilder } from "../../../data/utils";
+
+import axios from "axios";
+import { apiURL } from "../../../data/constants";
+
 
 const initialJobData: Job = {
     id: "",

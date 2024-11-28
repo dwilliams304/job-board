@@ -115,7 +115,7 @@ export default function SearchBar(props: SearchBarProps){
                                 <option>Any</option>
                                 {
                                     JobOptions.postAgeOptions.map((option, idx) => (
-                                        <option key={idx}>{option}</option>
+                                        <option key={idx} value={parseInt(option)}>&lt; {option}</option>
                                     ))
                                 }
                             </select>

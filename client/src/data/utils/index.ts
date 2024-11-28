@@ -8,6 +8,10 @@ function ScrollToTop(smooth: boolean){
     })
 }
 
+function SetTabTitle(title: string){
+    document.title = title;
+}
+
 function GetRandomNumber(max: number): number{
     return Math.floor(Math.random() * max);
 }
@@ -35,6 +39,7 @@ function JobLocatingStringBuilder(
 
 export { 
     ScrollToTop,
+    SetTabTitle,
     GetRandomNumber,
     OpenNewTab,
     JobLocatingStringBuilder
