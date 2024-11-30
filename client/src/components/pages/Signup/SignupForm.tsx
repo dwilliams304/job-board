@@ -287,6 +287,7 @@ export default function SignupForm() {
                     text="Create Account"
                     title="Create account"
                     className="w-full"
+                    disabled={false}
                 />
                 <p className="text-center">
                     Already have an account?

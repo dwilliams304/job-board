@@ -60,6 +60,7 @@ export default function ReportJob(props: ReportModalProps){
                             type="Primary"
                             title="Submit report"
                             text="Submit Report"
+                            disabled={false}
                         />
                     </div>
                 </form>

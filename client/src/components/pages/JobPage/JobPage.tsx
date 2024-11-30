@@ -137,6 +137,7 @@ export default function JobPage(){
                     icon={IoShareSocial}
                     function={() => {}}
                     className="lg:absolute right-0 top-0"
+                    disabled={false}
                 />
             </div>
 

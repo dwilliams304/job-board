@@ -71,6 +71,7 @@ export default function ContactPage(){
                         text="Send"
                         type="Primary"
                         title="Send"
+                        disabled={false}
                     />
                 </form>
             </div>

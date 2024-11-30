@@ -148,11 +148,13 @@ export default function Application({questions, setShowReportModal}: Application
                             type="Primary"
                             text="Submit Application"
                             function={() => window.alert("This is WIP! Check back in later :)")}
+                            disabled={false}
                         />
                         <Button
                             type="Tertiary"
                             text="Report Job"
                             function={() => setShowReportModal(true)}
+                            disabled={false}
                         />
                     </div>
                 </div>

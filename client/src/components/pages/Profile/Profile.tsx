@@ -24,6 +24,7 @@ export default function Profile(){
                 text="Sign Out"
                 style={{width: "9%", textAlign: "center"}}
                 function={onSignoutClick}
+                disabled={false}
             />
         </div>
     )
