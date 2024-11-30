@@ -104,6 +104,7 @@ export default function JobPost({job}: JobPostProps){
                             window.open(`/job/${job.id}/#apply`);
                             e.stopPropagation();
                         }}
+                        disabled={false}
                     />
             </div>
         </div>

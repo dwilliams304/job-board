@@ -89,6 +89,7 @@ export default function CompanyPage(){
         if(!tab || tab === "undefined" || !tabs.includes(tab)){ 
             onTabClick("jobs"); 
         }
+
     }, [])
 
 

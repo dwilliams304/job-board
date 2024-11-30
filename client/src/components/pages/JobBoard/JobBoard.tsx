@@ -17,7 +17,7 @@ import FiltersPopup from "./FiltersPopup";
 import { SetTabTitle } from "../../../data/utils/";
 import { SkeletonLoader } from "../../common";
 
-import { apiURL } from "../../../data/constants";
+import { apiURL, testURL } from "../../../data/constants";
 import axios from "axios";
 
 
@@ -62,6 +62,8 @@ export default function JobBoard(){
             .finally(() => {
                 setJobsAreLoading(false);
             })
+
+        return () => setJobsAreLoading(false);
     }, [])
 
 
@@ -85,7 +87,8 @@ export default function JobBoard(){
                 setJobsAreLoading(false);
             });
 
-        setJobsAreLoading(false);
+        return () => setJobsAreLoading(false);
+
     }, [searchParams])
 
 
@@ -97,6 +100,7 @@ export default function JobBoard(){
                     setShowFilterPopup
                 }}
                 onSearchSubmit={onSearchSubmit}
+                jobsAreLoading={jobsAreLoading}
             />
             {/* <FiltersPopup 
                 showFilterPopup={showFilterPopup}

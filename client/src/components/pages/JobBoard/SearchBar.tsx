@@ -9,6 +9,7 @@ import Button from "../../common/Button";
 type SearchBarProps = {
     filterPopupState: FilterPopupMenuState;
     onSearchSubmit: (...args: any[]) => void;
+    jobsAreLoading: boolean;
 }
 
 export default function SearchBar(props: SearchBarProps){
@@ -62,7 +63,7 @@ export default function SearchBar(props: SearchBarProps){
                         text="Search"
                         function={() => props.onSearchSubmit(searchInputs)}
                         style={{marginLeft: "2rem"}}
-
+                        disabled={props.jobsAreLoading}
                     />
 
                     {/* SEARCH DROPDOWNS */}
