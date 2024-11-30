@@ -17,8 +17,8 @@ export default function SearchBar(props: SearchBarProps){
         location: "",
         locationType: "Any",
         experience: "Any",
-        postAge: "Any"
-
+        postAge: "Any",
+        term: "",
     });
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
@@ -97,6 +97,24 @@ export default function SearchBar(props: SearchBarProps){
                                 <option>Any</option>
                                 {
                                     JobOptions.experienceOptions.map((option, idx) => (
+                                        <option key={idx} value={option}>{option}</option>
+                                    ))
+                                }
+                            </select>
+                        </div>
+                        
+                        <div className="flex flex-col text-center m-2">
+                            <label htmlFor="term"
+                            className="text-sm text-gray-400">
+                                Term
+                            </label>
+                            <select className="p-1 shadow-md border border-solid cursor-pointer" id="term"
+                            name="term"
+                            value={searchInputs.term}
+                            onChange={onChange}>
+                                <option>Any</option>
+                                {
+                                    JobOptions.termOptions.map((option, idx) => (
                                         <option key={idx} value={option}>{option}</option>
                                     ))
                                 }

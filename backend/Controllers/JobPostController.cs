@@ -58,7 +58,7 @@ namespace JobBoardDotnetBackend.Controllers
                 })
             };
             //Join the documents following the pipeline created
-            return await _jobPosts!.Aggregate<JobPost>(pipeline).ToListAsync();
+            return await _jobPosts.Aggregate<JobPost>(pipeline).ToListAsync();
         }
 
         [HttpGet("filterBy")]
@@ -67,26 +67,50 @@ namespace JobBoardDotnetBackend.Controllers
             var filterDefBuilder = Builders<JobPost>.Filter;
             var filter = filterDefBuilder.Empty;
 
+            var pipeline = new List<BsonDocument>();
+
             if(query.Title is not null)
             {
-                filter &= filterDefBuilder.Regex("title", new BsonRegularExpression(query.Title, "i"));
+                //filter &= filterDefBuilder.Regex("title", new BsonRegularExpression(query.Title, "i"));
+                pipeline.Add(new BsonDocument("$match", new BsonDocument("title",
+                    new BsonDocument("$regex", query.Title).Add("$options", "i"))));
             }
             if(query.Location is not null)
             {
-                filter &= filterDefBuilder.Regex("location", new BsonRegularExpression(query.Location, "i"));
+                //filter &= filterDefBuilder.Regex("location", new BsonRegularExpression(query.Location, "i"));
+                var locationFilter = new BsonDocument("$or", new BsonArray
+                {
+                    new BsonDocument("location.city",
+                        new BsonDocument("$regex", query.Location).Add("$options", "i")),
+                    new BsonDocument("location.state",
+                        new BsonDocument("$regex", query.Location).Add("$options", "i")),
+                    new BsonDocument("location.country",
+                        new BsonDocument("$regex", query.Location).Add("$options", "i")),
+                    new BsonDocument("location.postalCode",
+                        new BsonDocument("$regex", query.Location).Add("$options", "i"))
+                });
+                pipeline.Add(new BsonDocument("$match", locationFilter));
             }
             if(query.LocationType is not null)
             {
-                filter &= filterDefBuilder.Eq("location_type", query.LocationType);
+                //filter &= filterDefBuilder.Eq("location_type", query.LocationType);
+                pipeline.Add(new BsonDocument("$match", new BsonDocument("location.location_type", query.LocationType)));
             }
             if(query.Term is not null)
             {
-                filter &= filterDefBuilder.Eq("term", query.Term);
+                //filter &= filterDefBuilder.Eq("term", query.Term);
+                pipeline.Add(new BsonDocument("$match", new BsonDocument("term", query.Term)));
+            }if(query.Experience is not null)
+            {
+                //filter &= filterDefBuilder.Eq("term", query.Term);
+                pipeline.Add(new BsonDocument("$match", new BsonDocument("experience", query.Experience)));
             }
 
             if (query.MinSalary.HasValue)
             {
-                filter &= filterDefBuilder.Gt("salary", query.MinSalary);
+                //filter &= filterDefBuilder.Gt("salary", query.MinSalary);
+                pipeline.Add(new BsonDocument("$match", new BsonDocument("salary",
+                    new BsonDocument("$gte", query.MinSalary.Value))));
             }
 
             if (query.PostAge is not null)
@@ -95,29 +119,63 @@ namespace JobBoardDotnetBackend.Controllers
 
                 switch (query.PostAge.ToLower())
                 {
-                    case "90 days":
+                    case "90":
                         cutoffDate = DateTime.Now.AddDays(-90);
                         break;
-                    case "30 days":
+                    case "30":
                         cutoffDate = DateTime.Now.AddDays(-30);
                         break;
-                    case "7 days":
+                    case "7":
                         cutoffDate = DateTime.Now.AddDays(-7);
                         break;
-                    case "24 hours":
+                    case "24":
                         cutoffDate = DateTime.Now.AddHours(-24);
                         break;
                     default:
                         // No time frame filter if the input is invalid
+                        cutoffDate = DateTime.MinValue;
                         break;
                 }
 
-                filter &= filterDefBuilder.Gt("date_posted", cutoffDate);
+                //filter &= filterDefBuilder.Gt("date_posted", cutoffDate);
+                if (cutoffDate > DateTime.MinValue)
+                {
+                    pipeline.Add(new BsonDocument("$match", new BsonDocument("date_posted",
+                        new BsonDocument("$gte", cutoffDate))));
+                }
             }
 
+            pipeline.Add(new BsonDocument("$lookup", new BsonDocument
+            {
+                { "from", "Companies" },
+                { "localField", "company" },
+                { "foreignField", "_id" },
+                { "as", "company_details" }
+            }));
+            pipeline.Add(new BsonDocument("$unwind", "$company_details"));
+            pipeline.Add(new BsonDocument("$project", new BsonDocument
+            {
+                { "_id", 1 },
+                { "title", 1 },
+                { "short_description", 1 },
+                { "salary", 1 },
+                { "term", 1 },
+                { "location", 1 },
+                { "location_type", 1 },
+                { "experience", 1 },
+                { "date_posted", 1 },
+                { "company", new BsonDocument
+                {
+                    { "_id", "$company_details._id" },
+                    { "name", "$company_details.name" },
+                    { "img", "$company_details.img" }
+                }
+                }
+            }));
 
 
-            var posts = await _jobPosts.Find(filter).ToListAsync();
+
+            var posts = await _jobPosts.Aggregate<JobPost>(pipeline).ToListAsync();
             return posts;
         }
 

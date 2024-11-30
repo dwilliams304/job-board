@@ -74,14 +74,16 @@ export default function JobBoard(){
             filtersString += `${key}=${value}&`
         }
 
-        // axios.get(`${apiURL}/JobPost/filterBy?${filtersString}`)
-        //     .then(res => {
-        //     })
-        //     .catch(err => {
-        //     })
-        //     .finally(() => {
-        //          setJobsAreLoading(false);
-        //     });
+        axios.get(`${apiURL}/JobPost/filterBy?${filtersString}`)
+            .then(res => {
+                setJobsList(res.data);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+            .finally(() => {
+                setJobsAreLoading(false);
+            });
 
         setJobsAreLoading(false);
     }, [searchParams])
