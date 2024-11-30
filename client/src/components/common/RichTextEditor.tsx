@@ -90,6 +90,7 @@ export default function RichTextEditor(){
                                 backgroundColor: `${activeStyles.bold ? activeColor : inActiveColor}`,
                                 padding: navButtonPadding
                             }}
+                            disabled={false}
                         />
                         <Button
                             function={() => formatText('italic')}
@@ -99,6 +100,7 @@ export default function RichTextEditor(){
                                 backgroundColor: `${activeStyles.italic ? activeColor : inActiveColor}`,
                                 padding: navButtonPadding
                             }}
+                            disabled={false}
                         />
                         <Button
                             function={() => formatText('underline')}
@@ -108,6 +110,7 @@ export default function RichTextEditor(){
                                 backgroundColor: `${activeStyles.underline ? activeColor : inActiveColor}`,
                                 padding: navButtonPadding
                             }}
+                            disabled={false}
                         />
                         <Button
                             function={() => formatText('insertUnorderedList')}
@@ -117,6 +120,7 @@ export default function RichTextEditor(){
                                 backgroundColor: `${activeStyles.list ? activeColor : inActiveColor}`,
                                 padding: navButtonPadding
                             }}
+                            disabled={false}
                         />
                         <Button
                             function={() => {
@@ -129,6 +133,7 @@ export default function RichTextEditor(){
                                 backgroundColor: `${activeStyles.link ? activeColor : inActiveColor}`,
                                 padding: navButtonPadding
                             }}
+                            disabled={false}
                         />
                     </nav>
                     <div
