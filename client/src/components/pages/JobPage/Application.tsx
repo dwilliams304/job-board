@@ -113,6 +113,9 @@ export default function Application({questions, setShowReportModal}: Application
                                 accept=".pdf,.doc,.docx,.txt,.rtf"
                                 required={true}
                             />
+                            <label htmlFor="resume" className="text-sm italic text-gray-600">
+                                Accepts: .pdf, .doc, .docx, .txt, .rtf
+                            </label>
                         </div>
                         <div className="flex flex-col">
                             <label htmlFor="additional"> 
@@ -165,7 +168,7 @@ export default function Application({questions, setShowReportModal}: Application
                             ))
                         }
                     </form>
-                    <div className="flex flex-col space-y-4 md:flex-row md:space-x-4">
+                    <div className="flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0 pt-6">
                         <Button
                             styleType="Primary"
                             type="submit"
