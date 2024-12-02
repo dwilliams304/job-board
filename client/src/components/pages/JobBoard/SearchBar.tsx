@@ -59,7 +59,8 @@ export default function SearchBar(props: SearchBarProps){
                         value={searchInputs.location}
                     />
                     <Button
-                        type="Primary"
+                        styleType="Primary"
+                        type="submit"
                         text="Search"
                         function={() => props.onSearchSubmit(searchInputs)}
                         style={{marginLeft: "2rem"}}
