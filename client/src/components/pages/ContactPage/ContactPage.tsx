@@ -69,7 +69,7 @@ export default function ContactPage(){
                     <Button
                         function={(e) => onFormSubmit(e)}
                         text="Send"
-                        type="Primary"
+                        styleType="Primary"
                         title="Send"
                         disabled={false}
                     />

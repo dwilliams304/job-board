@@ -283,7 +283,7 @@ export default function SignupForm() {
 
                 <Button
                     function={onSubmit}
-                    type="Primary"
+                    styleType="Primary"
                     text="Create Account"
                     title="Create account"
                     className="w-full"

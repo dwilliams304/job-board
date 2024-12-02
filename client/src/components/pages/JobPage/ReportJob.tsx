@@ -57,7 +57,7 @@ export default function ReportJob(props: ReportModalProps){
                                 onReportSubmit(e);
                                 window.alert("Thank you for your report!")
                             }}
-                            type="Primary"
+                            styleType="Primary"
                             title="Submit report"
                             text="Submit Report"
                             disabled={false}

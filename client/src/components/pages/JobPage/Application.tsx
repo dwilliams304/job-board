@@ -13,12 +13,17 @@ export default function Application({questions, setShowReportModal}: Application
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const {name, value, type} = e.target;
-        console.log(formValues);
 
         setFormValues({
             ...formValues,
             [name]: value
         })
+    }
+
+    const onFormSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        // const data = e.target;
+        console.log(formValues);
     }
 
 
@@ -27,7 +32,7 @@ export default function Application({questions, setShowReportModal}: Application
             <div id="apply" className="bg-slate-200 w-full lg:w-4/6  md:mx-auto">
                 <div className="p-2 md:py-8 md:px-12">
                     <h3 className="text-lg font-bold pb-8">Job Application</h3>
-                    <form className="flex flex-col space-y-2">
+                    <form className="flex flex-col space-y-2" onSubmit={onFormSubmit}>
                         <div className="flex flex-col">
                             <label htmlFor="first-name"> 
                                 First name <span className="text-red-600">*</span>
@@ -35,8 +40,10 @@ export default function Application({questions, setShowReportModal}: Application
                             <input
                                 type="text"
                                 placeholder="First name"
-                                name="first-name"
+                                name="firstName"
                                 className="border p-2"
+                                onChange={onChange}
+                                value={formValues.firstName}
                             />
                         </div>
                         <div className="flex flex-col w-full">
@@ -46,8 +53,10 @@ export default function Application({questions, setShowReportModal}: Application
                             <input
                                 type="text"
                                 placeholder="Last name"
-                                name="last-name"
+                                name="lastName"
                                 className="border p-2"
+                                onChange={onChange}
+                                value={formValues.lastName}
                             />
                         </div>
                         <div className="flex flex-col">
@@ -106,6 +115,8 @@ export default function Application({questions, setShowReportModal}: Application
                             <textarea
                                 className="border h-60"
                                 name="additional"
+                                onChange={onChange}
+                                value={formValues.additional}
                             />
                         </div>
                         {questions && <h3 className="pt-10 pb-4 text-lg font-bold">Employer Specific Questions</h3>}
@@ -123,16 +134,21 @@ export default function Application({questions, setShowReportModal}: Application
                                             placeholder="Enter answer here..."
                                             required={question.required}
                                             name={question.question}
+                                            onChange={onChange}
+                                            value={formValues[question.question]}
                                         />
                                     }
                                     {
                                         question.type === "multi" &&
                                         <select className="border bg-white p-2 cursor-pointer"
                                         name={question.question}
-                                        required={question.required}>
+                                        required={question.required}
+                                        onChange={onChange}
+                                        value={formValues[question.question]}>
                                             {
                                                 question.options?.map((option: any, i: number) => (
-                                                    <option key={i}>
+                                                    <option key={i}
+                                                    value={formValues[option]}>
                                                         {option}
                                                     </option>
                                                 ))
@@ -145,13 +161,14 @@ export default function Application({questions, setShowReportModal}: Application
                     </form>
                     <div className="flex flex-col space-y-4 md:flex-row md:space-x-4">
                         <Button
-                            type="Primary"
+                            styleType="Primary"
+                            type="submit"
                             text="Submit Application"
-                            function={() => window.alert("This is WIP! Check back in later :)")}
+                            function={onFormSubmit}
                             disabled={false}
                         />
                         <Button
-                            type="Tertiary"
+                            styleType="Tertiary"
                             text="Report Job"
                             function={() => setShowReportModal(true)}
                             disabled={false}

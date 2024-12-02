@@ -20,7 +20,7 @@ export default function Profile(){
                 Email: N/A
             </p>
             <Button 
-                type="Primary"
+                styleType="Primary"
                 text="Sign Out"
                 style={{width: "9%", textAlign: "center"}}
                 function={onSignoutClick}

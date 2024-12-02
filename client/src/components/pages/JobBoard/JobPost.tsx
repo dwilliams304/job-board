@@ -98,7 +98,7 @@ export default function JobPost({job}: JobPostProps){
                         <span>Term: {job.term}</span>
                     </p>
                     <Button
-                        type="Primary"
+                        styleType="Primary"
                         text="Apply Now! &rarr;"
                         function={(e) => {
                             window.open(`/job/${job.id}/#apply`);

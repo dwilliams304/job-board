@@ -132,7 +132,7 @@ export default function JobPage(){
                     </a> */}
                 </div>
                 <Button
-                    type="Secondary"
+                    styleType="Secondary"
                     text="Share Job"
                     icon={IoShareSocial}
                     function={() => {}}

@@ -20,7 +20,7 @@
 
 type ButtonProps = {
     style?: React.CSSProperties
-    type?: "Primary" | "Secondary" | "Tertiary"
+    styleType?: "Primary" | "Secondary" | "Tertiary"
     function: ((...args: any[]) => void)
     text?: string
     title?: string
@@ -28,11 +28,12 @@ type ButtonProps = {
     className?: string;
     disabled: boolean;
     usesLoadingBar?: boolean;
+    type?: "button" | "reset" | "submit";
 }
 export default function Button(props: ButtonProps){
     //If we did enter in a type, return one of three
-    if(props.type){
-        switch(props.type){
+    if(props.styleType){
+        switch(props.styleType){
             case "Primary":
                 return(
                     <button style={props.style}
@@ -42,7 +43,9 @@ export default function Button(props: ButtonProps){
                                 ${props.className} ${props.disabled ? "cursor-not-allowed" : 
                                     "hover:bg-transparent hover:border-blue-700 hover:text-blue-700"}`}
                     onClick={props.function}
-                    disabled={props.disabled}>
+                    disabled={props.disabled}
+                    type={props.type ? props.type : "button"}
+                    >
                         <span className="flex align-middle justify-center">
                             {props.text} {props.icon && <props.icon />}
                         </span>
@@ -57,7 +60,9 @@ export default function Button(props: ButtonProps){
                                 ${props.className} ${props.disabled ? "cursor-not-allowed" : 
                                     "hover:bg-transparent hover:bg-blue-700 hover:text-transparent"}`}
                     onClick={props.function}
-                    disabled={props.disabled}>
+                    disabled={props.disabled}
+                    type={props.type ? props.type : "button"}
+                    >
                         <span className="flex align-middle justify-center">
                             {props.text} {props.icon && <props.icon />}
                         </span>
@@ -70,7 +75,9 @@ export default function Button(props: ButtonProps){
                     className={`px-8 py-2 bg-slate-300 duration-300 ease-in-out
                                 ${props.className} ${props.disabled ? "cursor-not-allowed" : "hover:g-slate-400"}`}
                     onClick={props.function}
-                    disabled={props.disabled}>
+                    disabled={props.disabled}
+                    type={props.type ? props.type : "button"}
+                    >
                         <span className="flex align-middle justify-center">
                             {props.text} {props.icon && <props.icon />}
                         </span>
@@ -85,6 +92,8 @@ export default function Button(props: ButtonProps){
                 title={props.title && props.title}
                 onClick={props.function}
                 disabled={props.disabled}
+                type={props.type ? props.type : "button"}
+                className={`${props.className}`}
                 >
                     <span className="flex align-middle">
                         {props.text} {props.icon && <props.icon />}
