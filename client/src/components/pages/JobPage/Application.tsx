@@ -44,6 +44,7 @@ export default function Application({questions, setShowReportModal}: Application
                                 className="border p-2"
                                 onChange={onChange}
                                 value={formValues.firstName}
+                                required={true}
                             />
                         </div>
                         <div className="flex flex-col w-full">
@@ -57,6 +58,7 @@ export default function Application({questions, setShowReportModal}: Application
                                 className="border p-2"
                                 onChange={onChange}
                                 value={formValues.lastName}
+                                required={true}
                             />
                         </div>
                         <div className="flex flex-col">
@@ -70,6 +72,7 @@ export default function Application({questions, setShowReportModal}: Application
                                 className="border p-2"
                                 onChange={onChange}
                                 value={formValues.email}
+                                required={true}
                             />
                         </div>
                         <div className="flex flex-col">
@@ -83,6 +86,7 @@ export default function Application({questions, setShowReportModal}: Application
                                 className="border p-2"
                                 onChange={onChange}
                                 value={formValues.location}
+                                required={true}
                             />
                         </div>
                         <div className="flex flex-col">
@@ -106,6 +110,8 @@ export default function Application({questions, setShowReportModal}: Application
                                 type="file"
                                 name="resume"
                                 className="border p-2"
+                                accept=".pdf,.doc,.docx,.txt,.rtf"
+                                required={true}
                             />
                         </div>
                         <div className="flex flex-col">
