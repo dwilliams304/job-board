@@ -89,14 +89,14 @@ export const Routes: Route[] = [
         pageElement: NotFound
     },
 
-    {
-        path: "/dev/createjobpost",
-        protected: false,
-        pageElement: CreateJobPost
-    },
-    {
-        path: "/dev/rte",
-        protected: false,
-        pageElement: RichTextEditor
-    }
+    // {
+    //     path: "/dev/createjobpost",
+    //     protected: false,
+    //     pageElement: CreateJobPost
+    // },
+    // {
+    //     path: "/dev/rte",
+    //     protected: false,
+    //     pageElement: RichTextEditor
+    // }
 ]

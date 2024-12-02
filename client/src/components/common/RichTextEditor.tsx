@@ -15,9 +15,9 @@
 import { useState, useRef, useEffect } from "react";
 import Button from "./Button";
 
-const activeColor = "#94A3B8";
-const inActiveColor = "#FFFFFF";
-const navButtonPadding = "8px 12px";
+// const activeColor = "#94A3B8";
+// const inActiveColor = "#FFFFFF";
+// const navButtonPadding = "8px 12px";
 
 const initialStyleState = {
     bold: false,
@@ -86,40 +86,24 @@ export default function RichTextEditor(){
                             function={() => formatText('bold')}
                             text="Bold"
                             title="Bold (Ctrl+B)"
-                            style={{fontWeight: "bold", 
-                                backgroundColor: `${activeStyles.bold ? activeColor : inActiveColor}`,
-                                padding: navButtonPadding
-                            }}
                             disabled={false}
                         />
                         <Button
                             function={() => formatText('italic')}
                             text="Italic"
                             title="Italic (Ctrl+I)"
-                            style={{fontStyle: "italic", 
-                                backgroundColor: `${activeStyles.italic ? activeColor : inActiveColor}`,
-                                padding: navButtonPadding
-                            }}
                             disabled={false}
                         />
                         <Button
                             function={() => formatText('underline')}
                             text="Underline"
                             title="Underline (Ctrl+U)"
-                            style={{textDecoration: "underline", 
-                                backgroundColor: `${activeStyles.underline ? activeColor : inActiveColor}`,
-                                padding: navButtonPadding
-                            }}
                             disabled={false}
                         />
                         <Button
                             function={() => formatText('insertUnorderedList')}
                             text="List"
                             title="Make List (Ctrl+Shift+L)"
-                            style={{marginLeft: "3rem", 
-                                backgroundColor: `${activeStyles.list ? activeColor : inActiveColor}`,
-                                padding: navButtonPadding
-                            }}
                             disabled={false}
                         />
                         <Button
@@ -129,10 +113,6 @@ export default function RichTextEditor(){
                             }}
                             text="Link"
                             title="Create Link (Ctrl+Shift+K)"
-                            style={{marginLeft: "3rem", 
-                                backgroundColor: `${activeStyles.link ? activeColor : inActiveColor}`,
-                                padding: navButtonPadding
-                            }}
                             disabled={false}
                         />
                     </nav>
