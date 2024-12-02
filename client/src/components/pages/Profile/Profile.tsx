@@ -22,7 +22,6 @@ export default function Profile(){
             <Button 
                 styleType="Primary"
                 text="Sign Out"
-                style={{width: "9%", textAlign: "center"}}
                 function={onSignoutClick}
                 disabled={false}
             />
