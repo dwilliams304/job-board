@@ -63,7 +63,7 @@ export default function SearchBar(props: SearchBarProps){
                         type="submit"
                         text="Search"
                         function={() => props.onSearchSubmit(searchInputs)}
-                        style={{marginLeft: "2rem"}}
+                        className="ml-8"
                         disabled={props.jobsAreLoading}
                     />
 

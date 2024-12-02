@@ -99,6 +99,7 @@ export default function JobPost({job}: JobPostProps){
                     </p>
                     <Button
                         styleType="Primary"
+                        className="lg:mt-4"
                         text="Apply Now! &rarr;"
                         function={(e) => {
                             window.open(`/job/${job.id}/#apply`);
