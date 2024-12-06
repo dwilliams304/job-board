@@ -2,6 +2,14 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ScrollToTop } from "../../../data/utils";
 import { Button } from "../../common";
+import * as z from "zod";
+
+const signupSchema = z.object({
+    firstName: z.string().min(2, {message: "Must be between 2-32 chars long"}).max(32),
+    lastName: z.string().min(2, {message: "Must be between 2-32 chars long"}).max(32),
+    email: z.string().email().min(4, {message: "Email is required"}),
+    password: z.string().min(8, {message: "Must be minimum 8 characters"})
+})
 
 const passwordReqs: passwordReqsTypes = {
     charLength: false,

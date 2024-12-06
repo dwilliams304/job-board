@@ -5,6 +5,13 @@ import { Link } from "react-router-dom";
 import { GetRandomNumber } from "../../../data/utils";
 // import { User } from "../../../data/users";
 import { Button } from "../../common";
+import * as z from "zod";
+import { useForm } from "react-hook-form";
+
+const loginSchema = z.object({
+    email: z.string().email(),
+    password: z.string()
+})
 
 const initialFormState = {
     email: "",
@@ -15,6 +22,8 @@ export default function LoginForm(){
     const [formValues, setFormValues] = useState(initialFormState);
     const [loginError, setLoginError] = useState("");
     const [isSigningIn, setIsSigningIn] = useState(false);
+
+
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const {name, value} = e.target;
