@@ -46,14 +46,14 @@ export default function SearchBar(props: SearchBarProps){
                     {/* MAIN SEARCH OPTIONS */}
                     <input 
                         placeholder="Title, keywords, etc..."
-                        className="m-1 mb-2 p-2 md:pr-6 pr-14 shadow-md border border-solid"
+                        className="lg:m-1 mb-2 p-2 md:pr-6 w-full lg:w-auto lg:pr-14 shadow-md border border-solid"
                         name="title"
                         onChange={onChange}
                         value={searchInputs.title}
                     />
                     <input 
                         placeholder="Location or 'Remote'"
-                        className="m-1 mb-2 p-2 md:pr-6 pr-14 shadow-md border border-solid"
+                        className="lg:m-1 mb-2 p-2 md:pr-6 w-full lg:w-auto lg:pr-14 shadow-md border border-solid"
                         name="location"
                         onChange={onChange}
                         value={searchInputs.location}
@@ -63,13 +63,13 @@ export default function SearchBar(props: SearchBarProps){
                         type="submit"
                         text="Search"
                         function={() => props.onSearchSubmit(searchInputs)}
-                        className="ml-8"
+                        className="mx-auto w-full lg:w-auto"
                         disabled={props.jobsAreLoading}
                     />
 
                     {/* SEARCH DROPDOWNS */}
-                    <div className="flex flex-row w-full justify-between">
-                        <div className="flex flex-col text-center m-2">
+                    <div className="flex flex-col md:flex-row w-full pt-4 md:justify-between">
+                        <div className="flex flex-col text-center space-y-1 md:space-y-0 md:m-2">
                             <label htmlFor="location"
                             className="text-sm text-gray-400">
                                 Location
@@ -87,7 +87,7 @@ export default function SearchBar(props: SearchBarProps){
                             </select>
                         </div>
                         
-                        <div className="flex flex-col text-center m-2">
+                        <div className="flex flex-col text-center md:m-2">
                             <label htmlFor="experience"
                             className="text-sm text-gray-400">
                                 Experience Level
@@ -105,7 +105,7 @@ export default function SearchBar(props: SearchBarProps){
                             </select>
                         </div>
                         
-                        <div className="flex flex-col text-center m-2">
+                        <div className="flex flex-col text-center md:m-2">
                             <label htmlFor="term"
                             className="text-sm text-gray-400">
                                 Term
@@ -123,7 +123,7 @@ export default function SearchBar(props: SearchBarProps){
                             </select>
                         </div>
                         
-                        <div className="flex flex-col text-center m-2">
+                        <div className="flex flex-col text-center md:m-2">
                             <label htmlFor="post-age"
                             className="text-sm text-gray-400">
                                 Post Age
