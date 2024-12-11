@@ -57,17 +57,17 @@ export default function Help(){
                     <div className="grid lg:grid-cols-3 grid-cols-2 gap-2 p-2 lg:gap-6 lg:w-2/3 mx-auto mt-6">
                         {
                             showEmployerHelp ?
-                            EmployerHelpArticles.map((article, idx) => (
+                            EmployerHelpArticles.map((article) => (
                                 <HelpArticleCard
-                                    key={idx}
+                                    key={article.id}
                                     borderColor={article.tag}
                                     helpArticle={article}
                                 />
                             ))
                             :
-                            SeekerHelpArticles.map((article, idx) => (
+                            SeekerHelpArticles.map((article) => (
                                 <HelpArticleCard 
-                                    key={idx}
+                                    key={article.id}
                                     borderColor={article.tag}
                                     helpArticle={article} 
                                 />
@@ -81,11 +81,11 @@ export default function Help(){
                     <h3 className="text-xl p-4">Featured Articles</h3>
                     <div className="flex flex-col space-y-4 justify-center align-middle">
                         {
-                            FeaturedArticles.map((article, idx) => (
+                            FeaturedArticles.map((article) => (
                                 <FeaturedArticleCard 
-                                    key={idx}
+                                    key={article.id}
                                     title={article.title}
-                                    articleID={article.articleID}
+                                    id={article.id}
                                 />
                             ))
                         }
