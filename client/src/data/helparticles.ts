@@ -2,59 +2,59 @@ type HelpArticleTags = "Account" | "Search" | "Payment"
 export type HelpArticle = {
     tag: HelpArticleTags,
     title: string,
-    articleLink: string
+    id: string
 }
 
 export type FeaturedArticle = {
     title: string
-    articleID: string
+    id: string
 }
 
 export const SeekerHelpArticles: HelpArticle[] = [
     {
         tag: "Account",
         title: "Profile Details",
-        articleLink: ""
+        id: "1"
     },
     {
         tag: "Payment",
         title: "Refund Policy",
-        articleLink: ""
+        id: "2"
     },
     {
         tag: "Search",
         title: "Keywords",
-        articleLink: ""
+        id: "3"
     },
     {
         tag: "Account",
         title: "Profile Details",
-        articleLink: ""
+        id: "4"
     },
     {
         tag: "Payment",
         title: "Refund Policy",
-        articleLink: ""
+        id: "5"
     },
     {
         tag: "Search",
         title: "Keywords",
-        articleLink: ""
+        id: "6"
     },
     {
         tag: "Account",
         title: "Profile Details",
-        articleLink: ""
+        id: "7"
     },
     {
         tag: "Payment",
         title: "Refund Policy",
-        articleLink: ""
+        id: "8"
     },
     {
         tag: "Search",
         title: "Keywords",
-        articleLink: ""
+        id: "9"
     },
 ]
 
@@ -62,62 +62,62 @@ export const EmployerHelpArticles: HelpArticle[] = [
     {
         tag: "Account",
         title: "How to Post a Job",
-        articleLink: ""
+        id: "x1"
     },
     {
         tag: "Payment",
         title: "Paying for Job Posts",
-        articleLink: ""
+        id: "x2"
     },
     {
         tag: "Search",
         title: "Search for Employees",
-        articleLink: ""
+        id: "x3"
     },
     {
         tag: "Account",
         title: "Make a Company Account",
-        articleLink: ""
+        id: "x4"
     },
     {
         tag: "Payment",
         title: "Refund Policy",
-        articleLink: ""
+        id: "x5"
     },
     {
         tag: "Search",
         title: "Keywords",
-        articleLink: ""
+        id: "x6"
     },
     {
         tag: "Account",
         title: "Profile Details",
-        articleLink: ""
+        id: "x7"
     },
     {
         tag: "Payment",
         title: "Refund Policy",
-        articleLink: ""
+        id: "x8"
     },
     {
         tag: "Search",
         title: "Keywords",
-        articleLink: ""
+        id: "x9"
     },
 ]
 
 export const FeaturedArticles: FeaturedArticle[] = [
     {
         title: "Reset Password",
-        articleID: "00000"
+        id: "1"
     },
     {
         title: "How to get a Refund",
-        articleID: "00000"
+        id: "2"
     },
     {
         title: "Resume Help",
-        articleID: "00000"
+        id: "3"
     }
 ]
 
