@@ -19,6 +19,7 @@ import { SkeletonLoader } from "../../common";
 
 import { apiURL, testURL } from "../../../data/constants";
 import axios from "axios";
+import { Job } from "../../../types/Jobs";
 
 
 export type FilterPopupMenuState = {
@@ -29,7 +30,7 @@ export type FilterPopupMenuState = {
 
 export default function JobBoard(){
     const [showFilterPopup, setShowFilterPopup] = useState(false);
-    const [jobsList, setJobsList] = useState([]);
+    const [jobsList, setJobsList] = useState<Job[]>([]);
     const [jobsAreLoading, setJobsAreLoading] = useState(false);
     const [searchParams, setSearchParams] = useSearchParams();
 
@@ -115,7 +116,7 @@ export default function JobBoard(){
                 </div>
                 :
                 <div>
-                    {
+                    { jobsList.length > 0 &&
                         jobsList.map((job, i) => (
                             <JobPost job={job} key={i} />
                         ))
