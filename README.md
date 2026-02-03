@@ -1,59 +1,69 @@
-# React Job Board  
+# Fullstack TypeScript/.NET Job Board
 
-The React Job Board is a mock job-board website that uses React (using TypeScript) and TailwindCSS for the frontend, and uses .NET/C# for the backend. 
-This Job Board will be fully functional, allowing for users to login to employer/job seeker accounts, create an employer/job seeker account, apply to jobs, and create job posts.
+A fullstack job listing platform built with React/TypeScript and .NET Core, featuring search, filtering, and dynamic data handling.
 
-&nbsp;
+## Overview
 
-## Purpose
+This project is a full-stack application designed to demonstrate a complete web-dev workflow using modern tech. It includes a React/TypeScript frontend styled with TailwindCSS, and a .NET Core C# backend API, with the goal of providing dynamic job listing and filtering.
 
-This project is not for commercial/public use. This is simply as a personal challenge to create a fully functional full-stack application using TypeScript, and .NET Core. I wanted to learn tech that I have previously not used like TypeScript. While I have familiarity with JavaScript and more statically typed languages (C#), I have not previously used TypeScript extensively, and have never used C# in a web development environment. 
+This project was built as a challenge to myself to strengthen my skills in the following:
+- Full-stack engineering
+- TypeScript/static typing in React
+- REST Api designed and data management
+- MongoDB implementations
+- .NET Core/C# in the web dev world
+- Responsive UIs with Tailwind
+
+## Tech Stack
+
+This project uses the following technologies:
+
+- Frontend
+    - React
+    - TypeScript
+    - TailwindCSS
+- Backend
+    - .NET Core
+    - C#
+    - MongoDB
+- Deployment (and CI/CD)
+    - Microsoft Azure
+    - Vercel
 
 
-&nbsp;
-## Dev Notes
+## Features
 
-+ This project currently has incomplete documentation as it is actively being worked on, please be patient!
-+ A lot of the frontend data is being pulled from hard-coded .ts files within ./client/data -- this is temporary and will be switched over to using the .NET backend when it is finished. Many models are incomplete and are purely for testing purposes and to show data being displayed (somewhat) dynamically
-+ Users can not currently sign in or create accounts. This is intentional
-+ Reviews tied to companies are not currently functional, and companies are no longer showing a review score - currently this is WIP
+This project currently has the following features implemented:
+
+- Full job board UI with categorized listings
+- Search/filtering UI components (job type, location, date posted, etc)
+- TypeScript driven frontend components
+- Planned backend support for user accounts and job posting workflows
 
 
+## Notes
 
-&nbsp;
----
-## To-Do  
-#### Backend:
-- [x] Switch backend to .NET
-- [x] Set up basic REST API
-- [ ] User sign in persistence
-- [ ] User authentication and roles
-- [ ] Users can create profiles
-- [x] Link jobs -> companies
-- [x] Link reviews -> companies
+This project was a huge learning experience, as this was my first exposure with TypeScript, TailwindCSS, .NET Core, MongoDB, and Azure. Prior to this project, I had not used TypeScript in any way but I am more familiar/comfortable with statically typed languages (namely C#) and was happy with the switch.
 
-#### Frontend:
-- [x] Scaffold basic Job Board UI
-- [x] Create mock data and display it
-- [x] Switch styling to Tailwind
-- [x] Users can click on job posts to see more details
-    - [ ] Make job description dynamic
-    - [ ] Users can report and share job postings
-- [x] Users can click on company pages from either job posts or job pages to see more
-- [x] Company pages show dynamic data for company name, description
-- [x] Company pages show all job postings from specific company
-- [x] Companies show all reviews
-- [ ] Users can make a profile (job seeker OR employer)
-- [ ] Users can sign in to profile and see profile page
-- [ ] Users can apply to a job post
-- [ ] Users on company profiles can create a job post
-- [ ] Users can leave reviews for companies
-- [ ] Job posts show number of successful applicants (f)
+TailwindCSS is super easy to use, and their documentation is very extensive, allowing me to pretty quickly put up nice looking UI components that are also responsive. While I still tend towards vanilla CSS as I love the control I can get, the ease of Tailwind and how quickly it could speed up your development time (once you're comfortable with it) is not lost on me.
 
-#### Stretch:  
-- [x] Convert JavaScript frontend to TypeScript
-- [x] Convert backend to TypeScript
-- [ ] Set up better data sorting/fetching for jobs, companies, reviews, etc...
-- [ ] Company pages can have admins for recruiters to post jobs
-- [ ] Set up way to create help articles dynamically
-- [ ] Set up payment pages for creating job listing (Stripe?)
+Using .NET was pretty different from what I'm used to. I previously had only worked with Express, but I had used C# in other projects (primarily for Unity games I like making) and was happy to be able to use a language I was semi-familiar with at the time.
+
+I also got some exposure with Azure for the first time. Which allowed me to see the process of creating the app from start-to-finish including the final deployment. Of all the steps, this was the step I ran into the most trouble with. Not using any cloud hosting solutions previously, and just trying to jump right into it felt very hard. However, I am happy with the final product. While it may not be the most perfect, it was still a very large challenge to tackle.
+
+## Stretch Goals/Future Improvements
+
+I would like to eventually add a few more features to this project, but it is on hold for now so I can focus on other projects.
+
+- User Profiles including:
+    - Profile creation
+    - Forgot password steps
+    - Multi-resume support (similar to LinkedIn)
+- Company Profiles/Mock payment setup for job-posting
+    - Job posting creation when logged into company profiles
+    - Dynamic rich content for created job-posts
+- Working job application submissions including:
+    - User resume uploading
+    - Job poster defined application questions
+    - Job poster defined required questions
+    - Company profiles being able to view applications to jobs
